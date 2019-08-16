@@ -22,26 +22,26 @@ public typealias Fixed = CoglFixed
 /// Some convenience methods for the fixed-point type
 public extension Fixed {
     /// Create a fixed-point number from a Double
-    public init(doubleValue d: Double) { self = cogl_double_to_fixed(d) }
+    init(doubleValue d: Double) { self = cogl_double_to_fixed(d) }
     /// Create a fixed-point number from a Float
-    public init(floatValue f: Float) { self = cogl_double_to_fixed(Double(f)) }
+    init(floatValue f: Float) { self = cogl_double_to_fixed(Double(f)) }
     /// Create a fixed-point number from an Int
-    public init(intValue i: Int) { self = CInt(i) << FIXED_Q }
+    init(intValue i: Int) { self = CInt(i) << FIXED_Q }
 
     /// Truncated integer representation of the fixed-point value
-    public var intValue: Int {
+    var intValue: Int {
         get { return Int(self >> FIXED_Q) }
         mutating set { self = CInt(newValue) << FIXED_Q }
     }
 
     /// Double precision representation of the fixed-point value
-    public var doubleValue: Double {
+    var doubleValue: Double {
         get { return Double(self) / 65536 }
         mutating set { self = cogl_double_to_fixed(newValue) }
     }
 
     /// Smallest possible number greater than zero expressed as a fixed-point number.
-    public static var 𝜀 = FIXED_EPSILON
+    static var 𝜀 = FIXED_EPSILON
 }
 
 /// Calculate the sine of the given angle in fixed-point notation
