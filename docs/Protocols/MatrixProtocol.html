@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MatrixProtocol Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Protocol/MatrixProtocol" class="dashAnchor"></a>
+
+    <a title="MatrixProtocol Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Cogl 2.62.0 Docs
+        </a>
+         (95% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/rhx/SwiftCogl">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://http%3A%2F%2Frhx%2Egithub%2Eio%2FSwiftCogl%2Fdocsets%2FCogl%2Exml">
+            <img class="header-icon" src="../img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Cogl Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      MatrixProtocol Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Bitmap.html">Bitmap</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Euler.html">Euler</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Material.html">Material</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MaterialLayer.html">MaterialLayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Matrix.html">Matrix</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Offscreen.html">Offscreen</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Quaternion.html">Quaternion</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Texture.html">Texture</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TextureVertex.html">TextureVertex</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/_ColorSizeCheck.html">_ColorSizeCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/_MatrixSizeCheck.html">_MatrixSizeCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/_TextureVertexSizeCheck.html">_TextureVertexSizeCheck</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10AFIRST_BITs5Int32Vvp">AFIRST_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl5A_BITs5Int32Vvp">A_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl7BGR_BITs5Int32Vvp">BGR_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9DEPTH_BITs5Int32Vvp">DEPTH_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9FIXED_0_5s5Int32Vvp">FIXED_0_5</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl7FIXED_1s5Int32Vvp">FIXED_1</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_2_PIs5Int32Vvp">FIXED_2_PI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_BITSs5Int32Vvp">FIXED_BITS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl13FIXED_EPSILONs5Int32Vvp">FIXED_EPSILON</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9FIXED_MAXs5Int32Vvp">FIXED_MAX</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9FIXED_MINs6UInt32Vvp">FIXED_MIN</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl8FIXED_PIs5Int32Vvp">FIXED_PI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_PI_2s5Int32Vvp">FIXED_PI_2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_PI_4s5Int32Vvp">FIXED_PI_4</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl7FIXED_Qs5Int32Vvp">FIXED_Q</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl11PREMULT_BITs5Int32Vvp">PREMULT_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl18RADIANS_TO_DEGREESs5Int32Vvp">RADIANS_TO_DEGREES</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl20SQRTI_ARG_10_PERCENTs5Int32Vvp">SQRTI_ARG_10_PERCENT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl19SQRTI_ARG_5_PERCENTs5Int32Vvp">SQRTI_ARG_5_PERCENT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl13SQRTI_ARG_MAXs5Int32Vvp">SQRTI_ARG_MAX</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl11STENCIL_BITs5Int32Vvp">STENCIL_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl17TEXTURE_MAX_WASTEs5Int32Vvp">TEXTURE_MAX_WASTE</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/AttributeType.html">AttributeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BitmapError.html">BitmapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BlendStringError.html">BlendStringError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BufferBit.html">BufferBit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BufferTarget.html">BufferTarget</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ColorMask.html">ColorMask</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/DepthTestFunction.html">DepthTestFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/FeatureFlags.html">FeatureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/FilterReturn.html">FilterReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Fixed.html">Fixed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/FogMode.html">FogMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/IndicesType.html">IndicesType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialAlphaFunc.html">MaterialAlphaFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialFilter.html">MaterialFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialLayerType.html">MaterialLayerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialWrapMode.html">MaterialWrapMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/PixelFormat.html">PixelFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ReadPixelsFlags.html">ReadPixelsFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/RendererError.html">RendererError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ShaderType.html">ShaderType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/StereoMode.html">StereoMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/SystemError.html">SystemError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureComponents.html">TextureComponents</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureError.html">TextureError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureFlags.html">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureType.html">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/VerticesMode.html">VerticesMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Winding.html">Winding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/WinsysFeature.html">WinsysFeature</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8angleCos0B0s5Int32VAE_tF">angleCos(angle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8angleSin0B0s5Int32VAE_tF">angleSin(angle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8angleTan0B0s5Int32VAE_tF">angleTan(angle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4atanys5Int32VADF">atan(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5atan2ys5Int32VAD_ADtF">atan2(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7beginGlyyF">beginGl()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16bitmapErrorQuarks6UInt32VyF">bitmapErrorQuark()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl21blendStringErrorQuarks6UInt32VyF">blendStringErrorQuark()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14checkExtension4name3exts5Int32VSPys4Int8VG_AItF">checkExtension(name:ext:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5clear5color7buffersyAA13ColorProtocol_p_SutF">clear(color:buffers:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10clipEnsureyyF">clipEnsure()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7clipPopyyF">clipPop()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8clipPush9primitive8boundsX10E2Y10E2X20E2Y2ySpySo01_A9PrimitiveVG_S4ftF">clipPush(primitive:boundsX1:boundsY1:boundsX2:boundsY2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8clipPush7xOffset01yD05width6heightySf_S3ftF">clipPush(xOffset:yOffset:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17clipPushRectangle2x02y02x12y1ySf_S3ftF">clipPushRectangle(x0:y0:x1:y1:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18clipPushWindowRect7xOffset01yF05width6heightySf_S3ftF">clipPushWindowRect(xOffset:yOffset:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl23clipPushWindowRectangle7xOffset01yF05width6heightys5Int32V_A3HtF">clipPushWindowRectangle(xOffset:yOffset:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16clipStackRestoreyyF">clipStackRestore()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13clipStackSaveyyF">clipStackSave()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl28clutterCheckExtensionCLUTTER4name3exts5Int32VSPys4Int8VG_AItF">clutterCheckExtensionCLUTTER(name:ext:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl30clutterWinsysHasFeatureCLUTTER7features5Int32VSo01_acE0V_tF">clutterWinsysHasFeatureCLUTTER(feature:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10colorEqual2v12v2s5Int32VSv_SvtF">colorEqual(v1:v2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16colorInitFromHsl0B03hue10saturation9luminanceyAA13ColorProtocol_p_S3ftF">colorInitFromHsl(color:hue:saturation:luminance:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3cosys5Int32VADF">cos(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13createProgramSvSgyF">createProgram()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12createShader10shaderTypeSvSgSo0acE0a_tF">createShader(shaderType:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16debugMatrixPrint6matrixyAA0C8Protocol_p_tF">debugMatrixPrint(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10disableFogyyF">disableFog()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3divys5Int32VAD_ADtF">div(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13doubleToFixed5values5Int32VSd_tF">doubleToFixed(value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11doubleToInt5values5Int32VSd_tF">doubleToInt(value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12doubleToUint5values6UInt32VSd_tF">doubleToUint(value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5endGlyyF">endGl()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17featuresAvailable0B0s5Int32VSo0A12FeatureFlagsa_tF">featuresAvailable(features:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5flushyyF">flush()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25framebufferGetColorFormat0B0So0a5PixelE0aSpySo01_A7TextureVG_tF">framebufferGetColorFormat(framebuffer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7frustum5left_6right_6bottom3top5zNear4zFarySf_S5ftF">frustum(left_:right_:bottom:top:zNear:zFar:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25getBackfaceCullingEnableds5Int32VyF">getBackfaceCullingEnabled()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11getBitmasks3red5green4blue5alphaySpys5Int32VG_A3ItF">getBitmasks(red:green:blue:alpha:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19getDepthTestEnableds5Int32VyF">getDepthTestEnabled()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11getFeaturesSo0A12FeatureFlagsayF">getFeatures()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12getModelview6matrixyAA14MatrixProtocol_p_tF">getModelview(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14getOptionGroupSpySo08_GOptionD0VGSgyF">getOptionGroup()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14getProcAddress4nameyyXCSgSPys4Int8VG_tF">getProcAddress(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13getProjection6matrixyAA14MatrixProtocol_p_tF">getProjection(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9getSourceSvSgyF">getSource()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11getViewport1vySpySfG_tF">getViewport(v:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18gtypeMatrixGetTypeSuyF">gtypeMatrixGetType()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13handleGetTypeSuyF">handleGetType()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9handleRef0B0SvSgSv_tF">handleRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11handleUnref0B0ySv_tF">handleUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8isBitmap6objects5Int32VSv_tF">isBitmap(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10isMaterial6handles5Int32VSv_tF">isMaterial(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11isOffscreen6objects5Int32VSv_tF">isOffscreen(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9isProgram6handles5Int32VSv_tF">isProgram(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8isShader6handles5Int32VSv_tF">isShader(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9isTexture6objects5Int32VSv_tF">isTexture(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14isVertexBuffer6handles5Int32VSv_tF">isVertexBuffer(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl21isVertexBufferIndices6handles5Int32VSv_tF">isVertexBufferIndices(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4log2ys5Int32VSiF">log2(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11materialRef0B0SvSgSv_tF">materialRef(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13materialUnref0B0ySv_tF">materialUnref(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11matrixEqual2v12v2s5Int32VSv_SvtF">matrixEqual(v1:v2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3mulys5Int32VAD_ADtF">mul(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7mul_divys5Int32VAD_A2DtF">mul_div(_:_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl36onscreenClutterBackendSetSizeCLUTTER5width6heightys5Int32V_AFtF">onscreenClutterBackendSetSizeCLUTTER(width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5ortho5left_6right_6bottom3top4near3farySf_S5ftF">ortho(left_:right_:bottom:top:near:far:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11perspective4fovy6aspect5zNear4zFarySf_S3ftF">perspective(fovy:aspect:zNear:zFar:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7polygon8vertices9nVertices8useColoryAA21TextureVertexProtocol_p_s6UInt32Vs5Int32VtF">polygon(vertices:nVertices:useColor:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13popDrawBufferyyF">popDrawBuffer()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14popFramebufferyyF">popFramebuffer()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9popMatrixyyF">popMatrix()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9popSourceyyF">popSource()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3powyS2i_s5Int32VtF">pow(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4pow2ySis5Int32VF">pow2(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programAttachShader0B6Handle06shaderE0ySv_SvtF">programAttachShader(programHandle:shaderHandle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25programGetUniformLocation6handle11uniformNames5Int32VSv_SPys4Int8VGtF">programGetUniformLocation(handle:uniformName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11programLink6handleySv_tF">programLink(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10programRef6handleSvSgSv_tF">programRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programSetUniform1f0B015uniformLocation5valueySv_s5Int32VSftF">programSetUniform1f(program:uniformLocation:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programSetUniform1i0B015uniformLocation5valueySv_s5Int32VAGtF">programSetUniform1i(program:uniformLocation:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl22programSetUniformFloat0B015uniformLocation11nComponents5count5valueySv_s5Int32VA2ISPySfGtF">programSetUniformFloat(program:uniformLocation:nComponents:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl20programSetUniformInt0B015uniformLocation11nComponents5count5valueySv_s5Int32VA2ISPyAIGtF">programSetUniformInt(program:uniformLocation:nComponents:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl23programSetUniformMatrix0B015uniformLocation10dimensions5count9transpose5valueySv_s5Int32VA3JSPySfGtF">programSetUniformMatrix(program:uniformLocation:dimensions:count:transpose:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16programUniform1f9uniformNo5valueys5Int32V_SftF">programUniform1f(uniformNo:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16programUniform1i9uniformNo5valueys5Int32V_AFtF">programUniform1i(uniformNo:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programUniformFloat9uniformNo4size5count5valueys5Int32V_A2HSPySfGtF">programUniformFloat(uniformNo:size:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17programUniformInt9uniformNo4size5count5valueys5Int32V_A2HSPyAHGtF">programUniformInt(uniformNo:size:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl20programUniformMatrix9uniformNo4size5count9transpose5valueys5Int32V_A3ISPySfGtF">programUniformMatrix(uniformNo:size:count:transpose:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12programUnref6handleySv_tF">programUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10programUse6handleySv_tF">programUse(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14pushDrawBufferyyF">pushDrawBuffer()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15pushFramebuffer6bufferySpySo01_A7TextureVG_tF">pushFramebuffer(buffer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10pushMatrixyyF">pushMatrix()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10pushSource8materialySv_tF">pushSource(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10readPixels1x1y5width6height6source6format6pixelsys5Int32V_A3KSo0a4ReadC5FlagsaSo0A11PixelFormataSpys5UInt8VGtF">readPixels(x:y:width:height:source:format:pixels:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9rectangle2x12y12x22y2ySf_S3ftF">rectangle(x1:y1:x2:y2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl31rectangleWithMultitextureCoords2x12y12x22y203texE00jE3LenySf_S3fSPySfGs5Int32VtF">rectangleWithMultitextureCoords(x1:y1:x2:y2:texCoords:texCoordsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl26rectangleWithTextureCoords2x12y12x22y23tx13ty13tx23ty2ySf_S7ftF">rectangleWithTextureCoords(x1:y1:x2:y2:tx1:ty1:tx2:ty2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10rectangles5verts6nRectsySPySfG_s6UInt32VtF">rectangles(verts:nRects:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl27rectanglesWithTextureCoords5verts6nRectsySPySfG_s6UInt32VtF">rectanglesWithTextureCoords(verts:nRects:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl6rotate5angle1x1y1zySf_S3ftF">rotate(angle:x:y:z:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5scale1x1y1zySf_S2ftF">scale(x:y:z:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25setBackfaceCullingEnabled7settingys5Int32V_tF">setBackfaceCullingEnabled(setting:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19setDepthTestEnabled7settingys5Int32V_tF">setDepthTestEnabled(setting:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13setDrawBuffer6target9offscreenySo0aD6Targeta_SvtF">setDrawBuffer(target:offscreen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl6setFog8fogColor4mode7density5zNear4zFaryAA0E8Protocol_p_So0aC4ModeaS3ftF">setFog(fogColor:mode:density:zNear:zFar:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14setFramebuffer6bufferySpySo01_A7TextureVG_tF">setFramebuffer(buffer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12setModelview6matrixyAA14MatrixProtocol_p_tF">setModelview(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13setProjection6matrixyAA14MatrixProtocol_p_tF">setProjection(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9setSource5coloryAA13ColorProtocol_p_tF">setSource(color:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9setSource8materialySv_tF">setSource(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9setSource7textureyAA15TextureProtocol_p_tF">setSource(texture:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16setSourceColor4f3red5green4blue5alphaySf_S3ftF">setSourceColor4f(red:green:blue:alpha:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17setSourceColor4ub3red5green4blue5alphays5UInt8V_A3HtF">setSourceColor4ub(red:green:blue:alpha:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11setViewport1x1y5width6heightys5Int32V_A3HtF">setViewport(x:y:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13shaderCompile6handleySv_tF">shaderCompile(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16shaderGetInfoLog6handleSSSgSv_tF">shaderGetInfoLog(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13shaderGetType6handleSo0a6ShaderD0aSv_tF">shaderGetType(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16shaderIsCompiled6handles5Int32VSv_tF">shaderIsCompiled(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9shaderRef6handleSvSgSv_tF">shaderRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12shaderSource0B06sourceySv_SPys4Int8VGtF">shaderSource(shader:source:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11shaderUnref6handleySv_tF">shaderUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3sinys5Int32VADF">sin(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4sqrtys5Int32VADF">sqrt(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5sqrti1xs5Int32VAE_tF">sqrti(x:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3tanys5Int32VADF">tan(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17textureErrorQuarks6UInt32VyF">textureErrorQuark()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10textureRef0B0SvSgSv_tF">textureRef(texture:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12textureUnref0B0ySv_tF">textureUnref(texture:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9transform6matrixyAA14MatrixProtocol_p_tF">transform(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9translate1x1y1zySf_S2ftF">translate(x:y:z:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15vertexBufferAdd6handle13attributeName11nComponents4type10normalized6stride7pointerySv_SPys4Int8VGs5UInt8VSo0A13AttributeTypeas5Int32Vs6UInt16VSvtF">vertexBufferAdd(handle:attributeName:nComponents:type:normalized:stride:pointer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18vertexBufferDelete6handle13attributeNameySv_SPys4Int8VGtF">vertexBufferDelete(handle:attributeName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19vertexBufferDisable6handle13attributeNameySv_SPys4Int8VGtF">vertexBufferDisable(handle:attributeName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16vertexBufferDraw6handle4mode5first5countySv_So0A12VerticesModeas5Int32VAJtF">vertexBufferDraw(handle:mode:first:count:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl24vertexBufferDrawElements6handle4mode7indices8minIndex03maxJ00H6Offset5countySv_So0A12VerticesModeaSvs5Int32VA3MtF">vertexBufferDrawElements(handle:mode:indices:minIndex:maxIndex:indicesOffset:count:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18vertexBufferEnable6handle13attributeNameySv_SPys4Int8VGtF">vertexBufferEnable(handle:attributeName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl24vertexBufferGetNVertices6handles6UInt32VSv_tF">vertexBufferGetNVertices(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl30vertexBufferIndicesGetForQuads01nD0SvSgs6UInt32V_tF">vertexBufferIndicesGetForQuads(nIndices:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl26vertexBufferIndicesGetType7indicesSo0adF0aSv_tF">vertexBufferIndicesGetType(indices:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl22vertexBufferIndicesNew11indicesType0F5Array0F3LenSvSgSo0adG0a_Svs5Int32VtF">vertexBufferIndicesNew(indicesType:indicesArray:indicesLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15vertexBufferNew9nVerticesSvSgs6UInt32V_tF">vertexBufferNew(nVertices:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15vertexBufferRef6handleSvSgSv_tF">vertexBufferRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18vertexBufferSubmit6handleySv_tF">vertexBufferSubmit(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17vertexBufferUnref6handleySv_tF">vertexBufferUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8viewport5width6heightys6UInt32V_AFtF">viewport(width:height:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/BitmapProtocol.html">BitmapProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ColorProtocol.html">ColorProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/EulerProtocol.html">EulerProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MaterialLayerProtocol.html">MaterialLayerProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MaterialProtocol.html">MaterialProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MatrixProtocol.html">MatrixProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/OffscreenProtocol.html">OffscreenProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/QuaternionProtocol.html">QuaternionProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextureProtocol.html">TextureProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextureVertexProtocol.html">TextureVertexProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/_ColorSizeCheckProtocol.html">_ColorSizeCheckProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/_MatrixSizeCheckProtocol.html">_MatrixSizeCheckProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/_TextureVertexSizeCheckProtocol.html">_TextureVertexSizeCheckProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/BitmapRef.html">BitmapRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ColorRef.html">ColorRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EulerRef.html">EulerRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MaterialLayerRef.html">MaterialLayerRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MaterialRef.html">MaterialRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MatrixRef.html">MatrixRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/OffscreenRef.html">OffscreenRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/QuaternionRef.html">QuaternionRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextureRef.html">TextureRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextureVertexRef.html">TextureVertexRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/_ColorSizeCheckRef.html">_ColorSizeCheckRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/_MatrixSizeCheckRef.html">_MatrixSizeCheckRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/_TextureVertexSizeCheckRef.html">_TextureVertexSizeCheckRef</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl5Anglea">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl13AttributeTypea">AttributeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11BitmapErrora">BitmapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl16BlendStringErrora">BlendStringError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl5Bool_a">Bool_</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl9BufferBita">BufferBit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12BufferTargeta">BufferTarget</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl0A7Texturea">CoglTexture</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl9ColorMaska">ColorMask</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17DepthTestFunctiona">DepthTestFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12FeatureFlagsa">FeatureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12FilterReturna">FilterReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl5Fixeda">Fixed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl7FogModea">FogMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl7FuncPtra">FuncPtr</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl6Handlea">Handle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11IndicesTypea">IndicesType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17MaterialAlphaFunca">MaterialAlphaFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl14MaterialFiltera">MaterialFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17MaterialLayerTypea">MaterialLayerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl16MaterialWrapModea">MaterialWrapMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11PixelFormata">PixelFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl15ReadPixelsFlagsa">ReadPixelsFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl13RendererErrora">RendererError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl10ShaderTypea">ShaderType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl10StereoModea">StereoMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11SystemErrora">SystemError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17TextureComponentsa">TextureComponents</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12TextureErrora">TextureError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12TextureFlagsa">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11TextureTypea">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12VerticesModea">VerticesMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl7Windinga">Winding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl13WinsysFeaturea">WinsysFeature</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>MatrixProtocol</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MatrixProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>The <code>MatrixProtocol</code> protocol exposes the methods and properties of an underlying <code>CoglMatrix</code> instance.
+The default implementation of these can be found in the protocol extension below.
+For a concrete class that implements these methods and properties, see <code><a href="../Classes/Matrix.html">Matrix</a></code>.
+Alternatively, use <code><a href="../Structs/MatrixRef.html">MatrixRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
+
+<p>A CoglMatrix holds a 4x4 transform matrix. This is a single precision,
+column-major matrix which means it is compatible with what OpenGL expects.</p>
+
+<p>A CoglMatrix can represent transforms such as, rotations, scaling,
+translation, sheering, and linear projections. You can combine these
+transforms by multiplying multiple matrices in the order you want them
+applied.</p>
+
+<p>The transformation of a vertex (x, y, z, w) by a CoglMatrix is given by:</p>
+<pre class="highlight swift"><code>  <span class="n">x_new</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">xy</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">xz</span> <span class="o">*</span> <span class="n">z</span> <span class="o">+</span> <span class="n">xw</span> <span class="o">*</span> <span class="n">w</span>
+  <span class="n">y_new</span> <span class="o">=</span> <span class="n">yx</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">yz</span> <span class="o">*</span> <span class="n">z</span> <span class="o">+</span> <span class="n">yw</span> <span class="o">*</span> <span class="n">w</span>
+  <span class="n">z_new</span> <span class="o">=</span> <span class="n">zx</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">zy</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">zz</span> <span class="o">*</span> <span class="n">z</span> <span class="o">+</span> <span class="n">zw</span> <span class="o">*</span> <span class="n">w</span>
+  <span class="n">w_new</span> <span class="o">=</span> <span class="n">wx</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">wy</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">wz</span> <span class="o">*</span> <span class="n">z</span> <span class="o">+</span> <span class="n">ww</span> <span class="o">*</span> <span class="n">w</span>
+</code></pre>
+
+<p>Where w is normally 1</p>
+
+<p><note>You must consider the members of the CoglMatrix structure read only,
+and all matrix modifications must be done via the cogl_matrix API. This
+allows Cogl to annotate the matrices internally. Violation of this will give
+undefined results. If you need to initialize a matrix with a constant other
+than the identity matrix you can use cogl_matrix_init_from_array().</note></p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolP3ptrSvvp"></a>
+                    <a name="//apple_ref/swift/Property/ptr" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolP3ptrSvvp">ptr</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Untyped pointer to the underlying <code>CoglMatrix</code> instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">ptr</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L5886">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolP10matrix_ptrSpySo01_aB0VGvp"></a>
+                    <a name="//apple_ref/swift/Property/matrix_ptr" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolP10matrix_ptrSpySo01_aB0VGvp">matrix_ptr</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Typed pointer to the underlying <code>CoglMatrix</code> instance.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Return the stored, untyped pointer as a typed pointer to the <code>CoglMatrix</code> instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">matrix_ptr</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglMatrix</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L5889">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/no%20signals"></a>
+                <a name="//apple_ref/swift/Section/no signals" class="dashAnchor"></a>
+                <a href="#/no%20signals">
+                  <h3 class="section-name">no signals</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE4copySpySo01_aB0VGSgyF"></a>
+                    <a name="//apple_ref/swift/Method/copy()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE4copySpySo01_aB0VGSgyF">copy()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allocates a new <code>CoglMatrix</code> on the heap and initializes it with
+the same values as <code>matrix</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">copy</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglMatrix</span><span class="o">&gt;!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6060-L6063">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE4freeyyF"></a>
+                    <a name="//apple_ref/swift/Method/free()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE4freeyyF">free()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Frees a <code>CoglMatrix</code> that was previously allocated via a call to
+cogl_matrix_copy().</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">free</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6067-L6070">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE7frustum5left_6right_6bottom3top5zNear4zFarySf_S5ftF"></a>
+                    <a name="//apple_ref/swift/Method/frustum(left_:right_:bottom:top:zNear:zFar:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE7frustum5left_6right_6bottom3top5zNear4zFarySf_S5ftF">frustum(left_:right_:bottom:top:zNear:zFar:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies <code>matrix</code> by the given frustum perspective matrix.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">frustum</span><span class="p">(</span><span class="nv">left_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">right_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">top</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6073-L6076">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE8getArraySPySfGSgyF"></a>
+                    <a name="//apple_ref/swift/Method/getArray()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE8getArraySPySfGSgyF">getArray()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Casts <code>matrix</code> to a float array which can be directly passed to OpenGL.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getArray</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6079-L6082">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE3get7inverses5Int32VAaB_p_tF"></a>
+                    <a name="//apple_ref/swift/Method/get(inverse:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE3get7inverses5Int32VAaB_p_tF">get(inverse:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the inverse transform of a given matrix and uses it to initialize
+a new <code>CoglMatrix</code>.</p>
+
+<p><note>Although the first parameter is annotated as const to indicate
+that the transform it represents isn&rsquo;t modified this function may
+technically save a copy of the inverse transform within the given
+<code>CoglMatrix</code> so that subsequent requests for the inverse transform may
+avoid costly inversion calculations.</note></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">get</span><span class="p">(</span><span class="nv">inverse</span><span class="p">:</span> <span class="kt">MatrixProtocol</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6092-L6095">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE8initFrom5arrayySPySfG_tF"></a>
+                    <a name="//apple_ref/swift/Method/initFrom(array:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE8initFrom5arrayySPySfG_tF">initFrom(array:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes <code>matrix</code> with the contents of <code><a href="../Protocols/MatrixProtocol.html#/s:4Cogl14MatrixProtocolPAAE5arraySPySfGSgvp">array</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">initFrom</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6098-L6101">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE12initIdentityyyF"></a>
+                    <a name="//apple_ref/swift/Method/initIdentity()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE12initIdentityyyF">initIdentity()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resets matrix to the identity matrix:</p>
+<pre class="highlight swift"><code>  <span class="o">.</span><span class="n">xx</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="o">.</span><span class="n">xy</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">xz</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">xw</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="o">.</span><span class="n">yx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">yy</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="o">.</span><span class="n">yz</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">yw</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="o">.</span><span class="n">zx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">zy</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">zz</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="o">.</span><span class="n">zw</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="o">.</span><span class="n">wx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">wy</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">wz</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">ww</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">initIdentity</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6112-L6115">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE15initTranslation2tx2ty2tzySf_S2ftF"></a>
+                    <a name="//apple_ref/swift/Method/initTranslation(tx:ty:tz:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE15initTranslation2tx2ty2tzySf_S2ftF">initTranslation(tx:ty:tz:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resets matrix to the (tx, ty, tz) translation matrix:</p>
+<pre class="highlight swift"><code>  <span class="o">.</span><span class="n">xx</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="o">.</span><span class="n">xy</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">xz</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">xw</span><span class="o">=</span><span class="n">tx</span><span class="p">;</span>
+  <span class="o">.</span><span class="n">yx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">yy</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="o">.</span><span class="n">yz</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">yw</span><span class="o">=</span><span class="n">ty</span><span class="p">;</span>
+  <span class="o">.</span><span class="n">zx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">zy</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">zz</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="o">.</span><span class="n">zw</span><span class="o">=</span><span class="n">tz</span><span class="p">;</span>
+  <span class="o">.</span><span class="n">wx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">wy</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">wz</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="o">.</span><span class="n">ww</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">initTranslation</span><span class="p">(</span><span class="nv">tx</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">ty</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">tz</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6126-L6129">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE6lookAt12eyePositionX0fG1Y0fG1Z7objectX0H1Y0H1Z8worldUpX0iJ1Y0iJ1ZySf_S8ftF"></a>
+                    <a name="//apple_ref/swift/Method/lookAt(eyePositionX:eyePositionY:eyePositionZ:objectX:objectY:objectZ:worldUpX:worldUpY:worldUpZ:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE6lookAt12eyePositionX0fG1Y0fG1Z7objectX0H1Y0H1Z8worldUpX0iJ1Y0iJ1ZySf_S8ftF">lookAt(eyePositionX:eyePositionY:eyePositionZ:objectX:objectY:objectZ:worldUpX:worldUpY:worldUpZ:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a view transform <code>matrix</code> that positions the camera at
+the coordinate (<code>eye_position_x</code>, <code>eye_position_y</code>, <code>eye_position_z</code>)
+looking towards an object at the coordinate (<code>object_x</code>, <code>object_y</code>,
+<code>object_z</code>). The top of the camera is aligned to the given world up
+vector, which is normally simply (0, 1, 0) to map up to the
+positive direction of the y axis.</p>
+
+<p>Because there is a lot of missleading documentation online for
+gluLookAt regarding the up vector we want to try and be a bit
+clearer here.</p>
+
+<p>The up vector should simply be relative to your world coordinates
+and does not need to change as you move the eye and object
+positions.  Many online sources may claim that the up vector needs
+to be perpendicular to the vector between the eye and object
+position (partly because the man page is somewhat missleading) but
+that is not necessary for this function.</p>
+
+<p><note>You should never look directly along the world-up
+vector.</note></p>
+
+<p><note>It is assumed you are using a typical projection matrix where
+your origin maps to the center of your viewport.</note></p>
+
+<p><note>Almost always when you use this function it should be the first
+transform applied to a new modelview transform</note></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">lookAt</span><span class="p">(</span><span class="n">eyePositionX</span> <span class="nv">eye_position_x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">eyePositionY</span> <span class="nv">eye_position_y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">eyePositionZ</span> <span class="nv">eye_position_z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">objectX</span> <span class="nv">object_x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">objectY</span> <span class="nv">object_y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">objectZ</span> <span class="nv">object_z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">worldUpX</span> <span class="nv">world_up_x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">worldUpY</span> <span class="nv">world_up_y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">worldUpZ</span> <span class="nv">world_up_z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6157-L6160">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE8multiply1a1byAaB_p_AaB_ptF"></a>
+                    <a name="//apple_ref/swift/Method/multiply(a:b:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE8multiply1a1byAaB_p_AaB_ptF">multiply(a:b:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies the two supplied matrices together and stores
+the resulting matrix inside <code>result</code>.</p>
+
+<p><note>It is possible to multiply the <code>a</code> matrix in-place, so
+<code>result</code> can be equal to <code>a</code> but can&rsquo;t be equal to <code>b</code>.</note></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">multiply</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">MatrixProtocol</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">MatrixProtocol</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6167-L6170">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE5ortho5left_6right_6bottom3top4near3farySf_S5ftF"></a>
+                    <a name="//apple_ref/swift/Method/ortho(left_:right_:bottom:top:near:far:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE5ortho5left_6right_6bottom3top4near3farySf_S5ftF">ortho(left_:right_:bottom:top:near:far:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies <code>matrix</code> by a parallel projection matrix.</p>
+
+<p><strong>ortho is deprecated:</strong>
+Use cogl_matrix_orthographic()</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">ortho</span><span class="p">(</span><span class="nv">left_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">right_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">top</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6176-L6179">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE11perspective4fovY6aspect5zNear4zFarySf_S3ftF"></a>
+                    <a name="//apple_ref/swift/Method/perspective(fovY:aspect:zNear:zFar:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE11perspective4fovY6aspect5zNear4zFarySf_S3ftF">perspective(fovY:aspect:zNear:zFar:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies <code>matrix</code> by the described perspective matrix</p>
+
+<p><note>You should be careful not to have to great a <code>z_far</code> / <code>z_near</code>
+ratio since that will reduce the effectiveness of depth testing
+since there wont be enough precision to identify the depth of
+objects near to each other.</note></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">perspective</span><span class="p">(</span><span class="n">fovY</span> <span class="nv">fov_y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">aspect</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6187-L6190">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE6rotate5angle1x1y1zySf_S3ftF"></a>
+                    <a name="//apple_ref/swift/Method/rotate(angle:x:y:z:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE6rotate5angle1x1y1zySf_S3ftF">rotate(angle:x:y:z:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies <code>matrix</code> with a rotation matrix that applies a rotation
+of <code>angle</code> degrees around the specified 3D vector.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">rotate</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6194-L6197">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE5scale2sx2sy2szySf_S2ftF"></a>
+                    <a name="//apple_ref/swift/Method/scale(sx:sy:sz:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE5scale2sx2sy2szySf_S2ftF">scale(sx:sy:sz:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies <code>matrix</code> with a transform matrix that scales along the X,
+Y and Z axis.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">scale</span><span class="p">(</span><span class="nv">sx</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">sy</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">sz</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6201-L6204">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE14transformPoint1x1y1z1wySpySfG_A3ItF"></a>
+                    <a name="//apple_ref/swift/Method/transformPoint(x:y:z:w:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE14transformPoint1x1y1z1wySpySfG_A3ItF">transformPoint(x:y:z:w:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transforms a point whos position is given and returned as four float
+components.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">transformPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">w</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6208-L6211">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE9translate1x1y1zySf_S2ftF"></a>
+                    <a name="//apple_ref/swift/Method/translate(x:y:z:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE9translate1x1y1zySf_S2ftF">translate(x:y:z:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies <code>matrix</code> with a transform matrix that translates along
+the X, Y and Z axis.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">translate</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6215-L6218">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE9transposeyyF"></a>
+                    <a name="//apple_ref/swift/Method/transpose()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE9transposeyyF">transpose()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Replaces <code>matrix</code> with its transpose. Ie, every element (i,j) in the
+new matrix is taken from element (j,i) in the old matrix.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">transpose</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6222-L6225">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE05debugB5PrintyyF"></a>
+                    <a name="//apple_ref/swift/Method/debugMatrixPrint()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE05debugB5PrintyyF">debugMatrixPrint()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Prints the contents of a <code>CoglMatrix</code> to stdout.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">debugMatrixPrint</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6228-L6231">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE012getModelviewB0yyF"></a>
+                    <a name="//apple_ref/swift/Method/getModelviewMatrix()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE012getModelviewB0yyF">getModelviewMatrix()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stores the current model-view matrix in <code>matrix</code>.</p>
+
+<p><strong>get_modelview_matrix is deprecated:</strong>
+Use cogl_framebuffer_get_modelview_matrix()
+                  instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">getModelviewMatrix</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6238-L6241">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE013getProjectionB0yyF"></a>
+                    <a name="//apple_ref/swift/Method/getProjectionMatrix()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE013getProjectionB0yyF">getProjectionMatrix()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stores the current projection matrix in <code>matrix</code>.</p>
+
+<p><strong>get_projection_matrix is deprecated:</strong>
+Use cogl_framebuffer_get_projection_matrix()
+                  instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">getProjectionMatrix</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6248-L6251">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE012setModelviewB0yyF"></a>
+                    <a name="//apple_ref/swift/Method/setModelviewMatrix()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE012setModelviewB0yyF">setModelviewMatrix()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads <code>matrix</code> as the new model-view matrix.</p>
+
+<p><strong>set_modelview_matrix is deprecated:</strong>
+Use cogl_framebuffer_set_modelview_matrix()
+                  instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">setModelviewMatrix</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6258-L6261">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE013setProjectionB0yyF"></a>
+                    <a name="//apple_ref/swift/Method/setProjectionMatrix()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE013setProjectionB0yyF">setProjectionMatrix()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads matrix as the new projection matrix.</p>
+
+<p><strong>set_projection_matrix is deprecated:</strong>
+Use cogl_framebuffer_set_projection_matrix()
+                  instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">setProjectionMatrix</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6268-L6271">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE9transformyyF"></a>
+                    <a name="//apple_ref/swift/Method/transform()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE9transformyyF">transform()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multiplies the current model-view matrix by the given matrix.</p>
+
+<p><strong>transform is deprecated:</strong>
+Use cogl_framebuffer_transform() instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">transform</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6277-L6280">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE5arraySPySfGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/array" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE5arraySPySfGSgvp">array</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Casts <code>matrix</code> to a float array which can be directly passed to OpenGL.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">array</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6282-L6288">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl14MatrixProtocolPAAE10isIdentitys5Int32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/isIdentity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl14MatrixProtocolPAAE10isIdentitys5Int32Vvp">isIdentity</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Determines if the given matrix is an identity matrix.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isIdentity</span><span class="p">:</span> <span class="kt">CoglBool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L6291-L6297">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

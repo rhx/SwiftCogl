@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ColorProtocol Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Protocol/ColorProtocol" class="dashAnchor"></a>
+
+    <a title="ColorProtocol Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Cogl 2.62.0 Docs
+        </a>
+         (95% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/rhx/SwiftCogl">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://http%3A%2F%2Frhx%2Egithub%2Eio%2FSwiftCogl%2Fdocsets%2FCogl%2Exml">
+            <img class="header-icon" src="../img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Cogl Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      ColorProtocol Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Bitmap.html">Bitmap</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Euler.html">Euler</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Material.html">Material</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MaterialLayer.html">MaterialLayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Matrix.html">Matrix</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Offscreen.html">Offscreen</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Quaternion.html">Quaternion</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Texture.html">Texture</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TextureVertex.html">TextureVertex</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/_ColorSizeCheck.html">_ColorSizeCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/_MatrixSizeCheck.html">_MatrixSizeCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/_TextureVertexSizeCheck.html">_TextureVertexSizeCheck</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10AFIRST_BITs5Int32Vvp">AFIRST_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl5A_BITs5Int32Vvp">A_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl7BGR_BITs5Int32Vvp">BGR_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9DEPTH_BITs5Int32Vvp">DEPTH_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9FIXED_0_5s5Int32Vvp">FIXED_0_5</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl7FIXED_1s5Int32Vvp">FIXED_1</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_2_PIs5Int32Vvp">FIXED_2_PI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_BITSs5Int32Vvp">FIXED_BITS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl13FIXED_EPSILONs5Int32Vvp">FIXED_EPSILON</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9FIXED_MAXs5Int32Vvp">FIXED_MAX</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9FIXED_MINs6UInt32Vvp">FIXED_MIN</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl8FIXED_PIs5Int32Vvp">FIXED_PI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_PI_2s5Int32Vvp">FIXED_PI_2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_PI_4s5Int32Vvp">FIXED_PI_4</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl7FIXED_Qs5Int32Vvp">FIXED_Q</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl11PREMULT_BITs5Int32Vvp">PREMULT_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl18RADIANS_TO_DEGREESs5Int32Vvp">RADIANS_TO_DEGREES</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl20SQRTI_ARG_10_PERCENTs5Int32Vvp">SQRTI_ARG_10_PERCENT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl19SQRTI_ARG_5_PERCENTs5Int32Vvp">SQRTI_ARG_5_PERCENT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl13SQRTI_ARG_MAXs5Int32Vvp">SQRTI_ARG_MAX</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl11STENCIL_BITs5Int32Vvp">STENCIL_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl17TEXTURE_MAX_WASTEs5Int32Vvp">TEXTURE_MAX_WASTE</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/AttributeType.html">AttributeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BitmapError.html">BitmapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BlendStringError.html">BlendStringError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BufferBit.html">BufferBit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BufferTarget.html">BufferTarget</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ColorMask.html">ColorMask</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/DepthTestFunction.html">DepthTestFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/FeatureFlags.html">FeatureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/FilterReturn.html">FilterReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Fixed.html">Fixed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/FogMode.html">FogMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/IndicesType.html">IndicesType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialAlphaFunc.html">MaterialAlphaFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialFilter.html">MaterialFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialLayerType.html">MaterialLayerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialWrapMode.html">MaterialWrapMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/PixelFormat.html">PixelFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ReadPixelsFlags.html">ReadPixelsFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/RendererError.html">RendererError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ShaderType.html">ShaderType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/StereoMode.html">StereoMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/SystemError.html">SystemError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureComponents.html">TextureComponents</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureError.html">TextureError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureFlags.html">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureType.html">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/VerticesMode.html">VerticesMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Winding.html">Winding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/WinsysFeature.html">WinsysFeature</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8angleCos0B0s5Int32VAE_tF">angleCos(angle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8angleSin0B0s5Int32VAE_tF">angleSin(angle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8angleTan0B0s5Int32VAE_tF">angleTan(angle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4atanys5Int32VADF">atan(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5atan2ys5Int32VAD_ADtF">atan2(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7beginGlyyF">beginGl()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16bitmapErrorQuarks6UInt32VyF">bitmapErrorQuark()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl21blendStringErrorQuarks6UInt32VyF">blendStringErrorQuark()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14checkExtension4name3exts5Int32VSPys4Int8VG_AItF">checkExtension(name:ext:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5clear5color7buffersyAA13ColorProtocol_p_SutF">clear(color:buffers:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10clipEnsureyyF">clipEnsure()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7clipPopyyF">clipPop()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8clipPush9primitive8boundsX10E2Y10E2X20E2Y2ySpySo01_A9PrimitiveVG_S4ftF">clipPush(primitive:boundsX1:boundsY1:boundsX2:boundsY2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8clipPush7xOffset01yD05width6heightySf_S3ftF">clipPush(xOffset:yOffset:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17clipPushRectangle2x02y02x12y1ySf_S3ftF">clipPushRectangle(x0:y0:x1:y1:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18clipPushWindowRect7xOffset01yF05width6heightySf_S3ftF">clipPushWindowRect(xOffset:yOffset:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl23clipPushWindowRectangle7xOffset01yF05width6heightys5Int32V_A3HtF">clipPushWindowRectangle(xOffset:yOffset:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16clipStackRestoreyyF">clipStackRestore()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13clipStackSaveyyF">clipStackSave()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl28clutterCheckExtensionCLUTTER4name3exts5Int32VSPys4Int8VG_AItF">clutterCheckExtensionCLUTTER(name:ext:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl30clutterWinsysHasFeatureCLUTTER7features5Int32VSo01_acE0V_tF">clutterWinsysHasFeatureCLUTTER(feature:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10colorEqual2v12v2s5Int32VSv_SvtF">colorEqual(v1:v2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16colorInitFromHsl0B03hue10saturation9luminanceyAA13ColorProtocol_p_S3ftF">colorInitFromHsl(color:hue:saturation:luminance:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3cosys5Int32VADF">cos(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13createProgramSvSgyF">createProgram()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12createShader10shaderTypeSvSgSo0acE0a_tF">createShader(shaderType:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16debugMatrixPrint6matrixyAA0C8Protocol_p_tF">debugMatrixPrint(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10disableFogyyF">disableFog()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3divys5Int32VAD_ADtF">div(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13doubleToFixed5values5Int32VSd_tF">doubleToFixed(value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11doubleToInt5values5Int32VSd_tF">doubleToInt(value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12doubleToUint5values6UInt32VSd_tF">doubleToUint(value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5endGlyyF">endGl()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17featuresAvailable0B0s5Int32VSo0A12FeatureFlagsa_tF">featuresAvailable(features:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5flushyyF">flush()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25framebufferGetColorFormat0B0So0a5PixelE0aSpySo01_A7TextureVG_tF">framebufferGetColorFormat(framebuffer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7frustum5left_6right_6bottom3top5zNear4zFarySf_S5ftF">frustum(left_:right_:bottom:top:zNear:zFar:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25getBackfaceCullingEnableds5Int32VyF">getBackfaceCullingEnabled()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11getBitmasks3red5green4blue5alphaySpys5Int32VG_A3ItF">getBitmasks(red:green:blue:alpha:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19getDepthTestEnableds5Int32VyF">getDepthTestEnabled()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11getFeaturesSo0A12FeatureFlagsayF">getFeatures()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12getModelview6matrixyAA14MatrixProtocol_p_tF">getModelview(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14getOptionGroupSpySo08_GOptionD0VGSgyF">getOptionGroup()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14getProcAddress4nameyyXCSgSPys4Int8VG_tF">getProcAddress(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13getProjection6matrixyAA14MatrixProtocol_p_tF">getProjection(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9getSourceSvSgyF">getSource()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11getViewport1vySpySfG_tF">getViewport(v:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18gtypeMatrixGetTypeSuyF">gtypeMatrixGetType()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13handleGetTypeSuyF">handleGetType()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9handleRef0B0SvSgSv_tF">handleRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11handleUnref0B0ySv_tF">handleUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8isBitmap6objects5Int32VSv_tF">isBitmap(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10isMaterial6handles5Int32VSv_tF">isMaterial(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11isOffscreen6objects5Int32VSv_tF">isOffscreen(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9isProgram6handles5Int32VSv_tF">isProgram(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8isShader6handles5Int32VSv_tF">isShader(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9isTexture6objects5Int32VSv_tF">isTexture(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14isVertexBuffer6handles5Int32VSv_tF">isVertexBuffer(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl21isVertexBufferIndices6handles5Int32VSv_tF">isVertexBufferIndices(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4log2ys5Int32VSiF">log2(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11materialRef0B0SvSgSv_tF">materialRef(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13materialUnref0B0ySv_tF">materialUnref(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11matrixEqual2v12v2s5Int32VSv_SvtF">matrixEqual(v1:v2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3mulys5Int32VAD_ADtF">mul(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7mul_divys5Int32VAD_A2DtF">mul_div(_:_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl36onscreenClutterBackendSetSizeCLUTTER5width6heightys5Int32V_AFtF">onscreenClutterBackendSetSizeCLUTTER(width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5ortho5left_6right_6bottom3top4near3farySf_S5ftF">ortho(left_:right_:bottom:top:near:far:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11perspective4fovy6aspect5zNear4zFarySf_S3ftF">perspective(fovy:aspect:zNear:zFar:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7polygon8vertices9nVertices8useColoryAA21TextureVertexProtocol_p_s6UInt32Vs5Int32VtF">polygon(vertices:nVertices:useColor:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13popDrawBufferyyF">popDrawBuffer()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14popFramebufferyyF">popFramebuffer()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9popMatrixyyF">popMatrix()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9popSourceyyF">popSource()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3powyS2i_s5Int32VtF">pow(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4pow2ySis5Int32VF">pow2(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programAttachShader0B6Handle06shaderE0ySv_SvtF">programAttachShader(programHandle:shaderHandle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25programGetUniformLocation6handle11uniformNames5Int32VSv_SPys4Int8VGtF">programGetUniformLocation(handle:uniformName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11programLink6handleySv_tF">programLink(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10programRef6handleSvSgSv_tF">programRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programSetUniform1f0B015uniformLocation5valueySv_s5Int32VSftF">programSetUniform1f(program:uniformLocation:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programSetUniform1i0B015uniformLocation5valueySv_s5Int32VAGtF">programSetUniform1i(program:uniformLocation:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl22programSetUniformFloat0B015uniformLocation11nComponents5count5valueySv_s5Int32VA2ISPySfGtF">programSetUniformFloat(program:uniformLocation:nComponents:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl20programSetUniformInt0B015uniformLocation11nComponents5count5valueySv_s5Int32VA2ISPyAIGtF">programSetUniformInt(program:uniformLocation:nComponents:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl23programSetUniformMatrix0B015uniformLocation10dimensions5count9transpose5valueySv_s5Int32VA3JSPySfGtF">programSetUniformMatrix(program:uniformLocation:dimensions:count:transpose:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16programUniform1f9uniformNo5valueys5Int32V_SftF">programUniform1f(uniformNo:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16programUniform1i9uniformNo5valueys5Int32V_AFtF">programUniform1i(uniformNo:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programUniformFloat9uniformNo4size5count5valueys5Int32V_A2HSPySfGtF">programUniformFloat(uniformNo:size:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17programUniformInt9uniformNo4size5count5valueys5Int32V_A2HSPyAHGtF">programUniformInt(uniformNo:size:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl20programUniformMatrix9uniformNo4size5count9transpose5valueys5Int32V_A3ISPySfGtF">programUniformMatrix(uniformNo:size:count:transpose:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12programUnref6handleySv_tF">programUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10programUse6handleySv_tF">programUse(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14pushDrawBufferyyF">pushDrawBuffer()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15pushFramebuffer6bufferySpySo01_A7TextureVG_tF">pushFramebuffer(buffer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10pushMatrixyyF">pushMatrix()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10pushSource8materialySv_tF">pushSource(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10readPixels1x1y5width6height6source6format6pixelsys5Int32V_A3KSo0a4ReadC5FlagsaSo0A11PixelFormataSpys5UInt8VGtF">readPixels(x:y:width:height:source:format:pixels:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9rectangle2x12y12x22y2ySf_S3ftF">rectangle(x1:y1:x2:y2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl31rectangleWithMultitextureCoords2x12y12x22y203texE00jE3LenySf_S3fSPySfGs5Int32VtF">rectangleWithMultitextureCoords(x1:y1:x2:y2:texCoords:texCoordsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl26rectangleWithTextureCoords2x12y12x22y23tx13ty13tx23ty2ySf_S7ftF">rectangleWithTextureCoords(x1:y1:x2:y2:tx1:ty1:tx2:ty2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10rectangles5verts6nRectsySPySfG_s6UInt32VtF">rectangles(verts:nRects:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl27rectanglesWithTextureCoords5verts6nRectsySPySfG_s6UInt32VtF">rectanglesWithTextureCoords(verts:nRects:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl6rotate5angle1x1y1zySf_S3ftF">rotate(angle:x:y:z:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5scale1x1y1zySf_S2ftF">scale(x:y:z:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25setBackfaceCullingEnabled7settingys5Int32V_tF">setBackfaceCullingEnabled(setting:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19setDepthTestEnabled7settingys5Int32V_tF">setDepthTestEnabled(setting:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13setDrawBuffer6target9offscreenySo0aD6Targeta_SvtF">setDrawBuffer(target:offscreen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl6setFog8fogColor4mode7density5zNear4zFaryAA0E8Protocol_p_So0aC4ModeaS3ftF">setFog(fogColor:mode:density:zNear:zFar:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14setFramebuffer6bufferySpySo01_A7TextureVG_tF">setFramebuffer(buffer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12setModelview6matrixyAA14MatrixProtocol_p_tF">setModelview(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13setProjection6matrixyAA14MatrixProtocol_p_tF">setProjection(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9setSource5coloryAA13ColorProtocol_p_tF">setSource(color:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9setSource8materialySv_tF">setSource(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9setSource7textureyAA15TextureProtocol_p_tF">setSource(texture:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16setSourceColor4f3red5green4blue5alphaySf_S3ftF">setSourceColor4f(red:green:blue:alpha:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17setSourceColor4ub3red5green4blue5alphays5UInt8V_A3HtF">setSourceColor4ub(red:green:blue:alpha:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11setViewport1x1y5width6heightys5Int32V_A3HtF">setViewport(x:y:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13shaderCompile6handleySv_tF">shaderCompile(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16shaderGetInfoLog6handleSSSgSv_tF">shaderGetInfoLog(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13shaderGetType6handleSo0a6ShaderD0aSv_tF">shaderGetType(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16shaderIsCompiled6handles5Int32VSv_tF">shaderIsCompiled(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9shaderRef6handleSvSgSv_tF">shaderRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12shaderSource0B06sourceySv_SPys4Int8VGtF">shaderSource(shader:source:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11shaderUnref6handleySv_tF">shaderUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3sinys5Int32VADF">sin(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4sqrtys5Int32VADF">sqrt(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5sqrti1xs5Int32VAE_tF">sqrti(x:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3tanys5Int32VADF">tan(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17textureErrorQuarks6UInt32VyF">textureErrorQuark()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10textureRef0B0SvSgSv_tF">textureRef(texture:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12textureUnref0B0ySv_tF">textureUnref(texture:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9transform6matrixyAA14MatrixProtocol_p_tF">transform(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9translate1x1y1zySf_S2ftF">translate(x:y:z:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15vertexBufferAdd6handle13attributeName11nComponents4type10normalized6stride7pointerySv_SPys4Int8VGs5UInt8VSo0A13AttributeTypeas5Int32Vs6UInt16VSvtF">vertexBufferAdd(handle:attributeName:nComponents:type:normalized:stride:pointer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18vertexBufferDelete6handle13attributeNameySv_SPys4Int8VGtF">vertexBufferDelete(handle:attributeName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19vertexBufferDisable6handle13attributeNameySv_SPys4Int8VGtF">vertexBufferDisable(handle:attributeName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16vertexBufferDraw6handle4mode5first5countySv_So0A12VerticesModeas5Int32VAJtF">vertexBufferDraw(handle:mode:first:count:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl24vertexBufferDrawElements6handle4mode7indices8minIndex03maxJ00H6Offset5countySv_So0A12VerticesModeaSvs5Int32VA3MtF">vertexBufferDrawElements(handle:mode:indices:minIndex:maxIndex:indicesOffset:count:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18vertexBufferEnable6handle13attributeNameySv_SPys4Int8VGtF">vertexBufferEnable(handle:attributeName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl24vertexBufferGetNVertices6handles6UInt32VSv_tF">vertexBufferGetNVertices(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl30vertexBufferIndicesGetForQuads01nD0SvSgs6UInt32V_tF">vertexBufferIndicesGetForQuads(nIndices:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl26vertexBufferIndicesGetType7indicesSo0adF0aSv_tF">vertexBufferIndicesGetType(indices:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl22vertexBufferIndicesNew11indicesType0F5Array0F3LenSvSgSo0adG0a_Svs5Int32VtF">vertexBufferIndicesNew(indicesType:indicesArray:indicesLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15vertexBufferNew9nVerticesSvSgs6UInt32V_tF">vertexBufferNew(nVertices:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15vertexBufferRef6handleSvSgSv_tF">vertexBufferRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18vertexBufferSubmit6handleySv_tF">vertexBufferSubmit(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17vertexBufferUnref6handleySv_tF">vertexBufferUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8viewport5width6heightys6UInt32V_AFtF">viewport(width:height:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/BitmapProtocol.html">BitmapProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ColorProtocol.html">ColorProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/EulerProtocol.html">EulerProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MaterialLayerProtocol.html">MaterialLayerProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MaterialProtocol.html">MaterialProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MatrixProtocol.html">MatrixProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/OffscreenProtocol.html">OffscreenProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/QuaternionProtocol.html">QuaternionProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextureProtocol.html">TextureProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextureVertexProtocol.html">TextureVertexProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/_ColorSizeCheckProtocol.html">_ColorSizeCheckProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/_MatrixSizeCheckProtocol.html">_MatrixSizeCheckProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/_TextureVertexSizeCheckProtocol.html">_TextureVertexSizeCheckProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/BitmapRef.html">BitmapRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ColorRef.html">ColorRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EulerRef.html">EulerRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MaterialLayerRef.html">MaterialLayerRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MaterialRef.html">MaterialRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MatrixRef.html">MatrixRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/OffscreenRef.html">OffscreenRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/QuaternionRef.html">QuaternionRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextureRef.html">TextureRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextureVertexRef.html">TextureVertexRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/_ColorSizeCheckRef.html">_ColorSizeCheckRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/_MatrixSizeCheckRef.html">_MatrixSizeCheckRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/_TextureVertexSizeCheckRef.html">_TextureVertexSizeCheckRef</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl5Anglea">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl13AttributeTypea">AttributeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11BitmapErrora">BitmapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl16BlendStringErrora">BlendStringError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl5Bool_a">Bool_</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl9BufferBita">BufferBit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12BufferTargeta">BufferTarget</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl0A7Texturea">CoglTexture</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl9ColorMaska">ColorMask</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17DepthTestFunctiona">DepthTestFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12FeatureFlagsa">FeatureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12FilterReturna">FilterReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl5Fixeda">Fixed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl7FogModea">FogMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl7FuncPtra">FuncPtr</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl6Handlea">Handle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11IndicesTypea">IndicesType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17MaterialAlphaFunca">MaterialAlphaFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl14MaterialFiltera">MaterialFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17MaterialLayerTypea">MaterialLayerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl16MaterialWrapModea">MaterialWrapMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11PixelFormata">PixelFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl15ReadPixelsFlagsa">ReadPixelsFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl13RendererErrora">RendererError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl10ShaderTypea">ShaderType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl10StereoModea">StereoMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11SystemErrora">SystemError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17TextureComponentsa">TextureComponents</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12TextureErrora">TextureError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12TextureFlagsa">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11TextureTypea">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12VerticesModea">VerticesMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl7Windinga">Winding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl13WinsysFeaturea">WinsysFeature</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>ColorProtocol</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ColorProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>The <code>ColorProtocol</code> protocol exposes the methods and properties of an underlying <code>CoglColor</code> instance.
+The default implementation of these can be found in the protocol extension below.
+For a concrete class that implements these methods and properties, see <code><a href="../Classes/Color.html">Color</a></code>.
+Alternatively, use <code><a href="../Structs/ColorRef.html">ColorRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
+
+<p>A structure for holding a color definition. The contents of
+the CoglColor structure are private and should never by accessed
+directly.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolP3ptrSvvp"></a>
+                    <a name="//apple_ref/swift/Property/ptr" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolP3ptrSvvp">ptr</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Untyped pointer to the underlying <code>CoglColor</code> instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">ptr</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3809">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolP9color_ptrSpySo01_aB0VGvp"></a>
+                    <a name="//apple_ref/swift/Property/color_ptr" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolP9color_ptrSpySo01_aB0VGvp">color_ptr</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Typed pointer to the underlying <code>CoglColor</code> instance.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Return the stored, untyped pointer as a typed pointer to the <code>CoglColor</code> instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">color_ptr</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglColor</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3812">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/no%20signals"></a>
+                <a name="//apple_ref/swift/Section/no signals" class="dashAnchor"></a>
+                <a href="#/no%20signals">
+                  <h3 class="section-name">no signals</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE4copySpySo01_aB0VGSgyF"></a>
+                    <a name="//apple_ref/swift/Method/copy()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE4copySpySo01_aB0VGSgyF">copy()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a copy of <code>color</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">copy</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglColor</span><span class="o">&gt;!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3948-L3951">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE4freeyyF"></a>
+                    <a name="//apple_ref/swift/Method/free()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE4freeyyF">free()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Frees the resources allocated by cogl_color_new() and cogl_color_copy()</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">free</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3954-L3957">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE8getAlphaSfyF"></a>
+                    <a name="//apple_ref/swift/Method/getAlpha()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE8getAlphaSfyF">getAlpha()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the alpha channel of <code>color</code> as a fixed point
+value between 0 and 1.0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getAlpha</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3961-L3964">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE12getAlphaBytes5UInt8VyF"></a>
+                    <a name="//apple_ref/swift/Method/getAlphaByte()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE12getAlphaBytes5UInt8VyF">getAlphaByte()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the alpha channel of <code>color</code> as a byte value
+between 0 and 255</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getAlphaByte</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CUnsignedChar</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3968-L3971">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE13getAlphaFloatSfyF"></a>
+                    <a name="//apple_ref/swift/Method/getAlphaFloat()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE13getAlphaFloatSfyF">getAlphaFloat()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the alpha channel of <code>color</code> as a floating point
+value between 0.0 and 1.0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getAlphaFloat</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3975-L3978">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE7getBlueSfyF"></a>
+                    <a name="//apple_ref/swift/Method/getBlue()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE7getBlueSfyF">getBlue()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the blue channel of <code>color</code> as a fixed point
+value between 0 and 1.0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getBlue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3982-L3985">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE11getBlueBytes5UInt8VyF"></a>
+                    <a name="//apple_ref/swift/Method/getBlueByte()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE11getBlueBytes5UInt8VyF">getBlueByte()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the blue channel of <code>color</code> as a byte value
+between 0 and 255</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getBlueByte</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CUnsignedChar</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3989-L3992">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE12getBlueFloatSfyF"></a>
+                    <a name="//apple_ref/swift/Method/getBlueFloat()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE12getBlueFloatSfyF">getBlueFloat()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the blue channel of <code>color</code> as a floating point
+value between 0.0 and 1.0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getBlueFloat</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3996-L3999">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE8getGreenSfyF"></a>
+                    <a name="//apple_ref/swift/Method/getGreen()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE8getGreenSfyF">getGreen()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the green channel of <code>color</code> as a fixed point
+value between 0 and 1.0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getGreen</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4003-L4006">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE12getGreenBytes5UInt8VyF"></a>
+                    <a name="//apple_ref/swift/Method/getGreenByte()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE12getGreenBytes5UInt8VyF">getGreenByte()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the green channel of <code>color</code> as a byte value
+between 0 and 255</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getGreenByte</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CUnsignedChar</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4010-L4013">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE13getGreenFloatSfyF"></a>
+                    <a name="//apple_ref/swift/Method/getGreenFloat()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE13getGreenFloatSfyF">getGreenFloat()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the green channel of <code>color</code> as a floating point
+value between 0.0 and 1.0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getGreenFloat</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4017-L4020">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE6getRedSfyF"></a>
+                    <a name="//apple_ref/swift/Method/getRed()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE6getRedSfyF">getRed()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the red channel of <code>color</code> as a fixed point
+value between 0 and 1.0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getRed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4024-L4027">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE10getRedBytes5UInt8VyF"></a>
+                    <a name="//apple_ref/swift/Method/getRedByte()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE10getRedBytes5UInt8VyF">getRedByte()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the red channel of <code>color</code> as a byte value
+between 0 and 255</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getRedByte</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CUnsignedChar</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4031-L4034">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE11getRedFloatSfyF"></a>
+                    <a name="//apple_ref/swift/Method/getRedFloat()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE11getRedFloatSfyF">getRedFloat()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the red channel of <code>color</code> as a floating point
+value between 0.0 and 1.0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getRedFloat</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4038-L4041">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE10initFrom4f3red5green4blue5alphaySf_S3ftF"></a>
+                    <a name="//apple_ref/swift/Method/initFrom4f(red:green:blue:alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE10initFrom4f3red5green4blue5alphaySf_S3ftF">initFrom4f(red:green:blue:alpha:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the values of the passed channels into a <code>CoglColor</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">initFrom4f</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4044-L4047">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE11initFrom4fv10colorArrayySPySfG_tF"></a>
+                    <a name="//apple_ref/swift/Method/initFrom4fv(colorArray:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE11initFrom4fv10colorArrayySPySfG_tF">initFrom4fv(colorArray:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the values of the passed channels into a <code>CoglColor</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">initFrom4fv</span><span class="p">(</span><span class="n">colorArray</span> <span class="nv">color_array</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4050-L4053">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE11initFrom4ub3red5green4blue5alphays5UInt8V_A3JtF"></a>
+                    <a name="//apple_ref/swift/Method/initFrom4ub(red:green:blue:alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE11initFrom4ub3red5green4blue5alphays5UInt8V_A3JtF">initFrom4ub(red:green:blue:alpha:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the values of the passed channels into a <code>CoglColor</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">initFrom4ub</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4056-L4059">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE11premultiplyyyF"></a>
+                    <a name="//apple_ref/swift/Method/premultiply()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE11premultiplyyyF">premultiply()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts a non-premultiplied color to a pre-multiplied color. For
+example, semi-transparent red is (1.0, 0, 0, 0.5) when non-premultiplied
+and (0.5, 0, 0, 0.5) when premultiplied.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">premultiply</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4064-L4067">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE3set5alphaySf_tF"></a>
+                    <a name="//apple_ref/swift/Method/set(alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE3set5alphaySf_tF">set(alpha:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the alpha channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE5alphaSfvp">alpha</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">alpha</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4070-L4073">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE12setAlphaByte5alphays5UInt8V_tF"></a>
+                    <a name="//apple_ref/swift/Method/setAlphaByte(alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE12setAlphaByte5alphays5UInt8V_tF">setAlphaByte(alpha:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the alpha channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE5alphaSfvp">alpha</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setAlphaByte</span><span class="p">(</span><span class="nv">alpha</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4076-L4079">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE13setAlphaFloat5alphaySf_tF"></a>
+                    <a name="//apple_ref/swift/Method/setAlphaFloat(alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE13setAlphaFloat5alphaySf_tF">setAlphaFloat(alpha:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the alpha channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE5alphaSfvp">alpha</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setAlphaFloat</span><span class="p">(</span><span class="nv">alpha</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4082-L4085">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE3set4blueySf_tF"></a>
+                    <a name="//apple_ref/swift/Method/set(blue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE3set4blueySf_tF">set(blue:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the blue channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE4blueSfvp">blue</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">blue</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4088-L4091">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE11setBlueByte4blueys5UInt8V_tF"></a>
+                    <a name="//apple_ref/swift/Method/setBlueByte(blue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE11setBlueByte4blueys5UInt8V_tF">setBlueByte(blue:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the blue channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE4blueSfvp">blue</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setBlueByte</span><span class="p">(</span><span class="nv">blue</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4094-L4097">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE12setBlueFloat4blueySf_tF"></a>
+                    <a name="//apple_ref/swift/Method/setBlueFloat(blue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE12setBlueFloat4blueySf_tF">setBlueFloat(blue:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the blue channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE4blueSfvp">blue</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setBlueFloat</span><span class="p">(</span><span class="nv">blue</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4100-L4103">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE9setFrom4f3red5green4blue5alphaySf_S3ftF"></a>
+                    <a name="//apple_ref/swift/Method/setFrom4f(red:green:blue:alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE9setFrom4f3red5green4blue5alphaySf_S3ftF">setFrom4f(red:green:blue:alpha:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the values of the passed channels into a <code>CoglColor</code></p>
+
+<p><strong>set_from_4f is deprecated:</strong>
+Use cogl_color_init_from_4f instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">setFrom4f</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4109-L4112">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE10setFrom4ub3red5green4blue5alphays5UInt8V_A3JtF"></a>
+                    <a name="//apple_ref/swift/Method/setFrom4ub(red:green:blue:alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE10setFrom4ub3red5green4blue5alphays5UInt8V_A3JtF">setFrom4ub(red:green:blue:alpha:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the values of the passed channels into a <code>CoglColor</code>.</p>
+
+<p><strong>set_from_4ub is deprecated:</strong>
+Use cogl_color_init_from_4ub instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">setFrom4ub</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4118-L4121">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE3set5greenySf_tF"></a>
+                    <a name="//apple_ref/swift/Method/set(green:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE3set5greenySf_tF">set(green:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the green channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE5greenSfvp">green</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">green</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4124-L4127">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE12setGreenByte5greenys5UInt8V_tF"></a>
+                    <a name="//apple_ref/swift/Method/setGreenByte(green:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE12setGreenByte5greenys5UInt8V_tF">setGreenByte(green:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the green channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE5greenSfvp">green</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setGreenByte</span><span class="p">(</span><span class="nv">green</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4130-L4133">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE13setGreenFloat5greenySf_tF"></a>
+                    <a name="//apple_ref/swift/Method/setGreenFloat(green:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE13setGreenFloat5greenySf_tF">setGreenFloat(green:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the green channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE5greenSfvp">green</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setGreenFloat</span><span class="p">(</span><span class="nv">green</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4136-L4139">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE3set3redySf_tF"></a>
+                    <a name="//apple_ref/swift/Method/set(red:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE3set3redySf_tF">set(red:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the red channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE3redSfvp">red</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4142-L4145">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE10setRedByte3redys5UInt8V_tF"></a>
+                    <a name="//apple_ref/swift/Method/setRedByte(red:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE10setRedByte3redys5UInt8V_tF">setRedByte(red:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the red channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE3redSfvp">red</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setRedByte</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4148-L4151">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE11setRedFloat3redySf_tF"></a>
+                    <a name="//apple_ref/swift/Method/setRedFloat(red:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE11setRedFloat3redySf_tF">setRedFloat(red:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the red channel of <code>color</code> to <code><a href="../Protocols/ColorProtocol.html#/s:4Cogl13ColorProtocolPAAE3redSfvp">red</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setRedFloat</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4154-L4157">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE5toHsl3hue10saturation9luminanceySpySfG_A2HtF"></a>
+                    <a name="//apple_ref/swift/Method/toHsl(hue:saturation:luminance:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE5toHsl3hue10saturation9luminanceySpySfG_A2HtF">toHsl(hue:saturation:luminance:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts <code>color</code> to the HLS format.</p>
+
+<p>The <code>hue</code> value is in the 0 .. 360 range. The <code>luminance</code> and
+<code>saturation</code> values are in the 0 .. 1 range.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">toHsl</span><span class="p">(</span><span class="nv">hue</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">saturation</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">luminance</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4163-L4166">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE13unpremultiplyyyF"></a>
+                    <a name="//apple_ref/swift/Method/unpremultiply()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE13unpremultiplyyyF">unpremultiply()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts a pre-multiplied color to a non-premultiplied color. For
+example, semi-transparent red is (0.5, 0, 0, 0.5) when premultiplied
+and (1.0, 0, 0, 0.5) when non-premultiplied.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">unpremultiply</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4171-L4174">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE11initFromHsl3hue10saturation9luminanceySf_S2ftF"></a>
+                    <a name="//apple_ref/swift/Method/initFromHsl(hue:saturation:luminance:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE11initFromHsl3hue10saturation9luminanceySf_S2ftF">initFromHsl(hue:saturation:luminance:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts a color expressed in HLS (hue, luminance and saturation)
+values into a <code>CoglColor</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">initFromHsl</span><span class="p">(</span><span class="nv">hue</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">saturation</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">luminance</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4178-L4181">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE5clear7buffersySu_tF"></a>
+                    <a name="//apple_ref/swift/Method/clear(buffers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE5clear7buffersySu_tF">clear(buffers:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clears all the auxiliary buffers identified in the <code>buffers</code> mask, and if
+that includes the color buffer then the specified <code>color</code> is used.</p>
+
+<p><strong>clear is deprecated:</strong>
+Use cogl_framebuffer_clear() api instead</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">clear</span><span class="p">(</span><span class="nv">buffers</span><span class="p">:</span> <span class="kt">CUnsignedLong</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4188-L4191">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE16colorInitFromHsl3hue10saturation9luminanceySf_S2ftF"></a>
+                    <a name="//apple_ref/swift/Method/colorInitFromHsl(hue:saturation:luminance:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE16colorInitFromHsl3hue10saturation9luminanceySf_S2ftF">colorInitFromHsl(hue:saturation:luminance:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts a color expressed in HLS (hue, luminance and saturation)
+values into a <code>CoglColor</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">colorInitFromHsl</span><span class="p">(</span><span class="nv">hue</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">saturation</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">luminance</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4195-L4198">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE6setFog4mode7density5zNear4zFarySo0aE4Modea_S3ftF"></a>
+                    <a name="//apple_ref/swift/Method/setFog(mode:density:zNear:zFar:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE6setFog4mode7density5zNear4zFarySo0aE4Modea_S3ftF">setFog(mode:density:zNear:zFar:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enables fogging. Fogging causes vertices that are further away from the eye
+to be rendered with a different color. The color is determined according to
+the chosen fog mode; at it&rsquo;s simplest the color is linearly interpolated so
+that vertices at <code>z_near</code> are drawn fully with their original color and
+vertices at <code>z_far</code> are drawn fully with <code>fog_color</code>. Fogging will remain
+enabled until you call cogl_disable_fog().</p>
+
+<p><note>The fogging functions only work correctly when primitives use
+unmultiplied alpha colors. By default Cogl will premultiply textures
+and cogl_set_source_color() will premultiply colors, so unless you
+explicitly load your textures requesting an unmultiplied internal format
+and use cogl_material_set_color() you can only use fogging with fully
+opaque primitives. This might improve in the future when we can depend
+on fragment shaders.</note></p>
+
+<p><strong>set_fog is deprecated:</strong>
+Use #CoglSnippet shader api for fog</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">setFog</span><span class="p">(</span><span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:4Cogl7FogModea">FogMode</a></span><span class="p">,</span> <span class="nv">density</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4217-L4220">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE09setSourceB0yyF"></a>
+                    <a name="//apple_ref/swift/Method/setSourceColor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE09setSourceB0yyF">setSourceColor()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is a convenience function for creating a solid fill source material
+from the given color. This color will be used for any subsequent drawing
+operation.</p>
+
+<p>The color will be premultiplied by Cogl, so the color should be
+non-premultiplied. For example: use (1.0, 0.0, 0.0, 0.5) for
+semi-transparent red.</p>
+
+<p>See also cogl_set_source_color4ub() and cogl_set_source_color4f()
+if you already have the color components.</p>
+
+<p><strong>set_source_color is deprecated:</strong>
+Latest drawing apis all take an explicit
+                  #CoglPipeline argument so this stack of
+                  #CoglMaterial&lt;!&ndash; &ndash;&gt;s shouldn&rsquo;t be used.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+<span class="kd">func</span> <span class="nf">setSourceColor</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4237-L4240">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE5alphaSfvp"></a>
+                    <a name="//apple_ref/swift/Property/alpha" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE5alphaSfvp">alpha</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the alpha channel of <code>color</code> as a fixed point
+value between 0 and 1.0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">CFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4243-L4254">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE9alphaBytes5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/alphaByte" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE9alphaBytes5UInt8Vvp">alphaByte</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the alpha channel of <code>color</code> as a byte value
+between 0 and 255</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">alphaByte</span><span class="p">:</span> <span class="kt">CUnsignedChar</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4258-L4269">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE10alphaFloatSfvp"></a>
+                    <a name="//apple_ref/swift/Property/alphaFloat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE10alphaFloatSfvp">alphaFloat</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the alpha channel of <code>color</code> as a floating point
+value between 0.0 and 1.0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">alphaFloat</span><span class="p">:</span> <span class="kt">CFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4273-L4284">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE4blueSfvp"></a>
+                    <a name="//apple_ref/swift/Property/blue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE4blueSfvp">blue</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the blue channel of <code>color</code> as a fixed point
+value between 0 and 1.0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">blue</span><span class="p">:</span> <span class="kt">CFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4288-L4299">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE8blueBytes5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/blueByte" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE8blueBytes5UInt8Vvp">blueByte</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the blue channel of <code>color</code> as a byte value
+between 0 and 255</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">blueByte</span><span class="p">:</span> <span class="kt">CUnsignedChar</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4303-L4314">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE9blueFloatSfvp"></a>
+                    <a name="//apple_ref/swift/Property/blueFloat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE9blueFloatSfvp">blueFloat</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the blue channel of <code>color</code> as a floating point
+value between 0.0 and 1.0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">blueFloat</span><span class="p">:</span> <span class="kt">CFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4318-L4329">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE5greenSfvp"></a>
+                    <a name="//apple_ref/swift/Property/green" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE5greenSfvp">green</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the green channel of <code>color</code> as a fixed point
+value between 0 and 1.0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">green</span><span class="p">:</span> <span class="kt">CFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4333-L4344">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE9greenBytes5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/greenByte" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE9greenBytes5UInt8Vvp">greenByte</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the green channel of <code>color</code> as a byte value
+between 0 and 255</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">greenByte</span><span class="p">:</span> <span class="kt">CUnsignedChar</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4348-L4359">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE10greenFloatSfvp"></a>
+                    <a name="//apple_ref/swift/Property/greenFloat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE10greenFloatSfvp">greenFloat</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the green channel of <code>color</code> as a floating point
+value between 0.0 and 1.0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">greenFloat</span><span class="p">:</span> <span class="kt">CFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4363-L4374">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE3redSfvp"></a>
+                    <a name="//apple_ref/swift/Property/red" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE3redSfvp">red</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the red channel of <code>color</code> as a fixed point
+value between 0 and 1.0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">red</span><span class="p">:</span> <span class="kt">CFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4378-L4389">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE7redBytes5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/redByte" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE7redBytes5UInt8Vvp">redByte</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the red channel of <code>color</code> as a byte value
+between 0 and 255</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">redByte</span><span class="p">:</span> <span class="kt">CUnsignedChar</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4393-L4404">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl13ColorProtocolPAAE8redFloatSfvp"></a>
+                    <a name="//apple_ref/swift/Property/redFloat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl13ColorProtocolPAAE8redFloatSfvp">redFloat</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the red channel of <code>color</code> as a floating point
+value between 0.0 and 1.0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">redFloat</span><span class="p">:</span> <span class="kt">CFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">nonmutating</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L4408-L4419">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

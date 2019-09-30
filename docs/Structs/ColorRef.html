@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ColorRef Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Struct/ColorRef" class="dashAnchor"></a>
+
+    <a title="ColorRef Structure Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Cogl 2.62.0 Docs
+        </a>
+         (95% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/rhx/SwiftCogl">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://http%3A%2F%2Frhx%2Egithub%2Eio%2FSwiftCogl%2Fdocsets%2FCogl%2Exml">
+            <img class="header-icon" src="../img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Cogl Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      ColorRef Structure Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Bitmap.html">Bitmap</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Euler.html">Euler</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Material.html">Material</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MaterialLayer.html">MaterialLayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Matrix.html">Matrix</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Offscreen.html">Offscreen</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Quaternion.html">Quaternion</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Texture.html">Texture</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TextureVertex.html">TextureVertex</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/_ColorSizeCheck.html">_ColorSizeCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/_MatrixSizeCheck.html">_MatrixSizeCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/_TextureVertexSizeCheck.html">_TextureVertexSizeCheck</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10AFIRST_BITs5Int32Vvp">AFIRST_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl5A_BITs5Int32Vvp">A_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl7BGR_BITs5Int32Vvp">BGR_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9DEPTH_BITs5Int32Vvp">DEPTH_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9FIXED_0_5s5Int32Vvp">FIXED_0_5</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl7FIXED_1s5Int32Vvp">FIXED_1</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_2_PIs5Int32Vvp">FIXED_2_PI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_BITSs5Int32Vvp">FIXED_BITS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl13FIXED_EPSILONs5Int32Vvp">FIXED_EPSILON</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9FIXED_MAXs5Int32Vvp">FIXED_MAX</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl9FIXED_MINs6UInt32Vvp">FIXED_MIN</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl8FIXED_PIs5Int32Vvp">FIXED_PI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_PI_2s5Int32Vvp">FIXED_PI_2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl10FIXED_PI_4s5Int32Vvp">FIXED_PI_4</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl7FIXED_Qs5Int32Vvp">FIXED_Q</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl11PREMULT_BITs5Int32Vvp">PREMULT_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl18RADIANS_TO_DEGREESs5Int32Vvp">RADIANS_TO_DEGREES</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl20SQRTI_ARG_10_PERCENTs5Int32Vvp">SQRTI_ARG_10_PERCENT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl19SQRTI_ARG_5_PERCENTs5Int32Vvp">SQRTI_ARG_5_PERCENT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl13SQRTI_ARG_MAXs5Int32Vvp">SQRTI_ARG_MAX</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl11STENCIL_BITs5Int32Vvp">STENCIL_BIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:4Cogl17TEXTURE_MAX_WASTEs5Int32Vvp">TEXTURE_MAX_WASTE</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/AttributeType.html">AttributeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BitmapError.html">BitmapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BlendStringError.html">BlendStringError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BufferBit.html">BufferBit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BufferTarget.html">BufferTarget</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ColorMask.html">ColorMask</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/DepthTestFunction.html">DepthTestFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/FeatureFlags.html">FeatureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/FilterReturn.html">FilterReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Fixed.html">Fixed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/FogMode.html">FogMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/IndicesType.html">IndicesType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialAlphaFunc.html">MaterialAlphaFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialFilter.html">MaterialFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialLayerType.html">MaterialLayerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/MaterialWrapMode.html">MaterialWrapMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/PixelFormat.html">PixelFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ReadPixelsFlags.html">ReadPixelsFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/RendererError.html">RendererError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/ShaderType.html">ShaderType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/StereoMode.html">StereoMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/SystemError.html">SystemError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureComponents.html">TextureComponents</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureError.html">TextureError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureFlags.html">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/TextureType.html">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/VerticesMode.html">VerticesMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Winding.html">Winding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/WinsysFeature.html">WinsysFeature</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8angleCos0B0s5Int32VAE_tF">angleCos(angle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8angleSin0B0s5Int32VAE_tF">angleSin(angle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8angleTan0B0s5Int32VAE_tF">angleTan(angle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4atanys5Int32VADF">atan(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5atan2ys5Int32VAD_ADtF">atan2(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7beginGlyyF">beginGl()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16bitmapErrorQuarks6UInt32VyF">bitmapErrorQuark()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl21blendStringErrorQuarks6UInt32VyF">blendStringErrorQuark()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14checkExtension4name3exts5Int32VSPys4Int8VG_AItF">checkExtension(name:ext:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5clear5color7buffersyAA13ColorProtocol_p_SutF">clear(color:buffers:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10clipEnsureyyF">clipEnsure()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7clipPopyyF">clipPop()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8clipPush9primitive8boundsX10E2Y10E2X20E2Y2ySpySo01_A9PrimitiveVG_S4ftF">clipPush(primitive:boundsX1:boundsY1:boundsX2:boundsY2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8clipPush7xOffset01yD05width6heightySf_S3ftF">clipPush(xOffset:yOffset:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17clipPushRectangle2x02y02x12y1ySf_S3ftF">clipPushRectangle(x0:y0:x1:y1:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18clipPushWindowRect7xOffset01yF05width6heightySf_S3ftF">clipPushWindowRect(xOffset:yOffset:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl23clipPushWindowRectangle7xOffset01yF05width6heightys5Int32V_A3HtF">clipPushWindowRectangle(xOffset:yOffset:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16clipStackRestoreyyF">clipStackRestore()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13clipStackSaveyyF">clipStackSave()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl28clutterCheckExtensionCLUTTER4name3exts5Int32VSPys4Int8VG_AItF">clutterCheckExtensionCLUTTER(name:ext:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl30clutterWinsysHasFeatureCLUTTER7features5Int32VSo01_acE0V_tF">clutterWinsysHasFeatureCLUTTER(feature:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10colorEqual2v12v2s5Int32VSv_SvtF">colorEqual(v1:v2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16colorInitFromHsl0B03hue10saturation9luminanceyAA13ColorProtocol_p_S3ftF">colorInitFromHsl(color:hue:saturation:luminance:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3cosys5Int32VADF">cos(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13createProgramSvSgyF">createProgram()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12createShader10shaderTypeSvSgSo0acE0a_tF">createShader(shaderType:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16debugMatrixPrint6matrixyAA0C8Protocol_p_tF">debugMatrixPrint(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10disableFogyyF">disableFog()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3divys5Int32VAD_ADtF">div(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13doubleToFixed5values5Int32VSd_tF">doubleToFixed(value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11doubleToInt5values5Int32VSd_tF">doubleToInt(value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12doubleToUint5values6UInt32VSd_tF">doubleToUint(value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5endGlyyF">endGl()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17featuresAvailable0B0s5Int32VSo0A12FeatureFlagsa_tF">featuresAvailable(features:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5flushyyF">flush()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25framebufferGetColorFormat0B0So0a5PixelE0aSpySo01_A7TextureVG_tF">framebufferGetColorFormat(framebuffer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7frustum5left_6right_6bottom3top5zNear4zFarySf_S5ftF">frustum(left_:right_:bottom:top:zNear:zFar:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25getBackfaceCullingEnableds5Int32VyF">getBackfaceCullingEnabled()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11getBitmasks3red5green4blue5alphaySpys5Int32VG_A3ItF">getBitmasks(red:green:blue:alpha:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19getDepthTestEnableds5Int32VyF">getDepthTestEnabled()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11getFeaturesSo0A12FeatureFlagsayF">getFeatures()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12getModelview6matrixyAA14MatrixProtocol_p_tF">getModelview(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14getOptionGroupSpySo08_GOptionD0VGSgyF">getOptionGroup()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14getProcAddress4nameyyXCSgSPys4Int8VG_tF">getProcAddress(name:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13getProjection6matrixyAA14MatrixProtocol_p_tF">getProjection(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9getSourceSvSgyF">getSource()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11getViewport1vySpySfG_tF">getViewport(v:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18gtypeMatrixGetTypeSuyF">gtypeMatrixGetType()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13handleGetTypeSuyF">handleGetType()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9handleRef0B0SvSgSv_tF">handleRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11handleUnref0B0ySv_tF">handleUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8isBitmap6objects5Int32VSv_tF">isBitmap(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10isMaterial6handles5Int32VSv_tF">isMaterial(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11isOffscreen6objects5Int32VSv_tF">isOffscreen(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9isProgram6handles5Int32VSv_tF">isProgram(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8isShader6handles5Int32VSv_tF">isShader(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9isTexture6objects5Int32VSv_tF">isTexture(object:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14isVertexBuffer6handles5Int32VSv_tF">isVertexBuffer(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl21isVertexBufferIndices6handles5Int32VSv_tF">isVertexBufferIndices(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4log2ys5Int32VSiF">log2(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11materialRef0B0SvSgSv_tF">materialRef(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13materialUnref0B0ySv_tF">materialUnref(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11matrixEqual2v12v2s5Int32VSv_SvtF">matrixEqual(v1:v2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3mulys5Int32VAD_ADtF">mul(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7mul_divys5Int32VAD_A2DtF">mul_div(_:_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl36onscreenClutterBackendSetSizeCLUTTER5width6heightys5Int32V_AFtF">onscreenClutterBackendSetSizeCLUTTER(width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5ortho5left_6right_6bottom3top4near3farySf_S5ftF">ortho(left_:right_:bottom:top:near:far:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11perspective4fovy6aspect5zNear4zFarySf_S3ftF">perspective(fovy:aspect:zNear:zFar:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl7polygon8vertices9nVertices8useColoryAA21TextureVertexProtocol_p_s6UInt32Vs5Int32VtF">polygon(vertices:nVertices:useColor:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13popDrawBufferyyF">popDrawBuffer()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14popFramebufferyyF">popFramebuffer()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9popMatrixyyF">popMatrix()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9popSourceyyF">popSource()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3powyS2i_s5Int32VtF">pow(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4pow2ySis5Int32VF">pow2(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programAttachShader0B6Handle06shaderE0ySv_SvtF">programAttachShader(programHandle:shaderHandle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25programGetUniformLocation6handle11uniformNames5Int32VSv_SPys4Int8VGtF">programGetUniformLocation(handle:uniformName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11programLink6handleySv_tF">programLink(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10programRef6handleSvSgSv_tF">programRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programSetUniform1f0B015uniformLocation5valueySv_s5Int32VSftF">programSetUniform1f(program:uniformLocation:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programSetUniform1i0B015uniformLocation5valueySv_s5Int32VAGtF">programSetUniform1i(program:uniformLocation:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl22programSetUniformFloat0B015uniformLocation11nComponents5count5valueySv_s5Int32VA2ISPySfGtF">programSetUniformFloat(program:uniformLocation:nComponents:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl20programSetUniformInt0B015uniformLocation11nComponents5count5valueySv_s5Int32VA2ISPyAIGtF">programSetUniformInt(program:uniformLocation:nComponents:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl23programSetUniformMatrix0B015uniformLocation10dimensions5count9transpose5valueySv_s5Int32VA3JSPySfGtF">programSetUniformMatrix(program:uniformLocation:dimensions:count:transpose:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16programUniform1f9uniformNo5valueys5Int32V_SftF">programUniform1f(uniformNo:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16programUniform1i9uniformNo5valueys5Int32V_AFtF">programUniform1i(uniformNo:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19programUniformFloat9uniformNo4size5count5valueys5Int32V_A2HSPySfGtF">programUniformFloat(uniformNo:size:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17programUniformInt9uniformNo4size5count5valueys5Int32V_A2HSPyAHGtF">programUniformInt(uniformNo:size:count:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl20programUniformMatrix9uniformNo4size5count9transpose5valueys5Int32V_A3ISPySfGtF">programUniformMatrix(uniformNo:size:count:transpose:value:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12programUnref6handleySv_tF">programUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10programUse6handleySv_tF">programUse(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14pushDrawBufferyyF">pushDrawBuffer()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15pushFramebuffer6bufferySpySo01_A7TextureVG_tF">pushFramebuffer(buffer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10pushMatrixyyF">pushMatrix()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10pushSource8materialySv_tF">pushSource(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10readPixels1x1y5width6height6source6format6pixelsys5Int32V_A3KSo0a4ReadC5FlagsaSo0A11PixelFormataSpys5UInt8VGtF">readPixels(x:y:width:height:source:format:pixels:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9rectangle2x12y12x22y2ySf_S3ftF">rectangle(x1:y1:x2:y2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl31rectangleWithMultitextureCoords2x12y12x22y203texE00jE3LenySf_S3fSPySfGs5Int32VtF">rectangleWithMultitextureCoords(x1:y1:x2:y2:texCoords:texCoordsLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl26rectangleWithTextureCoords2x12y12x22y23tx13ty13tx23ty2ySf_S7ftF">rectangleWithTextureCoords(x1:y1:x2:y2:tx1:ty1:tx2:ty2:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10rectangles5verts6nRectsySPySfG_s6UInt32VtF">rectangles(verts:nRects:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl27rectanglesWithTextureCoords5verts6nRectsySPySfG_s6UInt32VtF">rectanglesWithTextureCoords(verts:nRects:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl6rotate5angle1x1y1zySf_S3ftF">rotate(angle:x:y:z:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5scale1x1y1zySf_S2ftF">scale(x:y:z:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl25setBackfaceCullingEnabled7settingys5Int32V_tF">setBackfaceCullingEnabled(setting:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19setDepthTestEnabled7settingys5Int32V_tF">setDepthTestEnabled(setting:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13setDrawBuffer6target9offscreenySo0aD6Targeta_SvtF">setDrawBuffer(target:offscreen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl6setFog8fogColor4mode7density5zNear4zFaryAA0E8Protocol_p_So0aC4ModeaS3ftF">setFog(fogColor:mode:density:zNear:zFar:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl14setFramebuffer6bufferySpySo01_A7TextureVG_tF">setFramebuffer(buffer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12setModelview6matrixyAA14MatrixProtocol_p_tF">setModelview(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13setProjection6matrixyAA14MatrixProtocol_p_tF">setProjection(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9setSource5coloryAA13ColorProtocol_p_tF">setSource(color:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9setSource8materialySv_tF">setSource(material:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9setSource7textureyAA15TextureProtocol_p_tF">setSource(texture:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16setSourceColor4f3red5green4blue5alphaySf_S3ftF">setSourceColor4f(red:green:blue:alpha:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17setSourceColor4ub3red5green4blue5alphays5UInt8V_A3HtF">setSourceColor4ub(red:green:blue:alpha:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11setViewport1x1y5width6heightys5Int32V_A3HtF">setViewport(x:y:width:height:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13shaderCompile6handleySv_tF">shaderCompile(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16shaderGetInfoLog6handleSSSgSv_tF">shaderGetInfoLog(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl13shaderGetType6handleSo0a6ShaderD0aSv_tF">shaderGetType(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16shaderIsCompiled6handles5Int32VSv_tF">shaderIsCompiled(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9shaderRef6handleSvSgSv_tF">shaderRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12shaderSource0B06sourceySv_SPys4Int8VGtF">shaderSource(shader:source:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl11shaderUnref6handleySv_tF">shaderUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3sinys5Int32VADF">sin(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl4sqrtys5Int32VADF">sqrt(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl5sqrti1xs5Int32VAE_tF">sqrti(x:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl3tanys5Int32VADF">tan(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17textureErrorQuarks6UInt32VyF">textureErrorQuark()</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl10textureRef0B0SvSgSv_tF">textureRef(texture:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl12textureUnref0B0ySv_tF">textureUnref(texture:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9transform6matrixyAA14MatrixProtocol_p_tF">transform(matrix:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl9translate1x1y1zySf_S2ftF">translate(x:y:z:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15vertexBufferAdd6handle13attributeName11nComponents4type10normalized6stride7pointerySv_SPys4Int8VGs5UInt8VSo0A13AttributeTypeas5Int32Vs6UInt16VSvtF">vertexBufferAdd(handle:attributeName:nComponents:type:normalized:stride:pointer:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18vertexBufferDelete6handle13attributeNameySv_SPys4Int8VGtF">vertexBufferDelete(handle:attributeName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl19vertexBufferDisable6handle13attributeNameySv_SPys4Int8VGtF">vertexBufferDisable(handle:attributeName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl16vertexBufferDraw6handle4mode5first5countySv_So0A12VerticesModeas5Int32VAJtF">vertexBufferDraw(handle:mode:first:count:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl24vertexBufferDrawElements6handle4mode7indices8minIndex03maxJ00H6Offset5countySv_So0A12VerticesModeaSvs5Int32VA3MtF">vertexBufferDrawElements(handle:mode:indices:minIndex:maxIndex:indicesOffset:count:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18vertexBufferEnable6handle13attributeNameySv_SPys4Int8VGtF">vertexBufferEnable(handle:attributeName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl24vertexBufferGetNVertices6handles6UInt32VSv_tF">vertexBufferGetNVertices(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl30vertexBufferIndicesGetForQuads01nD0SvSgs6UInt32V_tF">vertexBufferIndicesGetForQuads(nIndices:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl26vertexBufferIndicesGetType7indicesSo0adF0aSv_tF">vertexBufferIndicesGetType(indices:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl22vertexBufferIndicesNew11indicesType0F5Array0F3LenSvSgSo0adG0a_Svs5Int32VtF">vertexBufferIndicesNew(indicesType:indicesArray:indicesLen:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15vertexBufferNew9nVerticesSvSgs6UInt32V_tF">vertexBufferNew(nVertices:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl15vertexBufferRef6handleSvSgSv_tF">vertexBufferRef(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl18vertexBufferSubmit6handleySv_tF">vertexBufferSubmit(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl17vertexBufferUnref6handleySv_tF">vertexBufferUnref(handle:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:4Cogl8viewport5width6heightys6UInt32V_AFtF">viewport(width:height:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/BitmapProtocol.html">BitmapProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ColorProtocol.html">ColorProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/EulerProtocol.html">EulerProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MaterialLayerProtocol.html">MaterialLayerProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MaterialProtocol.html">MaterialProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MatrixProtocol.html">MatrixProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/OffscreenProtocol.html">OffscreenProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/QuaternionProtocol.html">QuaternionProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextureProtocol.html">TextureProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/TextureVertexProtocol.html">TextureVertexProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/_ColorSizeCheckProtocol.html">_ColorSizeCheckProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/_MatrixSizeCheckProtocol.html">_MatrixSizeCheckProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/_TextureVertexSizeCheckProtocol.html">_TextureVertexSizeCheckProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/BitmapRef.html">BitmapRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ColorRef.html">ColorRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EulerRef.html">EulerRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MaterialLayerRef.html">MaterialLayerRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MaterialRef.html">MaterialRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MatrixRef.html">MatrixRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/OffscreenRef.html">OffscreenRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/QuaternionRef.html">QuaternionRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextureRef.html">TextureRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TextureVertexRef.html">TextureVertexRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/_ColorSizeCheckRef.html">_ColorSizeCheckRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/_MatrixSizeCheckRef.html">_MatrixSizeCheckRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/_TextureVertexSizeCheckRef.html">_TextureVertexSizeCheckRef</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl5Anglea">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl13AttributeTypea">AttributeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11BitmapErrora">BitmapError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl16BlendStringErrora">BlendStringError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl5Bool_a">Bool_</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl9BufferBita">BufferBit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12BufferTargeta">BufferTarget</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl0A7Texturea">CoglTexture</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl9ColorMaska">ColorMask</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17DepthTestFunctiona">DepthTestFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12FeatureFlagsa">FeatureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12FilterReturna">FilterReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl5Fixeda">Fixed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl7FogModea">FogMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl7FuncPtra">FuncPtr</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl6Handlea">Handle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11IndicesTypea">IndicesType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17MaterialAlphaFunca">MaterialAlphaFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl14MaterialFiltera">MaterialFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17MaterialLayerTypea">MaterialLayerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl16MaterialWrapModea">MaterialWrapMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11PixelFormata">PixelFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl15ReadPixelsFlagsa">ReadPixelsFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl13RendererErrora">RendererError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl10ShaderTypea">ShaderType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl10StereoModea">StereoMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11SystemErrora">SystemError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl17TextureComponentsa">TextureComponents</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12TextureErrora">TextureError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12TextureFlagsa">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl11TextureTypea">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl12VerticesModea">VerticesMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl7Windinga">Winding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:4Cogl13WinsysFeaturea">WinsysFeature</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>ColorRef</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ColorRef</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>The <code>ColorRef</code> type acts as a lightweight Swift reference to an underlying <code>CoglColor</code> instance.
+It exposes methods that can operate on this data type through <code><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></code> conformance.
+Use <code>ColorRef</code> only as an <code>unowned</code> reference to an existing <code>CoglColor</code> instance.</p>
+
+<p>A structure for holding a color definition. The contents of
+the CoglColor structure are private and should never by accessed
+directly.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl8ColorRefV3ptrSvvp"></a>
+                    <a name="//apple_ref/swift/Property/ptr" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl8ColorRefV3ptrSvvp">ptr</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Untyped pointer to the underlying <code>CoglColor</code> instance.
+For type-safe access, use the generated, typed pointer <code>color_ptr</code> property instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">ptr</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3825">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Color%20Record"></a>
+                <a name="//apple_ref/swift/Section/Color Record" class="dashAnchor"></a>
+                <a href="#/Color%20Record">
+                  <h3 class="section-name">Color Record</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl8ColorRefVyACSpySo01_aB0VGcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl8ColorRefVyACSpySo01_aB0VGcfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Designated initialiser from the underlying <code>C</code> data type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">p</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglColor</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3830-L3831">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl8ColorRefVyACxcAA0B8ProtocolRzlufc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl8ColorRefVyACxcAA0B8ProtocolRzlufc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reference intialiser for a related type that implements <code><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3834-L3836">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl8ColorRefV8cPointerACSpyxG_tclufc"></a>
+                    <a name="//apple_ref/swift/Method/init(cPointer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl8ColorRefV8cPointerACSpyxG_tclufc">init(cPointer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsafe typed initialiser.
+<strong>Do not use unless you know the underlying data type the pointer points to conforms to <code><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></code>.</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">cPointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3840-L3842">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl8ColorRefV12constPointerACSPyxG_tclufc"></a>
+                    <a name="//apple_ref/swift/Method/init(constPointer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl8ColorRefV12constPointerACSPyxG_tclufc">init(constPointer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsafe typed initialiser.
+<strong>Do not use unless you know the underlying data type the pointer points to conforms to <code><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></code>.</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">init</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">constPointer</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3846-L3848">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl8ColorRefV3rawACSV_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(raw:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl8ColorRefV3rawACSV_tcfc">init(raw:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsafe untyped initialiser.
+<strong>Do not use unless you know the underlying data type the pointer points to conforms to <code><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></code>.</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeRawPointer</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3852-L3854">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl8ColorRefV3rawACSv_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(raw:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl8ColorRefV3rawACSv_tcfc">init(raw:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsafe untyped initialiser.
+<strong>Do not use unless you know the underlying data type the pointer points to conforms to <code><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></code>.</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">raw</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3858-L3860">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl8ColorRefV13opaquePointerACs06OpaqueE0V_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(opaquePointer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl8ColorRefV13opaquePointerACs06OpaqueE0V_tcfc">init(opaquePointer:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unsafe untyped initialiser.
+<strong>Do not use unless you know the underlying data type the pointer points to conforms to <code><a href="../Protocols/ColorProtocol.html">ColorProtocol</a></code>.</strong></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">opaquePointer</span><span class="p">:</span> <span class="kt">OpaquePointer</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3864-L3866">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl8ColorRefVACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl8ColorRefVACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new (empty) color</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3869-L3872">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-09-30)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
