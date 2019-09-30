@@ -1,285 +1,285 @@
 {
   "warnings": [
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 92,
       "symbol": "AFIRST_BIT",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 94,
       "symbol": "A_BIT",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 96,
       "symbol": "BGR_BIT",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 98,
       "symbol": "DEPTH_BIT",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 134,
       "symbol": "PREMULT_BIT",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 150,
       "symbol": "STENCIL_BIT",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 152,
       "symbol": "TEXTURE_MAX_WASTE",
       "symbol_kind": "source.lang.swift.decl.var.global",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 260,
       "symbol": "FeatureFlags.onscreen_multiple",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1543,
       "symbol": "PixelFormat.depth_16",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1544,
       "symbol": "PixelFormat.depth_32",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1545,
       "symbol": "PixelFormat.depth_24_stencil_8",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1548,
       "symbol": "RendererError",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1550,
       "symbol": "RendererError",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1551,
       "symbol": "RendererError.xlib_display_open",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1552,
       "symbol": "RendererError.bad_constraint",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1634,
       "symbol": "TextureError.bad_parameter",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1690,
       "symbol": "WinsysFeature",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1692,
       "symbol": "WinsysFeature",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1693,
       "symbol": "WinsysFeature.multiple_onscreen",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1694,
       "symbol": "WinsysFeature.swap_throttle",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1695,
       "symbol": "WinsysFeature.vblank_counter",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1696,
       "symbol": "WinsysFeature.vblank_wait",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1697,
       "symbol": "WinsysFeature.texture_from_pixmap",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1698,
       "symbol": "WinsysFeature.swap_buffers_event",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1699,
       "symbol": "WinsysFeature.swap_region",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1700,
       "symbol": "WinsysFeature.swap_region_throttle",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1701,
       "symbol": "WinsysFeature.swap_region_synchronized",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1702,
       "symbol": "WinsysFeature.buffer_age",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1703,
       "symbol": "WinsysFeature.sync_and_complete_event",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1704,
       "symbol": "WinsysFeature.n_features",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1814,
       "symbol": "bitmapErrorQuark()",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 1822,
       "symbol": "blendStringErrorQuark()",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 2030,
       "symbol": "clutterCheckExtensionCLUTTER(name:ext:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 2038,
       "symbol": "clutterWinsysHasFeatureCLUTTER(feature:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 2116,
       "symbol": "doubleToFixed(value:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 2124,
       "symbol": "doubleToInt(value:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 2132,
       "symbol": "doubleToUint(value:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 2383,
       "symbol": "handleGetType()",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 2535,
       "symbol": "onscreenClutterBackendSetSizeCLUTTER(width:height:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
+      "file": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl/Sources/Cogl/Cogl-1.0.swift",
       "line": 3477,
       "symbol": "textureErrorQuark()",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/s254227/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl"
+  "source_directory": "/Users/rh/Dropbox/Developer/src/swift/rh/gtk/SwiftCogl"
 }
