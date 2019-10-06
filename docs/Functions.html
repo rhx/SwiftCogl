@@ -2066,7 +2066,7 @@ confusing Cogl you should aim to restore any changes you make before
 resuming use of Cogl.</p>
 
 <p>If you are making state changes with the intention of affecting Cogl drawing
-primitives you are 100`` on your own since you stand a good chance of
+primitives you are 100% on your own since you stand a good chance of
 conflicting with Cogl internals. For example clutter-gst which currently
 uses direct GL calls to bind ARBfp programs will very likely break when Cogl
 starts to use ARBfb programs itself for the material API.</p>
@@ -5177,7 +5177,7 @@ Use #CoglSnippet api</p>
 
 <p>This function is at least 6x faster than clib <code>sqrt()</code> on x86, and (this is
 not a typo!) about 500x faster on ARM without FPU. It&rsquo;s error is less than
-5<code>for arguments smaller than `COGL_SQRTI_ARG_5_PERCENT` and less than 10</code>
+5% for arguments smaller than <code>COGL_SQRTI_ARG_5_PERCENT</code> and less than 10%
 for narguments smaller than <code>COGL_SQRTI_ARG_10_PERCENT</code>. The maximum
 argument that can be passed to this function is <code>COGL_SQRTI_ARG_MAX</code>.</p>
 
