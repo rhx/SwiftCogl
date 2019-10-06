@@ -955,7 +955,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1707-L1710">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1706-L1709">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -985,7 +985,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1716-L1719">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1715-L1718">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1015,7 +1015,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1725-L1728">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1724-L1727">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1034,7 +1034,7 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>We do not advise nor reliably support the interleaving of raw GL drawing and
-Cogl drawing functions, but if you insist, cogl_begin_gl() and cogl_end_gl()
+Cogl drawing functions, but if you insist, <code>cogl_begin_gl()</code> and <code>cogl_end_gl()</code>
 provide a simple mechanism that may at least give you a fighting chance of
 succeeding.</p>
 
@@ -1049,8 +1049,8 @@ but if you are trying to do something like:</p>
 <span class="p">}</span>
 </code></pre>
 
-<p>You should surround blocks of drawing using raw GL with cogl_begin_gl()
-and cogl_end_gl():</p>
+<p>You should surround blocks of drawing using raw GL with <code>cogl_begin_gl()</code>
+and <code>cogl_end_gl()</code>:</p>
 <pre class="highlight swift"><code><span class="p">{</span>
    <span class="nf">cogl_begin_gl</span> <span class="p">();</span>
    <span class="o">-</span> <span class="n">setup</span> <span class="n">some</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
@@ -1082,11 +1082,11 @@ to OpenGL.</p>
 
 <p><note>No special material state is flushed, so if you want Cogl to setup a
 simplified material state it is your responsibility to set a simple source
-material before calling cogl_begin_gl(). E.g. by calling
-cogl_set_source_color4ub().</note></p>
+material before calling <code>cogl_begin_gl()</code>. E.g. by calling
+<code>cogl_set_source_color4ub()</code>.</note></p>
 
 <p><note>It is your responsibility to restore any OpenGL state that you modify
-to how it was after calling cogl_begin_gl() if you don&rsquo;t do this then the
+to how it was after calling <code>cogl_begin_gl()</code> if you don&rsquo;t do this then the
 result of further Cogl calls is undefined.</note></p>
 
 <p><note>You can not nest begin/end blocks.</note></p>
@@ -1109,7 +1109,7 @@ Use the #CoglGLES2Context api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1806-L1809">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1802-L1805">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1139,7 +1139,7 @@ Use the #CoglGLES2Context api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1814-L1817">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1810-L1813">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1169,7 +1169,7 @@ Use the #CoglGLES2Context api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1822-L1825">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1818-L1821">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1208,7 +1208,7 @@ OpenGL is an implementation detail for Cogl and so it&rsquo;s
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1839-L1842">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1835-L1838">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1243,7 +1243,7 @@ Use cogl_framebuffer_clear() api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1852-L1855">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1848-L1851">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1280,7 +1280,7 @@ Calling this function has no effect</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1867-L1870">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1863-L1866">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1299,7 +1299,7 @@ Calling this function has no effect</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Reverts the clipping region to the state before the last call to
-cogl_clip_push().</p>
+<code>cogl_clip_push()</code>.</p>
 
 <p><strong>clip_pop is deprecated:</strong>
 Use cogl_framebuffer_pop_clip() instead</p>
@@ -1315,7 +1315,7 @@ Use cogl_framebuffer_pop_clip() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1880-L1883">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1876-L1879">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1340,7 +1340,7 @@ be displayed. The rectangle dimensions are transformed by the
 current model-view matrix.</p>
 
 <p>The rectangle is intersected with the current clip region. To undo
-the effect of this function, call cogl_clip_pop().</p>
+the effect of this function, call <code>cogl_clip_pop()</code>.</p>
 
 <p><strong>clip_push is deprecated:</strong>
 The x, y, width, height arguments are inconsistent
@@ -1360,7 +1360,7 @@ The x, y, width, height arguments are inconsistent
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1903-L1906">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1899-L1902">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1389,7 +1389,7 @@ bounds are smaller than the true bounds.</p>
 <p>The primitive is transformed by the current model-view matrix and
 the silhouette is intersected with the previous clipping area.  To
 restore the previous clipping area, call
-cogl_clip_pop().</p>
+<code>cogl_clip_pop()</code>.</p>
 
 <p><strong>clip_push_primitive is deprecated:</strong>
 Use cogl_framebuffer_push_primitive_clip()
@@ -1406,7 +1406,7 @@ Use cogl_framebuffer_push_primitive_clip()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1927-L1930">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1923-L1926">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1431,7 +1431,7 @@ be displayed. The rectangle dimensions are transformed by the
 current model-view matrix.</p>
 
 <p>The rectangle is intersected with the current clip region. To undo
-the effect of this function, call cogl_clip_pop().</p>
+the effect of this function, call <code>cogl_clip_pop()</code>.</p>
 
 <p><strong>clip_push_rectangle is deprecated:</strong>
 Use cogl_framebuffer_push_rectangle_clip()
@@ -1448,7 +1448,7 @@ Use cogl_framebuffer_push_rectangle_clip()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1947-L1950">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1943-L1946">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1473,7 +1473,7 @@ be displayed. The rectangle dimensions are not transformed by the
 current model-view matrix.</p>
 
 <p>The rectangle is intersected with the current clip region. To undo
-the effect of this function, call cogl_clip_pop().</p>
+the effect of this function, call <code>cogl_clip_pop()</code>.</p>
 
 <p><strong>clip_push_window_rect is deprecated:</strong>
 Use cogl_framebuffer_push_scissor_clip() instead</p>
@@ -1489,7 +1489,7 @@ Use cogl_framebuffer_push_scissor_clip() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1966-L1969">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1962-L1965">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1514,7 +1514,7 @@ be displayed. The rectangle dimensions are not transformed by the
 current model-view matrix.</p>
 
 <p>The rectangle is intersected with the current clip region. To undo
-the effect of this function, call cogl_clip_pop().</p>
+the effect of this function, call <code>cogl_clip_pop()</code>.</p>
 
 <p><strong>clip_push_window_rectangle is deprecated:</strong>
 Use cogl_framebuffer_push_scissor_clip() instead</p>
@@ -1530,7 +1530,7 @@ Use cogl_framebuffer_push_scissor_clip() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1985-L1988">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1981-L1984">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1549,7 +1549,7 @@ Use cogl_framebuffer_push_scissor_clip() instead</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Restore the state of the clipping stack that was previously saved
-by cogl_clip_stack_save().</p>
+by <code>cogl_clip_stack_save()</code>.</p>
 
 <p><strong>clip_stack_restore is deprecated:</strong>
 This was originally added to allow us to restore
@@ -1569,7 +1569,7 @@ This was originally added to allow us to restore
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2002-L2005">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1998-L2001">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1589,9 +1589,9 @@ This was originally added to allow us to restore
                       <div class="abstract">
                         <p>Save the entire state of the clipping stack and then clear all
 clipping. The previous state can be returned to with
-cogl_clip_stack_restore(). Each call to cogl_clip_push() after this
-must be matched by a call to cogl_clip_pop() before calling
-cogl_clip_stack_restore().</p>
+<code>cogl_clip_stack_restore()</code>. Each call to <code>cogl_clip_push()</code> after this
+must be matched by a call to <code>cogl_clip_pop()</code> before calling
+<code>cogl_clip_stack_restore()</code>.</p>
 
 <p><strong>clip_stack_save is deprecated:</strong>
 This was originally added to allow us to save the
@@ -1611,7 +1611,7 @@ This was originally added to allow us to save the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2022-L2025">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2018-L2021">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1641,7 +1641,7 @@ This was originally added to allow us to save the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2030-L2033">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2026-L2029">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1671,7 +1671,7 @@ This was originally added to allow us to save the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2038-L2041">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2034-L2037">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1691,7 +1691,7 @@ This was originally added to allow us to save the
                       <div class="abstract">
                         <p>Compares two <code>CoglColor</code>&lt;!&ndash; &ndash;&gt;s and checks if they are the same.</p>
 
-<p>This function can be passed to g_hash_table_new() as the <code>key_equal_func</code>
+<p>This function can be passed to <code>g_hash_table_new()</code> as the <code>key_equal_func</code>
 parameter, when using <code>CoglColor</code>&lt;!&ndash; &ndash;&gt;s as keys in a <code>GHashTable</code>.</p>
 
                       </div>
@@ -1704,7 +1704,7 @@ parameter, when using <code>CoglColor</code>&lt;!&ndash; &ndash;&gt;s as keys in
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2050-L2053">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2046-L2049">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1735,7 +1735,7 @@ values into a <code>CoglColor</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2060-L2063">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2056-L2059">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1770,7 +1770,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2073-L2076">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2069-L2072">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1788,7 +1788,7 @@ Use #CoglSnippet api</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create a new shader handle, use cogl_shader_source() to set the
+                        <p>Create a new shader handle, use <code>cogl_shader_source()</code> to set the
 source code to be used on it.</p>
 
 <p><strong>create_shader is deprecated:</strong>
@@ -1805,7 +1805,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2086-L2089">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2082-L2085">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1835,7 +1835,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2095-L2098">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2091-L2094">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1870,7 +1870,7 @@ Use #CoglSnippet shader api for fog</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2108-L2111">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2104-L2107">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1900,7 +1900,7 @@ Use #CoglSnippet shader api for fog</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2116-L2119">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2112-L2115">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1930,7 +1930,7 @@ Use #CoglSnippet shader api for fog</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2124-L2127">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2120-L2123">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1960,7 +1960,7 @@ Use #CoglSnippet shader api for fog</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2132-L2135">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2128-L2131">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1978,8 +1978,8 @@ Use #CoglSnippet shader api for fog</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is the counterpart to cogl_begin_gl() used to delimit blocks of drawing
-code using raw OpenGL. Please refer to cogl_begin_gl() for full details.</p>
+                        <p>This is the counterpart to <code>cogl_begin_gl()</code> used to delimit blocks of drawing
+code using raw OpenGL. Please refer to <code>cogl_begin_gl()</code> for full details.</p>
 
 <p><strong>end_gl is deprecated:</strong>
 Use the #CoglGLES2Context api instead</p>
@@ -1995,7 +1995,7 @@ Use the #CoglGLES2Context api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2145-L2148">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2141-L2144">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2032,7 +2032,7 @@ Use cogl_has_feature() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2160-L2163">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2156-L2159">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2081,7 +2081,7 @@ starts to use ARBfb programs itself for the material API.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2188-L2191">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2184-L2187">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2101,7 +2101,7 @@ starts to use ARBfb programs itself for the material API.</p>
                       <div class="abstract">
                         <p>Queries the common <code>CoglPixelFormat</code> of all color buffers attached
 to this framebuffer. For an offscreen framebuffer created with
-cogl_offscreen_new_with_texture() this will correspond to the format
+<code>cogl_offscreen_new_with_texture()</code> this will correspond to the format
 of the texture.</p>
 
 <p>This API is deprecated because it is missleading to report a
@@ -2121,7 +2121,7 @@ that is really known.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2206-L2209">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2202-L2205">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2157,7 +2157,7 @@ Use cogl_framebuffer_frustum() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2220-L2223">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2216-L2219">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2176,7 +2176,7 @@ Use cogl_framebuffer_frustum() instead</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Queries if backface culling has been enabled via
-cogl_set_backface_culling_enabled()</p>
+<code>cogl_set_backface_culling_enabled()</code></p>
 
 <p><strong>get_backface_culling_enabled is deprecated:</strong>
 Use cogl_pipeline_get_cull_face_mode() instead</p>
@@ -2192,7 +2192,7 @@ Use cogl_pipeline_get_cull_face_mode() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2233-L2236">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2229-L2232">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2229,7 +2229,7 @@ Use cogl_framebuffer_get_red/green/blue/alpha_bits()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2248-L2251">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2244-L2247">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2247,7 +2247,7 @@ Use cogl_framebuffer_get_red/green/blue/alpha_bits()
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Queries if depth testing has been enabled via cogl_set_depth_test_enable()</p>
+                        <p>Queries if depth testing has been enabled via <code>cogl_set_depth_test_enable()</code></p>
 
 <p><strong>get_depth_test_enabled is deprecated:</strong>
 Use cogl_pipeline_set_depth_state() instead</p>
@@ -2263,7 +2263,7 @@ Use cogl_pipeline_set_depth_state() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2260-L2263">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2256-L2259">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2297,7 +2297,7 @@ Use cogl_foreach_feature() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2272-L2275">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2268-L2271">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2332,7 +2332,7 @@ Use cogl_framebuffer_get_modelview_matrix()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2285-L2288">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2281-L2284">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2368,7 +2368,7 @@ Not replaced</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2299-L2302">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2295-L2298">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2387,7 +2387,7 @@ Not replaced</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets a pointer to a given GL or GL ES extension function. This acts
-as a wrapper around glXGetProcAddress() or whatever is the
+as a wrapper around <code>glXGetProcAddress()</code> or whatever is the
 appropriate function for the current backend.</p>
 
 <p><note>This function should not be used to query core opengl API
@@ -2404,7 +2404,7 @@ and may return a junk pointer if you do.</note></p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2314-L2317">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2310-L2313">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2439,7 +2439,7 @@ Use cogl_framebuffer_get_projection_matrix()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2327-L2330">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2323-L2326">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2458,7 +2458,7 @@ Use cogl_framebuffer_get_projection_matrix()
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Returns the current source material as previously set using
-cogl_set_source().</p>
+<code>cogl_set_source()</code>.</p>
 
 <p><note>You should typically consider the returned material immutable
 and not try to change any of its properties unless you own a
@@ -2482,7 +2482,7 @@ Latest drawing apis all take an explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2348-L2351">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2344-L2347">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2519,7 +2519,7 @@ Use cogl_framebuffer_get_viewport4fv()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2363-L2366">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2359-L2362">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2551,7 +2551,7 @@ Use cogl_matrix_get_gtype() instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2375-L2378">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2371-L2374">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2581,7 +2581,7 @@ Use cogl_matrix_get_gtype() instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2383-L2386">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2379-L2382">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2611,7 +2611,7 @@ Use cogl_matrix_get_gtype() instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2392-L2395">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2388-L2391">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2642,7 +2642,7 @@ count reaches 0, the resources allocated by <code>handle</code> will be freed</p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2402-L2405">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2398-L2401">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2672,7 +2672,7 @@ count reaches 0, the resources allocated by <code>handle</code> will be freed</p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2411-L2414">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2407-L2410">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2706,7 +2706,7 @@ Use cogl_is_pipeline() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2423-L2426">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2419-L2422">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2737,7 +2737,7 @@ framebuffer object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2433-L2436">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2429-L2432">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2771,7 +2771,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2445-L2448">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2441-L2444">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2805,7 +2805,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2457-L2460">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2453-L2456">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2835,7 +2835,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2466-L2469">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2462-L2465">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2869,7 +2869,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2478-L2481">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2474-L2477">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2904,7 +2904,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2491-L2494">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2487-L2490">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2938,7 +2938,7 @@ Use cogl_object_ref() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2503-L2506">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2499-L2502">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2972,7 +2972,7 @@ Use cogl_object_unref() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2515-L2518">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2511-L2514">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3005,7 +3005,7 @@ inverse matrix these are not considered in the comparison.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2527-L2530">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2523-L2526">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3035,7 +3035,7 @@ inverse matrix these are not considered in the comparison.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2535-L2538">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2531-L2534">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3062,7 +3062,7 @@ calculated.</p>
   <graphic fileref="cogl_ortho.png" format="PNG"/>
 </figure>
 
-<p><note>This function copies the arguments from OpenGL&rsquo;s glOrtho() even
+<p><note>This function copies the arguments from OpenGL&rsquo;s <code>glOrtho()</code> even
 though they are unnecessarily confusing due to the z near and z far
 arguments actually being a <q>distance</q> from the origin, where
 negative values are behind the viewer, instead of coordinates for
@@ -3083,7 +3083,7 @@ Use cogl_framebuffer_orthographic() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2561-L2564">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2557-L2560">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3123,7 +3123,7 @@ Use cogl_framebuffer_perspective() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2579-L2582">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2575-L2578">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3167,7 +3167,7 @@ to COGL_MATERIAL_FILTER_NEAREST.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2602-L2605">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2598-L2601">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3185,7 +3185,7 @@ to COGL_MATERIAL_FILTER_NEAREST.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Restore cogl_set_draw_buffer() state.</p>
+                        <p>Restore <code>cogl_set_draw_buffer()</code> state.</p>
 
 <p><strong>pop_draw_buffer is deprecated:</strong>
 The latest drawing apis take explicit
@@ -3203,7 +3203,7 @@ The latest drawing apis take explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2616-L2619">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2612-L2615">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3240,7 +3240,7 @@ The latest drawing apis take explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2631-L2634">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2627-L2630">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3274,7 +3274,7 @@ Use cogl_framebuffer_pop_matrix() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2643-L2646">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2639-L2642">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3294,7 +3294,7 @@ Use cogl_framebuffer_pop_matrix() instead</p>
                       <div class="abstract">
                         <p>Removes the material at the top of the source stack. The material
 at the top of this stack defines the GPU state used to process
-later primitives as defined by cogl_set_source().</p>
+later primitives as defined by <code>cogl_set_source()</code>.</p>
 
 <p><strong>pop_source is deprecated:</strong>
 Latest drawing apis all take an explicit
@@ -3312,7 +3312,7 @@ Latest drawing apis all take an explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2659-L2662">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2655-L2658">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3332,7 +3332,7 @@ Latest drawing apis all take an explicit
                       <div class="abstract">
                         <p>Attaches a shader to a program object. A program can have multiple
 vertex or fragment shaders but only one of them may provide a
-main() function. It is allowed to use a program with only a vertex
+<code>main()</code> function. It is allowed to use a program with only a vertex
 shader or only a fragment shader.</p>
 
 <p><strong>program_attach_shader is deprecated:</strong>
@@ -3349,7 +3349,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2674-L2677">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2670-L2673">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3385,7 +3385,7 @@ Use #CoglSnippet api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2688-L2691">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2684-L2687">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3421,7 +3421,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2702-L2705">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2698-L2701">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3455,7 +3455,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2714-L2717">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2710-L2713">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3490,7 +3490,7 @@ Use #CoglSnippet api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2727-L2730">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2723-L2726">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3525,7 +3525,7 @@ Use #CoglSnippet api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2740-L2743">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2736-L2739">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3560,7 +3560,7 @@ Use #CoglSnippet api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2753-L2756">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2749-L2752">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3595,7 +3595,7 @@ Use #CoglSnippet api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2766-L2769">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2762-L2765">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3630,7 +3630,7 @@ Use #CoglSnippet api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2779-L2782">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2775-L2778">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3649,7 +3649,7 @@ Use #CoglSnippet api instead</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of a floating point uniform in the currently
-used (see cogl_program_use()) shader program.</p>
+used (see <code>cogl_program_use()</code>) shader program.</p>
 
 <p><strong>program_uniform_1f is deprecated:</strong>
 Use #CoglSnippet api</p>
@@ -3665,7 +3665,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2792-L2795">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2788-L2791">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3684,7 +3684,7 @@ Use #CoglSnippet api</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of an integer uniform in the currently
-used (see cogl_program_use()) shader program.</p>
+used (see <code>cogl_program_use()</code>) shader program.</p>
 
 <p><strong>program_uniform_1i is deprecated:</strong>
 Use #CoglSnippet api</p>
@@ -3700,7 +3700,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2805-L2808">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2801-L2804">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3719,7 +3719,7 @@ Use #CoglSnippet api</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of a float vector uniform, or uniform array in the
-currently used (see cogl_program_use()) shader program.</p>
+currently used (see <code>cogl_program_use()</code>) shader program.</p>
 
 <p><strong>program_uniform_float is deprecated:</strong>
 Use #CoglSnippet api</p>
@@ -3735,7 +3735,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2818-L2821">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2814-L2817">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3754,7 +3754,7 @@ Use #CoglSnippet api</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of a int vector uniform, or uniform array in the
-currently used (see cogl_program_use()) shader program.</p>
+currently used (see <code>cogl_program_use()</code>) shader program.</p>
 
 <p><strong>program_uniform_int is deprecated:</strong>
 Use #CoglSnippet api</p>
@@ -3770,7 +3770,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2831-L2834">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2827-L2830">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3789,7 +3789,7 @@ Use #CoglSnippet api</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of a matrix uniform, or uniform array in the
-currently used (see cogl_program_use()) shader program. The <code>size</code>
+currently used (see <code>cogl_program_use()</code>) shader program. The <code>size</code>
 parameter is used to determine the square size of the matrix.</p>
 
 <p><strong>program_uniform_matrix is deprecated:</strong>
@@ -3806,7 +3806,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2845-L2848">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2841-L2844">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3841,7 +3841,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2858-L2861">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2854-L2857">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3866,7 +3866,7 @@ behavior of GL is reinstated.</p>
 <p>This function affects the global state of the current Cogl
 context. It is much more efficient to attach the shader to a
 specific material used for rendering instead by calling
-cogl_material_set_user_program().</p>
+<code>cogl_material_set_user_program()</code>.</p>
 
 <p><strong>program_use is deprecated:</strong>
 Use #CoglSnippet api</p>
@@ -3882,7 +3882,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2877-L2880">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2873-L2876">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3900,7 +3900,7 @@ Use #CoglSnippet api</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Save cogl_set_draw_buffer() state.</p>
+                        <p>Save <code>cogl_set_draw_buffer()</code> state.</p>
 
 <p><strong>push_draw_buffer is deprecated:</strong>
 The latest drawing apis take explicit
@@ -3918,7 +3918,7 @@ The latest drawing apis take explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2891-L2894">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2887-L2890">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4004,7 +4004,7 @@ corresponding to the bottom right you can do so like this:</p>
 <span class="p">}</span>
 </code></pre>
 
-<p>The previous framebuffer can be restored by calling cogl_pop_framebuffer()</p>
+<p>The previous framebuffer can be restored by calling <code>cogl_pop_framebuffer()</code></p>
 
 <p><strong>push_framebuffer is deprecated:</strong>
 The latest drawing apis take explicit
@@ -4022,7 +4022,7 @@ The latest drawing apis take explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2976-L2979">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2971-L2974">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4041,7 +4041,7 @@ The latest drawing apis take explicit
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Stores the current model-view matrix on the matrix stack. The matrix
-can later be restored with cogl_pop_matrix().</p>
+can later be restored with <code>cogl_pop_matrix()</code>.</p>
 
 <p><strong>push_matrix is deprecated:</strong>
 Use cogl_framebuffer_push_matrix() instead</p>
@@ -4057,7 +4057,7 @@ Use cogl_framebuffer_push_matrix() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2989-L2992">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2984-L2987">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4077,7 +4077,7 @@ Use cogl_framebuffer_push_matrix() instead</p>
                       <div class="abstract">
                         <p>Pushes the given <code>material</code> to the top of the source stack. The
 material at the top of this stack defines the GPU state used to
-process later primitives as defined by cogl_set_source().</p>
+process later primitives as defined by <code>cogl_set_source()</code>.</p>
 
 <p><strong>push_source is deprecated:</strong>
 Latest drawing apis all take an explicit
@@ -4095,7 +4095,7 @@ Latest drawing apis all take an explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3005-L3008">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3000-L3003">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4137,7 +4137,7 @@ Use cogl_framebuffer_read_pixels() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3025-L3028">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3020-L3023">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4167,7 +4167,7 @@ Use cogl_framebuffer_read_pixels() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3034-L3037">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3029-L3032">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4205,7 +4205,7 @@ layers in the current source material then default texture coordinates
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3051-L3054">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3046-L3049">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4237,7 +4237,7 @@ texture pass in <code>tx1</code>=0.0 <code>ty1</code>=0.0 <code>tx2</code>=1.0 <
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3062-L3065">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3057-L3060">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4256,14 +4256,14 @@ texture pass in <code>tx1</code>=0.0 <code>ty1</code>=0.0 <code>tx2</code>=1.0 <
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Draws a series of rectangles in the same way that
-cogl_rectangle() does. In some situations it can give a
+<code>cogl_rectangle()</code> does. In some situations it can give a
 significant performance boost to use this function rather than
-calling cogl_rectangle() separately for each rectangle.</p>
+calling <code>cogl_rectangle()</code> separately for each rectangle.</p>
 
 <p><code>verts</code> should point to an array of <code>float</code>&lt;!&ndash; &ndash;&gt;s with
 <code>n_rects</code> * 4 elements. Each group of 4 values corresponds to the
 parameters x1, y1, x2, and y2, and have the same
-meaning as in cogl_rectangle().</p>
+meaning as in <code>cogl_rectangle()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -4275,7 +4275,7 @@ meaning as in cogl_rectangle().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3079-L3082">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3074-L3077">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4294,14 +4294,14 @@ meaning as in cogl_rectangle().</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Draws a series of rectangles in the same way that
-cogl_rectangle_with_texture_coords() does. In some situations it can give a
+<code>cogl_rectangle_with_texture_coords()</code> does. In some situations it can give a
 significant performance boost to use this function rather than
-calling cogl_rectangle_with_texture_coords() separately for each rectangle.</p>
+calling <code>cogl_rectangle_with_texture_coords()</code> separately for each rectangle.</p>
 
 <p><code>verts</code> should point to an array of <code>float</code>&lt;!&ndash; &ndash;&gt;s with
 <code>n_rects</code> * 8 elements. Each group of 8 values corresponds to the
 parameters x1, y1, x2, y2, tx1, ty1, tx2 and ty2 and have the same
-meaning as in cogl_rectangle_with_texture_coords().</p>
+meaning as in <code>cogl_rectangle_with_texture_coords()</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -4313,7 +4313,7 @@ meaning as in cogl_rectangle_with_texture_coords().</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3096-L3099">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3091-L3094">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4351,7 +4351,7 @@ Use cogl_framebuffer_rotate() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3112-L3115">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3107-L3110">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4386,7 +4386,7 @@ Use cogl_framebuffer_pop_matrix() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3125-L3128">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3120-L3123">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4424,7 +4424,7 @@ Use cogl_pipeline_set_cull_face_mode() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3141-L3144">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3136-L3139">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4444,8 +4444,8 @@ Use cogl_pipeline_set_cull_face_mode() instead</p>
                       <div class="abstract">
                         <p>Sets whether depth testing is enabled. If it is disabled then the
 order that actors are layered on the screen depends solely on the
-order specified using clutter_actor_raise() and
-clutter_actor_lower(), otherwise it will also take into account the
+order specified using <code>clutter_actor_raise()</code> and
+<code>clutter_actor_lower()</code>, otherwise it will also take into account the
 actor&rsquo;s depth. Depth testing is disabled by default.</p>
 
 <p><strong>set_depth_test_enabled is deprecated:</strong>
@@ -4462,7 +4462,7 @@ Use cogl_pipeline_set_depth_state() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3157-L3160">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3152-L3155">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4501,7 +4501,7 @@ The latest drawing apis take explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3174-L3177">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3169-L3172">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4524,13 +4524,13 @@ to be rendered with a different color. The color is determined according to
 the chosen fog mode; at it&rsquo;s simplest the color is linearly interpolated so
 that vertices at <code>z_near</code> are drawn fully with their original color and
 vertices at <code>z_far</code> are drawn fully with <code>fog_color</code>. Fogging will remain
-enabled until you call cogl_disable_fog().</p>
+enabled until you call <code>cogl_disable_fog()</code>.</p>
 
 <p><note>The fogging functions only work correctly when primitives use
 unmultiplied alpha colors. By default Cogl will premultiply textures
-and cogl_set_source_color() will premultiply colors, so unless you
+and <code>cogl_set_source_color()</code> will premultiply colors, so unless you
 explicitly load your textures requesting an unmultiplied internal format
-and use cogl_material_set_color() you can only use fogging with fully
+and use <code>cogl_material_set_color()</code> you can only use fogging with fully
 opaque primitives. This might improve in the future when we can depend
 on fragment shaders.</note></p>
 
@@ -4548,7 +4548,7 @@ Use #CoglSnippet shader api for fog</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3199-L3202">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3194-L3197">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4586,7 +4586,7 @@ The latest drawing apis take explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3215-L3218">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3210-L3213">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4621,7 +4621,7 @@ Use cogl_framebuffer_set_modelview_matrix()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3228-L3231">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3223-L3226">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4656,7 +4656,7 @@ Use cogl_framebuffer_set_projection_matrix()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3241-L3244">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3236-L3239">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4677,7 +4677,7 @@ Use cogl_framebuffer_set_projection_matrix()
                         <p>This function changes the material at the top of the source stack.
 The material at the top of this stack defines the GPU state used to
 process subsequent primitives, such as rectangles drawn with
-cogl_rectangle() or vertices drawn using cogl_vertex_buffer_draw().</p>
+<code>cogl_rectangle()</code> or vertices drawn using <code>cogl_vertex_buffer_draw()</code>.</p>
 
 <p><strong>set_source is deprecated:</strong>
 Latest drawing apis all take an explicit
@@ -4695,7 +4695,7 @@ Latest drawing apis all take an explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3258-L3261">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3253-L3256">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4721,7 +4721,7 @@ operation.</p>
 non-premultiplied. For example: use (1.0, 0.0, 0.0, 0.5) for
 semi-transparent red.</p>
 
-<p>See also cogl_set_source_color4ub() and cogl_set_source_color4f()
+<p>See also <code>cogl_set_source_color4ub()</code> and <code>cogl_set_source_color4f()</code>
 if you already have the color components.</p>
 
 <p><strong>set_source_color is deprecated:</strong>
@@ -4740,7 +4740,7 @@ Latest drawing apis all take an explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3281-L3284">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3276-L3279">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4763,7 +4763,7 @@ from the given color using normalized values for each component. This color
 will be used for any subsequent drawing operation.</p>
 
 <p>The value for each component is a fixed point number in the range
-between 0 and <code>1</code>.0. If the values passed in are outside that
+between 0 and <code>1.0</code>. If the values passed in are outside that
 range, they will be clamped.</p>
 
 <p><strong>set_source_color4f is deprecated:</strong>
@@ -4782,7 +4782,7 @@ Latest drawing apis all take an explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3301-L3304">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3296-L3299">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4823,7 +4823,7 @@ Latest drawing apis all take an explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3320-L3323">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3315-L3318">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4871,7 +4871,7 @@ Latest drawing apis all take an explicit
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3346-L3349">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3341-L3344">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4905,7 +4905,7 @@ Use cogl_framebuffer_set_viewport() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3358-L3361">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3353-L3356">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4942,7 +4942,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3373-L3376">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3368-L3371">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4961,7 +4961,7 @@ Use #CoglSnippet api</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Retrieves the information log for a coglobject, can be used in conjunction
-with cogl_shader_get_parameteriv() to retrieve the compiler warnings/error
+with <code>cogl_shader_get_parameteriv()</code> to retrieve the compiler warnings/error
 messages that caused a shader to not compile correctly, mainly useful for
 debugging purposes.</p>
 
@@ -4979,7 +4979,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3388-L3391">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3383-L3386">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5013,7 +5013,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3400-L3403">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3395-L3398">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5047,7 +5047,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3412-L3415">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3407-L3410">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5081,7 +5081,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3424-L3427">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3419-L3422">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5120,7 +5120,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3441-L3444">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3436-L3439">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5155,7 +5155,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3454-L3457">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3449-L3452">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5175,7 +5175,7 @@ Use #CoglSnippet api</p>
                       <div class="abstract">
                         <p>Very fast fixed point implementation of square root for integers.</p>
 
-<p>This function is at least 6x faster than clib sqrt() on x86, and (this is
+<p>This function is at least 6x faster than clib <code>sqrt()</code> on x86, and (this is
 not a typo!) about 500x faster on ARM without FPU. It&rsquo;s error is less than
 5<code>for arguments smaller than `COGL_SQRTI_ARG_5_PERCENT` and less than 10</code>
 for narguments smaller than <code>COGL_SQRTI_ARG_10_PERCENT</code>. The maximum
@@ -5191,7 +5191,7 @@ argument that can be passed to this function is <code>COGL_SQRTI_ARG_MAX</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3469-L3472">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3464-L3467">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5221,7 +5221,7 @@ argument that can be passed to this function is <code>COGL_SQRTI_ARG_MAX</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3477-L3480">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3472-L3475">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5255,7 +5255,7 @@ Use cogl_object_ref() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3489-L3492">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3484-L3487">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5289,7 +5289,7 @@ Use cogl_object_unref() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3501-L3504">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3496-L3499">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5323,7 +5323,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3513-L3516">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3508-L3511">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5358,7 +5358,7 @@ Use cogl_framebuffer_translate() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3526-L3529">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3521-L3524">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5383,17 +5383,17 @@ attribute with the same name.</p>
 <q>gl_MultiTexCoord0</q> to add standard attributes, like positions, colors
 and normals, or you can add custom attributes for use in shaders.</p>
 
-<p>The number of vertices declared when calling cogl_vertex_buffer_new()
+<p>The number of vertices declared when calling <code>cogl_vertex_buffer_new()</code>
 determines how many attribute values will be read from the supplied
 <code>pointer</code>.</p>
 
 <p>The data for your attribute isn&rsquo;t copied anywhere until you call
-cogl_vertex_buffer_submit(), or issue a draw call which automatically
+<code>cogl_vertex_buffer_submit()</code>, or issue a draw call which automatically
 submits pending attribute changes. so the supplied pointer must remain
 valid until then. If you are updating an existing attribute (done by
-re-adding it) then you still need to re-call cogl_vertex_buffer_submit()
+re-adding it) then you still need to re-call <code>cogl_vertex_buffer_submit()</code>
 to commit the changes to the GPU. Be carefull to minimize the number
-of calls to cogl_vertex_buffer_submit(), though.</p>
+of calls to <code>cogl_vertex_buffer_submit()</code>, though.</p>
 
 <p><note>If you are interleving attributes it is assumed that each interleaved
 attribute starts no farther than +- stride bytes from the other attributes
@@ -5421,7 +5421,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3567-L3570">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3562-L3565">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5440,7 +5440,7 @@ Use the #CoglPrimitive api instead</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Deletes an attribute from a buffer. You will need to call
-cogl_vertex_buffer_submit() or issue a draw call to commit this
+<code>cogl_vertex_buffer_submit()</code> or issue a draw call to commit this
 change to the GPU.</p>
 
 <p><strong>vertex_buffer_delete is deprecated:</strong>
@@ -5457,7 +5457,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3581-L3584">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3576-L3579">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5481,7 +5481,7 @@ Use the #CoglPrimitive api instead</p>
 individual buffers more reuseable it is possible to enable and disable
 attributes before using a buffer for drawing.</p>
 
-<p>You don&rsquo;t need to call cogl_vertex_buffer_submit() after using this
+<p>You don&rsquo;t need to call <code>cogl_vertex_buffer_submit()</code> after using this
 function.</p>
 
 <p><strong>vertex_buffer_disable is deprecated:</strong>
@@ -5498,7 +5498,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3600-L3603">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3595-L3598">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5536,7 +5536,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3616-L3619">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3611-L3614">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5575,7 +5575,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3633-L3636">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3628-L3631">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5599,7 +5599,7 @@ Use the #CoglPrimitive api instead</p>
 individual buffers more reuseable it is possible to enable and disable
 attributes before using a buffer for drawing.</p>
 
-<p>You don&rsquo;t need to call cogl_vertex_buffer_submit() after using this function</p>
+<p>You don&rsquo;t need to call <code>cogl_vertex_buffer_submit()</code> after using this function</p>
 
 <p><strong>vertex_buffer_enable is deprecated:</strong>
 Use the #CoglPrimitive api instead</p>
@@ -5615,7 +5615,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3651-L3654">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3646-L3649">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5649,7 +5649,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3663-L3666">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3658-L3661">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5705,7 +5705,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3697-L3700">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3692-L3695">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5739,7 +5739,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3709-L3712">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3704-L3707">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5776,7 +5776,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3724-L3727">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3719-L3722">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5810,7 +5810,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3736-L3739">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3731-L3734">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5844,7 +5844,7 @@ Use cogl_object_ref() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3748-L3751">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3743-L3746">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5884,7 +5884,7 @@ Use the #CoglPrimitive api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3766-L3769">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3761-L3764">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5918,7 +5918,7 @@ Use cogl_object_unref() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3778-L3781">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3773-L3776">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5952,7 +5952,7 @@ Use cogl_framebuffer_set_viewport instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3790-L3793">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3785-L3788">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -6332,7 +6332,7 @@ by a third fixed-point value.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
