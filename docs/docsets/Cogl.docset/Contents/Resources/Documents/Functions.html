@@ -1103,7 +1103,7 @@ Use the #CoglGLES2Context api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">beginGl</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -1202,7 +1202,7 @@ OpenGL is an implementation detail for Cogl and so it&rsquo;s
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">checkExtension</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">ext</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -1237,7 +1237,7 @@ Use cogl_framebuffer_clear() api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clear</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="Protocols/ColorProtocol.html">ColorProtocol</a></span><span class="p">,</span> <span class="nv">buffers</span><span class="p">:</span> <span class="kt">CUnsignedLong</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1274,7 +1274,7 @@ Calling this function has no effect</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipEnsure</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -1309,7 +1309,7 @@ Use cogl_framebuffer_pop_clip() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPop</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -1354,7 +1354,7 @@ The x, y, width, height arguments are inconsistent
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPush</span><span class="p">(</span><span class="n">xOffset</span> <span class="nv">x_offset</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">yOffset</span> <span class="nv">y_offset</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1400,7 +1400,7 @@ Use cogl_framebuffer_push_primitive_clip()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPush</span><span class="p">(</span><span class="nv">primitive</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglPrimitive</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">boundsX1</span> <span class="nv">bounds_x1</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">boundsY1</span> <span class="nv">bounds_y1</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">boundsX2</span> <span class="nv">bounds_x2</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">boundsY2</span> <span class="nv">bounds_y2</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1442,7 +1442,7 @@ Use cogl_framebuffer_push_rectangle_clip()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushRectangle</span><span class="p">(</span><span class="nv">x0</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y0</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">x1</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y1</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1483,7 +1483,7 @@ Use cogl_framebuffer_push_scissor_clip() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushWindowRect</span><span class="p">(</span><span class="n">xOffset</span> <span class="nv">x_offset</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">yOffset</span> <span class="nv">y_offset</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1524,7 +1524,7 @@ Use cogl_framebuffer_push_scissor_clip() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushWindowRectangle</span><span class="p">(</span><span class="n">xOffset</span> <span class="nv">x_offset</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">yOffset</span> <span class="nv">y_offset</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -1563,7 +1563,7 @@ This was originally added to allow us to restore
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipStackRestore</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -1605,7 +1605,7 @@ This was originally added to allow us to save the
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipStackSave</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -1764,7 +1764,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">createProgram</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -1799,7 +1799,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">createShader</span><span class="p">(</span><span class="n">shaderType</span> <span class="nv">shader_type</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl10ShaderTypea">ShaderType</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -1864,7 +1864,7 @@ Use #CoglSnippet shader api for fog</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">disableFog</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -1989,7 +1989,7 @@ Use the #CoglGLES2Context api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">endGl</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -2026,7 +2026,7 @@ Use cogl_has_feature() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">featuresAvailable</span><span class="p">(</span><span class="nv">features</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl12FeatureFlagsa">FeatureFlags</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -2115,7 +2115,7 @@ that is really known.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">framebufferGetColorFormat</span><span class="p">(</span><span class="nv">framebuffer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt"><a href="Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglPixelFormat</span></code></pre>
 
                         </div>
@@ -2151,7 +2151,7 @@ Use cogl_framebuffer_frustum() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">frustum</span><span class="p">(</span><span class="nv">left_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">right_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">top</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -2186,7 +2186,7 @@ Use cogl_pipeline_get_cull_face_mode() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBackfaceCullingEnabled</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -2223,7 +2223,7 @@ Use cogl_framebuffer_get_red/green/blue/alpha_bits()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBitmasks</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -2257,7 +2257,7 @@ Use cogl_pipeline_set_depth_state() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDepthTestEnabled</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -2291,7 +2291,7 @@ Use cogl_foreach_feature() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getFeatures</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CoglFeatureFlags</span></code></pre>
 
                         </div>
@@ -2326,7 +2326,7 @@ Use cogl_framebuffer_get_modelview_matrix()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getModelview</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -2362,7 +2362,7 @@ Not replaced</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getOptionGroup</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">GOptionGroup</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
@@ -2433,7 +2433,7 @@ Use cogl_framebuffer_get_projection_matrix()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getProjection</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -2476,7 +2476,7 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSource</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -2513,7 +2513,7 @@ Use cogl_framebuffer_get_viewport4fv()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getViewport</span><span class="p">(</span><span class="nv">v</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -2545,7 +2545,7 @@ Use cogl_matrix_get_gtype() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">gtypeMatrixGetType</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">GType</span></code></pre>
 
                         </div>
@@ -2700,7 +2700,7 @@ Use cogl_is_pipeline() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isMaterial</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -2765,7 +2765,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isProgram</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -2799,7 +2799,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isShader</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -2863,7 +2863,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isVertexBuffer</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -2898,7 +2898,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isVertexBufferIndices</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -2932,7 +2932,7 @@ Use cogl_object_ref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">materialRef</span><span class="p">(</span><span class="nv">material</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -2966,7 +2966,7 @@ Use cogl_object_unref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">materialUnref</span><span class="p">(</span><span class="nv">material</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3077,7 +3077,7 @@ Use cogl_framebuffer_orthographic() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">ortho</span><span class="p">(</span><span class="nv">left_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">right_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">top</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3117,7 +3117,7 @@ Use cogl_framebuffer_perspective() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">perspective</span><span class="p">(</span><span class="nv">fovy</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">aspect</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3197,7 +3197,7 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">popDrawBuffer</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -3234,7 +3234,7 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">popFramebuffer</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -3268,7 +3268,7 @@ Use cogl_framebuffer_pop_matrix() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">popMatrix</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -3306,7 +3306,7 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">popSource</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -3343,7 +3343,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programAttachShader</span><span class="p">(</span><span class="n">programHandle</span> <span class="nv">program_handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">shaderHandle</span> <span class="nv">shader_handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3379,7 +3379,7 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programGetUniformLocation</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformName</span> <span class="nv">uniform_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CInt</span></code></pre>
 
                         </div>
@@ -3415,7 +3415,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programLink</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3449,7 +3449,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programRef</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -3484,7 +3484,7 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniform1f</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3519,7 +3519,7 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniform1i</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3554,7 +3554,7 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformFloat</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">nComponents</span> <span class="nv">n_components</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3589,7 +3589,7 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformInt</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">nComponents</span> <span class="nv">n_components</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3624,7 +3624,7 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformMatrix</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">dimensions</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">transpose</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3659,7 +3659,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniform1f</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3694,7 +3694,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniform1i</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3729,7 +3729,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformFloat</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3764,7 +3764,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformInt</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3800,7 +3800,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformMatrix</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">transpose</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3835,7 +3835,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUnref</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3876,7 +3876,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUse</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -3912,7 +3912,7 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">pushDrawBuffer</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -4016,7 +4016,7 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">pushFramebuffer</span><span class="p">(</span><span class="nv">buffer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt"><a href="Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4051,7 +4051,7 @@ Use cogl_framebuffer_push_matrix() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">pushMatrix</span><span class="p">()</span></code></pre>
 
                         </div>
@@ -4089,7 +4089,7 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">pushSource</span><span class="p">(</span><span class="nv">material</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4131,7 +4131,7 @@ Use cogl_framebuffer_read_pixels() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">readPixels</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">source</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl15ReadPixelsFlagsa">ReadPixelsFlags</a></span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl11PixelFormata">PixelFormat</a></span><span class="p">,</span> <span class="nv">pixels</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4345,7 +4345,7 @@ Use cogl_framebuffer_rotate() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">rotate</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4380,7 +4380,7 @@ Use cogl_framebuffer_pop_matrix() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">scale</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4418,7 +4418,7 @@ Use cogl_pipeline_set_cull_face_mode() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setBackfaceCullingEnabled</span><span class="p">(</span><span class="nv">setting</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4456,7 +4456,7 @@ Use cogl_pipeline_set_depth_state() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setDepthTestEnabled</span><span class="p">(</span><span class="nv">setting</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4495,7 +4495,7 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setDrawBuffer</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl12BufferTargeta">BufferTarget</a></span><span class="p">,</span> <span class="nv">offscreen</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4542,7 +4542,7 @@ Use #CoglSnippet shader api for fog</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setFog</span><span class="p">(</span><span class="n">fogColor</span> <span class="nv">fog_color</span><span class="p">:</span> <span class="kt"><a href="Protocols/ColorProtocol.html">ColorProtocol</a></span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl7FogModea">FogMode</a></span><span class="p">,</span> <span class="nv">density</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4580,7 +4580,7 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setFramebuffer</span><span class="p">(</span><span class="nv">buffer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt"><a href="Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4615,7 +4615,7 @@ Use cogl_framebuffer_set_modelview_matrix()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setModelview</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4650,7 +4650,7 @@ Use cogl_framebuffer_set_projection_matrix()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setProjection</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4689,7 +4689,7 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSource</span><span class="p">(</span><span class="nv">material</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4734,7 +4734,7 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSource</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="Protocols/ColorProtocol.html">ColorProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4776,7 +4776,7 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSourceColor4f</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4817,7 +4817,7 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSourceColor4ub</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4865,7 +4865,7 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSource</span><span class="p">(</span><span class="nv">texture</span><span class="p">:</span> <span class="kt"><a href="Protocols/TextureProtocol.html">TextureProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4899,7 +4899,7 @@ Use cogl_framebuffer_set_viewport() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setViewport</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4936,7 +4936,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderCompile</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -4973,7 +4973,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderGetInfoLog</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -5007,7 +5007,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderGetType</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglShaderType</span></code></pre>
 
                         </div>
@@ -5041,7 +5041,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderIsCompiled</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
@@ -5075,7 +5075,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderRef</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -5114,7 +5114,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderSource</span><span class="p">(</span><span class="nv">shader</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5149,7 +5149,7 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderUnref</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5249,7 +5249,7 @@ Use cogl_object_ref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">textureRef</span><span class="p">(</span><span class="nv">texture</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -5283,7 +5283,7 @@ Use cogl_object_unref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">textureUnref</span><span class="p">(</span><span class="nv">texture</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5317,7 +5317,7 @@ Use cogl_framebuffer_transform() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">transform</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5352,7 +5352,7 @@ Use cogl_framebuffer_translate() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">translate</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5415,7 +5415,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferAdd</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">nComponents</span> <span class="nv">n_components</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl13AttributeTypea">AttributeType</a></span><span class="p">,</span> <span class="nv">normalized</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">,</span> <span class="nv">stride</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">pointer</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5451,7 +5451,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDelete</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5492,7 +5492,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDisable</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5530,7 +5530,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDraw</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl12VerticesModea">VerticesMode</a></span><span class="p">,</span> <span class="nv">first</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5569,7 +5569,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDrawElements</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl12VerticesModea">VerticesMode</a></span><span class="p">,</span> <span class="nv">indices</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">minIndex</span> <span class="nv">min_index</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">maxIndex</span> <span class="nv">max_index</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">indicesOffset</span> <span class="nv">indices_offset</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5609,7 +5609,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferEnable</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5643,7 +5643,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferGetNVertices</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CUnsignedInt</span></code></pre>
 
                         </div>
@@ -5699,7 +5699,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesGetForQuads</span><span class="p">(</span><span class="n">nIndices</span> <span class="nv">n_indices</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -5733,7 +5733,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesGetType</span><span class="p">(</span><span class="nv">indices</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglIndicesType</span></code></pre>
 
                         </div>
@@ -5770,7 +5770,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesNew</span><span class="p">(</span><span class="n">indicesType</span> <span class="nv">indices_type</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl11IndicesTypea">IndicesType</a></span><span class="p">,</span> <span class="n">indicesArray</span> <span class="nv">indices_array</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="n">indicesLen</span> <span class="nv">indices_len</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -5804,7 +5804,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferNew</span><span class="p">(</span><span class="n">nVertices</span> <span class="nv">n_vertices</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -5838,7 +5838,7 @@ Use cogl_object_ref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferRef</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
@@ -5878,7 +5878,7 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferSubmit</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5912,7 +5912,7 @@ Use cogl_object_unref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferUnref</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
@@ -5946,7 +5946,7 @@ Use cogl_framebuffer_set_viewport instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">viewport</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">)</span></code></pre>
 
                         </div>
@@ -6332,7 +6332,7 @@ by a third fixed-point value.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-06)</p>
+      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-10)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
