@@ -289,6 +289,599 @@ public extension TextureFlags {
     ///   the texture atlas used by Cogl
     static let no_atlas = COGL_TEXTURE_NO_ATLAS /* 4 */
 }
+// MARK: - Bitmap Class
+
+/// The `BitmapProtocol` protocol exposes the methods and properties of an underlying `CoglBitmap` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Bitmap`.
+/// Alternatively, use `BitmapRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
+
+public protocol BitmapProtocol {
+    /// Untyped pointer to the underlying `CoglBitmap` instance.
+    var ptr: UnsafeMutableRawPointer { get }
+
+    /// Typed pointer to the underlying `CoglBitmap` instance.
+    var bitmap_ptr: UnsafeMutablePointer<CoglBitmap> { get }
+}
+
+/// The `BitmapRef` type acts as a lightweight Swift reference to an underlying `CoglBitmap` instance.
+/// It exposes methods that can operate on this data type through `BitmapProtocol` conformance.
+/// Use `BitmapRef` only as an `unowned` reference to an existing `CoglBitmap` instance.
+///
+
+public struct BitmapRef: BitmapProtocol {
+    /// Untyped pointer to the underlying `CoglBitmap` instance.
+    /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer
+}
+
+public extension BitmapRef {
+    /// Designated initialiser from the underlying `C` data type
+    init(_ p: UnsafeMutablePointer<CoglBitmap>) {
+        ptr = UnsafeMutableRawPointer(p)    }
+
+    /// Reference intialiser for a related type that implements `BitmapProtocol`
+    init<T: BitmapProtocol>(_ other: T) {
+        ptr = other.ptr
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    init<T>(cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    init<T>(constPointer: UnsafePointer<T>) {
+        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    init(raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    init(raw: UnsafeMutableRawPointer) {
+        ptr = raw
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    init(opaquePointer: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(opaquePointer)
+    }
+
+        /// Loads an image file from disk. This function can be safely called from
+    /// within a thread.
+    init(file String_: UnsafePointer<CChar>) throws {
+        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        let rv = cogl_bitmap_new_from_file(String_, &error)
+        if let error = error {
+                throw ErrorType(error)
+        }
+        ptr = UnsafeMutableRawPointer(cast(rv))
+    }
+    /// Loads an image file from disk. This function can be safely called from
+    /// within a thread.
+    static func newFrom(file String_: UnsafePointer<CChar>) throws -> BitmapRef! {
+        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        let rv = cogl_bitmap_new_from_file(String_, &error)
+        if let error = error {
+                throw ErrorType(error)
+        }
+        return rv.map { BitmapRef(cast($0)) }
+    }
+}
+
+/// The `Bitmap` type acts as an owner of an underlying `CoglBitmap` instance.
+/// It provides the methods that can operate on this data type through `BitmapProtocol` conformance.
+/// Use `Bitmap` as a strong reference or owner of a `CoglBitmap` instance.
+///
+
+open class Bitmap: BitmapProtocol {
+    /// Untyped pointer to the underlying `CoglBitmap` instance.
+    /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Bitmap` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(_ op: UnsafeMutablePointer<CoglBitmap>) {
+        ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglBitmap` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Bitmap` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglBitmap>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglBitmap, cannot ref(cast(bitmap_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `BitmapProtocol`
+    /// `CoglBitmap` does not allow reference counting.
+    /// - Parameter other: an instance of a related type that implements `BitmapProtocol`
+    public init<T: BitmapProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other.bitmap_ptr)
+        // no reference counting for CoglBitmap, cannot ref(cast(bitmap_ptr))
+    }
+
+    /// Do-nothing destructor for`CoglBitmap`.
+    deinit {
+        // no reference counting for CoglBitmap, cannot unref(cast(bitmap_ptr))
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglBitmap, cannot ref(cast(bitmap_ptr))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglBitmap, cannot ref(cast(bitmap_ptr))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglBitmap, cannot ref(cast(bitmap_ptr))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglBitmap, cannot ref(cast(bitmap_ptr))
+    }
+
+    /// Loads an image file from disk. This function can be safely called from
+    /// within a thread.
+    public init(file String_: UnsafePointer<CChar>) throws {
+        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        let rv = cogl_bitmap_new_from_file(String_, &error)
+        if let error = error {
+                throw ErrorType(error)
+        }
+        ptr = UnsafeMutableRawPointer(cast(rv))
+    }
+
+    /// Loads an image file from disk. This function can be safely called from
+    /// within a thread.
+    public static func newFrom(file String_: UnsafePointer<CChar>) throws -> Bitmap! {
+        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        let rv = cogl_bitmap_new_from_file(String_, &error)
+        if let error = error {
+                throw ErrorType(error)
+        }
+        return rv.map { Bitmap(cast($0)) }
+    }
+
+}
+
+// MARK: - no Bitmap properties
+
+// MARK: - no signals
+
+
+public extension BitmapProtocol {
+    /// Return the stored, untyped pointer as a typed pointer to the `CoglBitmap` instance.
+    var bitmap_ptr: UnsafeMutablePointer<CoglBitmap> { return ptr.assumingMemoryBound(to: CoglBitmap.self) }
+
+}
+
+
+
+// MARK: - Offscreen Class
+
+/// The `OffscreenProtocol` protocol exposes the methods and properties of an underlying `CoglOffscreen` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Offscreen`.
+/// Alternatively, use `OffscreenRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
+
+public protocol OffscreenProtocol {
+    /// Untyped pointer to the underlying `CoglOffscreen` instance.
+    var ptr: UnsafeMutableRawPointer { get }
+
+    /// Typed pointer to the underlying `CoglOffscreen` instance.
+    var offscreen_ptr: UnsafeMutablePointer<CoglOffscreen> { get }
+}
+
+/// The `OffscreenRef` type acts as a lightweight Swift reference to an underlying `CoglOffscreen` instance.
+/// It exposes methods that can operate on this data type through `OffscreenProtocol` conformance.
+/// Use `OffscreenRef` only as an `unowned` reference to an existing `CoglOffscreen` instance.
+///
+
+public struct OffscreenRef: OffscreenProtocol {
+    /// Untyped pointer to the underlying `CoglOffscreen` instance.
+    /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer
+}
+
+public extension OffscreenRef {
+    /// Designated initialiser from the underlying `C` data type
+    init(_ p: UnsafeMutablePointer<CoglOffscreen>) {
+        ptr = UnsafeMutableRawPointer(p)    }
+
+    /// Reference intialiser for a related type that implements `OffscreenProtocol`
+    init<T: OffscreenProtocol>(_ other: T) {
+        ptr = other.ptr
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    init<T>(cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    init<T>(constPointer: UnsafePointer<T>) {
+        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    init(raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    init(raw: UnsafeMutableRawPointer) {
+        ptr = raw
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    init(opaquePointer: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(opaquePointer)
+    }
+
+        /// This creates an offscreen buffer object using the given `texture` as the
+    /// primary color buffer. It doesn't just initialize the contents of the
+    /// offscreen buffer with the `texture`; they are tightly bound so that
+    /// drawing to the offscreen buffer effectivly updates the contents of the
+    /// given texture. You don't need to destroy the offscreen buffer before
+    /// you can use the `texture` again.
+    /// 
+    /// <note>This only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
+    ///
+    /// **new_to_texture is deprecated:**
+    /// Use cogl_offscreen_new_with_texture instead.
+    @available(*, deprecated) init(to_texture texture: TextureProtocol) {
+        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
+        ptr = UnsafeMutableRawPointer(cast(rv))
+    }
+
+    /// This creates an offscreen framebuffer object using the given
+    /// `texture` as the primary color buffer. It doesn't just initialize
+    /// the contents of the offscreen buffer with the `texture`; they are
+    /// tightly bound so that drawing to the offscreen buffer effectively
+    /// updates the contents of the given texture. You don't need to
+    /// destroy the offscreen buffer before you can use the `texture` again.
+    /// 
+    /// <note>This api only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
+    /// 
+    /// The storage for the framebuffer is actually allocated lazily
+    /// so this function will never return `nil` to indicate a runtime
+    /// error. This means it is still possible to configure the framebuffer
+    /// before it is really allocated.
+    /// 
+    /// Simple applications without full error handling can simply rely on
+    /// Cogl to lazily allocate the storage of framebuffers but you should
+    /// be aware that if Cogl encounters an error (such as running out of
+    /// GPU memory) then your application will simply abort with an error
+    /// message. If you need to be able to catch such exceptions at runtime
+    /// then you can explicitly allocate your framebuffer when you have
+    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
+    /// passing in a `CoglError` argument to catch any exceptions.
+    init(texture: TextureProtocol) {
+        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
+        ptr = UnsafeMutableRawPointer(cast(rv))
+    }
+    /// This creates an offscreen buffer object using the given `texture` as the
+    /// primary color buffer. It doesn't just initialize the contents of the
+    /// offscreen buffer with the `texture`; they are tightly bound so that
+    /// drawing to the offscreen buffer effectivly updates the contents of the
+    /// given texture. You don't need to destroy the offscreen buffer before
+    /// you can use the `texture` again.
+    /// 
+    /// <note>This only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
+    ///
+    /// **new_to_texture is deprecated:**
+    /// Use cogl_offscreen_new_with_texture instead.
+    @available(*, deprecated) static func newTo(to_texture texture: TextureProtocol) -> OffscreenRef! {
+        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
+        return rv.map { OffscreenRef(cast($0)) }
+    }
+
+    /// This creates an offscreen framebuffer object using the given
+    /// `texture` as the primary color buffer. It doesn't just initialize
+    /// the contents of the offscreen buffer with the `texture`; they are
+    /// tightly bound so that drawing to the offscreen buffer effectively
+    /// updates the contents of the given texture. You don't need to
+    /// destroy the offscreen buffer before you can use the `texture` again.
+    /// 
+    /// <note>This api only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
+    /// 
+    /// The storage for the framebuffer is actually allocated lazily
+    /// so this function will never return `nil` to indicate a runtime
+    /// error. This means it is still possible to configure the framebuffer
+    /// before it is really allocated.
+    /// 
+    /// Simple applications without full error handling can simply rely on
+    /// Cogl to lazily allocate the storage of framebuffers but you should
+    /// be aware that if Cogl encounters an error (such as running out of
+    /// GPU memory) then your application will simply abort with an error
+    /// message. If you need to be able to catch such exceptions at runtime
+    /// then you can explicitly allocate your framebuffer when you have
+    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
+    /// passing in a `CoglError` argument to catch any exceptions.
+    static func newWith(texture: TextureProtocol) -> OffscreenRef! {
+        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
+        return rv.map { OffscreenRef(cast($0)) }
+    }
+}
+
+/// The `Offscreen` type acts as an owner of an underlying `CoglOffscreen` instance.
+/// It provides the methods that can operate on this data type through `OffscreenProtocol` conformance.
+/// Use `Offscreen` as a strong reference or owner of a `CoglOffscreen` instance.
+///
+
+open class Offscreen: OffscreenProtocol {
+    /// Untyped pointer to the underlying `CoglOffscreen` instance.
+    /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Offscreen` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(_ op: UnsafeMutablePointer<CoglOffscreen>) {
+        ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglOffscreen` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Offscreen` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglOffscreen>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglOffscreen, cannot ref(cast(offscreen_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `OffscreenProtocol`
+    /// `CoglOffscreen` does not allow reference counting.
+    /// - Parameter other: an instance of a related type that implements `OffscreenProtocol`
+    public init<T: OffscreenProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other.offscreen_ptr)
+        // no reference counting for CoglOffscreen, cannot ref(cast(offscreen_ptr))
+    }
+
+    /// Do-nothing destructor for`CoglOffscreen`.
+    deinit {
+        // no reference counting for CoglOffscreen, cannot unref(cast(offscreen_ptr))
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglOffscreen, cannot ref(cast(offscreen_ptr))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglOffscreen, cannot ref(cast(offscreen_ptr))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglOffscreen, cannot ref(cast(offscreen_ptr))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglOffscreen, cannot ref(cast(offscreen_ptr))
+    }
+
+    /// This creates an offscreen buffer object using the given `texture` as the
+    /// primary color buffer. It doesn't just initialize the contents of the
+    /// offscreen buffer with the `texture`; they are tightly bound so that
+    /// drawing to the offscreen buffer effectivly updates the contents of the
+    /// given texture. You don't need to destroy the offscreen buffer before
+    /// you can use the `texture` again.
+    /// 
+    /// <note>This only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
+    ///
+    /// **new_to_texture is deprecated:**
+    /// Use cogl_offscreen_new_with_texture instead.
+    @available(*, deprecated) public init(to_texture texture: TextureProtocol) {
+        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
+        ptr = UnsafeMutableRawPointer(cast(rv))
+    }
+
+    /// This creates an offscreen framebuffer object using the given
+    /// `texture` as the primary color buffer. It doesn't just initialize
+    /// the contents of the offscreen buffer with the `texture`; they are
+    /// tightly bound so that drawing to the offscreen buffer effectively
+    /// updates the contents of the given texture. You don't need to
+    /// destroy the offscreen buffer before you can use the `texture` again.
+    /// 
+    /// <note>This api only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
+    /// 
+    /// The storage for the framebuffer is actually allocated lazily
+    /// so this function will never return `nil` to indicate a runtime
+    /// error. This means it is still possible to configure the framebuffer
+    /// before it is really allocated.
+    /// 
+    /// Simple applications without full error handling can simply rely on
+    /// Cogl to lazily allocate the storage of framebuffers but you should
+    /// be aware that if Cogl encounters an error (such as running out of
+    /// GPU memory) then your application will simply abort with an error
+    /// message. If you need to be able to catch such exceptions at runtime
+    /// then you can explicitly allocate your framebuffer when you have
+    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
+    /// passing in a `CoglError` argument to catch any exceptions.
+    public init(texture: TextureProtocol) {
+        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
+        ptr = UnsafeMutableRawPointer(cast(rv))
+    }
+
+    /// This creates an offscreen buffer object using the given `texture` as the
+    /// primary color buffer. It doesn't just initialize the contents of the
+    /// offscreen buffer with the `texture`; they are tightly bound so that
+    /// drawing to the offscreen buffer effectivly updates the contents of the
+    /// given texture. You don't need to destroy the offscreen buffer before
+    /// you can use the `texture` again.
+    /// 
+    /// <note>This only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
+    ///
+    /// **new_to_texture is deprecated:**
+    /// Use cogl_offscreen_new_with_texture instead.
+    @available(*, deprecated) public static func newTo(to_texture texture: TextureProtocol) -> Offscreen! {
+        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
+        return rv.map { Offscreen(cast($0)) }
+    }
+
+    /// This creates an offscreen framebuffer object using the given
+    /// `texture` as the primary color buffer. It doesn't just initialize
+    /// the contents of the offscreen buffer with the `texture`; they are
+    /// tightly bound so that drawing to the offscreen buffer effectively
+    /// updates the contents of the given texture. You don't need to
+    /// destroy the offscreen buffer before you can use the `texture` again.
+    /// 
+    /// <note>This api only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
+    /// 
+    /// The storage for the framebuffer is actually allocated lazily
+    /// so this function will never return `nil` to indicate a runtime
+    /// error. This means it is still possible to configure the framebuffer
+    /// before it is really allocated.
+    /// 
+    /// Simple applications without full error handling can simply rely on
+    /// Cogl to lazily allocate the storage of framebuffers but you should
+    /// be aware that if Cogl encounters an error (such as running out of
+    /// GPU memory) then your application will simply abort with an error
+    /// message. If you need to be able to catch such exceptions at runtime
+    /// then you can explicitly allocate your framebuffer when you have
+    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
+    /// passing in a `CoglError` argument to catch any exceptions.
+    public static func newWith(texture: TextureProtocol) -> Offscreen! {
+        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
+        return rv.map { Offscreen(cast($0)) }
+    }
+
+}
+
+// MARK: - no Offscreen properties
+
+// MARK: - no signals
+
+
+public extension OffscreenProtocol {
+    /// Return the stored, untyped pointer as a typed pointer to the `CoglOffscreen` instance.
+    var offscreen_ptr: UnsafeMutablePointer<CoglOffscreen> { return ptr.assumingMemoryBound(to: CoglOffscreen.self) }
+
+}
+
+
 /// Data types for the components of a vertex attribute.
 public typealias AttributeType = CoglAttributeType
 
@@ -784,505 +1377,6 @@ public extension WinsysFeature {
     static let sync_and_complete_event = COGL_WINSYS_FEATURE_SYNC_AND_COMPLETE_EVENT /* 10 */
     static let n_features = COGL_WINSYS_FEATURE_N_FEATURES /* 11 */
 }
-// MARK: - Bitmap Class
-
-/// The `BitmapProtocol` protocol exposes the methods and properties of an underlying `CoglBitmap` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Bitmap`.
-/// Alternatively, use `BitmapRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
-
-public protocol BitmapProtocol {
-    /// Untyped pointer to the underlying `CoglBitmap` instance.
-    var ptr: UnsafeMutableRawPointer { get }
-
-    /// Typed pointer to the underlying `CoglBitmap` instance.
-    var bitmap_ptr: UnsafeMutablePointer<CoglBitmap> { get }
-}
-
-/// The `BitmapRef` type acts as a lightweight Swift reference to an underlying `CoglBitmap` instance.
-/// It exposes methods that can operate on this data type through `BitmapProtocol` conformance.
-/// Use `BitmapRef` only as an `unowned` reference to an existing `CoglBitmap` instance.
-///
-
-public struct BitmapRef: BitmapProtocol {
-    /// Untyped pointer to the underlying `CoglBitmap` instance.
-    /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
-}
-
-public extension BitmapRef {
-    /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<CoglBitmap>) {
-        ptr = UnsafeMutableRawPointer(p)    }
-
-    /// Reference intialiser for a related type that implements `BitmapProtocol`
-    init<T: BitmapProtocol>(_ other: T) {
-        ptr = other.ptr
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
-        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    init(raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
-        ptr = raw
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    init(opaquePointer: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(opaquePointer)
-    }
-
-        /// Loads an image file from disk. This function can be safely called from
-    /// within a thread.
-    init(file String_: UnsafePointer<CChar>) throws {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
-        let rv = cogl_bitmap_new_from_file(String_, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
-        self.init(cast(rv))
-    }
-    /// Loads an image file from disk. This function can be safely called from
-    /// within a thread.
-    static func newFrom(file String_: UnsafePointer<CChar>) throws -> BitmapRef! {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
-        let rv = cogl_bitmap_new_from_file(String_, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
-        return rv.map { BitmapRef(cast($0)) }
-    }
-}
-
-/// The `Bitmap` type acts as an owner of an underlying `CoglBitmap` instance.
-/// It provides the methods that can operate on this data type through `BitmapProtocol` conformance.
-/// Use `Bitmap` as a strong reference or owner of a `CoglBitmap` instance.
-///
-
-open class Bitmap: BitmapProtocol {
-    /// Untyped pointer to the underlying `CoglBitmap` instance.
-    /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `Bitmap` instance.
-    public init(_ op: UnsafeMutablePointer<CoglBitmap>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Reference convenience intialiser for a related type that implements `BitmapProtocol`
-    /// `CoglBitmap` does not allow reference counting.
-    public convenience init<T: BitmapProtocol>(_ other: T) {
-        self.init(cast(other.bitmap_ptr))
-        // no reference counting for CoglBitmap, cannot ref(cast(bitmap_ptr))
-    }
-
-    /// Do-nothing destructor for`CoglBitmap`.
-    deinit {
-        // no reference counting for CoglBitmap, cannot unref(cast(bitmap_ptr))
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglBitmap.self, capacity: 1) { $0 })
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglBitmap.self))
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglBitmap.self))
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglBitmap>(opaquePointer))
-    }
-
-    /// Loads an image file from disk. This function can be safely called from
-    /// within a thread.
-    public convenience init(file String_: UnsafePointer<CChar>) throws {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
-        let rv = cogl_bitmap_new_from_file(String_, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
-        self.init(cast(rv))
-    }
-
-    /// Loads an image file from disk. This function can be safely called from
-    /// within a thread.
-    public static func newFrom(file String_: UnsafePointer<CChar>) throws -> Bitmap! {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
-        let rv = cogl_bitmap_new_from_file(String_, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
-        return rv.map { Bitmap(cast($0)) }
-    }
-
-}
-
-// MARK: - no Bitmap properties
-
-// MARK: - no signals
-
-
-public extension BitmapProtocol {
-    /// Return the stored, untyped pointer as a typed pointer to the `CoglBitmap` instance.
-    var bitmap_ptr: UnsafeMutablePointer<CoglBitmap> { return ptr.assumingMemoryBound(to: CoglBitmap.self) }
-
-}
-
-
-
-// MARK: - Offscreen Class
-
-/// The `OffscreenProtocol` protocol exposes the methods and properties of an underlying `CoglOffscreen` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Offscreen`.
-/// Alternatively, use `OffscreenRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
-
-public protocol OffscreenProtocol {
-    /// Untyped pointer to the underlying `CoglOffscreen` instance.
-    var ptr: UnsafeMutableRawPointer { get }
-
-    /// Typed pointer to the underlying `CoglOffscreen` instance.
-    var offscreen_ptr: UnsafeMutablePointer<CoglOffscreen> { get }
-}
-
-/// The `OffscreenRef` type acts as a lightweight Swift reference to an underlying `CoglOffscreen` instance.
-/// It exposes methods that can operate on this data type through `OffscreenProtocol` conformance.
-/// Use `OffscreenRef` only as an `unowned` reference to an existing `CoglOffscreen` instance.
-///
-
-public struct OffscreenRef: OffscreenProtocol {
-    /// Untyped pointer to the underlying `CoglOffscreen` instance.
-    /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
-}
-
-public extension OffscreenRef {
-    /// Designated initialiser from the underlying `C` data type
-    init(_ p: UnsafeMutablePointer<CoglOffscreen>) {
-        ptr = UnsafeMutableRawPointer(p)    }
-
-    /// Reference intialiser for a related type that implements `OffscreenProtocol`
-    init<T: OffscreenProtocol>(_ other: T) {
-        ptr = other.ptr
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    init<T>(cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    init<T>(constPointer: UnsafePointer<T>) {
-        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    init(raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    init(raw: UnsafeMutableRawPointer) {
-        ptr = raw
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    init(opaquePointer: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(opaquePointer)
-    }
-
-        /// This creates an offscreen buffer object using the given `texture` as the
-    /// primary color buffer. It doesn't just initialize the contents of the
-    /// offscreen buffer with the `texture`; they are tightly bound so that
-    /// drawing to the offscreen buffer effectivly updates the contents of the
-    /// given texture. You don't need to destroy the offscreen buffer before
-    /// you can use the `texture` again.
-    /// 
-    /// <note>This only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    ///
-    /// **new_to_texture is deprecated:**
-    /// Use cogl_offscreen_new_with_texture instead.
-    @available(*, deprecated) init(to_texture texture: TextureProtocol) {
-        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
-        self.init(cast(rv))
-    }
-
-    /// This creates an offscreen framebuffer object using the given
-    /// `texture` as the primary color buffer. It doesn't just initialize
-    /// the contents of the offscreen buffer with the `texture`; they are
-    /// tightly bound so that drawing to the offscreen buffer effectively
-    /// updates the contents of the given texture. You don't need to
-    /// destroy the offscreen buffer before you can use the `texture` again.
-    /// 
-    /// <note>This api only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    /// 
-    /// The storage for the framebuffer is actually allocated lazily
-    /// so this function will never return `nil` to indicate a runtime
-    /// error. This means it is still possible to configure the framebuffer
-    /// before it is really allocated.
-    /// 
-    /// Simple applications without full error handling can simply rely on
-    /// Cogl to lazily allocate the storage of framebuffers but you should
-    /// be aware that if Cogl encounters an error (such as running out of
-    /// GPU memory) then your application will simply abort with an error
-    /// message. If you need to be able to catch such exceptions at runtime
-    /// then you can explicitly allocate your framebuffer when you have
-    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
-    /// passing in a `CoglError` argument to catch any exceptions.
-    init(texture: TextureProtocol) {
-        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
-        self.init(cast(rv))
-    }
-    /// This creates an offscreen buffer object using the given `texture` as the
-    /// primary color buffer. It doesn't just initialize the contents of the
-    /// offscreen buffer with the `texture`; they are tightly bound so that
-    /// drawing to the offscreen buffer effectivly updates the contents of the
-    /// given texture. You don't need to destroy the offscreen buffer before
-    /// you can use the `texture` again.
-    /// 
-    /// <note>This only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    ///
-    /// **new_to_texture is deprecated:**
-    /// Use cogl_offscreen_new_with_texture instead.
-    @available(*, deprecated) static func newTo(to_texture texture: TextureProtocol) -> OffscreenRef! {
-        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
-        return rv.map { OffscreenRef(cast($0)) }
-    }
-
-    /// This creates an offscreen framebuffer object using the given
-    /// `texture` as the primary color buffer. It doesn't just initialize
-    /// the contents of the offscreen buffer with the `texture`; they are
-    /// tightly bound so that drawing to the offscreen buffer effectively
-    /// updates the contents of the given texture. You don't need to
-    /// destroy the offscreen buffer before you can use the `texture` again.
-    /// 
-    /// <note>This api only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    /// 
-    /// The storage for the framebuffer is actually allocated lazily
-    /// so this function will never return `nil` to indicate a runtime
-    /// error. This means it is still possible to configure the framebuffer
-    /// before it is really allocated.
-    /// 
-    /// Simple applications without full error handling can simply rely on
-    /// Cogl to lazily allocate the storage of framebuffers but you should
-    /// be aware that if Cogl encounters an error (such as running out of
-    /// GPU memory) then your application will simply abort with an error
-    /// message. If you need to be able to catch such exceptions at runtime
-    /// then you can explicitly allocate your framebuffer when you have
-    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
-    /// passing in a `CoglError` argument to catch any exceptions.
-    static func newWith(texture: TextureProtocol) -> OffscreenRef! {
-        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
-        return rv.map { OffscreenRef(cast($0)) }
-    }
-}
-
-/// The `Offscreen` type acts as an owner of an underlying `CoglOffscreen` instance.
-/// It provides the methods that can operate on this data type through `OffscreenProtocol` conformance.
-/// Use `Offscreen` as a strong reference or owner of a `CoglOffscreen` instance.
-///
-
-open class Offscreen: OffscreenProtocol {
-    /// Untyped pointer to the underlying `CoglOffscreen` instance.
-    /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `Offscreen` instance.
-    public init(_ op: UnsafeMutablePointer<CoglOffscreen>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Reference convenience intialiser for a related type that implements `OffscreenProtocol`
-    /// `CoglOffscreen` does not allow reference counting.
-    public convenience init<T: OffscreenProtocol>(_ other: T) {
-        self.init(cast(other.offscreen_ptr))
-        // no reference counting for CoglOffscreen, cannot ref(cast(offscreen_ptr))
-    }
-
-    /// Do-nothing destructor for`CoglOffscreen`.
-    deinit {
-        // no reference counting for CoglOffscreen, cannot unref(cast(offscreen_ptr))
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglOffscreen.self, capacity: 1) { $0 })
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglOffscreen.self))
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglOffscreen.self))
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglOffscreen>(opaquePointer))
-    }
-
-    /// This creates an offscreen buffer object using the given `texture` as the
-    /// primary color buffer. It doesn't just initialize the contents of the
-    /// offscreen buffer with the `texture`; they are tightly bound so that
-    /// drawing to the offscreen buffer effectivly updates the contents of the
-    /// given texture. You don't need to destroy the offscreen buffer before
-    /// you can use the `texture` again.
-    /// 
-    /// <note>This only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    ///
-    /// **new_to_texture is deprecated:**
-    /// Use cogl_offscreen_new_with_texture instead.
-    @available(*, deprecated) public convenience init(to_texture texture: TextureProtocol) {
-        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
-        self.init(cast(rv))
-    }
-
-    /// This creates an offscreen framebuffer object using the given
-    /// `texture` as the primary color buffer. It doesn't just initialize
-    /// the contents of the offscreen buffer with the `texture`; they are
-    /// tightly bound so that drawing to the offscreen buffer effectively
-    /// updates the contents of the given texture. You don't need to
-    /// destroy the offscreen buffer before you can use the `texture` again.
-    /// 
-    /// <note>This api only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    /// 
-    /// The storage for the framebuffer is actually allocated lazily
-    /// so this function will never return `nil` to indicate a runtime
-    /// error. This means it is still possible to configure the framebuffer
-    /// before it is really allocated.
-    /// 
-    /// Simple applications without full error handling can simply rely on
-    /// Cogl to lazily allocate the storage of framebuffers but you should
-    /// be aware that if Cogl encounters an error (such as running out of
-    /// GPU memory) then your application will simply abort with an error
-    /// message. If you need to be able to catch such exceptions at runtime
-    /// then you can explicitly allocate your framebuffer when you have
-    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
-    /// passing in a `CoglError` argument to catch any exceptions.
-    public convenience init(texture: TextureProtocol) {
-        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
-        self.init(cast(rv))
-    }
-
-    /// This creates an offscreen buffer object using the given `texture` as the
-    /// primary color buffer. It doesn't just initialize the contents of the
-    /// offscreen buffer with the `texture`; they are tightly bound so that
-    /// drawing to the offscreen buffer effectivly updates the contents of the
-    /// given texture. You don't need to destroy the offscreen buffer before
-    /// you can use the `texture` again.
-    /// 
-    /// <note>This only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    ///
-    /// **new_to_texture is deprecated:**
-    /// Use cogl_offscreen_new_with_texture instead.
-    @available(*, deprecated) public static func newTo(to_texture texture: TextureProtocol) -> Offscreen! {
-        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
-        return rv.map { Offscreen(cast($0)) }
-    }
-
-    /// This creates an offscreen framebuffer object using the given
-    /// `texture` as the primary color buffer. It doesn't just initialize
-    /// the contents of the offscreen buffer with the `texture`; they are
-    /// tightly bound so that drawing to the offscreen buffer effectively
-    /// updates the contents of the given texture. You don't need to
-    /// destroy the offscreen buffer before you can use the `texture` again.
-    /// 
-    /// <note>This api only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    /// 
-    /// The storage for the framebuffer is actually allocated lazily
-    /// so this function will never return `nil` to indicate a runtime
-    /// error. This means it is still possible to configure the framebuffer
-    /// before it is really allocated.
-    /// 
-    /// Simple applications without full error handling can simply rely on
-    /// Cogl to lazily allocate the storage of framebuffers but you should
-    /// be aware that if Cogl encounters an error (such as running out of
-    /// GPU memory) then your application will simply abort with an error
-    /// message. If you need to be able to catch such exceptions at runtime
-    /// then you can explicitly allocate your framebuffer when you have
-    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
-    /// passing in a `CoglError` argument to catch any exceptions.
-    public static func newWith(texture: TextureProtocol) -> Offscreen! {
-        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
-        return rv.map { Offscreen(cast($0)) }
-    }
-
-}
-
-// MARK: - no Offscreen properties
-
-// MARK: - no signals
-
-
-public extension OffscreenProtocol {
-    /// Return the stored, untyped pointer as a typed pointer to the `CoglOffscreen` instance.
-    var offscreen_ptr: UnsafeMutablePointer<CoglOffscreen> { return ptr.assumingMemoryBound(to: CoglOffscreen.self) }
-
-}
-
-
 // MARK: - Texture Interface
 
 /// The `TextureProtocol` protocol exposes the methods and properties of an underlying `CoglTexture` instance.
@@ -1363,15 +1457,27 @@ open class Texture: TextureProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `Texture` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Texture` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<CoglTexture>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `TextureProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Texture` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglTexture>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for , cannot ref(cast(texture_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `TextureProtocol`
     /// `` does not allow reference counting.
-    public convenience init<T: TextureProtocol>(_ other: T) {
-        self.init(cast(other.texture_ptr))
+    /// - Parameter other: an instance of a related type that implements `TextureProtocol`
+    public init<T: TextureProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other.texture_ptr)
         // no reference counting for , cannot ref(cast(texture_ptr))
     }
 
@@ -1382,26 +1488,61 @@ open class Texture: TextureProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglTexture.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for , cannot ref(cast(texture_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglTexture.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for , cannot ref(cast(texture_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglTexture.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for , cannot ref(cast(texture_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglTexture>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for , cannot ref(cast(texture_ptr))
     }
 
 
@@ -3863,7 +4004,7 @@ public extension ColorRef {
         /// Creates a new (empty) color
     init() {
         let rv = cogl_color_new()
-        self.init(cast(rv))
+        ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
 
@@ -3880,15 +4021,27 @@ open class Color: ColorProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `Color` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Color` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<CoglColor>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `ColorProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglColor` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Color` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglColor>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglColor, cannot ref(cast(color_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `ColorProtocol`
     /// `CoglColor` does not allow reference counting.
-    public convenience init<T: ColorProtocol>(_ other: T) {
-        self.init(cast(other.color_ptr))
+    /// - Parameter other: an instance of a related type that implements `ColorProtocol`
+    public init<T: ColorProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other.color_ptr)
         // no reference counting for CoglColor, cannot ref(cast(color_ptr))
     }
 
@@ -3899,32 +4052,67 @@ open class Color: ColorProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglColor.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglColor, cannot ref(cast(color_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglColor.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglColor, cannot ref(cast(color_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglColor.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglColor, cannot ref(cast(color_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglColor>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglColor, cannot ref(cast(color_ptr))
     }
 
     /// Creates a new (empty) color
-    public convenience init() {
+    public init() {
         let rv = cogl_color_new()
-        self.init(cast(rv))
+        ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
 
@@ -4496,15 +4684,27 @@ open class Euler: EulerProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `Euler` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Euler` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<CoglEuler>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `EulerProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglEuler` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Euler` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglEuler>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglEuler, cannot ref(cast(_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `EulerProtocol`
     /// `CoglEuler` does not allow reference counting.
-    public convenience init<T: EulerProtocol>(_ other: T) {
-        self.init(cast(other._ptr))
+    /// - Parameter other: an instance of a related type that implements `EulerProtocol`
+    public init<T: EulerProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other._ptr)
         // no reference counting for CoglEuler, cannot ref(cast(_ptr))
     }
 
@@ -4515,26 +4715,61 @@ open class Euler: EulerProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EulerProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglEuler.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `EulerProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglEuler, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EulerProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglEuler.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `EulerProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglEuler, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EulerProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglEuler.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `EulerProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglEuler, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EulerProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglEuler>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `EulerProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglEuler, cannot ref(cast(_ptr))
     }
 
 
@@ -4634,15 +4869,27 @@ open class Material: MaterialProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `Material` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Material` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<CoglMaterial>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `MaterialProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglMaterial` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Material` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglMaterial>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglMaterial, cannot ref(cast(_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `MaterialProtocol`
     /// `CoglMaterial` does not allow reference counting.
-    public convenience init<T: MaterialProtocol>(_ other: T) {
-        self.init(cast(other._ptr))
+    /// - Parameter other: an instance of a related type that implements `MaterialProtocol`
+    public init<T: MaterialProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other._ptr)
         // no reference counting for CoglMaterial, cannot ref(cast(_ptr))
     }
 
@@ -4653,26 +4900,61 @@ open class Material: MaterialProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglMaterial.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglMaterial, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglMaterial.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglMaterial, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglMaterial.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglMaterial, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglMaterial>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglMaterial, cannot ref(cast(_ptr))
     }
 
 
@@ -5580,15 +5862,27 @@ open class MaterialLayer: MaterialLayerProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `MaterialLayer` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `MaterialLayer` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<CoglMaterialLayer>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `MaterialLayerProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglMaterialLayer` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `MaterialLayer` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglMaterialLayer>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglMaterialLayer, cannot ref(cast(_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `MaterialLayerProtocol`
     /// `CoglMaterialLayer` does not allow reference counting.
-    public convenience init<T: MaterialLayerProtocol>(_ other: T) {
-        self.init(cast(other._ptr))
+    /// - Parameter other: an instance of a related type that implements `MaterialLayerProtocol`
+    public init<T: MaterialLayerProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other._ptr)
         // no reference counting for CoglMaterialLayer, cannot ref(cast(_ptr))
     }
 
@@ -5599,26 +5893,61 @@ open class MaterialLayer: MaterialLayerProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialLayerProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglMaterialLayer.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialLayerProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglMaterialLayer, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialLayerProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglMaterialLayer.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialLayerProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglMaterialLayer, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialLayerProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglMaterialLayer.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialLayerProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglMaterialLayer, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialLayerProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglMaterialLayer>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialLayerProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglMaterialLayer, cannot ref(cast(_ptr))
     }
 
 
@@ -5989,15 +6318,27 @@ open class Matrix: MatrixProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `Matrix` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Matrix` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<CoglMatrix>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `MatrixProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglMatrix` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Matrix` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglMatrix>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglMatrix, cannot ref(cast(matrix_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `MatrixProtocol`
     /// `CoglMatrix` does not allow reference counting.
-    public convenience init<T: MatrixProtocol>(_ other: T) {
-        self.init(cast(other.matrix_ptr))
+    /// - Parameter other: an instance of a related type that implements `MatrixProtocol`
+    public init<T: MatrixProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other.matrix_ptr)
         // no reference counting for CoglMatrix, cannot ref(cast(matrix_ptr))
     }
 
@@ -6008,26 +6349,61 @@ open class Matrix: MatrixProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglMatrix.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglMatrix, cannot ref(cast(matrix_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglMatrix.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglMatrix, cannot ref(cast(matrix_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglMatrix.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglMatrix, cannot ref(cast(matrix_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglMatrix>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglMatrix, cannot ref(cast(matrix_ptr))
     }
 
 
@@ -6371,15 +6747,27 @@ open class Quaternion: QuaternionProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `Quaternion` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Quaternion` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<CoglQuaternion>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `QuaternionProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglQuaternion` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Quaternion` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglQuaternion>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglQuaternion, cannot ref(cast(_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `QuaternionProtocol`
     /// `CoglQuaternion` does not allow reference counting.
-    public convenience init<T: QuaternionProtocol>(_ other: T) {
-        self.init(cast(other._ptr))
+    /// - Parameter other: an instance of a related type that implements `QuaternionProtocol`
+    public init<T: QuaternionProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other._ptr)
         // no reference counting for CoglQuaternion, cannot ref(cast(_ptr))
     }
 
@@ -6390,26 +6778,61 @@ open class Quaternion: QuaternionProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `QuaternionProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglQuaternion.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `QuaternionProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglQuaternion, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `QuaternionProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglQuaternion.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `QuaternionProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglQuaternion, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `QuaternionProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglQuaternion.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `QuaternionProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglQuaternion, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `QuaternionProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglQuaternion>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `QuaternionProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglQuaternion, cannot ref(cast(_ptr))
     }
 
 
@@ -6509,15 +6932,27 @@ open class TextureVertex: TextureVertexProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `TextureVertex` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `TextureVertex` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<CoglTextureVertex>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `TextureVertexProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglTextureVertex` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `TextureVertex` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<CoglTextureVertex>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglTextureVertex, cannot ref(cast(_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `TextureVertexProtocol`
     /// `CoglTextureVertex` does not allow reference counting.
-    public convenience init<T: TextureVertexProtocol>(_ other: T) {
-        self.init(cast(other._ptr))
+    /// - Parameter other: an instance of a related type that implements `TextureVertexProtocol`
+    public init<T: TextureVertexProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other._ptr)
         // no reference counting for CoglTextureVertex, cannot ref(cast(_ptr))
     }
 
@@ -6528,26 +6963,61 @@ open class TextureVertex: TextureVertexProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureVertexProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: CoglTextureVertex.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureVertexProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglTextureVertex, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureVertexProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: CoglTextureVertex.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureVertexProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglTextureVertex, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureVertexProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: CoglTextureVertex.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureVertexProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglTextureVertex, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureVertexProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<CoglTextureVertex>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureVertexProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglTextureVertex, cannot ref(cast(_ptr))
     }
 
 
@@ -6666,15 +7136,27 @@ open class _ColorSizeCheck: _ColorSizeCheckProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `_ColorSizeCheck` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `_ColorSizeCheck` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<_CoglColorSizeCheck>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `_ColorSizeCheckProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `_CoglColorSizeCheck` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `_ColorSizeCheck` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<_CoglColorSizeCheck>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for _CoglColorSizeCheck, cannot ref(cast(_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `_ColorSizeCheckProtocol`
     /// `_CoglColorSizeCheck` does not allow reference counting.
-    public convenience init<T: _ColorSizeCheckProtocol>(_ other: T) {
-        self.init(cast(other._ptr))
+    /// - Parameter other: an instance of a related type that implements `_ColorSizeCheckProtocol`
+    public init<T: _ColorSizeCheckProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other._ptr)
         // no reference counting for _CoglColorSizeCheck, cannot ref(cast(_ptr))
     }
 
@@ -6685,26 +7167,61 @@ open class _ColorSizeCheck: _ColorSizeCheckProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_ColorSizeCheckProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: _CoglColorSizeCheck.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_ColorSizeCheckProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for _CoglColorSizeCheck, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_ColorSizeCheckProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: _CoglColorSizeCheck.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_ColorSizeCheckProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for _CoglColorSizeCheck, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_ColorSizeCheckProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: _CoglColorSizeCheck.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_ColorSizeCheckProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for _CoglColorSizeCheck, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_ColorSizeCheckProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<_CoglColorSizeCheck>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_ColorSizeCheckProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for _CoglColorSizeCheck, cannot ref(cast(_ptr))
     }
 
 
@@ -6804,15 +7321,27 @@ open class _MatrixSizeCheck: _MatrixSizeCheckProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `_MatrixSizeCheck` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `_MatrixSizeCheck` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<_CoglMatrixSizeCheck>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `_MatrixSizeCheckProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `_CoglMatrixSizeCheck` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `_MatrixSizeCheck` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<_CoglMatrixSizeCheck>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for _CoglMatrixSizeCheck, cannot ref(cast(_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `_MatrixSizeCheckProtocol`
     /// `_CoglMatrixSizeCheck` does not allow reference counting.
-    public convenience init<T: _MatrixSizeCheckProtocol>(_ other: T) {
-        self.init(cast(other._ptr))
+    /// - Parameter other: an instance of a related type that implements `_MatrixSizeCheckProtocol`
+    public init<T: _MatrixSizeCheckProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other._ptr)
         // no reference counting for _CoglMatrixSizeCheck, cannot ref(cast(_ptr))
     }
 
@@ -6823,26 +7352,61 @@ open class _MatrixSizeCheck: _MatrixSizeCheckProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_MatrixSizeCheckProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: _CoglMatrixSizeCheck.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_MatrixSizeCheckProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for _CoglMatrixSizeCheck, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_MatrixSizeCheckProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: _CoglMatrixSizeCheck.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_MatrixSizeCheckProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for _CoglMatrixSizeCheck, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_MatrixSizeCheckProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: _CoglMatrixSizeCheck.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_MatrixSizeCheckProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for _CoglMatrixSizeCheck, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_MatrixSizeCheckProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<_CoglMatrixSizeCheck>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_MatrixSizeCheckProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for _CoglMatrixSizeCheck, cannot ref(cast(_ptr))
     }
 
 
@@ -6942,15 +7506,27 @@ open class _TextureVertexSizeCheck: _TextureVertexSizeCheckProtocol {
     public let ptr: UnsafeMutableRawPointer
 
     /// Designated initialiser from the underlying `C` data type.
-    /// Ownership is transferred to the `_TextureVertexSizeCheck` instance.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `_TextureVertexSizeCheck` instance.
+    /// - Parameter op: pointer to the underlying object
     public init(_ op: UnsafeMutablePointer<_CoglTextureVertexSizeCheck>) {
         ptr = UnsafeMutableRawPointer(op)
     }
 
-    /// Reference convenience intialiser for a related type that implements `_TextureVertexSizeCheckProtocol`
+    /// Designated initialiser from the underlying `C` data type.
+    /// `_CoglTextureVertexSizeCheck` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `_TextureVertexSizeCheck` instance.
+    /// - Parameter op: pointer to the underlying object
+    public init(retaining op: UnsafeMutablePointer<_CoglTextureVertexSizeCheck>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for _CoglTextureVertexSizeCheck, cannot ref(cast(_ptr))
+    }
+
+    /// Reference intialiser for a related type that implements `_TextureVertexSizeCheckProtocol`
     /// `_CoglTextureVertexSizeCheck` does not allow reference counting.
-    public convenience init<T: _TextureVertexSizeCheckProtocol>(_ other: T) {
-        self.init(cast(other._ptr))
+    /// - Parameter other: an instance of a related type that implements `_TextureVertexSizeCheckProtocol`
+    public init<T: _TextureVertexSizeCheckProtocol>(_ other: T) {
+        ptr = UnsafeMutableRawPointer(other._ptr)
         // no reference counting for _CoglTextureVertexSizeCheck, cannot ref(cast(_ptr))
     }
 
@@ -6961,26 +7537,61 @@ open class _TextureVertexSizeCheck: _TextureVertexSizeCheckProtocol {
 
     /// Unsafe typed initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_TextureVertexSizeCheckProtocol`.**
-    public convenience init<T>(cPointer: UnsafeMutablePointer<T>) {
-        self.init(cPointer.withMemoryRebound(to: _CoglTextureVertexSizeCheck.self, capacity: 1) { $0 })
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_TextureVertexSizeCheckProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for _CoglTextureVertexSizeCheck, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_TextureVertexSizeCheckProtocol`.**
-    public convenience init(raw: UnsafeRawPointer) {
-        self.init(UnsafeMutableRawPointer(mutating: raw).assumingMemoryBound(to: _CoglTextureVertexSizeCheck.self))
+    /// - Parameter p: raw pointer to the underlying object
+    public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_TextureVertexSizeCheckProtocol`.**
+    public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for _CoglTextureVertexSizeCheck, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_TextureVertexSizeCheckProtocol`.**
-    public convenience init(raw: UnsafeMutableRawPointer) {
-        self.init(raw.assumingMemoryBound(to: _CoglTextureVertexSizeCheck.self))
+    /// - Parameter p: mutable raw pointer to the underlying object
+    public init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_TextureVertexSizeCheckProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for _CoglTextureVertexSizeCheck, cannot ref(cast(_ptr))
     }
 
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_TextureVertexSizeCheckProtocol`.**
-    public convenience init(opaquePointer: OpaquePointer) {
-        self.init(UnsafeMutablePointer<_CoglTextureVertexSizeCheck>(opaquePointer))
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `_TextureVertexSizeCheckProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for _CoglTextureVertexSizeCheck, cannot ref(cast(_ptr))
     }
 
 
