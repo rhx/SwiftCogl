@@ -912,7 +912,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>Functions</h1>
             <p>The following functions are available globally.</p>
 
@@ -925,9 +925,11 @@
               <div class="task-name-container">
                 <a name="/no%20signals"></a>
                 <a name="//apple_ref/swift/Section/no signals" class="dashAnchor"></a>
-                <a href="#/no%20signals">
-                  <h3 class="section-name">no signals</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/no%20signals"></a>
+                  <h3 class="section-name"><p>no signals</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -955,7 +957,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1706-L1709">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1847-L1850">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -985,7 +987,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1715-L1718">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1856-L1859">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1015,7 +1017,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1724-L1727">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1865-L1868">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1042,7 +1044,7 @@ succeeding.</p>
 through the modification of GL state; that will never be reliably supported,
 but if you are trying to do something like:</p>
 <pre class="highlight swift"><code><span class="p">{</span>
-   <span class="o">-</span> <span class="n">setup</span> <span class="n">some</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
+   <span class="o">-</span> <span class="n">setup</span> <span class="kd">some</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
    <span class="o">-</span> <span class="n">draw</span> <span class="n">using</span> <span class="kt">OpenGL</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="nf">glDrawArrays</span><span class="p">()</span> <span class="p">)</span>
    <span class="o">-</span> <span class="n">reset</span> <span class="n">modified</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
    <span class="o">-</span> <span class="k">continue</span> <span class="n">using</span> <span class="kt">Cogl</span> <span class="n">to</span> <span class="n">draw</span>
@@ -1053,7 +1055,7 @@ but if you are trying to do something like:</p>
 and <code>cogl_end_gl()</code>:</p>
 <pre class="highlight swift"><code><span class="p">{</span>
    <span class="nf">cogl_begin_gl</span> <span class="p">();</span>
-   <span class="o">-</span> <span class="n">setup</span> <span class="n">some</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
+   <span class="o">-</span> <span class="n">setup</span> <span class="kd">some</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
    <span class="o">-</span> <span class="n">draw</span> <span class="n">using</span> <span class="kt">OpenGL</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="nf">glDrawArrays</span><span class="p">()</span> <span class="p">)</span>
    <span class="o">-</span> <span class="n">reset</span> <span class="n">modified</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
    <span class="nf">cogl_end_gl</span> <span class="p">();</span>
@@ -1063,7 +1065,7 @@ and <code>cogl_end_gl()</code>:</p>
 
 <p>Don&rsquo;t ever try and do:</p>
 <pre class="highlight swift"><code><span class="p">{</span>
-   <span class="o">-</span> <span class="n">setup</span> <span class="n">some</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
+   <span class="o">-</span> <span class="n">setup</span> <span class="kd">some</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
    <span class="o">-</span> <span class="n">use</span> <span class="kt">Cogl</span> <span class="n">to</span> <span class="n">draw</span>
    <span class="o">-</span> <span class="n">reset</span> <span class="n">modified</span> <span class="kt">OpenGL</span> <span class="n">state</span><span class="o">.</span>
 <span class="p">}</span>
@@ -1103,13 +1105,13 @@ Use the #CoglGLES2Context api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">beginGl</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1802-L1805">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1943-L1946">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1139,7 +1141,7 @@ Use the #CoglGLES2Context api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1810-L1813">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1951-L1954">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1169,7 +1171,7 @@ Use the #CoglGLES2Context api instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1818-L1821">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1959-L1962">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1202,13 +1204,13 @@ OpenGL is an implementation detail for Cogl and so it&rsquo;s
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">checkExtension</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">ext</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1835-L1838">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1976-L1979">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1237,13 +1239,13 @@ Use cogl_framebuffer_clear() api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clear</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="Protocols/ColorProtocol.html">ColorProtocol</a></span><span class="p">,</span> <span class="nv">buffers</span><span class="p">:</span> <span class="kt">CUnsignedLong</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1848-L1851">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1989-L1992">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1274,13 +1276,13 @@ Calling this function has no effect</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipEnsure</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1863-L1866">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2004-L2007">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1309,13 +1311,13 @@ Use cogl_framebuffer_pop_clip() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPop</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1876-L1879">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2017-L2020">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1354,13 +1356,13 @@ The x, y, width, height arguments are inconsistent
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPush</span><span class="p">(</span><span class="n">xOffset</span> <span class="nv">x_offset</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">yOffset</span> <span class="nv">y_offset</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1899-L1902">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2040-L2043">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1400,13 +1402,13 @@ Use cogl_framebuffer_push_primitive_clip()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPush</span><span class="p">(</span><span class="nv">primitive</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglPrimitive</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">boundsX1</span> <span class="nv">bounds_x1</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">boundsY1</span> <span class="nv">bounds_y1</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">boundsX2</span> <span class="nv">bounds_x2</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">boundsY2</span> <span class="nv">bounds_y2</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1923-L1926">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2064-L2067">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1442,13 +1444,13 @@ Use cogl_framebuffer_push_rectangle_clip()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushRectangle</span><span class="p">(</span><span class="nv">x0</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y0</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">x1</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y1</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1943-L1946">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2084-L2087">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1483,13 +1485,13 @@ Use cogl_framebuffer_push_scissor_clip() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushWindowRect</span><span class="p">(</span><span class="n">xOffset</span> <span class="nv">x_offset</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">yOffset</span> <span class="nv">y_offset</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1962-L1965">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2103-L2106">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1524,13 +1526,13 @@ Use cogl_framebuffer_push_scissor_clip() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushWindowRectangle</span><span class="p">(</span><span class="n">xOffset</span> <span class="nv">x_offset</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">yOffset</span> <span class="nv">y_offset</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1981-L1984">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2122-L2125">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1563,13 +1565,13 @@ This was originally added to allow us to restore
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipStackRestore</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L1998-L2001">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2139-L2142">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1605,13 +1607,13 @@ This was originally added to allow us to save the
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipStackSave</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2018-L2021">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2159-L2162">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1641,7 +1643,7 @@ This was originally added to allow us to save the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2026-L2029">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2167-L2170">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1671,7 +1673,7 @@ This was originally added to allow us to save the
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2034-L2037">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2175-L2178">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1704,7 +1706,7 @@ parameter, when using <code>CoglColor</code>&lt;!&ndash; &ndash;&gt;s as keys in
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2046-L2049">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2187-L2190">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1735,7 +1737,7 @@ values into a <code>CoglColor</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2056-L2059">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2197-L2200">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1764,13 +1766,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">createProgram</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2069-L2072">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2210-L2213">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1799,13 +1801,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">createShader</span><span class="p">(</span><span class="n">shaderType</span> <span class="nv">shader_type</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl10ShaderTypea">ShaderType</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2082-L2085">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2223-L2226">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1835,7 +1837,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2091-L2094">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2232-L2235">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1864,13 +1866,13 @@ Use #CoglSnippet shader api for fog</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">disableFog</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2104-L2107">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2245-L2248">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1900,7 +1902,7 @@ Use #CoglSnippet shader api for fog</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2112-L2115">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2253-L2256">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1930,7 +1932,7 @@ Use #CoglSnippet shader api for fog</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2120-L2123">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2261-L2264">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1960,7 +1962,7 @@ Use #CoglSnippet shader api for fog</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2128-L2131">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2269-L2272">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1989,13 +1991,13 @@ Use the #CoglGLES2Context api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">endGl</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2141-L2144">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2282-L2285">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2026,13 +2028,13 @@ Use cogl_has_feature() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">featuresAvailable</span><span class="p">(</span><span class="nv">features</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl12FeatureFlagsa">FeatureFlags</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2156-L2159">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2297-L2300">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2081,7 +2083,7 @@ starts to use ARBfb programs itself for the material API.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2184-L2187">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2325-L2328">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2115,13 +2117,13 @@ that is really known.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">framebufferGetColorFormat</span><span class="p">(</span><span class="nv">framebuffer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt"><a href="Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglPixelFormat</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2202-L2205">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2343-L2346">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2151,13 +2153,13 @@ Use cogl_framebuffer_frustum() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">frustum</span><span class="p">(</span><span class="nv">left_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">right_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">top</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2216-L2219">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2357-L2360">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2186,13 +2188,13 @@ Use cogl_pipeline_get_cull_face_mode() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBackfaceCullingEnabled</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2229-L2232">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2370-L2373">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2223,13 +2225,13 @@ Use cogl_framebuffer_get_red/green/blue/alpha_bits()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBitmasks</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2244-L2247">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2385-L2388">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2257,13 +2259,13 @@ Use cogl_pipeline_set_depth_state() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getDepthTestEnabled</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2256-L2259">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2397-L2400">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2291,13 +2293,13 @@ Use cogl_foreach_feature() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getFeatures</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CoglFeatureFlags</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2268-L2271">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2409-L2412">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2326,13 +2328,13 @@ Use cogl_framebuffer_get_modelview_matrix()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getModelview</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2281-L2284">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2422-L2425">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2362,13 +2364,13 @@ Not replaced</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getOptionGroup</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">GOptionGroup</span><span class="o">&gt;!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2295-L2298">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2436-L2439">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2404,7 +2406,7 @@ and may return a junk pointer if you do.</note></p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2310-L2313">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2451-L2454">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2433,13 +2435,13 @@ Use cogl_framebuffer_get_projection_matrix()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getProjection</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2323-L2326">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2464-L2467">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2476,13 +2478,13 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSource</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2344-L2347">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2485-L2488">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2513,13 +2515,13 @@ Use cogl_framebuffer_get_viewport4fv()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">getViewport</span><span class="p">(</span><span class="nv">v</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2359-L2362">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2500-L2503">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2545,13 +2547,13 @@ Use cogl_matrix_get_gtype() instead.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">gtypeMatrixGetType</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">GType</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2371-L2374">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2512-L2515">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2581,7 +2583,7 @@ Use cogl_matrix_get_gtype() instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2379-L2382">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2520-L2523">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2611,7 +2613,7 @@ Use cogl_matrix_get_gtype() instead.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2388-L2391">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2529-L2532">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2642,7 +2644,7 @@ count reaches 0, the resources allocated by <code>handle</code> will be freed</p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2398-L2401">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2539-L2542">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2672,7 +2674,7 @@ count reaches 0, the resources allocated by <code>handle</code> will be freed</p
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2407-L2410">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2548-L2551">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2700,13 +2702,13 @@ Use cogl_is_pipeline() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isMaterial</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2419-L2422">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2560-L2563">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2737,7 +2739,7 @@ framebuffer object.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2429-L2432">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2570-L2573">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2765,13 +2767,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isProgram</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2441-L2444">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2582-L2585">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2799,13 +2801,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isShader</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2453-L2456">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2594-L2597">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2835,7 +2837,7 @@ Use #CoglSnippet api</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2462-L2465">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2603-L2606">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2863,13 +2865,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isVertexBuffer</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2474-L2477">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2615-L2618">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2898,13 +2900,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">isVertexBufferIndices</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2487-L2490">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2628-L2631">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2932,13 +2934,13 @@ Use cogl_object_ref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">materialRef</span><span class="p">(</span><span class="nv">material</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2499-L2502">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2640-L2643">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2966,13 +2968,13 @@ Use cogl_object_unref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">materialUnref</span><span class="p">(</span><span class="nv">material</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2511-L2514">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2652-L2655">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3005,7 +3007,7 @@ inverse matrix these are not considered in the comparison.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2523-L2526">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2664-L2667">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3035,7 +3037,7 @@ inverse matrix these are not considered in the comparison.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2531-L2534">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2672-L2675">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3064,7 +3066,7 @@ calculated.</p>
 
 <p><note>This function copies the arguments from OpenGL&rsquo;s <code>glOrtho()</code> even
 though they are unnecessarily confusing due to the z near and z far
-arguments actually being a <q>distance</q> from the origin, where
+arguments actually being a &ldquo;distance&rdquo; from the origin, where
 negative values are behind the viewer, instead of coordinates for
 the z clipping planes which would have been consistent with the
 left, right bottom and top arguments.</note></p>
@@ -3077,13 +3079,13 @@ Use cogl_framebuffer_orthographic() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">ortho</span><span class="p">(</span><span class="nv">left_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">right_</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">top</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2557-L2560">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2698-L2701">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3117,13 +3119,13 @@ Use cogl_framebuffer_perspective() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">perspective</span><span class="p">(</span><span class="nv">fovy</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">aspect</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2575-L2578">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2716-L2719">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3167,7 +3169,7 @@ to COGL_MATERIAL_FILTER_NEAREST.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2598-L2601">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2739-L2742">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3197,13 +3199,13 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">popDrawBuffer</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2612-L2615">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2753-L2756">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3234,13 +3236,13 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">popFramebuffer</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2627-L2630">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2768-L2771">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3268,13 +3270,13 @@ Use cogl_framebuffer_pop_matrix() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">popMatrix</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2639-L2642">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2780-L2783">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3306,13 +3308,13 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">popSource</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2655-L2658">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2796-L2799">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3343,13 +3345,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programAttachShader</span><span class="p">(</span><span class="n">programHandle</span> <span class="nv">program_handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">shaderHandle</span> <span class="nv">shader_handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2670-L2673">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2811-L2814">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3379,13 +3381,13 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programGetUniformLocation</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformName</span> <span class="nv">uniform_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CInt</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2684-L2687">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2825-L2828">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3415,13 +3417,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programLink</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2698-L2701">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2839-L2842">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3449,13 +3451,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programRef</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2710-L2713">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2851-L2854">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3484,13 +3486,13 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniform1f</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2723-L2726">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2864-L2867">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3519,13 +3521,13 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniform1i</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2736-L2739">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2877-L2880">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3554,13 +3556,13 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformFloat</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">nComponents</span> <span class="nv">n_components</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2749-L2752">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2890-L2893">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3589,13 +3591,13 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformInt</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">nComponents</span> <span class="nv">n_components</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2762-L2765">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2903-L2906">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3624,13 +3626,13 @@ Use #CoglSnippet api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformMatrix</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">dimensions</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">transpose</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2775-L2778">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2916-L2919">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3659,13 +3661,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniform1f</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2788-L2791">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2929-L2932">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3694,13 +3696,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniform1i</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2801-L2804">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2942-L2945">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3729,13 +3731,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformFloat</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2814-L2817">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2955-L2958">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3764,13 +3766,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformInt</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2827-L2830">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2968-L2971">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3800,13 +3802,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformMatrix</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">transpose</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2841-L2844">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2982-L2985">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3835,13 +3837,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUnref</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2854-L2857">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2995-L2998">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3876,13 +3878,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUse</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2873-L2876">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3014-L3017">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3912,13 +3914,13 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">pushDrawBuffer</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2887-L2890">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3028-L3031">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4016,13 +4018,13 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">pushFramebuffer</span><span class="p">(</span><span class="nv">buffer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt"><a href="Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2971-L2974">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3112-L3115">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4051,13 +4053,13 @@ Use cogl_framebuffer_push_matrix() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">pushMatrix</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L2984-L2987">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3125-L3128">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4089,13 +4091,13 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">pushSource</span><span class="p">(</span><span class="nv">material</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3000-L3003">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3141-L3144">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4131,13 +4133,13 @@ Use cogl_framebuffer_read_pixels() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">readPixels</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">source</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl15ReadPixelsFlagsa">ReadPixelsFlags</a></span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl11PixelFormata">PixelFormat</a></span><span class="p">,</span> <span class="nv">pixels</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3020-L3023">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3161-L3164">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4167,7 +4169,7 @@ Use cogl_framebuffer_read_pixels() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3029-L3032">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3170-L3173">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4205,7 +4207,7 @@ layers in the current source material then default texture coordinates
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3046-L3049">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3187-L3190">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4237,7 +4239,7 @@ texture pass in <code>tx1</code>=0.0 <code>ty1</code>=0.0 <code>tx2</code>=1.0 <
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3057-L3060">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3198-L3201">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4275,7 +4277,7 @@ meaning as in <code>cogl_rectangle()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3074-L3077">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3215-L3218">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4313,7 +4315,7 @@ meaning as in <code>cogl_rectangle_with_texture_coords()</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3091-L3094">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3232-L3235">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4345,13 +4347,13 @@ Use cogl_framebuffer_rotate() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">rotate</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3107-L3110">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3248-L3251">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4380,13 +4382,13 @@ Use cogl_framebuffer_pop_matrix() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">scale</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3120-L3123">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3261-L3264">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4418,13 +4420,13 @@ Use cogl_pipeline_set_cull_face_mode() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setBackfaceCullingEnabled</span><span class="p">(</span><span class="nv">setting</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3136-L3139">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3277-L3280">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4456,13 +4458,13 @@ Use cogl_pipeline_set_depth_state() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setDepthTestEnabled</span><span class="p">(</span><span class="nv">setting</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3152-L3155">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3293-L3296">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4495,13 +4497,13 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setDrawBuffer</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl12BufferTargeta">BufferTarget</a></span><span class="p">,</span> <span class="nv">offscreen</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3169-L3172">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3310-L3313">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4542,13 +4544,13 @@ Use #CoglSnippet shader api for fog</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setFog</span><span class="p">(</span><span class="n">fogColor</span> <span class="nv">fog_color</span><span class="p">:</span> <span class="kt"><a href="Protocols/ColorProtocol.html">ColorProtocol</a></span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl7FogModea">FogMode</a></span><span class="p">,</span> <span class="nv">density</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3194-L3197">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3335-L3338">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4580,13 +4582,13 @@ The latest drawing apis take explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setFramebuffer</span><span class="p">(</span><span class="nv">buffer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt"><a href="Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a></span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3210-L3213">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3351-L3354">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4615,13 +4617,13 @@ Use cogl_framebuffer_set_modelview_matrix()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setModelview</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3223-L3226">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3364-L3367">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4650,13 +4652,13 @@ Use cogl_framebuffer_set_projection_matrix()
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setProjection</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3236-L3239">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3377-L3380">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4689,13 +4691,13 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSource</span><span class="p">(</span><span class="nv">material</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3253-L3256">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3394-L3397">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4734,13 +4736,13 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSource</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="Protocols/ColorProtocol.html">ColorProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3276-L3279">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3417-L3420">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4776,13 +4778,13 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSourceColor4f</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3296-L3299">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3437-L3440">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4817,13 +4819,13 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSourceColor4ub</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3315-L3318">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3456-L3459">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4865,13 +4867,13 @@ Latest drawing apis all take an explicit
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSource</span><span class="p">(</span><span class="nv">texture</span><span class="p">:</span> <span class="kt"><a href="Protocols/TextureProtocol.html">TextureProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3341-L3344">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3482-L3485">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4899,13 +4901,13 @@ Use cogl_framebuffer_set_viewport() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">setViewport</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3353-L3356">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3494-L3497">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4936,13 +4938,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderCompile</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3368-L3371">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3509-L3512">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4973,13 +4975,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderGetInfoLog</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3383-L3386">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3524-L3527">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5007,13 +5009,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderGetType</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglShaderType</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3395-L3398">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3536-L3539">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5041,13 +5043,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderIsCompiled</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglBool</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3407-L3410">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3548-L3551">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5075,13 +5077,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderRef</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3419-L3422">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3560-L3563">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5114,13 +5116,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderSource</span><span class="p">(</span><span class="nv">shader</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3436-L3439">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3577-L3580">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5149,13 +5151,13 @@ Use #CoglSnippet api</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">shaderUnref</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3449-L3452">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3590-L3593">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5191,7 +5193,7 @@ argument that can be passed to this function is <code>COGL_SQRTI_ARG_MAX</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3464-L3467">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3605-L3608">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5221,7 +5223,7 @@ argument that can be passed to this function is <code>COGL_SQRTI_ARG_MAX</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3472-L3475">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3613-L3616">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5249,13 +5251,13 @@ Use cogl_object_ref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">textureRef</span><span class="p">(</span><span class="nv">texture</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3484-L3487">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3625-L3628">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5283,13 +5285,13 @@ Use cogl_object_unref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">textureUnref</span><span class="p">(</span><span class="nv">texture</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3496-L3499">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3637-L3640">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5317,13 +5319,13 @@ Use cogl_framebuffer_transform() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">transform</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="kt"><a href="Protocols/MatrixProtocol.html">MatrixProtocol</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3508-L3511">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3649-L3652">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5352,13 +5354,13 @@ Use cogl_framebuffer_translate() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">translate</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="n">gfloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3521-L3524">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3662-L3665">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5379,8 +5381,8 @@ Use cogl_framebuffer_translate() instead</p>
                         <p>Adds an attribute to a buffer, or replaces a previously added
 attribute with the same name.</p>
 
-<p>You either can use one of the built-in names such as <q>gl_Vertex</q>, or
-<q>gl_MultiTexCoord0</q> to add standard attributes, like positions, colors
+<p>You either can use one of the built-in names such as &ldquo;gl_Vertex&rdquo;, or
+&ldquo;gl_MultiTexCoord0&rdquo; to add standard attributes, like positions, colors
 and normals, or you can add custom attributes for use in shaders.</p>
 
 <p>The number of vertices declared when calling <code>cogl_vertex_buffer_new()</code>
@@ -5415,13 +5417,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferAdd</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">nComponents</span> <span class="nv">n_components</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl13AttributeTypea">AttributeType</a></span><span class="p">,</span> <span class="nv">normalized</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl5Bool_a">Bool_</a></span><span class="p">,</span> <span class="nv">stride</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">pointer</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3562-L3565">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3703-L3706">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5451,13 +5453,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDelete</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3576-L3579">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3717-L3720">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5492,13 +5494,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDisable</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3595-L3598">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3736-L3739">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5530,13 +5532,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDraw</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl12VerticesModea">VerticesMode</a></span><span class="p">,</span> <span class="nv">first</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3611-L3614">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3752-L3755">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5569,13 +5571,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDrawElements</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl12VerticesModea">VerticesMode</a></span><span class="p">,</span> <span class="nv">indices</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">minIndex</span> <span class="nv">min_index</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">maxIndex</span> <span class="nv">max_index</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="n">indicesOffset</span> <span class="nv">indices_offset</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3628-L3631">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3769-L3772">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5609,13 +5611,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferEnable</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3646-L3649">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3787-L3790">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5643,13 +5645,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferGetNVertices</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CUnsignedInt</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3658-L3661">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3799-L3802">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5699,13 +5701,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesGetForQuads</span><span class="p">(</span><span class="n">nIndices</span> <span class="nv">n_indices</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3692-L3695">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3833-L3836">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5733,13 +5735,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesGetType</span><span class="p">(</span><span class="nv">indices</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglIndicesType</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3704-L3707">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3845-L3848">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5770,13 +5772,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesNew</span><span class="p">(</span><span class="n">indicesType</span> <span class="nv">indices_type</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl11IndicesTypea">IndicesType</a></span><span class="p">,</span> <span class="n">indicesArray</span> <span class="nv">indices_array</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">,</span> <span class="n">indicesLen</span> <span class="nv">indices_len</span><span class="p">:</span> <span class="kt">CInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3719-L3722">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3860-L3863">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5804,13 +5806,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferNew</span><span class="p">(</span><span class="n">nVertices</span> <span class="nv">n_vertices</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3731-L3734">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3872-L3875">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5838,13 +5840,13 @@ Use cogl_object_ref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferRef</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3743-L3746">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3884-L3887">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5878,13 +5880,13 @@ Use the #CoglPrimitive api instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferSubmit</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3761-L3764">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3902-L3905">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5912,13 +5914,13 @@ Use cogl_object_unref() instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferUnref</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt"><a href="Typealiases.html#/s:4Cogl6Handlea">Handle</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3773-L3776">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3914-L3917">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -5946,21 +5948,17 @@ Use cogl_framebuffer_set_viewport instead</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated)</span>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="nf">viewport</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CUnsignedInt</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3785-L3788">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L3926-L3929">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -6332,8 +6330,8 @@ by a third fixed-point value.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2019-10-10)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-03-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
