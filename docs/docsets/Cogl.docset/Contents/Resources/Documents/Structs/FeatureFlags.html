@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WinsysFeature Extension Reference</title>
+    <title>FeatureFlags Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Extension/WinsysFeature" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/FeatureFlags" class="dashAnchor"></a>
 
-    <a title="WinsysFeature Extension Reference"></a>
+    <a title="FeatureFlags Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -50,7 +50,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Cogl Reference</a>
       <img class="carat" src="../img/carat.png" />
-      WinsysFeature Extension Reference
+      FeatureFlags Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -895,14 +895,14 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>WinsysFeature</h1>
+            <h1>FeatureFlags</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt"><a href="../Typealiases.html#/s:4Cogl13WinsysFeaturea">WinsysFeature</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FeatureFlags</span> <span class="p">:</span> <span class="kt">OptionSet</span></code></pre>
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Flags for the supported features.</p>
 
           </div>
         </section>
@@ -914,9 +914,925 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E16multipleOnscreenABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/multipleOnscreen" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E16multipleOnscreenABvpZ">multipleOnscreen</a>
+                    <a name="/s:4Cogl12FeatureFlagsV8rawValues6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/rawValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV8rawValues6UInt32Vvp">rawValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The corresponding value of the raw type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">rawValue</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L297">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV8intValueSivp"></a>
+                    <a name="//apple_ref/swift/Property/intValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV8intValueSivp">intValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The equivalent raw Int value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">intValue</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L299">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV3ints5Int32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/int" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV3ints5Int32Vvp">int</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The equivalent raw <code>gint</code> value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">int</span><span class="p">:</span> <span class="n">gint</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L301">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV5valueSo0abC0avp"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV5valueSo0abC0avp">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The equivalent underlying <code>CoglFeatureFlags</code> enum value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CoglFeatureFlags</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L303">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV8rawValueACs6UInt32V_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(rawValue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV8rawValueACs6UInt32V_tcfc">init(rawValue:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance with the specified raw value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L306">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsVyACSo0abC0acfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsVyACSo0abC0acfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance with the specified <code>CoglFeatureFlags</code> enum value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">enumValue</span><span class="p">:</span> <span class="kt">CoglFeatureFlags</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L308">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsVyACSicfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsVyACSicfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance with the specified Int value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">intValue</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L310">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsVyACs5Int32Vcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsVyACs5Int32Vcfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance with the specified <code>gint</code> value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">gintValue</span><span class="p">:</span> <span class="n">gint</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L312">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV16textureRectangleACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/textureRectangle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV16textureRectangleACvpZ">textureRectangle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ARB_texture_rectangle support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">textureRectangle</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L315">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV11textureNpotACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/textureNpot" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV11textureNpotACvpZ">textureNpot</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Non power of two textures are supported
+   by the hardware. This is a equivalent to the
+   <code>COGL_FEATURE_TEXTURE_NPOT_BASIC</code>, <code>COGL_FEATURE_TEXTURE_NPOT_MIPMAP</code>
+   and <code>COGL_FEATURE_TEXTURE_NPOT_REPEAT</code> features combined.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">textureNpot</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L320">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV10textureYuvACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/textureYuv" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV10textureYuvACvpZ">textureYuv</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ycbcr conversion support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">textureYuv</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L322">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV17textureReadPixelsACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/textureReadPixels" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV17textureReadPixelsACvpZ">textureReadPixels</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>glReadPixels()</code> support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">textureReadPixels</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L324">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV11shadersGlslACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/shadersGlsl" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV11shadersGlslACvpZ">shadersGlsl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>GLSL support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">shadersGlsl</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L326">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV9offscreenACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/offscreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV9offscreenACvpZ">offscreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>FBO support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">offscreen</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L328">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV20offscreenMultisampleACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/offscreenMultisample" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV20offscreenMultisampleACvpZ">offscreenMultisample</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multisample support on FBOs</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">offscreenMultisample</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L330">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV13offscreenBlitACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/offscreenBlit" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV13offscreenBlitACvpZ">offscreenBlit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blit support on FBOs</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">offscreenBlit</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L332">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV14fourClipPlanesACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/fourClipPlanes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV14fourClipPlanesACvpZ">fourClipPlanes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>At least 4 clip planes available</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">fourClipPlanes</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L334">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV13stencilBufferACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/stencilBuffer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV13stencilBufferACvpZ">stencilBuffer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stencil buffer support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">stencilBuffer</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L336">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV4vbosACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/vbos" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV4vbosACvpZ">vbos</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>VBO support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">vbos</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L338">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV4pbosACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/pbos" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV4pbosACvpZ">pbos</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>PBO support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">pbos</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L340">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV18unsignedIntIndicesACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/unsignedIntIndices" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV18unsignedIntIndicesACvpZ">unsignedIntIndices</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set if
+    <code>COGL_INDICES_TYPE_UNSIGNED_INT</code> is supported in
+    <code>cogl_vertex_buffer_indices_new()</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">unsignedIntIndices</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L344">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV10depthRangeACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/depthRange" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV10depthRangeACvpZ">depthRange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>cogl_material_set_depth_range()</code> support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">depthRange</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L346">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV16textureNpotBasicACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/textureNpotBasic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV16textureNpotBasicACvpZ">textureNpotBasic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The hardware supports non power
+    of two textures, but you also need to check the
+    <code>COGL_FEATURE_TEXTURE_NPOT_MIPMAP</code> and <code>COGL_FEATURE_TEXTURE_NPOT_REPEAT</code>
+    features to know if the hardware supports npot texture mipmaps
+    or repeat modes other than
+    <code>COGL_PIPELINE_WRAP_MODE_CLAMP_TO_EDGE</code> respectively.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">textureNpotBasic</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L353">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV17textureNpotMipmapACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/textureNpotMipmap" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV17textureNpotMipmapACvpZ">textureNpotMipmap</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Mipmapping is supported in
+    conjuntion with non power of two textures.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">textureNpotMipmap</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L356">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV17textureNpotRepeatACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/textureNpotRepeat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV17textureNpotRepeatACvpZ">textureNpotRepeat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Repeat modes other than
+    <code>COGL_PIPELINE_WRAP_MODE_CLAMP_TO_EDGE</code> are supported by the
+    hardware.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">textureNpotRepeat</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L360">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV11pointSpriteACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/pointSprite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV11pointSpriteACvpZ">pointSprite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether
+    <code>cogl_material_set_layer_point_sprite_coords_enabled()</code> is supported.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">pointSprite</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L363">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV9texture3dACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/texture3d" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV9texture3dACvpZ">texture3d</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>3D texture support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">texture3d</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L365">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV12shadersArbfpACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/shadersArbfp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV12shadersArbfpACvpZ">shadersArbfp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ARBFP support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">shadersArbfp</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L367">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV16mapBufferForReadACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/mapBufferForRead" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV16mapBufferForReadACvpZ">mapBufferForRead</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether <code>cogl_buffer_map()</code> is
+    supported with CoglBufferAccess including read support.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">mapBufferForRead</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L370">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV17mapBufferForWriteACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/mapBufferForWrite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV17mapBufferForWriteACvpZ">mapBufferForWrite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether <code>cogl_buffer_map()</code> is
+    supported with CoglBufferAccess including write support.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">mapBufferForWrite</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L373">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV16onscreenMultipleACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/onscreenMultiple" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV16onscreenMultipleACvpZ">onscreenMultiple</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -931,7 +1847,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">multipleOnscreen</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">onscreenMultiple</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
 
                         </div>
                       </div>
@@ -944,9 +1860,645 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E12swapThrottleABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swapThrottle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E12swapThrottleABvpZ">swapThrottle</a>
+                    <a name="/s:4Cogl12FeatureFlagsV12depthTextureACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/depthTexture" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV12depthTextureACvpZ">depthTexture</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether <code><a href="../Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a></code> support rendering the
+    depth buffer to a texture.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">depthTexture</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L377">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV17texture_rectangleACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/texture_rectangle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV17texture_rectangleACvpZ">texture_rectangle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ARB_texture_rectangle support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">texture_rectangle</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L380">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV12texture_npotACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/texture_npot" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV12texture_npotACvpZ">texture_npot</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Non power of two textures are supported
+   by the hardware. This is a equivalent to the
+   <code>COGL_FEATURE_TEXTURE_NPOT_BASIC</code>, <code>COGL_FEATURE_TEXTURE_NPOT_MIPMAP</code>
+   and <code>COGL_FEATURE_TEXTURE_NPOT_REPEAT</code> features combined.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">texture_npot</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L385">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV11texture_yuvACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/texture_yuv" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV11texture_yuvACvpZ">texture_yuv</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ycbcr conversion support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">texture_yuv</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L387">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV19texture_read_pixelsACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/texture_read_pixels" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV19texture_read_pixelsACvpZ">texture_read_pixels</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>glReadPixels()</code> support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">texture_read_pixels</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L389">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV12shaders_glslACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/shaders_glsl" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV12shaders_glslACvpZ">shaders_glsl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>GLSL support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">shaders_glsl</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L391">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV21offscreen_multisampleACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/offscreen_multisample" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV21offscreen_multisampleACvpZ">offscreen_multisample</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Multisample support on FBOs</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">offscreen_multisample</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L393">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV14offscreen_blitACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/offscreen_blit" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV14offscreen_blitACvpZ">offscreen_blit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blit support on FBOs</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">offscreen_blit</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L395">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV16four_clip_planesACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/four_clip_planes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV16four_clip_planesACvpZ">four_clip_planes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>At least 4 clip planes available</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">four_clip_planes</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L397">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV14stencil_bufferACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/stencil_buffer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV14stencil_bufferACvpZ">stencil_buffer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stencil buffer support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">stencil_buffer</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L399">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV20unsigned_int_indicesACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/unsigned_int_indices" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV20unsigned_int_indicesACvpZ">unsigned_int_indices</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set if
+    <code>COGL_INDICES_TYPE_UNSIGNED_INT</code> is supported in
+    <code>cogl_vertex_buffer_indices_new()</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">unsigned_int_indices</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L403">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV11depth_rangeACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/depth_range" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV11depth_rangeACvpZ">depth_range</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>cogl_material_set_depth_range()</code> support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">depth_range</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L405">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV18texture_npot_basicACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/texture_npot_basic" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV18texture_npot_basicACvpZ">texture_npot_basic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The hardware supports non power
+    of two textures, but you also need to check the
+    <code>COGL_FEATURE_TEXTURE_NPOT_MIPMAP</code> and <code>COGL_FEATURE_TEXTURE_NPOT_REPEAT</code>
+    features to know if the hardware supports npot texture mipmaps
+    or repeat modes other than
+    <code>COGL_PIPELINE_WRAP_MODE_CLAMP_TO_EDGE</code> respectively.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">texture_npot_basic</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L412">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV19texture_npot_mipmapACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/texture_npot_mipmap" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV19texture_npot_mipmapACvpZ">texture_npot_mipmap</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Mipmapping is supported in
+    conjuntion with non power of two textures.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">texture_npot_mipmap</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L415">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV19texture_npot_repeatACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/texture_npot_repeat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV19texture_npot_repeatACvpZ">texture_npot_repeat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Repeat modes other than
+    <code>COGL_PIPELINE_WRAP_MODE_CLAMP_TO_EDGE</code> are supported by the
+    hardware.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">texture_npot_repeat</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L419">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV12point_spriteACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/point_sprite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV12point_spriteACvpZ">point_sprite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether
+    <code>cogl_material_set_layer_point_sprite_coords_enabled()</code> is supported.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">point_sprite</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L422">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV10texture_3dACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/texture_3d" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV10texture_3dACvpZ">texture_3d</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>3D texture support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">texture_3d</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L424">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV13shaders_arbfpACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/shaders_arbfp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV13shaders_arbfpACvpZ">shaders_arbfp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ARBFP support</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">shaders_arbfp</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L426">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV19map_buffer_for_readACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/map_buffer_for_read" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV19map_buffer_for_readACvpZ">map_buffer_for_read</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether <code>cogl_buffer_map()</code> is
+    supported with CoglBufferAccess including read support.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">map_buffer_for_read</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L429">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV20map_buffer_for_writeACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/map_buffer_for_write" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV20map_buffer_for_writeACvpZ">map_buffer_for_write</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether <code>cogl_buffer_map()</code> is
+    supported with CoglBufferAccess including write support.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">map_buffer_for_write</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L432">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Cogl12FeatureFlagsV17onscreen_multipleACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/onscreen_multiple" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV17onscreen_multipleACvpZ">onscreen_multiple</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -961,7 +2513,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swapThrottle</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">onscreen_multiple</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
 
                         </div>
                       </div>
@@ -974,9 +2526,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E13vblankCounterABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/vblankCounter" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E13vblankCounterABvpZ">vblankCounter</a>
+                    <a name="/s:4Cogl12FeatureFlagsV13depth_textureACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/depth_texture" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Cogl12FeatureFlagsV13depth_textureACvpZ">depth_texture</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -984,649 +2536,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Whether <code><a href="../Typealiases.html#/s:4Cogl0A11Framebuffera">CoglFramebuffer</a></code> support rendering the
+    depth buffer to a texture.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">vblankCounter</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">depth_texture</span><span class="p">:</span> <span class="kt">FeatureFlags</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E10vblankWaitABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/vblankWait" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E10vblankWaitABvpZ">vblankWait</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">vblankWait</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E17textureFromPixmapABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/textureFromPixmap" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E17textureFromPixmapABvpZ">textureFromPixmap</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">textureFromPixmap</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E16swapBuffersEventABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swapBuffersEvent" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E16swapBuffersEventABvpZ">swapBuffersEvent</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swapBuffersEvent</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E10swapRegionABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swapRegion" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E10swapRegionABvpZ">swapRegion</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swapRegion</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E18swapRegionThrottleABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swapRegionThrottle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E18swapRegionThrottleABvpZ">swapRegionThrottle</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swapRegionThrottle</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E22swapRegionSynchronizedABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swapRegionSynchronized" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E22swapRegionSynchronizedABvpZ">swapRegionSynchronized</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swapRegionSynchronized</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E9bufferAgeABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/bufferAge" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E9bufferAgeABvpZ">bufferAge</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">bufferAge</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E20syncAndCompleteEventABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/syncAndCompleteEvent" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E20syncAndCompleteEventABvpZ">syncAndCompleteEvent</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">syncAndCompleteEvent</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E9nFeaturesABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/nFeatures" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E9nFeaturesABvpZ">nFeatures</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">nFeatures</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E17multiple_onscreenABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/multiple_onscreen" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E17multiple_onscreenABvpZ">multiple_onscreen</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">multiple_onscreen</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E13swap_throttleABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swap_throttle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E13swap_throttleABvpZ">swap_throttle</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swap_throttle</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E14vblank_counterABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/vblank_counter" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E14vblank_counterABvpZ">vblank_counter</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">vblank_counter</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E11vblank_waitABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/vblank_wait" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E11vblank_waitABvpZ">vblank_wait</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">vblank_wait</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E19texture_from_pixmapABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/texture_from_pixmap" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E19texture_from_pixmapABvpZ">texture_from_pixmap</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">texture_from_pixmap</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E18swap_buffers_eventABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swap_buffers_event" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E18swap_buffers_eventABvpZ">swap_buffers_event</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swap_buffers_event</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E11swap_regionABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swap_region" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E11swap_regionABvpZ">swap_region</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swap_region</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E20swap_region_throttleABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swap_region_throttle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E20swap_region_throttleABvpZ">swap_region_throttle</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swap_region_throttle</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E24swap_region_synchronizedABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/swap_region_synchronized" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E24swap_region_synchronizedABvpZ">swap_region_synchronized</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">swap_region_synchronized</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E10buffer_ageABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/buffer_age" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E10buffer_ageABvpZ">buffer_age</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">buffer_age</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E23sync_and_complete_eventABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/sync_and_complete_event" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E23sync_and_complete_eventABvpZ">sync_and_complete_event</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">sync_and_complete_event</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:So18_CoglWinsysFeatureV0A0E10n_featuresABvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/n_features" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18_CoglWinsysFeatureV0A0E10n_featuresABvpZ">n_features</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">n_features</span><span class="p">:</span> <span class="n">_CoglWinsysFeature</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L436">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

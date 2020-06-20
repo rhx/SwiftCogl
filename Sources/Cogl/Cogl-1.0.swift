@@ -1,3 +1,33 @@
+
+func cast(_ param: UInt)   -> Int    {    Int(bitPattern: param) }
+func cast(_ param: Int)    -> UInt   {   UInt(bitPattern: param) }
+func cast(_ param: UInt16) -> Int16  {  Int16(bitPattern: param) }
+func cast(_ param: Int16)  -> UInt16 { UInt16(bitPattern: param) }
+func cast(_ param: UInt32) -> Int32  {  Int32(bitPattern: param) }
+func cast(_ param: Int32)  -> UInt32 { UInt32(bitPattern: param) }
+func cast(_ param: UInt64) -> Int64  {  Int64(bitPattern: param) }
+func cast(_ param: Int64)  -> UInt64 { UInt64(bitPattern: param) }
+func cast(_ param: Float)  -> Double { Double(param) }
+func cast(_ param: Float80) -> Double { Double(param) }
+func cast(_ param: Double) -> Float { Float(param) }
+func cast(_ param: Double) -> Float80 { Float80(param) }
+func cast<U: UnsignedInteger>(_ param: U) -> Int { Int(param) }
+func cast<S: SignedInteger>(_ param: S) -> Int { Int(param) }
+func cast<U: UnsignedInteger>(_ param: Int) -> U { U(param) }
+func cast<S: SignedInteger>(_ param: Int) -> S  { S(param) }
+func cast<I: BinaryInteger>(_ param: I) -> Int32 { Int32(param) }
+func cast<I: BinaryInteger>(_ param: I) -> UInt32 { UInt32(param) }
+func cast<I: BinaryInteger>(_ param: I) -> Bool { param != 0 }
+func cast<I: BinaryInteger>(_ param: Bool) -> I { param ? 1 : 0 }
+
+func cast(_ param: UnsafeRawPointer?) -> String! {
+    return param.map { String(cString: $0.assumingMemoryBound(to: CChar.self)) }
+}
+
+func cast(_ param: OpaquePointer?) -> String! {
+    return param.map { String(cString: UnsafePointer<CChar>($0)) }
+}
+
 func cast(_ param: UnsafeRawPointer) -> OpaquePointer! {
     return OpaquePointer(param)
 }
@@ -89,6 +119,7 @@ public typealias Bool_ = CoglBool
 /// Type used for storing references to cogl objects, the CoglHandle is
 /// a fully opaque type without any public data members.
 public typealias Handle = CoglHandle
+
 public let AFIRST_BIT = COGL_AFIRST_BIT /* gint 64 */
 
 public let A_BIT = COGL_A_BIT /* gint 16 */
@@ -151,144 +182,344 @@ public let STENCIL_BIT = COGL_STENCIL_BIT /* gint 512 */
 
 public let TEXTURE_MAX_WASTE = COGL_TEXTURE_MAX_WASTE /* gint 127 */
 /// Types of auxiliary buffers
-public typealias BufferBit = CoglBufferBit
+public struct BufferBit: OptionSet {
+    /// The corresponding value of the raw type
+    public var rawValue: UInt32 = 0
+    /// The equivalent raw Int value
+    public var intValue: Int { get { Int(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent raw `gint` value
+    public var int: gint { get { gint(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent underlying `CoglBufferBit` enum value
+    public var value: CoglBufferBit { get { CoglBufferBit(rawValue: cast(rawValue)) } set { rawValue = UInt32(newValue.rawValue) } }
 
-public extension BufferBit {
+    /// Creates a new instance with the specified raw value
+    public init(rawValue: UInt32) { self.rawValue = rawValue }
+    /// Creates a new instance with the specified `CoglBufferBit` enum value
+    public init(_ enumValue: CoglBufferBit) { self.rawValue = UInt32(enumValue.rawValue) }
+    /// Creates a new instance with the specified Int value
+    public init(_ intValue: Int)   { self.rawValue = UInt32(intValue)  }
+    /// Creates a new instance with the specified `gint` value
+    public init(_ gintValue: gint) { self.rawValue = UInt32(gintValue) }
+
     /// Selects the primary color buffer
-    static let color = COGL_BUFFER_BIT_COLOR /* 1 */
+    public static let color = BufferBit(1) /* COGL_BUFFER_BIT_COLOR */
     /// Selects the depth buffer
-    static let depth = COGL_BUFFER_BIT_DEPTH /* 2 */
+    public static let depth = BufferBit(2) /* COGL_BUFFER_BIT_DEPTH */
     /// Selects the stencil buffer
-    static let stencil = COGL_BUFFER_BIT_STENCIL /* 4 */
+    public static let stencil = BufferBit(4) /* COGL_BUFFER_BIT_STENCIL */
+
+
 }
+func cast<I: BinaryInteger>(_ param: I) -> BufferBit { BufferBit(rawValue: cast(param)) }
+func cast(_ param: BufferBit) -> UInt32 { cast(param.rawValue) }
+
 
 /// Target flags for FBOs.
-public typealias BufferTarget = CoglBufferTarget
+public struct BufferTarget: OptionSet {
+    /// The corresponding value of the raw type
+    public var rawValue: UInt32 = 0
+    /// The equivalent raw Int value
+    public var intValue: Int { get { Int(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent raw `gint` value
+    public var int: gint { get { gint(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent underlying `CoglBufferTarget` enum value
+    public var value: CoglBufferTarget { get { CoglBufferTarget(rawValue: cast(rawValue)) } set { rawValue = UInt32(newValue.rawValue) } }
 
-public extension BufferTarget {
+    /// Creates a new instance with the specified raw value
+    public init(rawValue: UInt32) { self.rawValue = rawValue }
+    /// Creates a new instance with the specified `CoglBufferTarget` enum value
+    public init(_ enumValue: CoglBufferTarget) { self.rawValue = UInt32(enumValue.rawValue) }
+    /// Creates a new instance with the specified Int value
+    public init(_ intValue: Int)   { self.rawValue = UInt32(intValue)  }
+    /// Creates a new instance with the specified `gint` value
+    public init(_ gintValue: gint) { self.rawValue = UInt32(gintValue) }
+
     /// FIXME
-    static let window_buffer = COGL_WINDOW_BUFFER /* 2 */
+    public static let windowBuffer = BufferTarget(2) /* COGL_WINDOW_BUFFER */
     /// FIXME
-    static let offscreen_buffer = COGL_OFFSCREEN_BUFFER /* 4 */
+    public static let offscreenBuffer = BufferTarget(4) /* COGL_OFFSCREEN_BUFFER */
+
+    /// FIXME
+    @available(*, deprecated) public static let window_buffer = BufferTarget(2) /* COGL_WINDOW_BUFFER */
+    /// FIXME
+    @available(*, deprecated) public static let offscreen_buffer = BufferTarget(4) /* COGL_OFFSCREEN_BUFFER */
 }
+func cast<I: BinaryInteger>(_ param: I) -> BufferTarget { BufferTarget(rawValue: cast(param)) }
+func cast(_ param: BufferTarget) -> UInt32 { cast(param.rawValue) }
+
 
 /// Defines a bit mask of color channels. This can be used with
 /// `cogl_pipeline_set_color_mask()` for example to define which color
 /// channels should be written to the current framebuffer when
 /// drawing something.
-public typealias ColorMask = CoglColorMask
+public struct ColorMask: OptionSet {
+    /// The corresponding value of the raw type
+    public var rawValue: UInt32 = 0
+    /// The equivalent raw Int value
+    public var intValue: Int { get { Int(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent raw `gint` value
+    public var int: gint { get { gint(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent underlying `CoglColorMask` enum value
+    public var value: CoglColorMask { get { CoglColorMask(rawValue: cast(rawValue)) } set { rawValue = UInt32(newValue.rawValue) } }
 
-public extension ColorMask {
+    /// Creates a new instance with the specified raw value
+    public init(rawValue: UInt32) { self.rawValue = rawValue }
+    /// Creates a new instance with the specified `CoglColorMask` enum value
+    public init(_ enumValue: CoglColorMask) { self.rawValue = UInt32(enumValue.rawValue) }
+    /// Creates a new instance with the specified Int value
+    public init(_ intValue: Int)   { self.rawValue = UInt32(intValue)  }
+    /// Creates a new instance with the specified `gint` value
+    public init(_ gintValue: gint) { self.rawValue = UInt32(gintValue) }
+
     /// None of the color channels are masked
-    static let none_ = COGL_COLOR_MASK_NONE /* 0 */
+    public static let `none` = ColorMask(0) /* COGL_COLOR_MASK_NONE */
     /// Masks the red color channel
-    static let red = COGL_COLOR_MASK_RED /* 1 */
+    public static let red = ColorMask(1) /* COGL_COLOR_MASK_RED */
     /// Masks the green color channel
-    static let green = COGL_COLOR_MASK_GREEN /* 2 */
+    public static let green = ColorMask(2) /* COGL_COLOR_MASK_GREEN */
     /// Masks the blue color channel
-    static let blue = COGL_COLOR_MASK_BLUE /* 4 */
+    public static let blue = ColorMask(4) /* COGL_COLOR_MASK_BLUE */
     /// Masks the alpha color channel
-    static let alpha = COGL_COLOR_MASK_ALPHA /* 8 */
+    public static let alpha = ColorMask(8) /* COGL_COLOR_MASK_ALPHA */
     /// All of the color channels are masked
-    static let all = COGL_COLOR_MASK_ALL /* 15 */
+    public static let all = ColorMask(15) /* COGL_COLOR_MASK_ALL */
+
+    /// None of the color channels are masked
+    @available(*, deprecated) public static let none_ = ColorMask(0) /* COGL_COLOR_MASK_NONE */
 }
+func cast<I: BinaryInteger>(_ param: I) -> ColorMask { ColorMask(rawValue: cast(param)) }
+func cast(_ param: ColorMask) -> UInt32 { cast(param.rawValue) }
+
 
 /// Flags for the supported features.
-public typealias FeatureFlags = CoglFeatureFlags
+public struct FeatureFlags: OptionSet {
+    /// The corresponding value of the raw type
+    public var rawValue: UInt32 = 0
+    /// The equivalent raw Int value
+    public var intValue: Int { get { Int(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent raw `gint` value
+    public var int: gint { get { gint(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent underlying `CoglFeatureFlags` enum value
+    public var value: CoglFeatureFlags { get { CoglFeatureFlags(rawValue: cast(rawValue)) } set { rawValue = UInt32(newValue.rawValue) } }
 
-public extension FeatureFlags {
+    /// Creates a new instance with the specified raw value
+    public init(rawValue: UInt32) { self.rawValue = rawValue }
+    /// Creates a new instance with the specified `CoglFeatureFlags` enum value
+    public init(_ enumValue: CoglFeatureFlags) { self.rawValue = UInt32(enumValue.rawValue) }
+    /// Creates a new instance with the specified Int value
+    public init(_ intValue: Int)   { self.rawValue = UInt32(intValue)  }
+    /// Creates a new instance with the specified `gint` value
+    public init(_ gintValue: gint) { self.rawValue = UInt32(gintValue) }
+
     /// ARB_texture_rectangle support
-    static let texture_rectangle = COGL_FEATURE_TEXTURE_RECTANGLE /* 2 */
+    public static let textureRectangle = FeatureFlags(2) /* COGL_FEATURE_TEXTURE_RECTANGLE */
     /// Non power of two textures are supported
     ///    by the hardware. This is a equivalent to the
     ///    `COGL_FEATURE_TEXTURE_NPOT_BASIC`, `COGL_FEATURE_TEXTURE_NPOT_MIPMAP`
     ///    and `COGL_FEATURE_TEXTURE_NPOT_REPEAT` features combined.
-    static let texture_npot = COGL_FEATURE_TEXTURE_NPOT /* 4 */
+    public static let textureNpot = FeatureFlags(4) /* COGL_FEATURE_TEXTURE_NPOT */
     /// ycbcr conversion support
-    static let texture_yuv = COGL_FEATURE_TEXTURE_YUV /* 8 */
+    public static let textureYuv = FeatureFlags(8) /* COGL_FEATURE_TEXTURE_YUV */
     /// `glReadPixels()` support
-    static let texture_read_pixels = COGL_FEATURE_TEXTURE_READ_PIXELS /* 16 */
+    public static let textureReadPixels = FeatureFlags(16) /* COGL_FEATURE_TEXTURE_READ_PIXELS */
     /// GLSL support
-    static let shaders_glsl = COGL_FEATURE_SHADERS_GLSL /* 32 */
+    public static let shadersGlsl = FeatureFlags(32) /* COGL_FEATURE_SHADERS_GLSL */
     /// FBO support
-    static let offscreen = COGL_FEATURE_OFFSCREEN /* 64 */
+    public static let offscreen = FeatureFlags(64) /* COGL_FEATURE_OFFSCREEN */
     /// Multisample support on FBOs
-    static let offscreen_multisample = COGL_FEATURE_OFFSCREEN_MULTISAMPLE /* 128 */
+    public static let offscreenMultisample = FeatureFlags(128) /* COGL_FEATURE_OFFSCREEN_MULTISAMPLE */
     /// Blit support on FBOs
-    static let offscreen_blit = COGL_FEATURE_OFFSCREEN_BLIT /* 256 */
+    public static let offscreenBlit = FeatureFlags(256) /* COGL_FEATURE_OFFSCREEN_BLIT */
     /// At least 4 clip planes available
-    static let four_clip_planes = COGL_FEATURE_FOUR_CLIP_PLANES /* 512 */
+    public static let fourClipPlanes = FeatureFlags(512) /* COGL_FEATURE_FOUR_CLIP_PLANES */
     /// Stencil buffer support
-    static let stencil_buffer = COGL_FEATURE_STENCIL_BUFFER /* 1024 */
+    public static let stencilBuffer = FeatureFlags(1024) /* COGL_FEATURE_STENCIL_BUFFER */
     /// VBO support
-    static let vbos = COGL_FEATURE_VBOS /* 2048 */
+    public static let vbos = FeatureFlags(2048) /* COGL_FEATURE_VBOS */
     /// PBO support
-    static let pbos = COGL_FEATURE_PBOS /* 4096 */
+    public static let pbos = FeatureFlags(4096) /* COGL_FEATURE_PBOS */
     /// Set if
     ///     `COGL_INDICES_TYPE_UNSIGNED_INT` is supported in
     ///     `cogl_vertex_buffer_indices_new()`.
-    static let unsigned_int_indices = COGL_FEATURE_UNSIGNED_INT_INDICES /* 8192 */
+    public static let unsignedIntIndices = FeatureFlags(8192) /* COGL_FEATURE_UNSIGNED_INT_INDICES */
     /// `cogl_material_set_depth_range()` support
-    static let depth_range = COGL_FEATURE_DEPTH_RANGE /* 16384 */
+    public static let depthRange = FeatureFlags(16384) /* COGL_FEATURE_DEPTH_RANGE */
     /// The hardware supports non power
     ///     of two textures, but you also need to check the
     ///     `COGL_FEATURE_TEXTURE_NPOT_MIPMAP` and `COGL_FEATURE_TEXTURE_NPOT_REPEAT`
     ///     features to know if the hardware supports npot texture mipmaps
     ///     or repeat modes other than
     ///     `COGL_PIPELINE_WRAP_MODE_CLAMP_TO_EDGE` respectively.
-    static let texture_npot_basic = COGL_FEATURE_TEXTURE_NPOT_BASIC /* 32768 */
+    public static let textureNpotBasic = FeatureFlags(32768) /* COGL_FEATURE_TEXTURE_NPOT_BASIC */
     /// Mipmapping is supported in
     ///     conjuntion with non power of two textures.
-    static let texture_npot_mipmap = COGL_FEATURE_TEXTURE_NPOT_MIPMAP /* 65536 */
+    public static let textureNpotMipmap = FeatureFlags(65536) /* COGL_FEATURE_TEXTURE_NPOT_MIPMAP */
     /// Repeat modes other than
     ///     `COGL_PIPELINE_WRAP_MODE_CLAMP_TO_EDGE` are supported by the
     ///     hardware.
-    static let texture_npot_repeat = COGL_FEATURE_TEXTURE_NPOT_REPEAT /* 131072 */
+    public static let textureNpotRepeat = FeatureFlags(131072) /* COGL_FEATURE_TEXTURE_NPOT_REPEAT */
     /// Whether
     ///     `cogl_material_set_layer_point_sprite_coords_enabled()` is supported.
-    static let point_sprite = COGL_FEATURE_POINT_SPRITE /* 262144 */
+    public static let pointSprite = FeatureFlags(262144) /* COGL_FEATURE_POINT_SPRITE */
     /// 3D texture support
-    static let texture_3d = COGL_FEATURE_TEXTURE_3D /* 524288 */
+    public static let texture3d = FeatureFlags(524288) /* COGL_FEATURE_TEXTURE_3D */
     /// ARBFP support
-    static let shaders_arbfp = COGL_FEATURE_SHADERS_ARBFP /* 1048576 */
+    public static let shadersArbfp = FeatureFlags(1048576) /* COGL_FEATURE_SHADERS_ARBFP */
     /// Whether `cogl_buffer_map()` is
     ///     supported with CoglBufferAccess including read support.
-    static let map_buffer_for_read = COGL_FEATURE_MAP_BUFFER_FOR_READ /* 2097152 */
+    public static let mapBufferForRead = FeatureFlags(2097152) /* COGL_FEATURE_MAP_BUFFER_FOR_READ */
     /// Whether `cogl_buffer_map()` is
     ///     supported with CoglBufferAccess including write support.
-    static let map_buffer_for_write = COGL_FEATURE_MAP_BUFFER_FOR_WRITE /* 4194304 */
-    static let onscreen_multiple = COGL_FEATURE_ONSCREEN_MULTIPLE /* 8388608 */
+    public static let mapBufferForWrite = FeatureFlags(4194304) /* COGL_FEATURE_MAP_BUFFER_FOR_WRITE */
+    public static let onscreenMultiple = FeatureFlags(8388608) /* COGL_FEATURE_ONSCREEN_MULTIPLE */
     /// Whether `CoglFramebuffer` support rendering the
     ///     depth buffer to a texture.
-    static let depth_texture = COGL_FEATURE_DEPTH_TEXTURE /* 16777216 */
+    public static let depthTexture = FeatureFlags(16777216) /* COGL_FEATURE_DEPTH_TEXTURE */
+
+    /// ARB_texture_rectangle support
+    @available(*, deprecated) public static let texture_rectangle = FeatureFlags(2) /* COGL_FEATURE_TEXTURE_RECTANGLE */
+    /// Non power of two textures are supported
+    ///    by the hardware. This is a equivalent to the
+    ///    `COGL_FEATURE_TEXTURE_NPOT_BASIC`, `COGL_FEATURE_TEXTURE_NPOT_MIPMAP`
+    ///    and `COGL_FEATURE_TEXTURE_NPOT_REPEAT` features combined.
+    @available(*, deprecated) public static let texture_npot = FeatureFlags(4) /* COGL_FEATURE_TEXTURE_NPOT */
+    /// ycbcr conversion support
+    @available(*, deprecated) public static let texture_yuv = FeatureFlags(8) /* COGL_FEATURE_TEXTURE_YUV */
+    /// `glReadPixels()` support
+    @available(*, deprecated) public static let texture_read_pixels = FeatureFlags(16) /* COGL_FEATURE_TEXTURE_READ_PIXELS */
+    /// GLSL support
+    @available(*, deprecated) public static let shaders_glsl = FeatureFlags(32) /* COGL_FEATURE_SHADERS_GLSL */
+    /// Multisample support on FBOs
+    @available(*, deprecated) public static let offscreen_multisample = FeatureFlags(128) /* COGL_FEATURE_OFFSCREEN_MULTISAMPLE */
+    /// Blit support on FBOs
+    @available(*, deprecated) public static let offscreen_blit = FeatureFlags(256) /* COGL_FEATURE_OFFSCREEN_BLIT */
+    /// At least 4 clip planes available
+    @available(*, deprecated) public static let four_clip_planes = FeatureFlags(512) /* COGL_FEATURE_FOUR_CLIP_PLANES */
+    /// Stencil buffer support
+    @available(*, deprecated) public static let stencil_buffer = FeatureFlags(1024) /* COGL_FEATURE_STENCIL_BUFFER */
+    /// Set if
+    ///     `COGL_INDICES_TYPE_UNSIGNED_INT` is supported in
+    ///     `cogl_vertex_buffer_indices_new()`.
+    @available(*, deprecated) public static let unsigned_int_indices = FeatureFlags(8192) /* COGL_FEATURE_UNSIGNED_INT_INDICES */
+    /// `cogl_material_set_depth_range()` support
+    @available(*, deprecated) public static let depth_range = FeatureFlags(16384) /* COGL_FEATURE_DEPTH_RANGE */
+    /// The hardware supports non power
+    ///     of two textures, but you also need to check the
+    ///     `COGL_FEATURE_TEXTURE_NPOT_MIPMAP` and `COGL_FEATURE_TEXTURE_NPOT_REPEAT`
+    ///     features to know if the hardware supports npot texture mipmaps
+    ///     or repeat modes other than
+    ///     `COGL_PIPELINE_WRAP_MODE_CLAMP_TO_EDGE` respectively.
+    @available(*, deprecated) public static let texture_npot_basic = FeatureFlags(32768) /* COGL_FEATURE_TEXTURE_NPOT_BASIC */
+    /// Mipmapping is supported in
+    ///     conjuntion with non power of two textures.
+    @available(*, deprecated) public static let texture_npot_mipmap = FeatureFlags(65536) /* COGL_FEATURE_TEXTURE_NPOT_MIPMAP */
+    /// Repeat modes other than
+    ///     `COGL_PIPELINE_WRAP_MODE_CLAMP_TO_EDGE` are supported by the
+    ///     hardware.
+    @available(*, deprecated) public static let texture_npot_repeat = FeatureFlags(131072) /* COGL_FEATURE_TEXTURE_NPOT_REPEAT */
+    /// Whether
+    ///     `cogl_material_set_layer_point_sprite_coords_enabled()` is supported.
+    @available(*, deprecated) public static let point_sprite = FeatureFlags(262144) /* COGL_FEATURE_POINT_SPRITE */
+    /// 3D texture support
+    @available(*, deprecated) public static let texture_3d = FeatureFlags(524288) /* COGL_FEATURE_TEXTURE_3D */
+    /// ARBFP support
+    @available(*, deprecated) public static let shaders_arbfp = FeatureFlags(1048576) /* COGL_FEATURE_SHADERS_ARBFP */
+    /// Whether `cogl_buffer_map()` is
+    ///     supported with CoglBufferAccess including read support.
+    @available(*, deprecated) public static let map_buffer_for_read = FeatureFlags(2097152) /* COGL_FEATURE_MAP_BUFFER_FOR_READ */
+    /// Whether `cogl_buffer_map()` is
+    ///     supported with CoglBufferAccess including write support.
+    @available(*, deprecated) public static let map_buffer_for_write = FeatureFlags(4194304) /* COGL_FEATURE_MAP_BUFFER_FOR_WRITE */
+    @available(*, deprecated) public static let onscreen_multiple = FeatureFlags(8388608) /* COGL_FEATURE_ONSCREEN_MULTIPLE */
+    /// Whether `CoglFramebuffer` support rendering the
+    ///     depth buffer to a texture.
+    @available(*, deprecated) public static let depth_texture = FeatureFlags(16777216) /* COGL_FEATURE_DEPTH_TEXTURE */
 }
+func cast<I: BinaryInteger>(_ param: I) -> FeatureFlags { FeatureFlags(rawValue: cast(param)) }
+func cast(_ param: FeatureFlags) -> UInt32 { cast(param.rawValue) }
+
 
 /// Flags for `cogl_framebuffer_read_pixels_into_bitmap()`
-public typealias ReadPixelsFlags = CoglReadPixelsFlags
+public struct ReadPixelsFlags: OptionSet {
+    /// The corresponding value of the raw type
+    public var rawValue: UInt32 = 0
+    /// The equivalent raw Int value
+    public var intValue: Int { get { Int(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent raw `gint` value
+    public var int: gint { get { gint(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent underlying `CoglReadPixelsFlags` enum value
+    public var value: CoglReadPixelsFlags { get { CoglReadPixelsFlags(rawValue: cast(rawValue)) } set { rawValue = UInt32(newValue.rawValue) } }
 
-public extension ReadPixelsFlags {
+    /// Creates a new instance with the specified raw value
+    public init(rawValue: UInt32) { self.rawValue = rawValue }
+    /// Creates a new instance with the specified `CoglReadPixelsFlags` enum value
+    public init(_ enumValue: CoglReadPixelsFlags) { self.rawValue = UInt32(enumValue.rawValue) }
+    /// Creates a new instance with the specified Int value
+    public init(_ intValue: Int)   { self.rawValue = UInt32(intValue)  }
+    /// Creates a new instance with the specified `gint` value
+    public init(_ gintValue: gint) { self.rawValue = UInt32(gintValue) }
+
     /// Read from the color buffer
-    static let color_buffer = COGL_READ_PIXELS_COLOR_BUFFER /* 1 */
+    public static let colorBuffer = ReadPixelsFlags(1) /* COGL_READ_PIXELS_COLOR_BUFFER */
+
+    /// Read from the color buffer
+    @available(*, deprecated) public static let color_buffer = ReadPixelsFlags(1) /* COGL_READ_PIXELS_COLOR_BUFFER */
 }
+func cast<I: BinaryInteger>(_ param: I) -> ReadPixelsFlags { ReadPixelsFlags(rawValue: cast(param)) }
+func cast(_ param: ReadPixelsFlags) -> UInt32 { cast(param.rawValue) }
+
 
 /// Flags to pass to the cogl_texture_new_* family of functions.
-public typealias TextureFlags = CoglTextureFlags
+public struct TextureFlags: OptionSet {
+    /// The corresponding value of the raw type
+    public var rawValue: UInt32 = 0
+    /// The equivalent raw Int value
+    public var intValue: Int { get { Int(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent raw `gint` value
+    public var int: gint { get { gint(rawValue) } set { rawValue = UInt32(newValue) } }
+    /// The equivalent underlying `CoglTextureFlags` enum value
+    public var value: CoglTextureFlags { get { CoglTextureFlags(rawValue: cast(rawValue)) } set { rawValue = UInt32(newValue.rawValue) } }
 
-public extension TextureFlags {
+    /// Creates a new instance with the specified raw value
+    public init(rawValue: UInt32) { self.rawValue = rawValue }
+    /// Creates a new instance with the specified `CoglTextureFlags` enum value
+    public init(_ enumValue: CoglTextureFlags) { self.rawValue = UInt32(enumValue.rawValue) }
+    /// Creates a new instance with the specified Int value
+    public init(_ intValue: Int)   { self.rawValue = UInt32(intValue)  }
+    /// Creates a new instance with the specified `gint` value
+    public init(_ gintValue: gint) { self.rawValue = UInt32(gintValue) }
+
     /// No flags specified
-    static let none_ = COGL_TEXTURE_NONE /* 0 */
+    public static let `none` = TextureFlags(0) /* COGL_TEXTURE_NONE */
     /// Disables the automatic generation of
     ///   the mipmap pyramid from the base level image whenever it is
     ///   updated. The mipmaps are only generated when the texture is
     ///   rendered with a mipmap filter so it should be free to leave out
     ///   this flag when using other filtering modes
-    static let no_auto_mipmap = COGL_TEXTURE_NO_AUTO_MIPMAP /* 1 */
+    public static let noAutoMipmap = TextureFlags(1) /* COGL_TEXTURE_NO_AUTO_MIPMAP */
     /// Disables the slicing of the texture
-    static let no_slicing = COGL_TEXTURE_NO_SLICING /* 2 */
+    public static let noSlicing = TextureFlags(2) /* COGL_TEXTURE_NO_SLICING */
     /// Disables the insertion of the texture inside
     ///   the texture atlas used by Cogl
-    static let no_atlas = COGL_TEXTURE_NO_ATLAS /* 4 */
+    public static let noAtlas = TextureFlags(4) /* COGL_TEXTURE_NO_ATLAS */
+
+    /// No flags specified
+    @available(*, deprecated) public static let none_ = TextureFlags(0) /* COGL_TEXTURE_NONE */
+    /// Disables the automatic generation of
+    ///   the mipmap pyramid from the base level image whenever it is
+    ///   updated. The mipmaps are only generated when the texture is
+    ///   rendered with a mipmap filter so it should be free to leave out
+    ///   this flag when using other filtering modes
+    @available(*, deprecated) public static let no_auto_mipmap = TextureFlags(1) /* COGL_TEXTURE_NO_AUTO_MIPMAP */
+    /// Disables the slicing of the texture
+    @available(*, deprecated) public static let no_slicing = TextureFlags(2) /* COGL_TEXTURE_NO_SLICING */
+    /// Disables the insertion of the texture inside
+    ///   the texture atlas used by Cogl
+    @available(*, deprecated) public static let no_atlas = TextureFlags(4) /* COGL_TEXTURE_NO_ATLAS */
 }
+func cast<I: BinaryInteger>(_ param: I) -> TextureFlags { TextureFlags(rawValue: cast(param)) }
+func cast(_ param: TextureFlags) -> UInt32 { cast(param.rawValue) }
+
 // MARK: - Bitmap Class
 
 /// The `BitmapProtocol` protocol exposes the methods and properties of an underlying `CoglBitmap` instance.
@@ -298,7 +529,7 @@ public extension TextureFlags {
 ///
 
 public protocol BitmapProtocol {
-    /// Untyped pointer to the underlying `CoglBitmap` instance.
+        /// Untyped pointer to the underlying `CoglBitmap` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglBitmap` instance.
@@ -311,7 +542,7 @@ public protocol BitmapProtocol {
 ///
 
 public struct BitmapRef: BitmapProtocol {
-    /// Untyped pointer to the underlying `CoglBitmap` instance.
+        /// Untyped pointer to the underlying `CoglBitmap` instance.
     /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -359,21 +590,17 @@ public extension BitmapRef {
         /// Loads an image file from disk. This function can be safely called from
     /// within a thread.
     init(file String_: UnsafePointer<CChar>) throws {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
-        let rv = cogl_bitmap_new_from_file(String_, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
+        var error: UnsafeMutablePointer<GError>?
+        let rv: UnsafeMutablePointer<CoglBitmap>! = cast(cogl_bitmap_new_from_file(String_, &error))
+        if let error = error { throw ErrorType(error) }
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
     /// Loads an image file from disk. This function can be safely called from
     /// within a thread.
     static func newFrom(file String_: UnsafePointer<CChar>) throws -> BitmapRef! {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
-        let rv = cogl_bitmap_new_from_file(String_, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
+        var error: UnsafeMutablePointer<GError>?
+        let rv: UnsafeMutablePointer<CoglBitmap>! = cast(cogl_bitmap_new_from_file(String_, &error))
+        if let error = error { throw ErrorType(error) }
         return rv.map { BitmapRef(cast($0)) }
     }
 }
@@ -384,7 +611,7 @@ public extension BitmapRef {
 ///
 
 open class Bitmap: BitmapProtocol {
-    /// Untyped pointer to the underlying `CoglBitmap` instance.
+        /// Untyped pointer to the underlying `CoglBitmap` instance.
     /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -413,7 +640,7 @@ open class Bitmap: BitmapProtocol {
         // no reference counting for CoglBitmap, cannot ref(cast(bitmap_ptr))
     }
 
-    /// Do-nothing destructor for`CoglBitmap`.
+    /// Do-nothing destructor for `CoglBitmap`.
     deinit {
         // no reference counting for CoglBitmap, cannot unref(cast(bitmap_ptr))
     }
@@ -480,35 +707,34 @@ open class Bitmap: BitmapProtocol {
     /// Loads an image file from disk. This function can be safely called from
     /// within a thread.
     public init(file String_: UnsafePointer<CChar>) throws {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
-        let rv = cogl_bitmap_new_from_file(String_, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
+        var error: UnsafeMutablePointer<GError>?
+        let rv: UnsafeMutablePointer<CoglBitmap>! = cast(cogl_bitmap_new_from_file(String_, &error))
+        if let error = error { throw ErrorType(error) }
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
     /// Loads an image file from disk. This function can be safely called from
     /// within a thread.
     public static func newFrom(file String_: UnsafePointer<CChar>) throws -> Bitmap! {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
-        let rv = cogl_bitmap_new_from_file(String_, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
+        var error: UnsafeMutablePointer<GError>?
+        let rv: UnsafeMutablePointer<CoglBitmap>! = cast(cogl_bitmap_new_from_file(String_, &error))
+        if let error = error { throw ErrorType(error) }
         return rv.map { Bitmap(cast($0)) }
     }
 
 }
 
-// MARK: - no Bitmap properties
+// MARK: no Bitmap properties
 
-// MARK: - no signals
+// MARK: no Bitmap signals
 
 
+// MARK: Bitmap Class: BitmapProtocol extension (methods and fields)
 public extension BitmapProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglBitmap` instance.
     var bitmap_ptr: UnsafeMutablePointer<CoglBitmap> { return ptr.assumingMemoryBound(to: CoglBitmap.self) }
+
+
 
 }
 
@@ -523,7 +749,7 @@ public extension BitmapProtocol {
 ///
 
 public protocol OffscreenProtocol {
-    /// Untyped pointer to the underlying `CoglOffscreen` instance.
+        /// Untyped pointer to the underlying `CoglOffscreen` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglOffscreen` instance.
@@ -536,7 +762,7 @@ public protocol OffscreenProtocol {
 ///
 
 public struct OffscreenRef: OffscreenProtocol {
-    /// Untyped pointer to the underlying `CoglOffscreen` instance.
+        /// Untyped pointer to the underlying `CoglOffscreen` instance.
     /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -595,7 +821,7 @@ public extension OffscreenRef {
     /// **new_to_texture is deprecated:**
     /// Use cogl_offscreen_new_with_texture instead.
     @available(*, deprecated) init(to_texture texture: TextureProtocol) {
-        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
+        let rv: UnsafeMutablePointer<CoglOffscreen>! = cast(cogl_offscreen_new_to_texture(cast(texture.ptr)))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
@@ -624,7 +850,7 @@ public extension OffscreenRef {
     /// finished configuring it by calling `cogl_framebuffer_allocate()` and
     /// passing in a `CoglError` argument to catch any exceptions.
     init(texture: TextureProtocol) {
-        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
+        let rv: UnsafeMutablePointer<CoglOffscreen>! = cast(cogl_offscreen_new_with_texture(cast(texture.ptr)))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
     /// This creates an offscreen buffer object using the given `texture` as the
@@ -641,7 +867,7 @@ public extension OffscreenRef {
     /// **new_to_texture is deprecated:**
     /// Use cogl_offscreen_new_with_texture instead.
     @available(*, deprecated) static func newTo(to_texture texture: TextureProtocol) -> OffscreenRef! {
-        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
+        let rv: UnsafeMutablePointer<CoglOffscreen>! = cast(cogl_offscreen_new_to_texture(cast(texture.ptr)))
         return rv.map { OffscreenRef(cast($0)) }
     }
 
@@ -670,7 +896,7 @@ public extension OffscreenRef {
     /// finished configuring it by calling `cogl_framebuffer_allocate()` and
     /// passing in a `CoglError` argument to catch any exceptions.
     static func newWith(texture: TextureProtocol) -> OffscreenRef! {
-        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
+        let rv: UnsafeMutablePointer<CoglOffscreen>! = cast(cogl_offscreen_new_with_texture(cast(texture.ptr)))
         return rv.map { OffscreenRef(cast($0)) }
     }
 }
@@ -681,7 +907,7 @@ public extension OffscreenRef {
 ///
 
 open class Offscreen: OffscreenProtocol {
-    /// Untyped pointer to the underlying `CoglOffscreen` instance.
+        /// Untyped pointer to the underlying `CoglOffscreen` instance.
     /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -710,7 +936,7 @@ open class Offscreen: OffscreenProtocol {
         // no reference counting for CoglOffscreen, cannot ref(cast(offscreen_ptr))
     }
 
-    /// Do-nothing destructor for`CoglOffscreen`.
+    /// Do-nothing destructor for `CoglOffscreen`.
     deinit {
         // no reference counting for CoglOffscreen, cannot unref(cast(offscreen_ptr))
     }
@@ -788,7 +1014,7 @@ open class Offscreen: OffscreenProtocol {
     /// **new_to_texture is deprecated:**
     /// Use cogl_offscreen_new_with_texture instead.
     @available(*, deprecated) public init(to_texture texture: TextureProtocol) {
-        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
+        let rv: UnsafeMutablePointer<CoglOffscreen>! = cast(cogl_offscreen_new_to_texture(cast(texture.ptr)))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
@@ -817,7 +1043,7 @@ open class Offscreen: OffscreenProtocol {
     /// finished configuring it by calling `cogl_framebuffer_allocate()` and
     /// passing in a `CoglError` argument to catch any exceptions.
     public init(texture: TextureProtocol) {
-        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
+        let rv: UnsafeMutablePointer<CoglOffscreen>! = cast(cogl_offscreen_new_with_texture(cast(texture.ptr)))
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
@@ -835,7 +1061,7 @@ open class Offscreen: OffscreenProtocol {
     /// **new_to_texture is deprecated:**
     /// Use cogl_offscreen_new_with_texture instead.
     @available(*, deprecated) public static func newTo(to_texture texture: TextureProtocol) -> Offscreen! {
-        let rv = cogl_offscreen_new_to_texture(cast(texture.ptr))
+        let rv: UnsafeMutablePointer<CoglOffscreen>! = cast(cogl_offscreen_new_to_texture(cast(texture.ptr)))
         return rv.map { Offscreen(cast($0)) }
     }
 
@@ -864,519 +1090,27 @@ open class Offscreen: OffscreenProtocol {
     /// finished configuring it by calling `cogl_framebuffer_allocate()` and
     /// passing in a `CoglError` argument to catch any exceptions.
     public static func newWith(texture: TextureProtocol) -> Offscreen! {
-        let rv = cogl_offscreen_new_with_texture(cast(texture.ptr))
+        let rv: UnsafeMutablePointer<CoglOffscreen>! = cast(cogl_offscreen_new_with_texture(cast(texture.ptr)))
         return rv.map { Offscreen(cast($0)) }
     }
 
 }
 
-// MARK: - no Offscreen properties
+// MARK: no Offscreen properties
 
-// MARK: - no signals
+// MARK: no Offscreen signals
 
 
+// MARK: Offscreen Class: OffscreenProtocol extension (methods and fields)
 public extension OffscreenProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglOffscreen` instance.
     var offscreen_ptr: UnsafeMutablePointer<CoglOffscreen> { return ptr.assumingMemoryBound(to: CoglOffscreen.self) }
 
+
+
 }
 
 
-/// Data types for the components of a vertex attribute.
-public typealias AttributeType = CoglAttributeType
-
-public extension AttributeType {
-    /// Data is the same size of a byte
-    static let byte = COGL_ATTRIBUTE_TYPE_BYTE /* 5120 */
-    /// Data is the same size of an
-    ///   unsigned byte
-    static let unsigned_byte = COGL_ATTRIBUTE_TYPE_UNSIGNED_BYTE /* 5121 */
-    /// Data is the same size of a short integer
-    static let short = COGL_ATTRIBUTE_TYPE_SHORT /* 5122 */
-    /// Data is the same size of
-    ///   an unsigned short integer
-    static let unsigned_short = COGL_ATTRIBUTE_TYPE_UNSIGNED_SHORT /* 5123 */
-    /// Data is the same size of a float
-    static let float = COGL_ATTRIBUTE_TYPE_FLOAT /* 5126 */
-}
-
-/// Error codes that can be thrown when performing bitmap
-/// operations. Note that `gdk_pixbuf_new_from_file()` can also throw
-/// errors directly from the underlying image loading library. For
-/// example, if GdkPixbuf is used then errors `GdkPixbufError`<!-- -->s
-/// will be used directly.
-public typealias BitmapError = CoglBitmapError
-
-public extension BitmapError {
-    /// Generic failure code, something went
-    ///   wrong.
-    static let failed = COGL_BITMAP_ERROR_FAILED /* 0 */
-    /// Unknown image type.
-    static let unknown_type = COGL_BITMAP_ERROR_UNKNOWN_TYPE /* 1 */
-    /// An image file was broken somehow.
-    static let corrupt_image = COGL_BITMAP_ERROR_CORRUPT_IMAGE /* 2 */
-}
-
-/// Error enumeration for the blend strings parser
-public typealias BlendStringError = CoglBlendStringError
-
-public extension BlendStringError {
-    /// Generic parse error
-    static let parse_error = COGL_BLEND_STRING_ERROR_PARSE_ERROR /* 0 */
-    /// Argument parse error
-    static let argument_parse_error = COGL_BLEND_STRING_ERROR_ARGUMENT_PARSE_ERROR /* 1 */
-    /// Internal parser error
-    static let invalid_error = COGL_BLEND_STRING_ERROR_INVALID_ERROR /* 2 */
-    /// Blend string not
-    ///   supported by the GPU
-    static let gpu_unsupported_error = COGL_BLEND_STRING_ERROR_GPU_UNSUPPORTED_ERROR /* 3 */
-}
-
-/// When using depth testing one of these functions is used to compare
-/// the depth of an incoming fragment against the depth value currently
-/// stored in the depth buffer. The function is changed using
-/// `cogl_depth_state_set_test_function()`.
-/// 
-/// The test is only done when depth testing is explicitly enabled. (See
-/// `cogl_depth_state_set_test_enabled()`)
-public typealias DepthTestFunction = CoglDepthTestFunction
-
-public extension DepthTestFunction {
-    /// Never passes.
-    static let never = COGL_DEPTH_TEST_FUNCTION_NEVER /* 512 */
-    /// Passes if the fragment's depth
-    /// value is less than the value currently in the depth buffer.
-    static let less = COGL_DEPTH_TEST_FUNCTION_LESS /* 513 */
-    /// Passes if the fragment's depth
-    /// value is equal to the value currently in the depth buffer.
-    static let equal = COGL_DEPTH_TEST_FUNCTION_EQUAL /* 514 */
-    /// Passes if the fragment's depth
-    /// value is less or equal to the value currently in the depth buffer.
-    static let lequal = COGL_DEPTH_TEST_FUNCTION_LEQUAL /* 515 */
-    /// Passes if the fragment's depth
-    /// value is greater than the value currently in the depth buffer.
-    static let greater = COGL_DEPTH_TEST_FUNCTION_GREATER /* 516 */
-    /// Passes if the fragment's depth
-    /// value is not equal to the value currently in the depth buffer.
-    static let notequal = COGL_DEPTH_TEST_FUNCTION_NOTEQUAL /* 517 */
-    /// Passes if the fragment's depth
-    /// value greater than or equal to the value currently in the depth buffer.
-    static let gequal = COGL_DEPTH_TEST_FUNCTION_GEQUAL /* 518 */
-    /// Always passes.
-    static let always = COGL_DEPTH_TEST_FUNCTION_ALWAYS /* 519 */
-}
-
-/// Return values for the `CoglXlibFilterFunc` and `CoglWin32FilterFunc` functions.
-public typealias FilterReturn = CoglFilterReturn
-
-public extension FilterReturn {
-    /// The event was not handled, continues the
-    ///                        processing
-    static let continue_ = COGL_FILTER_CONTINUE /* 0 */
-    /// Remove the event, stops the processing
-    static let remove = COGL_FILTER_REMOVE /* 1 */
-}
-
-/// The fog mode determines the equation used to calculate the fogging blend
-/// factor while fogging is enabled. The simplest `COGL_FOG_MODE_LINEAR` mode
-/// determines f as:
-/// 
-/// ```
-///   f = end - eye_distance / end - start
-/// ```
-/// 
-/// Where eye_distance is the distance of the current fragment in eye
-/// coordinates from the origin.
-public typealias FogMode = CoglFogMode
-
-public extension FogMode {
-    /// Calculates the fog blend factor as:
-    /// ```
-    ///   f = end - eye_distance / end - start
-    /// ```
-    /// 
-    static let linear = COGL_FOG_MODE_LINEAR /* 0 */
-    /// Calculates the fog blend factor as:
-    /// ```
-    ///   f = e ^ -(density * eye_distance)
-    /// ```
-    /// 
-    static let exponential = COGL_FOG_MODE_EXPONENTIAL /* 1 */
-    /// Calculates the fog blend factor as:
-    /// ```
-    ///   f = e ^ -(density * eye_distance)^2
-    /// ```
-    /// 
-    static let exponential_squared = COGL_FOG_MODE_EXPONENTIAL_SQUARED /* 2 */
-}
-
-/// You should aim to use the smallest data type that gives you enough
-/// range, since it reduces the size of your index array and can help
-/// reduce the demand on memory bandwidth.
-/// 
-/// Note that `COGL_INDICES_TYPE_UNSIGNED_INT` is only supported if the
-/// `COGL_FEATURE_ID_UNSIGNED_INT_INDICES` feature is available. This
-/// should always be available on OpenGL but on OpenGL ES it will only
-/// be available if the GL_OES_element_index_uint extension is
-/// advertized.
-public typealias IndicesType = CoglIndicesType
-
-public extension IndicesType {
-    /// Your indices are unsigned bytes
-    static let byte = COGL_INDICES_TYPE_UNSIGNED_BYTE /* 0 */
-    /// Your indices are unsigned shorts
-    static let short = COGL_INDICES_TYPE_UNSIGNED_SHORT /* 1 */
-    /// Your indices are unsigned ints
-    static let int = COGL_INDICES_TYPE_UNSIGNED_INT /* 2 */
-}
-
-/// Alpha testing happens before blending primitives with the framebuffer and
-/// gives an opportunity to discard fragments based on a comparison with the
-/// incoming alpha value and a reference alpha value. The `CoglMaterialAlphaFunc`
-/// determines how the comparison is done.
-public typealias MaterialAlphaFunc = CoglMaterialAlphaFunc
-
-public extension MaterialAlphaFunc {
-    /// Never let the fragment through.
-    static let never = COGL_MATERIAL_ALPHA_FUNC_NEVER /* 512 */
-    /// Let the fragment through if the incoming
-    ///   alpha value is less than the reference alpha value
-    static let less = COGL_MATERIAL_ALPHA_FUNC_LESS /* 513 */
-    /// Let the fragment through if the incoming
-    ///   alpha value equals the reference alpha value
-    static let equal = COGL_MATERIAL_ALPHA_FUNC_EQUAL /* 514 */
-    /// Let the fragment through if the incoming
-    ///   alpha value is less than or equal to the reference alpha value
-    static let lequal = COGL_MATERIAL_ALPHA_FUNC_LEQUAL /* 515 */
-    /// Let the fragment through if the incoming
-    ///   alpha value is greater than the reference alpha value
-    static let greater = COGL_MATERIAL_ALPHA_FUNC_GREATER /* 516 */
-    /// Let the fragment through if the incoming
-    ///   alpha value does not equal the reference alpha value
-    static let notequal = COGL_MATERIAL_ALPHA_FUNC_NOTEQUAL /* 517 */
-    /// Let the fragment through if the incoming
-    ///   alpha value is greater than or equal to the reference alpha value.
-    static let gequal = COGL_MATERIAL_ALPHA_FUNC_GEQUAL /* 518 */
-    /// Always let the fragment through.
-    static let always = COGL_MATERIAL_ALPHA_FUNC_ALWAYS /* 519 */
-}
-
-/// Texture filtering is used whenever the current pixel maps either to more
-/// than one texture element (texel) or less than one. These filter enums
-/// correspond to different strategies used to come up with a pixel color, by
-/// possibly referring to multiple neighbouring texels and taking a weighted
-/// average or simply using the nearest texel.
-public typealias MaterialFilter = CoglMaterialFilter
-
-public extension MaterialFilter {
-    /// Measuring in manhatten distance from the,
-    ///   current pixel center, use the nearest texture texel
-    static let nearest = COGL_MATERIAL_FILTER_NEAREST /* 9728 */
-    /// Use the weighted average of the 4 texels
-    ///   nearest the current pixel center
-    static let linear = COGL_MATERIAL_FILTER_LINEAR /* 9729 */
-    /// Select the mimap level whose
-    ///   texel size most closely matches the current pixel, and use the
-    ///   `COGL_MATERIAL_FILTER_NEAREST` criterion
-    static let nearest_mipmap_nearest = COGL_MATERIAL_FILTER_NEAREST_MIPMAP_NEAREST /* 9984 */
-    /// Select the mimap level whose
-    ///   texel size most closely matches the current pixel, and use the
-    ///   `COGL_MATERIAL_FILTER_LINEAR` criterion
-    static let linear_mipmap_nearest = COGL_MATERIAL_FILTER_LINEAR_MIPMAP_NEAREST /* 9985 */
-    /// Select the two mimap levels
-    ///   whose texel size most closely matches the current pixel, use
-    ///   the `COGL_MATERIAL_FILTER_NEAREST` criterion on each one and take
-    ///   their weighted average
-    static let nearest_mipmap_linear = COGL_MATERIAL_FILTER_NEAREST_MIPMAP_LINEAR /* 9986 */
-    /// Select the two mimap levels
-    ///   whose texel size most closely matches the current pixel, use
-    ///   the `COGL_MATERIAL_FILTER_LINEAR` criterion on each one and take
-    ///   their weighted average
-    static let linear_mipmap_linear = COGL_MATERIAL_FILTER_LINEAR_MIPMAP_LINEAR /* 9987 */
-}
-
-/// Available types of layers for a `CoglMaterial`. This enumeration
-/// might be expanded in later versions.
-public typealias MaterialLayerType = CoglMaterialLayerType
-
-public extension MaterialLayerType {
-    /// The layer represents a
-    ///   <link linkend="cogl-Textures">texture</link>
-    static let texture = COGL_MATERIAL_LAYER_TYPE_TEXTURE /* 0 */
-}
-
-/// The wrap mode specifies what happens when texture coordinates
-/// outside the range 0→1 are used. Note that if the filter mode is
-/// anything but `COGL_MATERIAL_FILTER_NEAREST` then texels outside the
-/// range 0→1 might be used even when the coordinate is exactly 0 or 1
-/// because OpenGL will try to sample neighbouring pixels. For example
-/// if you are trying to render the full texture then you may get
-/// artifacts around the edges when the pixels from the other side are
-/// merged in if the wrap mode is set to repeat.
-public typealias MaterialWrapMode = CoglMaterialWrapMode
-
-public extension MaterialWrapMode {
-    /// The texture will be repeated. This
-    ///   is useful for example to draw a tiled background.
-    static let repeat_ = COGL_MATERIAL_WRAP_MODE_REPEAT /* 10497 */
-    /// The coordinates outside the
-    ///   range 0→1 will sample copies of the edge pixels of the
-    ///   texture. This is useful to avoid artifacts if only one copy of
-    ///   the texture is being rendered.
-    static let clamp_to_edge = COGL_MATERIAL_WRAP_MODE_CLAMP_TO_EDGE /* 33071 */
-    /// Cogl will try to automatically
-    ///   decide which of the above two to use. For `cogl_rectangle()`, it
-    ///   will use repeat mode if any of the texture coordinates are
-    ///   outside the range 0→1, otherwise it will use clamp to edge. For
-    ///   `cogl_polygon()` it will always use repeat mode. For
-    ///   `cogl_vertex_buffer_draw()` it will use repeat mode except for
-    ///   layers that have point sprite coordinate generation enabled. This
-    ///   is the default value.
-    static let automatic = COGL_MATERIAL_WRAP_MODE_AUTOMATIC /* 519 */
-}
-
-/// Pixel formats used by Cogl. For the formats with a byte per
-/// component, the order of the components specify the order in
-/// increasing memory addresses. So for example
-/// `COGL_PIXEL_FORMAT_RGB_888` would have the red component in the
-/// lowest address, green in the next address and blue after that
-/// regardless of the endianness of the system.
-/// 
-/// For the formats with non byte aligned components the component
-/// order specifies the order within a 16-bit or 32-bit number from
-/// most significant bit to least significant. So for
-/// `COGL_PIXEL_FORMAT_RGB_565`, the red component would be in bits
-/// 11-15, the green component would be in 6-11 and the blue component
-/// would be in 1-5. Therefore the order in memory depends on the
-/// endianness of the system.
-/// 
-/// When uploading a texture `COGL_PIXEL_FORMAT_ANY` can be used as the
-/// internal format. Cogl will try to pick the best format to use
-/// internally and convert the texture data if necessary.
-public typealias PixelFormat = CoglPixelFormat
-
-public extension PixelFormat {
-    /// Any format
-    static let any = COGL_PIXEL_FORMAT_ANY /* 0 */
-    /// 8 bits alpha mask
-    static let a_8 = COGL_PIXEL_FORMAT_A_8 /* 17 */
-    /// RGB, 16 bits
-    static let rgb_565 = COGL_PIXEL_FORMAT_RGB_565 /* 4 */
-    /// RGBA, 16 bits
-    static let rgba_4444 = COGL_PIXEL_FORMAT_RGBA_4444 /* 21 */
-    /// RGBA, 16 bits
-    static let rgba_5551 = COGL_PIXEL_FORMAT_RGBA_5551 /* 22 */
-    /// Not currently supported
-    static let yuv = COGL_PIXEL_FORMAT_YUV /* 7 */
-    /// Single luminance component
-    static let g_8 = COGL_PIXEL_FORMAT_G_8 /* 8 */
-    /// RG, 16 bits. Note that red-green textures
-    ///   are only available if `COGL_FEATURE_ID_TEXTURE_RG` is advertised.
-    ///   See `cogl_texture_set_components()` for details.
-    static let rg_88 = COGL_PIXEL_FORMAT_RG_88 /* 9 */
-    /// RGB, 24 bits
-    static let rgb_888 = COGL_PIXEL_FORMAT_RGB_888 /* 2 */
-    /// BGR, 24 bits
-    static let bgr_888 = COGL_PIXEL_FORMAT_BGR_888 /* 34 */
-    /// RGBA, 32 bits
-    static let rgba_8888 = COGL_PIXEL_FORMAT_RGBA_8888 /* 19 */
-    /// BGRA, 32 bits
-    static let bgra_8888 = COGL_PIXEL_FORMAT_BGRA_8888 /* 51 */
-    /// ARGB, 32 bits
-    static let argb_8888 = COGL_PIXEL_FORMAT_ARGB_8888 /* 83 */
-    /// ABGR, 32 bits
-    static let abgr_8888 = COGL_PIXEL_FORMAT_ABGR_8888 /* 115 */
-    /// RGBA, 32 bits, 10 bpc
-    static let rgba_1010102 = COGL_PIXEL_FORMAT_RGBA_1010102 /* 29 */
-    /// BGRA, 32 bits, 10 bpc
-    static let bgra_1010102 = COGL_PIXEL_FORMAT_BGRA_1010102 /* 61 */
-    /// ARGB, 32 bits, 10 bpc
-    static let argb_2101010 = COGL_PIXEL_FORMAT_ARGB_2101010 /* 93 */
-    /// ABGR, 32 bits, 10 bpc
-    static let abgr_2101010 = COGL_PIXEL_FORMAT_ABGR_2101010 /* 125 */
-    /// Premultiplied RGBA, 32 bits
-    static let rgba_8888_pre = COGL_PIXEL_FORMAT_RGBA_8888_PRE /* 147 */
-    /// Premultiplied BGRA, 32 bits
-    static let bgra_8888_pre = COGL_PIXEL_FORMAT_BGRA_8888_PRE /* 179 */
-    /// Premultiplied ARGB, 32 bits
-    static let argb_8888_pre = COGL_PIXEL_FORMAT_ARGB_8888_PRE /* 211 */
-    /// Premultiplied ABGR, 32 bits
-    static let abgr_8888_pre = COGL_PIXEL_FORMAT_ABGR_8888_PRE /* 243 */
-    /// Premultiplied RGBA, 16 bits
-    static let rgba_4444_pre = COGL_PIXEL_FORMAT_RGBA_4444_PRE /* 149 */
-    /// Premultiplied RGBA, 16 bits
-    static let rgba_5551_pre = COGL_PIXEL_FORMAT_RGBA_5551_PRE /* 150 */
-    /// Premultiplied RGBA, 32 bits, 10 bpc
-    static let rgba_1010102_pre = COGL_PIXEL_FORMAT_RGBA_1010102_PRE /* 157 */
-    /// Premultiplied BGRA, 32 bits, 10 bpc
-    static let bgra_1010102_pre = COGL_PIXEL_FORMAT_BGRA_1010102_PRE /* 189 */
-    /// Premultiplied ARGB, 32 bits, 10 bpc
-    static let argb_2101010_pre = COGL_PIXEL_FORMAT_ARGB_2101010_PRE /* 221 */
-    /// Premultiplied ABGR, 32 bits, 10 bpc
-    static let abgr_2101010_pre = COGL_PIXEL_FORMAT_ABGR_2101010_PRE /* 253 */
-    static let depth_16 = COGL_PIXEL_FORMAT_DEPTH_16 /* 265 */
-    static let depth_32 = COGL_PIXEL_FORMAT_DEPTH_32 /* 259 */
-    static let depth_24_stencil_8 = COGL_PIXEL_FORMAT_DEPTH_24_STENCIL_8 /* 771 */
-}
-
-public typealias RendererError = CoglRendererError
-
-public extension RendererError {
-    static let xlib_display_open = COGL_RENDERER_ERROR_XLIB_DISPLAY_OPEN /* 0 */
-    static let bad_constraint = COGL_RENDERER_ERROR_BAD_CONSTRAINT /* 1 */
-}
-
-/// Types of shaders
-public typealias ShaderType = CoglShaderType
-
-public extension ShaderType {
-    /// A program for proccessing vertices
-    static let vertex = COGL_SHADER_TYPE_VERTEX /* 0 */
-    /// A program for processing fragments
-    static let fragment = COGL_SHADER_TYPE_FRAGMENT /* 1 */
-}
-
-/// Represents how draw should affect the two buffers
-/// of a stereo framebuffer. See `cogl_framebuffer_set_stereo_mode()`.
-public typealias StereoMode = CoglStereoMode
-
-public extension StereoMode {
-    /// draw to both stereo buffers
-    static let both = COGL_STEREO_BOTH /* 0 */
-    /// draw only to the left stereo buffer
-    static let left_ = COGL_STEREO_LEFT /* 1 */
-    /// draw only to the left stereo buffer
-    static let right_ = COGL_STEREO_RIGHT /* 2 */
-}
-
-/// Error enumeration for Cogl
-/// 
-/// The `COGL_SYSTEM_ERROR_UNSUPPORTED` error can be thrown for a
-/// variety of reasons. For example:
-/// 
-/// <itemizedlist>
-///  <listitem><para>You've tried to use a feature that is not
-///   advertised by `cogl_has_feature()`. This could happen if you create
-///   a 2d texture with a non-power-of-two size when
-///   `COGL_FEATURE_ID_TEXTURE_NPOT` is not advertised.</para></listitem>
-///  <listitem><para>The GPU can not handle the configuration you have
-///   requested. An example might be if you try to use too many texture
-///   layers in a single `CoglPipeline`</para></listitem>
-///  <listitem><para>The driver does not support some
-///   configuration.</para></listiem>
-/// </itemizedlist>
-/// 
-/// Currently this is only used by Cogl API marked as experimental so
-/// this enum should also be considered experimental.
-public typealias SystemError = CoglSystemError
-
-public extension SystemError {
-    /// You tried to use a feature or
-    ///    configuration not currently available.
-    static let cogl_system_error_unsupported = COGL_SYSTEM_ERROR_UNSUPPORTED /* 0 */
-    /// You tried to allocate a resource
-    ///    such as a texture and there wasn't enough memory.
-    static let cogl_system_error_no_memory = COGL_SYSTEM_ERROR_NO_MEMORY /* 1 */
-}
-
-/// See `cogl_texture_set_components()`.
-public typealias TextureComponents = CoglTextureComponents
-
-public extension TextureComponents {
-    /// Only the alpha component
-    static let a = COGL_TEXTURE_COMPONENTS_A /* 1 */
-    /// Red and green components. Note that
-    ///   this can only be used if the `COGL_FEATURE_ID_TEXTURE_RG` feature
-    ///   is advertised.
-    static let rg = COGL_TEXTURE_COMPONENTS_RG /* 2 */
-    /// Red, green and blue components
-    static let rgb = COGL_TEXTURE_COMPONENTS_RGB /* 3 */
-    /// Red, green, blue and alpha components
-    static let rgba = COGL_TEXTURE_COMPONENTS_RGBA /* 4 */
-    /// Only a depth component
-    static let depth = COGL_TEXTURE_COMPONENTS_DEPTH /* 5 */
-}
-
-/// Error codes that can be thrown when allocating textures.
-public typealias TextureError = CoglTextureError
-
-public extension TextureError {
-    /// Unsupported size
-    static let size = COGL_TEXTURE_ERROR_SIZE /* 0 */
-    /// Unsupported format
-    static let format = COGL_TEXTURE_ERROR_FORMAT /* 1 */
-    static let bad_parameter = COGL_TEXTURE_ERROR_BAD_PARAMETER /* 2 */
-    /// A primitive texture type that is
-    ///   unsupported by the driver was used
-    static let type = COGL_TEXTURE_ERROR_TYPE /* 3 */
-}
-
-/// Constants representing the underlying hardware texture type of a
-/// `CoglTexture`.
-public typealias TextureType = CoglTextureType
-
-public extension TextureType {
-    /// A `CoglTexture2D`
-    static let _2d = COGL_TEXTURE_TYPE_2D /* 0 */
-    /// A `CoglTexture3D`
-    static let _3d = COGL_TEXTURE_TYPE_3D /* 1 */
-    /// A `CoglTextureRectangle`
-    static let rectangle = COGL_TEXTURE_TYPE_RECTANGLE /* 2 */
-}
-
-/// Different ways of interpreting vertices when drawing.
-public typealias VerticesMode = CoglVerticesMode
-
-public extension VerticesMode {
-    /// FIXME, equivalent to
-    /// <constant>GL_POINTS</constant>
-    static let points = COGL_VERTICES_MODE_POINTS /* 0 */
-    /// FIXME, equivalent to <constant>GL_LINES</constant>
-    static let lines = COGL_VERTICES_MODE_LINES /* 1 */
-    /// FIXME, equivalent to
-    /// <constant>GL_LINE_LOOP</constant>
-    static let line_loop = COGL_VERTICES_MODE_LINE_LOOP /* 2 */
-    /// FIXME, equivalent to
-    /// <constant>GL_LINE_STRIP</constant>
-    static let line_strip = COGL_VERTICES_MODE_LINE_STRIP /* 3 */
-    /// FIXME, equivalent to
-    /// <constant>GL_TRIANGLES</constant>
-    static let triangles = COGL_VERTICES_MODE_TRIANGLES /* 4 */
-    /// FIXME, equivalent to
-    /// <constant>GL_TRIANGLE_STRIP</constant>
-    static let triangle_strip = COGL_VERTICES_MODE_TRIANGLE_STRIP /* 5 */
-    /// FIXME, equivalent to <constant>GL_TRIANGLE_FAN</constant>
-    static let triangle_fan = COGL_VERTICES_MODE_TRIANGLE_FAN /* 6 */
-}
-
-/// Enum used to represent the two directions of rotation. This can be
-/// used to set the front face for culling by calling
-/// `cogl_pipeline_set_front_face_winding()`.
-public typealias Winding = CoglWinding
-
-public extension Winding {
-    /// Vertices are in a clockwise order
-    static let clockwise = COGL_WINDING_CLOCKWISE /* 0 */
-    /// Vertices are in a counter-clockwise order
-    static let counter_clockwise = COGL_WINDING_COUNTER_CLOCKWISE /* 1 */
-}
-
-public typealias WinsysFeature = CoglWinsysFeature
-
-public extension WinsysFeature {
-    static let multiple_onscreen = COGL_WINSYS_FEATURE_MULTIPLE_ONSCREEN /* 0 */
-    static let swap_throttle = COGL_WINSYS_FEATURE_SWAP_THROTTLE /* 1 */
-    static let vblank_counter = COGL_WINSYS_FEATURE_VBLANK_COUNTER /* 2 */
-    static let vblank_wait = COGL_WINSYS_FEATURE_VBLANK_WAIT /* 3 */
-    static let texture_from_pixmap = COGL_WINSYS_FEATURE_TEXTURE_FROM_PIXMAP /* 4 */
-    static let swap_buffers_event = COGL_WINSYS_FEATURE_SWAP_BUFFERS_EVENT /* 5 */
-    static let swap_region = COGL_WINSYS_FEATURE_SWAP_REGION /* 6 */
-    static let swap_region_throttle = COGL_WINSYS_FEATURE_SWAP_REGION_THROTTLE /* 7 */
-    static let swap_region_synchronized = COGL_WINSYS_FEATURE_SWAP_REGION_SYNCHRONIZED /* 8 */
-    static let buffer_age = COGL_WINSYS_FEATURE_BUFFER_AGE /* 9 */
-    static let sync_and_complete_event = COGL_WINSYS_FEATURE_SYNC_AND_COMPLETE_EVENT /* 10 */
-    static let n_features = COGL_WINSYS_FEATURE_N_FEATURES /* 11 */
-}
 // MARK: - Texture Interface
 
 /// The `TextureProtocol` protocol exposes the methods and properties of an underlying `CoglTexture` instance.
@@ -1386,7 +1120,7 @@ public extension WinsysFeature {
 ///
 
 public protocol TextureProtocol {
-    /// Untyped pointer to the underlying `CoglTexture` instance.
+        /// Untyped pointer to the underlying `CoglTexture` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglTexture` instance.
@@ -1399,7 +1133,7 @@ public protocol TextureProtocol {
 ///
 
 public struct TextureRef: TextureProtocol {
-    /// Untyped pointer to the underlying `CoglTexture` instance.
+        /// Untyped pointer to the underlying `CoglTexture` instance.
     /// For type-safe access, use the generated, typed pointer `texture_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -1452,7 +1186,7 @@ public extension TextureRef {
 ///
 
 open class Texture: TextureProtocol {
-    /// Untyped pointer to the underlying `CoglTexture` instance.
+        /// Untyped pointer to the underlying `CoglTexture` instance.
     /// For type-safe access, use the generated, typed pointer `texture_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -1481,7 +1215,7 @@ open class Texture: TextureProtocol {
         // no reference counting for , cannot ref(cast(texture_ptr))
     }
 
-    /// Do-nothing destructor for``.
+    /// Do-nothing destructor for ``.
     deinit {
         // no reference counting for , cannot unref(cast(texture_ptr))
     }
@@ -1549,11 +1283,12 @@ open class Texture: TextureProtocol {
 
 }
 
-// MARK: - no Texture properties
+// MARK: no Texture properties
 
-// MARK: - no signals
+// MARK: no Texture signals
 
 
+// MARK: Texture Interface: TextureProtocol extension (methods and fields)
 public extension TextureProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglTexture` instance.
     var texture_ptr: UnsafeMutablePointer<CoglTexture> { return ptr.assumingMemoryBound(to: CoglTexture.self) }
@@ -1567,12 +1302,10 @@ public extension TextureProtocol {
     /// the texture, or if the texture is attached to a `CoglOffscreen`
     /// framebuffer and rendered too.</note>
     func allocate() throws -> CoglBool {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        var error: UnsafeMutablePointer<GError>?
         let rv = cogl_texture_allocate(cast(texture_ptr), &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
-        return rv
+        if let error = error { throw ErrorType(error) }
+        return cast(rv)
     }
 
     /// Queries what components the given `texture` stores internally as set
@@ -1584,7 +1317,7 @@ public extension TextureProtocol {
     /// the pixel format of the data.
     func getComponents() -> CoglTextureComponents {
         let rv = cogl_texture_get_components(cast(texture_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Copies the pixel data from a cogl texture to system memory.
@@ -1593,9 +1326,9 @@ public extension TextureProtocol {
     /// `rowstride` argument, the rowstride should be the rowstride you
     /// want for the destination `data` buffer not the rowstride of the
     /// source texture</note>
-    func getData(format: PixelFormat, rowstride: CUnsignedInt, data: UnsafeMutablePointer<UInt8>) -> CInt {
-        let rv = cogl_texture_get_data(cast(texture_ptr), format, rowstride, cast(data))
-        return rv
+    func getData(format: PixelFormat, rowstride: CUnsignedInt, data: UnsafeMutablePointer<UInt8>) -> Int {
+        let rv: Int = cast(cogl_texture_get_data(cast(texture_ptr), format, rowstride, cast(data)))
+        return cast(rv)
     }
 
     /// Queries the GL handles for a GPU side texture through its `CoglTexture`.
@@ -1604,20 +1337,20 @@ public extension TextureProtocol {
     /// queried.
     func getGlTexture(outGlHandle out_gl_handle: UnsafeMutablePointer<CUnsignedInt>, outGlTarget out_gl_target: UnsafeMutablePointer<CUnsignedInt>) -> CoglBool {
         let rv = cogl_texture_get_gl_texture(cast(texture_ptr), cast(out_gl_handle), cast(out_gl_target))
-        return rv
+        return cast(rv)
     }
 
     /// Queries the height of a cogl texture.
-    func getHeight() -> CUnsignedInt {
-        let rv = cogl_texture_get_height(cast(texture_ptr))
-        return rv
+    func getHeight() -> Int {
+        let rv: Int = cast(cogl_texture_get_height(cast(texture_ptr)))
+        return cast(rv)
     }
 
     /// Queries the maximum wasted (unused) pixels in one dimension of a GPU side
     /// texture.
-    func getMaxWaste() -> CInt {
-        let rv = cogl_texture_get_max_waste(cast(texture_ptr))
-        return rv
+    func getMaxWaste() -> Int {
+        let rv: Int = cast(cogl_texture_get_max_waste(cast(texture_ptr)))
+        return cast(rv)
     }
 
     /// Queries the pre-multiplied alpha status for internally stored red,
@@ -1627,13 +1360,13 @@ public extension TextureProtocol {
     /// By default the pre-multipled state is `TRUE`.
     func getPremultiplied() -> CoglBool {
         let rv = cogl_texture_get_premultiplied(cast(texture_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Queries the width of a cogl texture.
-    func getWidth() -> CUnsignedInt {
-        let rv = cogl_texture_get_width(cast(texture_ptr))
-        return rv
+    func getWidth() -> Int {
+        let rv: Int = cast(cogl_texture_get_width(cast(texture_ptr)))
+        return cast(rv)
     }
 
     /// Affects the internal storage format for this texture by specifying
@@ -1692,7 +1425,7 @@ public extension TextureProtocol {
     /// <note>The region set can't be larger than the source `data`</note>
     func setRegion(srcX src_x: CInt, srcY src_y: CInt, dstX dst_x: CInt, dstY dst_y: CInt, dstWidth dst_width: CUnsignedInt, dstHeight dst_height: CUnsignedInt, width: CInt, height: CInt, format: PixelFormat, rowstride: CUnsignedInt, data: UnsafePointer<UInt8>) -> CoglBool {
         let rv = cogl_texture_set_region(cast(texture_ptr), src_x, src_y, dst_x, dst_y, dst_width, dst_height, width, height, format, rowstride, cast(data))
-        return rv
+        return cast(rv)
     }
 
     /// This is a convenience function for creating a material with the first
@@ -1734,7 +1467,7 @@ public extension TextureProtocol {
         /// the pixel format of the data.
         get {
             let rv = cogl_texture_get_components(cast(texture_ptr))
-            return rv
+            return cast(rv)
         }
         /// Affects the internal storage format for this texture by specifying
         /// what components will be required for sampling later.
@@ -1756,16 +1489,16 @@ public extension TextureProtocol {
         /// an image format as long as `COGL_TEXTURE_COMPONENTS_RG` isn't used
         /// as the texture's components.
         nonmutating set {
-            cogl_texture_set_components(cast(texture_ptr), newValue)
+            cogl_texture_set_components(cast(texture_ptr), cast(newValue))
         }
     }
 
     /// Queries the height of a cogl texture.
-    var height: CUnsignedInt {
+    var height: Int {
         /// Queries the height of a cogl texture.
         get {
-            let rv = cogl_texture_get_height(cast(texture_ptr))
-            return rv
+            let rv: Int = cast(cogl_texture_get_height(cast(texture_ptr)))
+            return cast(rv)
         }
     }
 
@@ -1776,18 +1509,18 @@ public extension TextureProtocol {
         /// objects).
         get {
             let rv = cogl_texture_is_sliced(cast(texture_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
     /// Queries the maximum wasted (unused) pixels in one dimension of a GPU side
     /// texture.
-    var maxWaste: CInt {
+    var maxWaste: Int {
         /// Queries the maximum wasted (unused) pixels in one dimension of a GPU side
         /// texture.
         get {
-            let rv = cogl_texture_get_max_waste(cast(texture_ptr))
-            return rv
+            let rv: Int = cast(cogl_texture_get_max_waste(cast(texture_ptr)))
+            return cast(rv)
         }
     }
 
@@ -1804,7 +1537,7 @@ public extension TextureProtocol {
         /// By default the pre-multipled state is `TRUE`.
         get {
             let rv = cogl_texture_get_premultiplied(cast(texture_ptr))
-            return rv
+            return cast(rv)
         }
         /// Affects the internal storage format for this texture by specifying
         /// whether red, green and blue color components should be stored as
@@ -1828,25 +1561,744 @@ public extension TextureProtocol {
         /// 
         /// By default the `premultipled` state is `TRUE`.
         nonmutating set {
-            cogl_texture_set_premultiplied(cast(texture_ptr), newValue)
+            cogl_texture_set_premultiplied(cast(texture_ptr), cast(newValue))
         }
     }
 
     /// Queries the width of a cogl texture.
-    var width: CUnsignedInt {
+    var width: Int {
         /// Queries the width of a cogl texture.
         get {
-            let rv = cogl_texture_get_width(cast(texture_ptr))
-            return rv
+            let rv: Int = cast(cogl_texture_get_width(cast(texture_ptr)))
+            return cast(rv)
         }
     }
+
+
 }
 
+
+/// Data types for the components of a vertex attribute.
+public typealias AttributeType = CoglAttributeType
+
+public extension AttributeType {
+    /// Data is the same size of a byte
+    static let byte = COGL_ATTRIBUTE_TYPE_BYTE /* 5120 */
+    /// Data is the same size of an
+    ///   unsigned byte
+    static let unsignedByte = COGL_ATTRIBUTE_TYPE_UNSIGNED_BYTE /* 5121 */
+    /// Data is the same size of a short integer
+    static let short = COGL_ATTRIBUTE_TYPE_SHORT /* 5122 */
+    /// Data is the same size of
+    ///   an unsigned short integer
+    static let unsignedShort = COGL_ATTRIBUTE_TYPE_UNSIGNED_SHORT /* 5123 */
+    /// Data is the same size of a float
+    static let float = COGL_ATTRIBUTE_TYPE_FLOAT /* 5126 */
+    /// Data is the same size of an
+    ///   unsigned byte
+    @available(*, deprecated) static let unsigned_byte = AttributeType.unsignedByte /* COGL_ATTRIBUTE_TYPE_UNSIGNED_BYTE */
+    /// Data is the same size of
+    ///   an unsigned short integer
+    @available(*, deprecated) static let unsigned_short = AttributeType.unsignedShort /* COGL_ATTRIBUTE_TYPE_UNSIGNED_SHORT */
+}
+func cast<I: BinaryInteger>(_ param: I) -> AttributeType { AttributeType(rawValue: cast(param)) }
+func cast(_ param: AttributeType) -> UInt32 { cast(param.rawValue) }
+
+
+/// Error codes that can be thrown when performing bitmap
+/// operations. Note that `gdk_pixbuf_new_from_file()` can also throw
+/// errors directly from the underlying image loading library. For
+/// example, if GdkPixbuf is used then errors `GdkPixbufError`<!-- -->s
+/// will be used directly.
+public typealias BitmapError = CoglBitmapError
+
+public extension BitmapError {
+    /// Generic failure code, something went
+    ///   wrong.
+    static let failed = COGL_BITMAP_ERROR_FAILED /* 0 */
+    /// Unknown image type.
+    static let unknownType = COGL_BITMAP_ERROR_UNKNOWN_TYPE /* 1 */
+    /// An image file was broken somehow.
+    static let corruptImage = COGL_BITMAP_ERROR_CORRUPT_IMAGE /* 2 */
+    /// Unknown image type.
+    @available(*, deprecated) static let unknown_type = BitmapError.unknownType /* COGL_BITMAP_ERROR_UNKNOWN_TYPE */
+    /// An image file was broken somehow.
+    @available(*, deprecated) static let corrupt_image = BitmapError.corruptImage /* COGL_BITMAP_ERROR_CORRUPT_IMAGE */
+}
+func cast<I: BinaryInteger>(_ param: I) -> BitmapError { BitmapError(rawValue: cast(param)) }
+func cast(_ param: BitmapError) -> UInt32 { cast(param.rawValue) }
+
+
+/// Error enumeration for the blend strings parser
+public typealias BlendStringError = CoglBlendStringError
+
+public extension BlendStringError {
+    /// Generic parse error
+    static let parseError = COGL_BLEND_STRING_ERROR_PARSE_ERROR /* 0 */
+    /// Argument parse error
+    static let argumentParseError = COGL_BLEND_STRING_ERROR_ARGUMENT_PARSE_ERROR /* 1 */
+    /// Internal parser error
+    static let invalidError = COGL_BLEND_STRING_ERROR_INVALID_ERROR /* 2 */
+    /// Blend string not
+    ///   supported by the GPU
+    static let gpuUnsupportedError = COGL_BLEND_STRING_ERROR_GPU_UNSUPPORTED_ERROR /* 3 */
+    /// Generic parse error
+    @available(*, deprecated) static let parse_error = BlendStringError.parseError /* COGL_BLEND_STRING_ERROR_PARSE_ERROR */
+    /// Argument parse error
+    @available(*, deprecated) static let argument_parse_error = BlendStringError.argumentParseError /* COGL_BLEND_STRING_ERROR_ARGUMENT_PARSE_ERROR */
+    /// Internal parser error
+    @available(*, deprecated) static let invalid_error = BlendStringError.invalidError /* COGL_BLEND_STRING_ERROR_INVALID_ERROR */
+    /// Blend string not
+    ///   supported by the GPU
+    @available(*, deprecated) static let gpu_unsupported_error = BlendStringError.gpuUnsupportedError /* COGL_BLEND_STRING_ERROR_GPU_UNSUPPORTED_ERROR */
+}
+func cast<I: BinaryInteger>(_ param: I) -> BlendStringError { BlendStringError(rawValue: cast(param)) }
+func cast(_ param: BlendStringError) -> UInt32 { cast(param.rawValue) }
+
+
+/// When using depth testing one of these functions is used to compare
+/// the depth of an incoming fragment against the depth value currently
+/// stored in the depth buffer. The function is changed using
+/// `cogl_depth_state_set_test_function()`.
+/// 
+/// The test is only done when depth testing is explicitly enabled. (See
+/// `cogl_depth_state_set_test_enabled()`)
+public typealias DepthTestFunction = CoglDepthTestFunction
+
+public extension DepthTestFunction {
+    /// Never passes.
+    static let never = COGL_DEPTH_TEST_FUNCTION_NEVER /* 512 */
+    /// Passes if the fragment's depth
+    /// value is less than the value currently in the depth buffer.
+    static let less = COGL_DEPTH_TEST_FUNCTION_LESS /* 513 */
+    /// Passes if the fragment's depth
+    /// value is equal to the value currently in the depth buffer.
+    static let equal = COGL_DEPTH_TEST_FUNCTION_EQUAL /* 514 */
+    /// Passes if the fragment's depth
+    /// value is less or equal to the value currently in the depth buffer.
+    static let lequal = COGL_DEPTH_TEST_FUNCTION_LEQUAL /* 515 */
+    /// Passes if the fragment's depth
+    /// value is greater than the value currently in the depth buffer.
+    static let greater = COGL_DEPTH_TEST_FUNCTION_GREATER /* 516 */
+    /// Passes if the fragment's depth
+    /// value is not equal to the value currently in the depth buffer.
+    static let notequal = COGL_DEPTH_TEST_FUNCTION_NOTEQUAL /* 517 */
+    /// Passes if the fragment's depth
+    /// value greater than or equal to the value currently in the depth buffer.
+    static let gequal = COGL_DEPTH_TEST_FUNCTION_GEQUAL /* 518 */
+    /// Always passes.
+    static let always = COGL_DEPTH_TEST_FUNCTION_ALWAYS /* 519 */
+
+}
+func cast<I: BinaryInteger>(_ param: I) -> DepthTestFunction { DepthTestFunction(rawValue: cast(param)) }
+func cast(_ param: DepthTestFunction) -> UInt32 { cast(param.rawValue) }
+
+
+/// Return values for the `CoglXlibFilterFunc` and `CoglWin32FilterFunc` functions.
+public typealias FilterReturn = CoglFilterReturn
+
+public extension FilterReturn {
+    /// The event was not handled, continues the
+    ///                        processing
+    static let `continue` = COGL_FILTER_CONTINUE /* 0 */
+    /// Remove the event, stops the processing
+    static let remove = COGL_FILTER_REMOVE /* 1 */
+    /// The event was not handled, continues the
+    ///                        processing
+    @available(*, deprecated) static let continue_ = FilterReturn.`continue` /* COGL_FILTER_CONTINUE */
+}
+func cast<I: BinaryInteger>(_ param: I) -> FilterReturn { FilterReturn(rawValue: cast(param)) }
+func cast(_ param: FilterReturn) -> UInt32 { cast(param.rawValue) }
+
+
+/// The fog mode determines the equation used to calculate the fogging blend
+/// factor while fogging is enabled. The simplest `COGL_FOG_MODE_LINEAR` mode
+/// determines f as:
+/// 
+/// ```
+///   f = end - eye_distance / end - start
+/// ```
+/// 
+/// Where eye_distance is the distance of the current fragment in eye
+/// coordinates from the origin.
+public typealias FogMode = CoglFogMode
+
+public extension FogMode {
+    /// Calculates the fog blend factor as:
+    /// ```
+    ///   f = end - eye_distance / end - start
+    /// ```
+    /// 
+    static let linear = COGL_FOG_MODE_LINEAR /* 0 */
+    /// Calculates the fog blend factor as:
+    /// ```
+    ///   f = e ^ -(density * eye_distance)
+    /// ```
+    /// 
+    static let exponential = COGL_FOG_MODE_EXPONENTIAL /* 1 */
+    /// Calculates the fog blend factor as:
+    /// ```
+    ///   f = e ^ -(density * eye_distance)^2
+    /// ```
+    /// 
+    static let exponentialSquared = COGL_FOG_MODE_EXPONENTIAL_SQUARED /* 2 */
+    /// Calculates the fog blend factor as:
+    /// ```
+    ///   f = e ^ -(density * eye_distance)^2
+    /// ```
+    /// 
+    @available(*, deprecated) static let exponential_squared = FogMode.exponentialSquared /* COGL_FOG_MODE_EXPONENTIAL_SQUARED */
+}
+func cast<I: BinaryInteger>(_ param: I) -> FogMode { FogMode(rawValue: cast(param)) }
+func cast(_ param: FogMode) -> UInt32 { cast(param.rawValue) }
+
+
+/// You should aim to use the smallest data type that gives you enough
+/// range, since it reduces the size of your index array and can help
+/// reduce the demand on memory bandwidth.
+/// 
+/// Note that `COGL_INDICES_TYPE_UNSIGNED_INT` is only supported if the
+/// `COGL_FEATURE_ID_UNSIGNED_INT_INDICES` feature is available. This
+/// should always be available on OpenGL but on OpenGL ES it will only
+/// be available if the GL_OES_element_index_uint extension is
+/// advertized.
+public typealias IndicesType = CoglIndicesType
+
+public extension IndicesType {
+    /// Your indices are unsigned bytes
+    static let byte = COGL_INDICES_TYPE_UNSIGNED_BYTE /* 0 */
+    /// Your indices are unsigned shorts
+    static let short = COGL_INDICES_TYPE_UNSIGNED_SHORT /* 1 */
+    /// Your indices are unsigned ints
+    static let int = COGL_INDICES_TYPE_UNSIGNED_INT /* 2 */
+
+}
+func cast<I: BinaryInteger>(_ param: I) -> IndicesType { IndicesType(rawValue: cast(param)) }
+func cast(_ param: IndicesType) -> UInt32 { cast(param.rawValue) }
+
+
+/// Alpha testing happens before blending primitives with the framebuffer and
+/// gives an opportunity to discard fragments based on a comparison with the
+/// incoming alpha value and a reference alpha value. The `CoglMaterialAlphaFunc`
+/// determines how the comparison is done.
+public typealias MaterialAlphaFunc = CoglMaterialAlphaFunc
+
+public extension MaterialAlphaFunc {
+    /// Never let the fragment through.
+    static let never = COGL_MATERIAL_ALPHA_FUNC_NEVER /* 512 */
+    /// Let the fragment through if the incoming
+    ///   alpha value is less than the reference alpha value
+    static let less = COGL_MATERIAL_ALPHA_FUNC_LESS /* 513 */
+    /// Let the fragment through if the incoming
+    ///   alpha value equals the reference alpha value
+    static let equal = COGL_MATERIAL_ALPHA_FUNC_EQUAL /* 514 */
+    /// Let the fragment through if the incoming
+    ///   alpha value is less than or equal to the reference alpha value
+    static let lequal = COGL_MATERIAL_ALPHA_FUNC_LEQUAL /* 515 */
+    /// Let the fragment through if the incoming
+    ///   alpha value is greater than the reference alpha value
+    static let greater = COGL_MATERIAL_ALPHA_FUNC_GREATER /* 516 */
+    /// Let the fragment through if the incoming
+    ///   alpha value does not equal the reference alpha value
+    static let notequal = COGL_MATERIAL_ALPHA_FUNC_NOTEQUAL /* 517 */
+    /// Let the fragment through if the incoming
+    ///   alpha value is greater than or equal to the reference alpha value.
+    static let gequal = COGL_MATERIAL_ALPHA_FUNC_GEQUAL /* 518 */
+    /// Always let the fragment through.
+    static let always = COGL_MATERIAL_ALPHA_FUNC_ALWAYS /* 519 */
+
+}
+func cast<I: BinaryInteger>(_ param: I) -> MaterialAlphaFunc { MaterialAlphaFunc(rawValue: cast(param)) }
+func cast(_ param: MaterialAlphaFunc) -> UInt32 { cast(param.rawValue) }
+
+
+/// Texture filtering is used whenever the current pixel maps either to more
+/// than one texture element (texel) or less than one. These filter enums
+/// correspond to different strategies used to come up with a pixel color, by
+/// possibly referring to multiple neighbouring texels and taking a weighted
+/// average or simply using the nearest texel.
+public typealias MaterialFilter = CoglMaterialFilter
+
+public extension MaterialFilter {
+    /// Measuring in manhatten distance from the,
+    ///   current pixel center, use the nearest texture texel
+    static let nearest = COGL_MATERIAL_FILTER_NEAREST /* 9728 */
+    /// Use the weighted average of the 4 texels
+    ///   nearest the current pixel center
+    static let linear = COGL_MATERIAL_FILTER_LINEAR /* 9729 */
+    /// Select the mimap level whose
+    ///   texel size most closely matches the current pixel, and use the
+    ///   `COGL_MATERIAL_FILTER_NEAREST` criterion
+    static let nearestMipmapNearest = COGL_MATERIAL_FILTER_NEAREST_MIPMAP_NEAREST /* 9984 */
+    /// Select the mimap level whose
+    ///   texel size most closely matches the current pixel, and use the
+    ///   `COGL_MATERIAL_FILTER_LINEAR` criterion
+    static let linearMipmapNearest = COGL_MATERIAL_FILTER_LINEAR_MIPMAP_NEAREST /* 9985 */
+    /// Select the two mimap levels
+    ///   whose texel size most closely matches the current pixel, use
+    ///   the `COGL_MATERIAL_FILTER_NEAREST` criterion on each one and take
+    ///   their weighted average
+    static let nearestMipmapLinear = COGL_MATERIAL_FILTER_NEAREST_MIPMAP_LINEAR /* 9986 */
+    /// Select the two mimap levels
+    ///   whose texel size most closely matches the current pixel, use
+    ///   the `COGL_MATERIAL_FILTER_LINEAR` criterion on each one and take
+    ///   their weighted average
+    static let linearMipmapLinear = COGL_MATERIAL_FILTER_LINEAR_MIPMAP_LINEAR /* 9987 */
+    /// Select the mimap level whose
+    ///   texel size most closely matches the current pixel, and use the
+    ///   `COGL_MATERIAL_FILTER_NEAREST` criterion
+    @available(*, deprecated) static let nearest_mipmap_nearest = MaterialFilter.nearestMipmapNearest /* COGL_MATERIAL_FILTER_NEAREST_MIPMAP_NEAREST */
+    /// Select the mimap level whose
+    ///   texel size most closely matches the current pixel, and use the
+    ///   `COGL_MATERIAL_FILTER_LINEAR` criterion
+    @available(*, deprecated) static let linear_mipmap_nearest = MaterialFilter.linearMipmapNearest /* COGL_MATERIAL_FILTER_LINEAR_MIPMAP_NEAREST */
+    /// Select the two mimap levels
+    ///   whose texel size most closely matches the current pixel, use
+    ///   the `COGL_MATERIAL_FILTER_NEAREST` criterion on each one and take
+    ///   their weighted average
+    @available(*, deprecated) static let nearest_mipmap_linear = MaterialFilter.nearestMipmapLinear /* COGL_MATERIAL_FILTER_NEAREST_MIPMAP_LINEAR */
+    /// Select the two mimap levels
+    ///   whose texel size most closely matches the current pixel, use
+    ///   the `COGL_MATERIAL_FILTER_LINEAR` criterion on each one and take
+    ///   their weighted average
+    @available(*, deprecated) static let linear_mipmap_linear = MaterialFilter.linearMipmapLinear /* COGL_MATERIAL_FILTER_LINEAR_MIPMAP_LINEAR */
+}
+func cast<I: BinaryInteger>(_ param: I) -> MaterialFilter { MaterialFilter(rawValue: cast(param)) }
+func cast(_ param: MaterialFilter) -> UInt32 { cast(param.rawValue) }
+
+
+/// Available types of layers for a `CoglMaterial`. This enumeration
+/// might be expanded in later versions.
+public typealias MaterialLayerType = CoglMaterialLayerType
+
+public extension MaterialLayerType {
+    /// The layer represents a
+    ///   <link linkend="cogl-Textures">texture</link>
+    static let texture = COGL_MATERIAL_LAYER_TYPE_TEXTURE /* 0 */
+
+}
+func cast<I: BinaryInteger>(_ param: I) -> MaterialLayerType { MaterialLayerType(rawValue: cast(param)) }
+func cast(_ param: MaterialLayerType) -> UInt32 { cast(param.rawValue) }
+
+
+/// The wrap mode specifies what happens when texture coordinates
+/// outside the range 0→1 are used. Note that if the filter mode is
+/// anything but `COGL_MATERIAL_FILTER_NEAREST` then texels outside the
+/// range 0→1 might be used even when the coordinate is exactly 0 or 1
+/// because OpenGL will try to sample neighbouring pixels. For example
+/// if you are trying to render the full texture then you may get
+/// artifacts around the edges when the pixels from the other side are
+/// merged in if the wrap mode is set to repeat.
+public typealias MaterialWrapMode = CoglMaterialWrapMode
+
+public extension MaterialWrapMode {
+    /// The texture will be repeated. This
+    ///   is useful for example to draw a tiled background.
+    static let `repeat` = COGL_MATERIAL_WRAP_MODE_REPEAT /* 10497 */
+    /// The coordinates outside the
+    ///   range 0→1 will sample copies of the edge pixels of the
+    ///   texture. This is useful to avoid artifacts if only one copy of
+    ///   the texture is being rendered.
+    static let clampToEdge = COGL_MATERIAL_WRAP_MODE_CLAMP_TO_EDGE /* 33071 */
+    /// Cogl will try to automatically
+    ///   decide which of the above two to use. For `cogl_rectangle()`, it
+    ///   will use repeat mode if any of the texture coordinates are
+    ///   outside the range 0→1, otherwise it will use clamp to edge. For
+    ///   `cogl_polygon()` it will always use repeat mode. For
+    ///   `cogl_vertex_buffer_draw()` it will use repeat mode except for
+    ///   layers that have point sprite coordinate generation enabled. This
+    ///   is the default value.
+    static let automatic = COGL_MATERIAL_WRAP_MODE_AUTOMATIC /* 519 */
+    /// The texture will be repeated. This
+    ///   is useful for example to draw a tiled background.
+    @available(*, deprecated) static let repeat_ = MaterialWrapMode.`repeat` /* COGL_MATERIAL_WRAP_MODE_REPEAT */
+    /// The coordinates outside the
+    ///   range 0→1 will sample copies of the edge pixels of the
+    ///   texture. This is useful to avoid artifacts if only one copy of
+    ///   the texture is being rendered.
+    @available(*, deprecated) static let clamp_to_edge = MaterialWrapMode.clampToEdge /* COGL_MATERIAL_WRAP_MODE_CLAMP_TO_EDGE */
+}
+func cast<I: BinaryInteger>(_ param: I) -> MaterialWrapMode { MaterialWrapMode(rawValue: cast(param)) }
+func cast(_ param: MaterialWrapMode) -> UInt32 { cast(param.rawValue) }
+
+
+/// Pixel formats used by Cogl. For the formats with a byte per
+/// component, the order of the components specify the order in
+/// increasing memory addresses. So for example
+/// `COGL_PIXEL_FORMAT_RGB_888` would have the red component in the
+/// lowest address, green in the next address and blue after that
+/// regardless of the endianness of the system.
+/// 
+/// For the formats with non byte aligned components the component
+/// order specifies the order within a 16-bit or 32-bit number from
+/// most significant bit to least significant. So for
+/// `COGL_PIXEL_FORMAT_RGB_565`, the red component would be in bits
+/// 11-15, the green component would be in 6-11 and the blue component
+/// would be in 1-5. Therefore the order in memory depends on the
+/// endianness of the system.
+/// 
+/// When uploading a texture `COGL_PIXEL_FORMAT_ANY` can be used as the
+/// internal format. Cogl will try to pick the best format to use
+/// internally and convert the texture data if necessary.
+public typealias PixelFormat = CoglPixelFormat
+
+public extension PixelFormat {
+    /// Any format
+    static let any = COGL_PIXEL_FORMAT_ANY /* 0 */
+    /// 8 bits alpha mask
+    static let a8 = COGL_PIXEL_FORMAT_A_8 /* 17 */
+    /// RGB, 16 bits
+    static let rgb565 = COGL_PIXEL_FORMAT_RGB_565 /* 4 */
+    /// RGBA, 16 bits
+    static let rgba4444 = COGL_PIXEL_FORMAT_RGBA_4444 /* 21 */
+    /// RGBA, 16 bits
+    static let rgba5551 = COGL_PIXEL_FORMAT_RGBA_5551 /* 22 */
+    /// Not currently supported
+    static let yuv = COGL_PIXEL_FORMAT_YUV /* 7 */
+    /// Single luminance component
+    static let g8 = COGL_PIXEL_FORMAT_G_8 /* 8 */
+    /// RG, 16 bits. Note that red-green textures
+    ///   are only available if `COGL_FEATURE_ID_TEXTURE_RG` is advertised.
+    ///   See `cogl_texture_set_components()` for details.
+    static let rg88 = COGL_PIXEL_FORMAT_RG_88 /* 9 */
+    /// RGB, 24 bits
+    static let rgb888 = COGL_PIXEL_FORMAT_RGB_888 /* 2 */
+    /// BGR, 24 bits
+    static let bgr888 = COGL_PIXEL_FORMAT_BGR_888 /* 34 */
+    /// RGBA, 32 bits
+    static let rgba8888 = COGL_PIXEL_FORMAT_RGBA_8888 /* 19 */
+    /// BGRA, 32 bits
+    static let bgra8888 = COGL_PIXEL_FORMAT_BGRA_8888 /* 51 */
+    /// ARGB, 32 bits
+    static let argb8888 = COGL_PIXEL_FORMAT_ARGB_8888 /* 83 */
+    /// ABGR, 32 bits
+    static let abgr8888 = COGL_PIXEL_FORMAT_ABGR_8888 /* 115 */
+    /// RGBA, 32 bits, 10 bpc
+    static let rgba1010102 = COGL_PIXEL_FORMAT_RGBA_1010102 /* 29 */
+    /// BGRA, 32 bits, 10 bpc
+    static let bgra1010102 = COGL_PIXEL_FORMAT_BGRA_1010102 /* 61 */
+    /// ARGB, 32 bits, 10 bpc
+    static let argb2101010 = COGL_PIXEL_FORMAT_ARGB_2101010 /* 93 */
+    /// ABGR, 32 bits, 10 bpc
+    static let abgr2101010 = COGL_PIXEL_FORMAT_ABGR_2101010 /* 125 */
+    /// Premultiplied RGBA, 32 bits
+    static let rgba8888Pre = COGL_PIXEL_FORMAT_RGBA_8888_PRE /* 147 */
+    /// Premultiplied BGRA, 32 bits
+    static let bgra8888Pre = COGL_PIXEL_FORMAT_BGRA_8888_PRE /* 179 */
+    /// Premultiplied ARGB, 32 bits
+    static let argb8888Pre = COGL_PIXEL_FORMAT_ARGB_8888_PRE /* 211 */
+    /// Premultiplied ABGR, 32 bits
+    static let abgr8888Pre = COGL_PIXEL_FORMAT_ABGR_8888_PRE /* 243 */
+    /// Premultiplied RGBA, 16 bits
+    static let rgba4444Pre = COGL_PIXEL_FORMAT_RGBA_4444_PRE /* 149 */
+    /// Premultiplied RGBA, 16 bits
+    static let rgba5551Pre = COGL_PIXEL_FORMAT_RGBA_5551_PRE /* 150 */
+    /// Premultiplied RGBA, 32 bits, 10 bpc
+    static let rgba1010102Pre = COGL_PIXEL_FORMAT_RGBA_1010102_PRE /* 157 */
+    /// Premultiplied BGRA, 32 bits, 10 bpc
+    static let bgra1010102Pre = COGL_PIXEL_FORMAT_BGRA_1010102_PRE /* 189 */
+    /// Premultiplied ARGB, 32 bits, 10 bpc
+    static let argb2101010Pre = COGL_PIXEL_FORMAT_ARGB_2101010_PRE /* 221 */
+    /// Premultiplied ABGR, 32 bits, 10 bpc
+    static let abgr2101010Pre = COGL_PIXEL_FORMAT_ABGR_2101010_PRE /* 253 */
+    static let depth16 = COGL_PIXEL_FORMAT_DEPTH_16 /* 265 */
+    static let depth32 = COGL_PIXEL_FORMAT_DEPTH_32 /* 259 */
+    static let depth24Stencil8 = COGL_PIXEL_FORMAT_DEPTH_24_STENCIL_8 /* 771 */
+    /// 8 bits alpha mask
+    @available(*, deprecated) static let a_8 = PixelFormat.a8 /* COGL_PIXEL_FORMAT_A_8 */
+    /// RGB, 16 bits
+    @available(*, deprecated) static let rgb_565 = PixelFormat.rgb565 /* COGL_PIXEL_FORMAT_RGB_565 */
+    /// RGBA, 16 bits
+    @available(*, deprecated) static let rgba_4444 = PixelFormat.rgba4444 /* COGL_PIXEL_FORMAT_RGBA_4444 */
+    /// RGBA, 16 bits
+    @available(*, deprecated) static let rgba_5551 = PixelFormat.rgba5551 /* COGL_PIXEL_FORMAT_RGBA_5551 */
+    /// Single luminance component
+    @available(*, deprecated) static let g_8 = PixelFormat.g8 /* COGL_PIXEL_FORMAT_G_8 */
+    /// RG, 16 bits. Note that red-green textures
+    ///   are only available if `COGL_FEATURE_ID_TEXTURE_RG` is advertised.
+    ///   See `cogl_texture_set_components()` for details.
+    @available(*, deprecated) static let rg_88 = PixelFormat.rg88 /* COGL_PIXEL_FORMAT_RG_88 */
+    /// RGB, 24 bits
+    @available(*, deprecated) static let rgb_888 = PixelFormat.rgb888 /* COGL_PIXEL_FORMAT_RGB_888 */
+    /// BGR, 24 bits
+    @available(*, deprecated) static let bgr_888 = PixelFormat.bgr888 /* COGL_PIXEL_FORMAT_BGR_888 */
+    /// RGBA, 32 bits
+    @available(*, deprecated) static let rgba_8888 = PixelFormat.rgba8888 /* COGL_PIXEL_FORMAT_RGBA_8888 */
+    /// BGRA, 32 bits
+    @available(*, deprecated) static let bgra_8888 = PixelFormat.bgra8888 /* COGL_PIXEL_FORMAT_BGRA_8888 */
+    /// ARGB, 32 bits
+    @available(*, deprecated) static let argb_8888 = PixelFormat.argb8888 /* COGL_PIXEL_FORMAT_ARGB_8888 */
+    /// ABGR, 32 bits
+    @available(*, deprecated) static let abgr_8888 = PixelFormat.abgr8888 /* COGL_PIXEL_FORMAT_ABGR_8888 */
+    /// RGBA, 32 bits, 10 bpc
+    @available(*, deprecated) static let rgba_1010102 = PixelFormat.rgba1010102 /* COGL_PIXEL_FORMAT_RGBA_1010102 */
+    /// BGRA, 32 bits, 10 bpc
+    @available(*, deprecated) static let bgra_1010102 = PixelFormat.bgra1010102 /* COGL_PIXEL_FORMAT_BGRA_1010102 */
+    /// ARGB, 32 bits, 10 bpc
+    @available(*, deprecated) static let argb_2101010 = PixelFormat.argb2101010 /* COGL_PIXEL_FORMAT_ARGB_2101010 */
+    /// ABGR, 32 bits, 10 bpc
+    @available(*, deprecated) static let abgr_2101010 = PixelFormat.abgr2101010 /* COGL_PIXEL_FORMAT_ABGR_2101010 */
+    /// Premultiplied RGBA, 32 bits
+    @available(*, deprecated) static let rgba_8888_pre = PixelFormat.rgba8888Pre /* COGL_PIXEL_FORMAT_RGBA_8888_PRE */
+    /// Premultiplied BGRA, 32 bits
+    @available(*, deprecated) static let bgra_8888_pre = PixelFormat.bgra8888Pre /* COGL_PIXEL_FORMAT_BGRA_8888_PRE */
+    /// Premultiplied ARGB, 32 bits
+    @available(*, deprecated) static let argb_8888_pre = PixelFormat.argb8888Pre /* COGL_PIXEL_FORMAT_ARGB_8888_PRE */
+    /// Premultiplied ABGR, 32 bits
+    @available(*, deprecated) static let abgr_8888_pre = PixelFormat.abgr8888Pre /* COGL_PIXEL_FORMAT_ABGR_8888_PRE */
+    /// Premultiplied RGBA, 16 bits
+    @available(*, deprecated) static let rgba_4444_pre = PixelFormat.rgba4444Pre /* COGL_PIXEL_FORMAT_RGBA_4444_PRE */
+    /// Premultiplied RGBA, 16 bits
+    @available(*, deprecated) static let rgba_5551_pre = PixelFormat.rgba5551Pre /* COGL_PIXEL_FORMAT_RGBA_5551_PRE */
+    /// Premultiplied RGBA, 32 bits, 10 bpc
+    @available(*, deprecated) static let rgba_1010102_pre = PixelFormat.rgba1010102Pre /* COGL_PIXEL_FORMAT_RGBA_1010102_PRE */
+    /// Premultiplied BGRA, 32 bits, 10 bpc
+    @available(*, deprecated) static let bgra_1010102_pre = PixelFormat.bgra1010102Pre /* COGL_PIXEL_FORMAT_BGRA_1010102_PRE */
+    /// Premultiplied ARGB, 32 bits, 10 bpc
+    @available(*, deprecated) static let argb_2101010_pre = PixelFormat.argb2101010Pre /* COGL_PIXEL_FORMAT_ARGB_2101010_PRE */
+    /// Premultiplied ABGR, 32 bits, 10 bpc
+    @available(*, deprecated) static let abgr_2101010_pre = PixelFormat.abgr2101010Pre /* COGL_PIXEL_FORMAT_ABGR_2101010_PRE */
+    @available(*, deprecated) static let depth_16 = PixelFormat.depth16 /* COGL_PIXEL_FORMAT_DEPTH_16 */
+    @available(*, deprecated) static let depth_32 = PixelFormat.depth32 /* COGL_PIXEL_FORMAT_DEPTH_32 */
+    @available(*, deprecated) static let depth_24_stencil_8 = PixelFormat.depth24Stencil8 /* COGL_PIXEL_FORMAT_DEPTH_24_STENCIL_8 */
+}
+func cast<I: BinaryInteger>(_ param: I) -> PixelFormat { PixelFormat(rawValue: cast(param)) }
+func cast(_ param: PixelFormat) -> UInt32 { cast(param.rawValue) }
+
+
+public typealias RendererError = CoglRendererError
+
+public extension RendererError {
+    static let xlibDisplayOpen = COGL_RENDERER_ERROR_XLIB_DISPLAY_OPEN /* 0 */
+    static let badConstraint = COGL_RENDERER_ERROR_BAD_CONSTRAINT /* 1 */
+    @available(*, deprecated) static let xlib_display_open = RendererError.xlibDisplayOpen /* COGL_RENDERER_ERROR_XLIB_DISPLAY_OPEN */
+    @available(*, deprecated) static let bad_constraint = RendererError.badConstraint /* COGL_RENDERER_ERROR_BAD_CONSTRAINT */
+}
+func cast<I: BinaryInteger>(_ param: I) -> RendererError { RendererError(rawValue: cast(param)) }
+func cast(_ param: RendererError) -> UInt32 { cast(param.rawValue) }
+
+
+/// Types of shaders
+public typealias ShaderType = CoglShaderType
+
+public extension ShaderType {
+    /// A program for proccessing vertices
+    static let vertex = COGL_SHADER_TYPE_VERTEX /* 0 */
+    /// A program for processing fragments
+    static let fragment = COGL_SHADER_TYPE_FRAGMENT /* 1 */
+
+}
+func cast<I: BinaryInteger>(_ param: I) -> ShaderType { ShaderType(rawValue: cast(param)) }
+func cast(_ param: ShaderType) -> UInt32 { cast(param.rawValue) }
+
+
+/// Represents how draw should affect the two buffers
+/// of a stereo framebuffer. See `cogl_framebuffer_set_stereo_mode()`.
+public typealias StereoMode = CoglStereoMode
+
+public extension StereoMode {
+    /// draw to both stereo buffers
+    static let both = COGL_STEREO_BOTH /* 0 */
+    /// draw only to the left stereo buffer
+    static let `left` = COGL_STEREO_LEFT /* 1 */
+    /// draw only to the left stereo buffer
+    static let `right` = COGL_STEREO_RIGHT /* 2 */
+    /// draw only to the left stereo buffer
+    @available(*, deprecated) static let left_ = StereoMode.`left` /* COGL_STEREO_LEFT */
+    /// draw only to the left stereo buffer
+    @available(*, deprecated) static let right_ = StereoMode.`right` /* COGL_STEREO_RIGHT */
+}
+func cast<I: BinaryInteger>(_ param: I) -> StereoMode { StereoMode(rawValue: cast(param)) }
+func cast(_ param: StereoMode) -> UInt32 { cast(param.rawValue) }
+
+
+/// Error enumeration for Cogl
+/// 
+/// The `COGL_SYSTEM_ERROR_UNSUPPORTED` error can be thrown for a
+/// variety of reasons. For example:
+/// 
+/// <itemizedlist>
+///  <listitem><para>You've tried to use a feature that is not
+///   advertised by `cogl_has_feature()`. This could happen if you create
+///   a 2d texture with a non-power-of-two size when
+///   `COGL_FEATURE_ID_TEXTURE_NPOT` is not advertised.</para></listitem>
+///  <listitem><para>The GPU can not handle the configuration you have
+///   requested. An example might be if you try to use too many texture
+///   layers in a single `CoglPipeline`</para></listitem>
+///  <listitem><para>The driver does not support some
+///   configuration.</para></listiem>
+/// </itemizedlist>
+/// 
+/// Currently this is only used by Cogl API marked as experimental so
+/// this enum should also be considered experimental.
+public typealias SystemError = CoglSystemError
+
+public extension SystemError {
+    /// You tried to use a feature or
+    ///    configuration not currently available.
+    static let coglSystemErrorUnsupported = COGL_SYSTEM_ERROR_UNSUPPORTED /* 0 */
+    /// You tried to allocate a resource
+    ///    such as a texture and there wasn't enough memory.
+    static let coglSystemErrorNoMemory = COGL_SYSTEM_ERROR_NO_MEMORY /* 1 */
+    /// You tried to use a feature or
+    ///    configuration not currently available.
+    @available(*, deprecated) static let cogl_system_error_unsupported = SystemError.coglSystemErrorUnsupported /* COGL_SYSTEM_ERROR_UNSUPPORTED */
+    /// You tried to allocate a resource
+    ///    such as a texture and there wasn't enough memory.
+    @available(*, deprecated) static let cogl_system_error_no_memory = SystemError.coglSystemErrorNoMemory /* COGL_SYSTEM_ERROR_NO_MEMORY */
+}
+func cast<I: BinaryInteger>(_ param: I) -> SystemError { SystemError(rawValue: cast(param)) }
+func cast(_ param: SystemError) -> UInt32 { cast(param.rawValue) }
+
+
+/// See `cogl_texture_set_components()`.
+public typealias TextureComponents = CoglTextureComponents
+
+public extension TextureComponents {
+    /// Only the alpha component
+    static let a = COGL_TEXTURE_COMPONENTS_A /* 1 */
+    /// Red and green components. Note that
+    ///   this can only be used if the `COGL_FEATURE_ID_TEXTURE_RG` feature
+    ///   is advertised.
+    static let rg = COGL_TEXTURE_COMPONENTS_RG /* 2 */
+    /// Red, green and blue components
+    static let rgb = COGL_TEXTURE_COMPONENTS_RGB /* 3 */
+    /// Red, green, blue and alpha components
+    static let rgba = COGL_TEXTURE_COMPONENTS_RGBA /* 4 */
+    /// Only a depth component
+    static let depth = COGL_TEXTURE_COMPONENTS_DEPTH /* 5 */
+
+}
+func cast<I: BinaryInteger>(_ param: I) -> TextureComponents { TextureComponents(rawValue: cast(param)) }
+func cast(_ param: TextureComponents) -> UInt32 { cast(param.rawValue) }
+
+
+/// Error codes that can be thrown when allocating textures.
+public typealias TextureError = CoglTextureError
+
+public extension TextureError {
+    /// Unsupported size
+    static let size = COGL_TEXTURE_ERROR_SIZE /* 0 */
+    /// Unsupported format
+    static let format = COGL_TEXTURE_ERROR_FORMAT /* 1 */
+    static let badParameter = COGL_TEXTURE_ERROR_BAD_PARAMETER /* 2 */
+    /// A primitive texture type that is
+    ///   unsupported by the driver was used
+    static let type = COGL_TEXTURE_ERROR_TYPE /* 3 */
+    @available(*, deprecated) static let bad_parameter = TextureError.badParameter /* COGL_TEXTURE_ERROR_BAD_PARAMETER */
+}
+func cast<I: BinaryInteger>(_ param: I) -> TextureError { TextureError(rawValue: cast(param)) }
+func cast(_ param: TextureError) -> UInt32 { cast(param.rawValue) }
+
+
+/// Constants representing the underlying hardware texture type of a
+/// `CoglTexture`.
+public typealias TextureType = CoglTextureType
+
+public extension TextureType {
+    /// A `CoglTexture2D`
+    static let _2d = COGL_TEXTURE_TYPE_2D /* 0 */
+    /// A `CoglTexture3D`
+    static let _3d = COGL_TEXTURE_TYPE_3D /* 1 */
+    /// A `CoglTextureRectangle`
+    static let rectangle = COGL_TEXTURE_TYPE_RECTANGLE /* 2 */
+
+}
+func cast<I: BinaryInteger>(_ param: I) -> TextureType { TextureType(rawValue: cast(param)) }
+func cast(_ param: TextureType) -> UInt32 { cast(param.rawValue) }
+
+
+/// Different ways of interpreting vertices when drawing.
+public typealias VerticesMode = CoglVerticesMode
+
+public extension VerticesMode {
+    /// FIXME, equivalent to
+    /// <constant>GL_POINTS</constant>
+    static let points = COGL_VERTICES_MODE_POINTS /* 0 */
+    /// FIXME, equivalent to <constant>GL_LINES</constant>
+    static let lines = COGL_VERTICES_MODE_LINES /* 1 */
+    /// FIXME, equivalent to
+    /// <constant>GL_LINE_LOOP</constant>
+    static let lineLoop = COGL_VERTICES_MODE_LINE_LOOP /* 2 */
+    /// FIXME, equivalent to
+    /// <constant>GL_LINE_STRIP</constant>
+    static let lineStrip = COGL_VERTICES_MODE_LINE_STRIP /* 3 */
+    /// FIXME, equivalent to
+    /// <constant>GL_TRIANGLES</constant>
+    static let triangles = COGL_VERTICES_MODE_TRIANGLES /* 4 */
+    /// FIXME, equivalent to
+    /// <constant>GL_TRIANGLE_STRIP</constant>
+    static let triangleStrip = COGL_VERTICES_MODE_TRIANGLE_STRIP /* 5 */
+    /// FIXME, equivalent to <constant>GL_TRIANGLE_FAN</constant>
+    static let triangleFan = COGL_VERTICES_MODE_TRIANGLE_FAN /* 6 */
+    /// FIXME, equivalent to
+    /// <constant>GL_LINE_LOOP</constant>
+    @available(*, deprecated) static let line_loop = VerticesMode.lineLoop /* COGL_VERTICES_MODE_LINE_LOOP */
+    /// FIXME, equivalent to
+    /// <constant>GL_LINE_STRIP</constant>
+    @available(*, deprecated) static let line_strip = VerticesMode.lineStrip /* COGL_VERTICES_MODE_LINE_STRIP */
+    /// FIXME, equivalent to
+    /// <constant>GL_TRIANGLE_STRIP</constant>
+    @available(*, deprecated) static let triangle_strip = VerticesMode.triangleStrip /* COGL_VERTICES_MODE_TRIANGLE_STRIP */
+    /// FIXME, equivalent to <constant>GL_TRIANGLE_FAN</constant>
+    @available(*, deprecated) static let triangle_fan = VerticesMode.triangleFan /* COGL_VERTICES_MODE_TRIANGLE_FAN */
+}
+func cast<I: BinaryInteger>(_ param: I) -> VerticesMode { VerticesMode(rawValue: cast(param)) }
+func cast(_ param: VerticesMode) -> UInt32 { cast(param.rawValue) }
+
+
+/// Enum used to represent the two directions of rotation. This can be
+/// used to set the front face for culling by calling
+/// `cogl_pipeline_set_front_face_winding()`.
+public typealias Winding = CoglWinding
+
+public extension Winding {
+    /// Vertices are in a clockwise order
+    static let clockwise = COGL_WINDING_CLOCKWISE /* 0 */
+    /// Vertices are in a counter-clockwise order
+    static let counterClockwise = COGL_WINDING_COUNTER_CLOCKWISE /* 1 */
+    /// Vertices are in a counter-clockwise order
+    @available(*, deprecated) static let counter_clockwise = Winding.counterClockwise /* COGL_WINDING_COUNTER_CLOCKWISE */
+}
+func cast<I: BinaryInteger>(_ param: I) -> Winding { Winding(rawValue: cast(param)) }
+func cast(_ param: Winding) -> UInt32 { cast(param.rawValue) }
+
+
+public typealias WinsysFeature = CoglWinsysFeature
+
+public extension WinsysFeature {
+    static let multipleOnscreen = COGL_WINSYS_FEATURE_MULTIPLE_ONSCREEN /* 0 */
+    static let swapThrottle = COGL_WINSYS_FEATURE_SWAP_THROTTLE /* 1 */
+    static let vblankCounter = COGL_WINSYS_FEATURE_VBLANK_COUNTER /* 2 */
+    static let vblankWait = COGL_WINSYS_FEATURE_VBLANK_WAIT /* 3 */
+    static let textureFromPixmap = COGL_WINSYS_FEATURE_TEXTURE_FROM_PIXMAP /* 4 */
+    static let swapBuffersEvent = COGL_WINSYS_FEATURE_SWAP_BUFFERS_EVENT /* 5 */
+    static let swapRegion = COGL_WINSYS_FEATURE_SWAP_REGION /* 6 */
+    static let swapRegionThrottle = COGL_WINSYS_FEATURE_SWAP_REGION_THROTTLE /* 7 */
+    static let swapRegionSynchronized = COGL_WINSYS_FEATURE_SWAP_REGION_SYNCHRONIZED /* 8 */
+    static let bufferAge = COGL_WINSYS_FEATURE_BUFFER_AGE /* 9 */
+    static let syncAndCompleteEvent = COGL_WINSYS_FEATURE_SYNC_AND_COMPLETE_EVENT /* 10 */
+    static let nFeatures = COGL_WINSYS_FEATURE_N_FEATURES /* 11 */
+    @available(*, deprecated) static let multiple_onscreen = WinsysFeature.multipleOnscreen /* COGL_WINSYS_FEATURE_MULTIPLE_ONSCREEN */
+    @available(*, deprecated) static let swap_throttle = WinsysFeature.swapThrottle /* COGL_WINSYS_FEATURE_SWAP_THROTTLE */
+    @available(*, deprecated) static let vblank_counter = WinsysFeature.vblankCounter /* COGL_WINSYS_FEATURE_VBLANK_COUNTER */
+    @available(*, deprecated) static let vblank_wait = WinsysFeature.vblankWait /* COGL_WINSYS_FEATURE_VBLANK_WAIT */
+    @available(*, deprecated) static let texture_from_pixmap = WinsysFeature.textureFromPixmap /* COGL_WINSYS_FEATURE_TEXTURE_FROM_PIXMAP */
+    @available(*, deprecated) static let swap_buffers_event = WinsysFeature.swapBuffersEvent /* COGL_WINSYS_FEATURE_SWAP_BUFFERS_EVENT */
+    @available(*, deprecated) static let swap_region = WinsysFeature.swapRegion /* COGL_WINSYS_FEATURE_SWAP_REGION */
+    @available(*, deprecated) static let swap_region_throttle = WinsysFeature.swapRegionThrottle /* COGL_WINSYS_FEATURE_SWAP_REGION_THROTTLE */
+    @available(*, deprecated) static let swap_region_synchronized = WinsysFeature.swapRegionSynchronized /* COGL_WINSYS_FEATURE_SWAP_REGION_SYNCHRONIZED */
+    @available(*, deprecated) static let buffer_age = WinsysFeature.bufferAge /* COGL_WINSYS_FEATURE_BUFFER_AGE */
+    @available(*, deprecated) static let sync_and_complete_event = WinsysFeature.syncAndCompleteEvent /* COGL_WINSYS_FEATURE_SYNC_AND_COMPLETE_EVENT */
+    @available(*, deprecated) static let n_features = WinsysFeature.nFeatures /* COGL_WINSYS_FEATURE_N_FEATURES */
+}
+func cast<I: BinaryInteger>(_ param: I) -> WinsysFeature { WinsysFeature(rawValue: cast(param)) }
+func cast(_ param: WinsysFeature) -> UInt32 { cast(param.rawValue) }
 
 /// Computes the cosine of `angle`
 public func angleCos(angle: Angle) -> CoglFixed {
     let rv = cogl_angle_cos(angle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -1855,7 +2307,7 @@ public func angleCos(angle: Angle) -> CoglFixed {
 /// Computes the sine of `angle`
 public func angleSin(angle: Angle) -> CoglFixed {
     let rv = cogl_angle_sin(angle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -1864,7 +2316,7 @@ public func angleSin(angle: Angle) -> CoglFixed {
 /// Computes the tangent of `angle`
 public func angleTan(angle: Angle) -> CoglFixed {
     let rv = cogl_angle_tan(angle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -1950,7 +2402,7 @@ public func angleTan(angle: Angle) -> CoglFixed {
 
 public func bitmapErrorQuark() -> UInt32 {
     let rv = cogl_bitmap_error_quark()
-    return rv
+    return cast(rv)
 }
 
 
@@ -1958,7 +2410,7 @@ public func bitmapErrorQuark() -> UInt32 {
 
 public func blendStringErrorQuark() -> UInt32 {
     let rv = cogl_blend_string_error_quark()
-    return rv
+    return cast(rv)
 }
 
 
@@ -1975,7 +2427,7 @@ public func blendStringErrorQuark() -> UInt32 {
 /// ]|
 @available(*, deprecated) public func checkExtension(name: UnsafePointer<CChar>, ext: UnsafePointer<CChar>) -> CoglBool {
     let rv = cogl_check_extension(name, ext)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2166,7 +2618,7 @@ public func blendStringErrorQuark() -> UInt32 {
 
 @available(*, deprecated) public func clutterCheckExtensionCLUTTER(name: UnsafePointer<CChar>, ext: UnsafePointer<CChar>) -> CoglBool {
     let rv = cogl_clutter_check_extension_CLUTTER(name, ext)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2174,7 +2626,7 @@ public func blendStringErrorQuark() -> UInt32 {
 
 @available(*, deprecated) public func clutterWinsysHasFeatureCLUTTER(feature: WinsysFeature) -> CoglBool {
     let rv = cogl_clutter_winsys_has_feature_CLUTTER(feature)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2186,7 +2638,7 @@ public func blendStringErrorQuark() -> UInt32 {
 /// parameter, when using `CoglColor`<!-- -->s as keys in a `GHashTable`.
 public func colorEqual(v1: UnsafeMutableRawPointer, v2: UnsafeMutableRawPointer) -> CoglBool {
     let rv = cogl_color_equal(cast(v1), cast(v2))
-    return rv
+    return cast(rv)
 }
 
 
@@ -2209,7 +2661,7 @@ public func colorInitFromHsl(color: ColorProtocol, hue: gfloat, saturation: gflo
 /// Use #CoglSnippet api
 @available(*, deprecated) public func createProgram() -> CoglHandle! {
     let rv = cogl_create_program()
-    return rv
+    return cast(rv)
 }
 
 
@@ -2222,7 +2674,7 @@ public func colorInitFromHsl(color: ColorProtocol, hue: gfloat, saturation: gflo
 /// Use #CoglSnippet api
 @available(*, deprecated) public func createShader(shaderType shader_type: ShaderType) -> CoglHandle! {
     let rv = cogl_create_shader(shader_type)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2252,23 +2704,23 @@ public func debugMatrixPrint(matrix: MatrixProtocol) {
 
 public func doubleToFixed(value: gdouble) -> CoglFixed {
     let rv = cogl_double_to_fixed(value)
-    return rv
+    return cast(rv)
 }
 
 
 
 
-public func doubleToInt(value: gdouble) -> CInt {
-    let rv = cogl_double_to_int(value)
-    return rv
+public func doubleToInt(value: gdouble) -> Int {
+    let rv: Int = cast(cogl_double_to_int(value))
+    return cast(rv)
 }
 
 
 
 
-public func doubleToUint(value: gdouble) -> CUnsignedInt {
-    let rv = cogl_double_to_uint(value)
-    return rv
+public func doubleToUint(value: gdouble) -> Int {
+    let rv: Int = cast(cogl_double_to_uint(value))
+    return cast(rv)
 }
 
 
@@ -2295,8 +2747,8 @@ public func doubleToUint(value: gdouble) -> CUnsignedInt {
 /// **features_available is deprecated:**
 /// Use cogl_has_feature() instead
 @available(*, deprecated) public func featuresAvailable(features: FeatureFlags) -> CoglBool {
-    let rv = cogl_features_available(features)
-    return rv
+    let rv = cogl_features_available(features.value)
+    return cast(rv)
 }
 
 
@@ -2342,7 +2794,7 @@ public func flush() {
 /// that is really known.
 @available(*, deprecated) public func framebufferGetColorFormat(framebuffer: UnsafeMutablePointer<CoglFramebuffer>) -> CoglPixelFormat {
     let rv = cogl_framebuffer_get_color_format(cast(framebuffer))
-    return rv
+    return cast(rv)
 }
 
 
@@ -2369,7 +2821,7 @@ public func flush() {
 /// Use cogl_pipeline_get_cull_face_mode() instead
 @available(*, deprecated) public func getBackfaceCullingEnabled() -> CoglBool {
     let rv = cogl_get_backface_culling_enabled()
-    return rv
+    return cast(rv)
 }
 
 
@@ -2396,7 +2848,7 @@ public func flush() {
 /// Use cogl_pipeline_set_depth_state() instead
 @available(*, deprecated) public func getDepthTestEnabled() -> CoglBool {
     let rv = cogl_get_depth_test_enabled()
-    return rv
+    return cast(rv)
 }
 
 
@@ -2408,7 +2860,7 @@ public func flush() {
 /// Use cogl_foreach_feature() instead
 @available(*, deprecated) public func getFeatures() -> CoglFeatureFlags {
     let rv = cogl_get_features()
-    return rv
+    return cast(rv)
 }
 
 
@@ -2434,7 +2886,7 @@ public func flush() {
 /// **get_option_group is deprecated:**
 /// Not replaced
 @available(*, deprecated) public func getOptionGroup() -> UnsafeMutablePointer<GOptionGroup>! {
-    let rv = cogl_get_option_group()
+    let rv: UnsafeMutablePointer<GOptionGroup>! = cast(cogl_get_option_group())
     return cast(rv)
 }
 
@@ -2450,7 +2902,7 @@ public func flush() {
 /// and may return a junk pointer if you do.</note>
 public func getProcAddress(name: UnsafePointer<CChar>) -> CoglFuncPtr! {
     let rv = cogl_get_proc_address(name)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2483,7 +2935,7 @@ public func getProcAddress(name: UnsafePointer<CChar>) -> CoglFuncPtr! {
 ///                   #CoglPipeline argument so this stack of
 ///                   #CoglMaterial<!-- -->s shouldn't be used.
 @available(*, deprecated) public func getSource() -> UnsafeMutableRawPointer! {
-    let rv = cogl_get_source()
+    let rv: UnsafeMutableRawPointer! = cast(cogl_get_source())
     return cast(rv)
 }
 
@@ -2511,7 +2963,7 @@ public func getProcAddress(name: UnsafePointer<CChar>) -> CoglFuncPtr! {
 /// Use cogl_matrix_get_gtype() instead.
 @available(*, deprecated) public func gtypeMatrixGetType() -> GType {
     let rv = cogl_gtype_matrix_get_type()
-    return rv
+    return cast(rv)
 }
 
 
@@ -2519,7 +2971,7 @@ public func getProcAddress(name: UnsafePointer<CChar>) -> CoglFuncPtr! {
 
 public func handleGetType() -> GType {
     let rv = cogl_handle_get_type()
-    return rv
+    return cast(rv)
 }
 
 
@@ -2528,7 +2980,7 @@ public func handleGetType() -> GType {
 /// Increases the reference count of `handle` by 1
 public func handleRef(handle: Handle) -> CoglHandle! {
     let rv = cogl_handle_ref(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2547,7 +2999,7 @@ public func handleUnref(handle: Handle) {
 /// Checks whether `object` is a `CoglBitmap`
 public func isBitmap(object: UnsafeMutableRawPointer) -> CoglBool {
     let rv = cogl_is_bitmap(cast(object))
-    return rv
+    return cast(rv)
 }
 
 
@@ -2559,7 +3011,7 @@ public func isBitmap(object: UnsafeMutableRawPointer) -> CoglBool {
 /// Use cogl_is_pipeline() instead
 @available(*, deprecated) public func isMaterial(handle: Handle) -> CoglBool {
     let rv = cogl_is_material(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2569,7 +3021,7 @@ public func isBitmap(object: UnsafeMutableRawPointer) -> CoglBool {
 /// framebuffer object.
 public func isOffscreen(object: UnsafeMutableRawPointer) -> CoglBool {
     let rv = cogl_is_offscreen(cast(object))
-    return rv
+    return cast(rv)
 }
 
 
@@ -2581,7 +3033,7 @@ public func isOffscreen(object: UnsafeMutableRawPointer) -> CoglBool {
 /// Use #CoglSnippet api
 @available(*, deprecated) public func isProgram(handle: Handle) -> CoglBool {
     let rv = cogl_is_program(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2593,7 +3045,7 @@ public func isOffscreen(object: UnsafeMutableRawPointer) -> CoglBool {
 /// Use #CoglSnippet api
 @available(*, deprecated) public func isShader(handle: Handle) -> CoglBool {
     let rv = cogl_is_shader(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2602,7 +3054,7 @@ public func isOffscreen(object: UnsafeMutableRawPointer) -> CoglBool {
 /// Gets whether the given object references a texture object.
 public func isTexture(object: UnsafeMutableRawPointer) -> CoglBool {
     let rv = cogl_is_texture(cast(object))
-    return rv
+    return cast(rv)
 }
 
 
@@ -2614,7 +3066,7 @@ public func isTexture(object: UnsafeMutableRawPointer) -> CoglBool {
 /// Use the #CoglPrimitive api instead
 @available(*, deprecated) public func isVertexBuffer(handle: Handle) -> CoglBool {
     let rv = cogl_is_vertex_buffer(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2627,7 +3079,7 @@ public func isTexture(object: UnsafeMutableRawPointer) -> CoglBool {
 /// Use the #CoglPrimitive api instead
 @available(*, deprecated) public func isVertexBufferIndices(handle: Handle) -> CoglBool {
     let rv = cogl_is_vertex_buffer_indices(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2639,7 +3091,7 @@ public func isTexture(object: UnsafeMutableRawPointer) -> CoglBool {
 /// Use cogl_object_ref() instead
 @available(*, deprecated) public func materialRef(material: Handle) -> CoglHandle! {
     let rv = cogl_material_ref(material)
-    return rv
+    return cast(rv)
 }
 
 
@@ -2663,7 +3115,7 @@ public func isTexture(object: UnsafeMutableRawPointer) -> CoglBool {
 /// inverse matrix these are not considered in the comparison.
 public func matrixEqual(v1: UnsafeMutableRawPointer, v2: UnsafeMutableRawPointer) -> CoglBool {
     let rv = cogl_matrix_equal(cast(v1), cast(v2))
-    return rv
+    return cast(rv)
 }
 
 
@@ -2822,9 +3274,9 @@ public func polygon(vertices: TextureVertexProtocol, nVertices n_vertices: CUnsi
 ///
 /// **program_get_uniform_location is deprecated:**
 /// Use #CoglSnippet api instead
-@available(*, deprecated) public func programGetUniformLocation(handle: Handle, uniformName uniform_name: UnsafePointer<CChar>) -> CInt {
-    let rv = cogl_program_get_uniform_location(handle, uniform_name)
-    return rv
+@available(*, deprecated) public func programGetUniformLocation(handle: Handle, uniformName uniform_name: UnsafePointer<CChar>) -> Int {
+    let rv: Int = cast(cogl_program_get_uniform_location(handle, uniform_name))
+    return cast(rv)
 }
 
 
@@ -2850,7 +3302,7 @@ public func polygon(vertices: TextureVertexProtocol, nVertices n_vertices: CUnsi
 /// Use #CoglSnippet api
 @available(*, deprecated) public func programRef(handle: Handle) -> CoglHandle! {
     let rv = cogl_program_ref(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -3159,7 +3611,7 @@ public func polygon(vertices: TextureVertexProtocol, nVertices n_vertices: CUnsi
 /// **read_pixels is deprecated:**
 /// Use cogl_framebuffer_read_pixels() instead
 @available(*, deprecated) public func readPixels(x: CInt, y: CInt, width: CInt, height: CInt, source: ReadPixelsFlags, format: PixelFormat, pixels: UnsafeMutablePointer<UInt8>) {
-    cogl_read_pixels(x, y, width, height, source, format, cast(pixels))
+    cogl_read_pixels(x, y, width, height, source.value, format, cast(pixels))
 
 }
 
@@ -3308,7 +3760,7 @@ public func rectanglesWithTextureCoords(verts: UnsafePointer<CFloat>, nRects n_r
 ///                   #CoglFramebuffer arguments so this stack of
 ///                   framebuffers shouldn't be used anymore.
 @available(*, deprecated) public func setDrawBuffer(target: BufferTarget, offscreen: Handle) {
-    cogl_set_draw_buffer(target, offscreen)
+    cogl_set_draw_buffer(target.value, offscreen)
 
 }
 
@@ -3522,8 +3974,8 @@ public func rectanglesWithTextureCoords(verts: UnsafePointer<CFloat>, nRects n_r
 /// **shader_get_info_log is deprecated:**
 /// Use #CoglSnippet api
 @available(*, deprecated) public func shaderGetInfoLog(handle: Handle) -> String! {
-    let rv = cogl_shader_get_info_log(handle)
-    return rv.map { String(cString: UnsafePointer<CChar>($0)) }
+    let rv: String! = cast(cogl_shader_get_info_log(handle))
+    return cast(rv)
 }
 
 
@@ -3535,7 +3987,7 @@ public func rectanglesWithTextureCoords(verts: UnsafePointer<CFloat>, nRects n_r
 /// Use #CoglSnippet api
 @available(*, deprecated) public func shaderGetType(handle: Handle) -> CoglShaderType {
     let rv = cogl_shader_get_type(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -3547,7 +3999,7 @@ public func rectanglesWithTextureCoords(verts: UnsafePointer<CFloat>, nRects n_r
 /// Use #CoglSnippet api
 @available(*, deprecated) public func shaderIsCompiled(handle: Handle) -> CoglBool {
     let rv = cogl_shader_is_compiled(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -3559,7 +4011,7 @@ public func rectanglesWithTextureCoords(verts: UnsafePointer<CFloat>, nRects n_r
 /// Use #CoglSnippet api
 @available(*, deprecated) public func shaderRef(handle: Handle) -> CoglHandle! {
     let rv = cogl_shader_ref(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -3602,9 +4054,9 @@ public func rectanglesWithTextureCoords(verts: UnsafePointer<CFloat>, nRects n_r
 /// 5% for arguments smaller than `COGL_SQRTI_ARG_5_PERCENT` and less than 10%
 /// for narguments smaller than `COGL_SQRTI_ARG_10_PERCENT`. The maximum
 /// argument that can be passed to this function is `COGL_SQRTI_ARG_MAX`.
-public func sqrti(x: CInt) -> CInt {
-    let rv = cogl_sqrti(x)
-    return rv
+public func sqrti(x: CInt) -> Int {
+    let rv: Int = cast(cogl_sqrti(x))
+    return cast(rv)
 }
 
 
@@ -3612,7 +4064,7 @@ public func sqrti(x: CInt) -> CInt {
 
 public func textureErrorQuark() -> UInt32 {
     let rv = cogl_texture_error_quark()
-    return rv
+    return cast(rv)
 }
 
 
@@ -3623,7 +4075,7 @@ public func textureErrorQuark() -> UInt32 {
 /// **texture_ref is deprecated:**
 /// Use cogl_object_ref() instead
 @available(*, deprecated) public func textureRef(texture: UnsafeMutableRawPointer) -> UnsafeMutableRawPointer! {
-    let rv = cogl_texture_ref(cast(texture))
+    let rv: UnsafeMutableRawPointer! = cast(cogl_texture_ref(cast(texture)))
     return cast(rv)
 }
 
@@ -3796,9 +4248,9 @@ public func textureErrorQuark() -> UInt32 {
 ///
 /// **vertex_buffer_get_n_vertices is deprecated:**
 /// Use the #CoglPrimitive api instead
-@available(*, deprecated) public func vertexBufferGetNVertices(handle: Handle) -> CUnsignedInt {
-    let rv = cogl_vertex_buffer_get_n_vertices(handle)
-    return rv
+@available(*, deprecated) public func vertexBufferGetNVertices(handle: Handle) -> Int {
+    let rv: Int = cast(cogl_vertex_buffer_get_n_vertices(handle))
+    return cast(rv)
 }
 
 
@@ -3832,7 +4284,7 @@ public func textureErrorQuark() -> UInt32 {
 /// Use the #CoglPrimitive api instead
 @available(*, deprecated) public func vertexBufferIndicesGetForQuads(nIndices n_indices: CUnsignedInt) -> CoglHandle! {
     let rv = cogl_vertex_buffer_indices_get_for_quads(n_indices)
-    return rv
+    return cast(rv)
 }
 
 
@@ -3844,7 +4296,7 @@ public func textureErrorQuark() -> UInt32 {
 /// Use the #CoglPrimitive api instead
 @available(*, deprecated) public func vertexBufferIndicesGetType(indices: Handle) -> CoglIndicesType {
     let rv = cogl_vertex_buffer_indices_get_type(indices)
-    return rv
+    return cast(rv)
 }
 
 
@@ -3859,7 +4311,7 @@ public func textureErrorQuark() -> UInt32 {
 /// Use the #CoglPrimitive api instead
 @available(*, deprecated) public func vertexBufferIndicesNew(indicesType indices_type: IndicesType, indicesArray indices_array: UnsafeMutableRawPointer, indicesLen indices_len: CInt) -> CoglHandle! {
     let rv = cogl_vertex_buffer_indices_new(indices_type, cast(indices_array), indices_len)
-    return rv
+    return cast(rv)
 }
 
 
@@ -3871,7 +4323,7 @@ public func textureErrorQuark() -> UInt32 {
 /// Use the #CoglPrimitive api instead
 @available(*, deprecated) public func vertexBufferNew(nVertices n_vertices: CUnsignedInt) -> CoglHandle! {
     let rv = cogl_vertex_buffer_new(n_vertices)
-    return rv
+    return cast(rv)
 }
 
 
@@ -3883,7 +4335,7 @@ public func textureErrorQuark() -> UInt32 {
 /// Use cogl_object_ref() instead
 @available(*, deprecated) public func vertexBufferRef(handle: Handle) -> CoglHandle! {
     let rv = cogl_vertex_buffer_ref(handle)
-    return rv
+    return cast(rv)
 }
 
 
@@ -3941,7 +4393,7 @@ public func textureErrorQuark() -> UInt32 {
 /// the CoglColor structure are private and should never by accessed
 /// directly.
 public protocol ColorProtocol {
-    /// Untyped pointer to the underlying `CoglColor` instance.
+        /// Untyped pointer to the underlying `CoglColor` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglColor` instance.
@@ -3956,7 +4408,7 @@ public protocol ColorProtocol {
 /// the CoglColor structure are private and should never by accessed
 /// directly.
 public struct ColorRef: ColorProtocol {
-    /// Untyped pointer to the underlying `CoglColor` instance.
+        /// Untyped pointer to the underlying `CoglColor` instance.
     /// For type-safe access, use the generated, typed pointer `color_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -4003,7 +4455,7 @@ public extension ColorRef {
 
         /// Creates a new (empty) color
     init() {
-        let rv = cogl_color_new()
+        let rv: UnsafeMutablePointer<CoglColor>! = cast(cogl_color_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 }
@@ -4016,7 +4468,7 @@ public extension ColorRef {
 /// the CoglColor structure are private and should never by accessed
 /// directly.
 open class Color: ColorProtocol {
-    /// Untyped pointer to the underlying `CoglColor` instance.
+        /// Untyped pointer to the underlying `CoglColor` instance.
     /// For type-safe access, use the generated, typed pointer `color_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -4045,7 +4497,7 @@ open class Color: ColorProtocol {
         // no reference counting for CoglColor, cannot ref(cast(color_ptr))
     }
 
-    /// Do-nothing destructor for`CoglColor`.
+    /// Do-nothing destructor for `CoglColor`.
     deinit {
         // no reference counting for CoglColor, cannot unref(cast(color_ptr))
     }
@@ -4111,25 +4563,26 @@ open class Color: ColorProtocol {
 
     /// Creates a new (empty) color
     public init() {
-        let rv = cogl_color_new()
+        let rv: UnsafeMutablePointer<CoglColor>! = cast(cogl_color_new())
         ptr = UnsafeMutableRawPointer(cast(rv))
     }
 
 
 }
 
-// MARK: - no Color properties
+// MARK: no Color properties
 
-// MARK: - no signals
+// MARK: no Color signals
 
 
+// MARK: Color Record: ColorProtocol extension (methods and fields)
 public extension ColorProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglColor` instance.
     var color_ptr: UnsafeMutablePointer<CoglColor> { return ptr.assumingMemoryBound(to: CoglColor.self) }
 
     /// Creates a copy of `color`
     func copy() -> UnsafeMutablePointer<CoglColor>! {
-        let rv = cogl_color_copy(cast(color_ptr))
+        let rv: UnsafeMutablePointer<CoglColor>! = cast(cogl_color_copy(cast(color_ptr)))
         return cast(rv)
     }
 
@@ -4141,86 +4594,86 @@ public extension ColorProtocol {
 
     /// Retrieves the alpha channel of `color` as a fixed point
     /// value between 0 and 1.0.
-    func getAlpha() -> CFloat {
-        let rv = cogl_color_get_alpha(cast(color_ptr))
-        return rv
+    func getAlpha() -> Double {
+        let rv: Float = cast(cogl_color_get_alpha(cast(color_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the alpha channel of `color` as a byte value
     /// between 0 and 255
     func getAlphaByte() -> CUnsignedChar {
         let rv = cogl_color_get_alpha_byte(cast(color_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Retrieves the alpha channel of `color` as a floating point
     /// value between 0.0 and 1.0
-    func getAlphaFloat() -> CFloat {
-        let rv = cogl_color_get_alpha_float(cast(color_ptr))
-        return rv
+    func getAlphaFloat() -> Double {
+        let rv: Float = cast(cogl_color_get_alpha_float(cast(color_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the blue channel of `color` as a fixed point
     /// value between 0 and 1.0.
-    func getBlue() -> CFloat {
-        let rv = cogl_color_get_blue(cast(color_ptr))
-        return rv
+    func getBlue() -> Double {
+        let rv: Float = cast(cogl_color_get_blue(cast(color_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the blue channel of `color` as a byte value
     /// between 0 and 255
     func getBlueByte() -> CUnsignedChar {
         let rv = cogl_color_get_blue_byte(cast(color_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Retrieves the blue channel of `color` as a floating point
     /// value between 0.0 and 1.0
-    func getBlueFloat() -> CFloat {
-        let rv = cogl_color_get_blue_float(cast(color_ptr))
-        return rv
+    func getBlueFloat() -> Double {
+        let rv: Float = cast(cogl_color_get_blue_float(cast(color_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the green channel of `color` as a fixed point
     /// value between 0 and 1.0.
-    func getGreen() -> CFloat {
-        let rv = cogl_color_get_green(cast(color_ptr))
-        return rv
+    func getGreen() -> Double {
+        let rv: Float = cast(cogl_color_get_green(cast(color_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the green channel of `color` as a byte value
     /// between 0 and 255
     func getGreenByte() -> CUnsignedChar {
         let rv = cogl_color_get_green_byte(cast(color_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Retrieves the green channel of `color` as a floating point
     /// value between 0.0 and 1.0
-    func getGreenFloat() -> CFloat {
-        let rv = cogl_color_get_green_float(cast(color_ptr))
-        return rv
+    func getGreenFloat() -> Double {
+        let rv: Float = cast(cogl_color_get_green_float(cast(color_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the red channel of `color` as a fixed point
     /// value between 0 and 1.0.
-    func getRed() -> CFloat {
-        let rv = cogl_color_get_red(cast(color_ptr))
-        return rv
+    func getRed() -> Double {
+        let rv: Float = cast(cogl_color_get_red(cast(color_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the red channel of `color` as a byte value
     /// between 0 and 255
     func getRedByte() -> CUnsignedChar {
         let rv = cogl_color_get_red_byte(cast(color_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Retrieves the red channel of `color` as a floating point
     /// value between 0.0 and 1.0
-    func getRedFloat() -> CFloat {
-        let rv = cogl_color_get_red_float(cast(color_ptr))
-        return rv
+    func getRedFloat() -> Double {
+        let rv: Float = cast(cogl_color_get_red_float(cast(color_ptr)))
+        return cast(rv)
     }
 
     /// Sets the values of the passed channels into a `CoglColor`
@@ -4423,16 +4876,16 @@ public extension ColorProtocol {
     }
     /// Retrieves the alpha channel of `color` as a fixed point
     /// value between 0 and 1.0.
-    var alpha: CFloat {
+    var alpha: Double {
         /// Retrieves the alpha channel of `color` as a fixed point
         /// value between 0 and 1.0.
         get {
-            let rv = cogl_color_get_alpha(cast(color_ptr))
-            return rv
+            let rv: Float = cast(cogl_color_get_alpha(cast(color_ptr)))
+            return cast(rv)
         }
         /// Sets the alpha channel of `color` to `alpha`.
         nonmutating set {
-            cogl_color_set_alpha(cast(color_ptr), newValue)
+            cogl_color_set_alpha(cast(color_ptr), cast(newValue))
         }
     }
 
@@ -4443,41 +4896,41 @@ public extension ColorProtocol {
         /// between 0 and 255
         get {
             let rv = cogl_color_get_alpha_byte(cast(color_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the alpha channel of `color` to `alpha`.
         nonmutating set {
-            cogl_color_set_alpha_byte(cast(color_ptr), newValue)
+            cogl_color_set_alpha_byte(cast(color_ptr), cast(newValue))
         }
     }
 
     /// Retrieves the alpha channel of `color` as a floating point
     /// value between 0.0 and 1.0
-    var alphaFloat: CFloat {
+    var alphaFloat: Double {
         /// Retrieves the alpha channel of `color` as a floating point
         /// value between 0.0 and 1.0
         get {
-            let rv = cogl_color_get_alpha_float(cast(color_ptr))
-            return rv
+            let rv: Float = cast(cogl_color_get_alpha_float(cast(color_ptr)))
+            return cast(rv)
         }
         /// Sets the alpha channel of `color` to `alpha`.
         nonmutating set {
-            cogl_color_set_alpha_float(cast(color_ptr), newValue)
+            cogl_color_set_alpha_float(cast(color_ptr), cast(newValue))
         }
     }
 
     /// Retrieves the blue channel of `color` as a fixed point
     /// value between 0 and 1.0.
-    var blue: CFloat {
+    var blue: Double {
         /// Retrieves the blue channel of `color` as a fixed point
         /// value between 0 and 1.0.
         get {
-            let rv = cogl_color_get_blue(cast(color_ptr))
-            return rv
+            let rv: Float = cast(cogl_color_get_blue(cast(color_ptr)))
+            return cast(rv)
         }
         /// Sets the blue channel of `color` to `blue`.
         nonmutating set {
-            cogl_color_set_blue(cast(color_ptr), newValue)
+            cogl_color_set_blue(cast(color_ptr), cast(newValue))
         }
     }
 
@@ -4488,41 +4941,41 @@ public extension ColorProtocol {
         /// between 0 and 255
         get {
             let rv = cogl_color_get_blue_byte(cast(color_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the blue channel of `color` to `blue`.
         nonmutating set {
-            cogl_color_set_blue_byte(cast(color_ptr), newValue)
+            cogl_color_set_blue_byte(cast(color_ptr), cast(newValue))
         }
     }
 
     /// Retrieves the blue channel of `color` as a floating point
     /// value between 0.0 and 1.0
-    var blueFloat: CFloat {
+    var blueFloat: Double {
         /// Retrieves the blue channel of `color` as a floating point
         /// value between 0.0 and 1.0
         get {
-            let rv = cogl_color_get_blue_float(cast(color_ptr))
-            return rv
+            let rv: Float = cast(cogl_color_get_blue_float(cast(color_ptr)))
+            return cast(rv)
         }
         /// Sets the blue channel of `color` to `blue`.
         nonmutating set {
-            cogl_color_set_blue_float(cast(color_ptr), newValue)
+            cogl_color_set_blue_float(cast(color_ptr), cast(newValue))
         }
     }
 
     /// Retrieves the green channel of `color` as a fixed point
     /// value between 0 and 1.0.
-    var green: CFloat {
+    var green: Double {
         /// Retrieves the green channel of `color` as a fixed point
         /// value between 0 and 1.0.
         get {
-            let rv = cogl_color_get_green(cast(color_ptr))
-            return rv
+            let rv: Float = cast(cogl_color_get_green(cast(color_ptr)))
+            return cast(rv)
         }
         /// Sets the green channel of `color` to `green`.
         nonmutating set {
-            cogl_color_set_green(cast(color_ptr), newValue)
+            cogl_color_set_green(cast(color_ptr), cast(newValue))
         }
     }
 
@@ -4533,41 +4986,41 @@ public extension ColorProtocol {
         /// between 0 and 255
         get {
             let rv = cogl_color_get_green_byte(cast(color_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the green channel of `color` to `green`.
         nonmutating set {
-            cogl_color_set_green_byte(cast(color_ptr), newValue)
+            cogl_color_set_green_byte(cast(color_ptr), cast(newValue))
         }
     }
 
     /// Retrieves the green channel of `color` as a floating point
     /// value between 0.0 and 1.0
-    var greenFloat: CFloat {
+    var greenFloat: Double {
         /// Retrieves the green channel of `color` as a floating point
         /// value between 0.0 and 1.0
         get {
-            let rv = cogl_color_get_green_float(cast(color_ptr))
-            return rv
+            let rv: Float = cast(cogl_color_get_green_float(cast(color_ptr)))
+            return cast(rv)
         }
         /// Sets the green channel of `color` to `green`.
         nonmutating set {
-            cogl_color_set_green_float(cast(color_ptr), newValue)
+            cogl_color_set_green_float(cast(color_ptr), cast(newValue))
         }
     }
 
     /// Retrieves the red channel of `color` as a fixed point
     /// value between 0 and 1.0.
-    var red: CFloat {
+    var red: Double {
         /// Retrieves the red channel of `color` as a fixed point
         /// value between 0 and 1.0.
         get {
-            let rv = cogl_color_get_red(cast(color_ptr))
-            return rv
+            let rv: Float = cast(cogl_color_get_red(cast(color_ptr)))
+            return cast(rv)
         }
         /// Sets the red channel of `color` to `red`.
         nonmutating set {
-            cogl_color_set_red(cast(color_ptr), newValue)
+            cogl_color_set_red(cast(color_ptr), cast(newValue))
         }
     }
 
@@ -4578,28 +5031,43 @@ public extension ColorProtocol {
         /// between 0 and 255
         get {
             let rv = cogl_color_get_red_byte(cast(color_ptr))
-            return rv
+            return cast(rv)
         }
         /// Sets the red channel of `color` to `red`.
         nonmutating set {
-            cogl_color_set_red_byte(cast(color_ptr), newValue)
+            cogl_color_set_red_byte(cast(color_ptr), cast(newValue))
         }
     }
 
     /// Retrieves the red channel of `color` as a floating point
     /// value between 0.0 and 1.0
-    var redFloat: CFloat {
+    var redFloat: Double {
         /// Retrieves the red channel of `color` as a floating point
         /// value between 0.0 and 1.0
         get {
-            let rv = cogl_color_get_red_float(cast(color_ptr))
-            return rv
+            let rv: Float = cast(cogl_color_get_red_float(cast(color_ptr)))
+            return cast(rv)
         }
         /// Sets the red channel of `color` to `red`.
         nonmutating set {
-            cogl_color_set_red_float(cast(color_ptr), newValue)
+            cogl_color_set_red_float(cast(color_ptr), cast(newValue))
         }
     }
+
+    // var privateMemberRed is unavailable because private_member_red is private
+
+    // var privateMemberGreen is unavailable because private_member_green is private
+
+    // var privateMemberBlue is unavailable because private_member_blue is private
+
+    // var privateMemberAlpha is unavailable because private_member_alpha is private
+
+    // var privateMemberPadding0 is unavailable because private_member_padding0 is private
+
+    // var privateMemberPadding1 is unavailable because private_member_padding1 is private
+
+    // var privateMemberPadding2 is unavailable because private_member_padding2 is private
+
 }
 
 
@@ -4613,7 +5081,7 @@ public extension ColorProtocol {
 ///
 
 public protocol EulerProtocol {
-    /// Untyped pointer to the underlying `CoglEuler` instance.
+        /// Untyped pointer to the underlying `CoglEuler` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglEuler` instance.
@@ -4626,7 +5094,7 @@ public protocol EulerProtocol {
 ///
 
 public struct EulerRef: EulerProtocol {
-    /// Untyped pointer to the underlying `CoglEuler` instance.
+        /// Untyped pointer to the underlying `CoglEuler` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -4679,7 +5147,7 @@ public extension EulerRef {
 ///
 
 open class Euler: EulerProtocol {
-    /// Untyped pointer to the underlying `CoglEuler` instance.
+        /// Untyped pointer to the underlying `CoglEuler` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -4708,7 +5176,7 @@ open class Euler: EulerProtocol {
         // no reference counting for CoglEuler, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`CoglEuler`.
+    /// Do-nothing destructor for `CoglEuler`.
     deinit {
         // no reference counting for CoglEuler, cannot unref(cast(_ptr))
     }
@@ -4776,14 +5244,17 @@ open class Euler: EulerProtocol {
 
 }
 
-// MARK: - no Euler properties
+// MARK: no Euler properties
 
-// MARK: - no signals
+// MARK: no Euler signals
 
 
+// MARK: Euler Record: EulerProtocol extension (methods and fields)
 public extension EulerProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglEuler` instance.
     var _ptr: UnsafeMutablePointer<CoglEuler> { return ptr.assumingMemoryBound(to: CoglEuler.self) }
+
+
 
 }
 
@@ -4798,7 +5269,7 @@ public extension EulerProtocol {
 ///
 
 public protocol MaterialProtocol {
-    /// Untyped pointer to the underlying `CoglMaterial` instance.
+        /// Untyped pointer to the underlying `CoglMaterial` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglMaterial` instance.
@@ -4811,7 +5282,7 @@ public protocol MaterialProtocol {
 ///
 
 public struct MaterialRef: MaterialProtocol {
-    /// Untyped pointer to the underlying `CoglMaterial` instance.
+        /// Untyped pointer to the underlying `CoglMaterial` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -4864,7 +5335,7 @@ public extension MaterialRef {
 ///
 
 open class Material: MaterialProtocol {
-    /// Untyped pointer to the underlying `CoglMaterial` instance.
+        /// Untyped pointer to the underlying `CoglMaterial` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -4893,7 +5364,7 @@ open class Material: MaterialProtocol {
         // no reference counting for CoglMaterial, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`CoglMaterial`.
+    /// Do-nothing destructor for `CoglMaterial`.
     deinit {
         // no reference counting for CoglMaterial, cannot unref(cast(_ptr))
     }
@@ -4961,11 +5432,12 @@ open class Material: MaterialProtocol {
 
 }
 
-// MARK: - no Material properties
+// MARK: no Material properties
 
-// MARK: - no signals
+// MARK: no Material signals
 
 
+// MARK: Material Record: MaterialProtocol extension (methods and fields)
 public extension MaterialProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglMaterial` instance.
     var _ptr: UnsafeMutablePointer<CoglMaterial> { return ptr.assumingMemoryBound(to: CoglMaterial.self) }
@@ -4982,7 +5454,7 @@ public extension MaterialProtocol {
     /// **copy is deprecated:**
     /// Use cogl_pipeline_copy() instead
     @available(*, deprecated) func copy() -> UnsafeMutablePointer<CoglMaterial>! {
-        let rv = cogl_material_copy(cast(_ptr))
+        let rv: UnsafeMutablePointer<CoglMaterial>! = cast(cogl_material_copy(cast(_ptr)))
         return cast(rv)
     }
 
@@ -5030,7 +5502,7 @@ public extension MaterialProtocol {
     ///                  instead
     @available(*, deprecated) func getLayerPointSpriteCoordsEnabled(layerIndex layer_index: CInt) -> CoglBool {
         let rv = cogl_material_get_layer_point_sprite_coords_enabled(cast(_ptr), layer_index)
-        return rv
+        return cast(rv)
     }
 
     /// Returns the wrap mode for the 'p' coordinate of texture lookups on this
@@ -5040,7 +5512,7 @@ public extension MaterialProtocol {
     /// Use cogl_pipeline_get_layer_wrap_mode_p() instead
     @available(*, deprecated) func getLayerWrapModeP(layerIndex layer_index: CInt) -> CoglMaterialWrapMode {
         let rv = cogl_material_get_layer_wrap_mode_p(cast(_ptr), layer_index)
-        return rv
+        return cast(rv)
     }
 
     /// Returns the wrap mode for the 's' coordinate of texture lookups on this
@@ -5050,7 +5522,7 @@ public extension MaterialProtocol {
     /// Use cogl_pipeline_get_layer_wrap_mode_s() instead
     @available(*, deprecated) func getLayerWrapModeS(layerIndex layer_index: CInt) -> CoglMaterialWrapMode {
         let rv = cogl_material_get_layer_wrap_mode_s(cast(_ptr), layer_index)
-        return rv
+        return cast(rv)
     }
 
     /// Returns the wrap mode for the 't' coordinate of texture lookups on this
@@ -5060,7 +5532,7 @@ public extension MaterialProtocol {
     /// Use cogl_pipeline_get_layer_wrap_mode_t() instead
     @available(*, deprecated) func getLayerWrapModeT(layerIndex layer_index: CInt) -> CoglMaterialWrapMode {
         let rv = cogl_material_get_layer_wrap_mode_t(cast(_ptr), layer_index)
-        return rv
+        return cast(rv)
     }
 
     /// This function lets you access a material's internal list of layers
@@ -5075,7 +5547,7 @@ public extension MaterialProtocol {
     /// way and so you would have to re-get the list in that
     /// situation.</note>
     func getLayers() -> UnsafePointer<GList>! {
-        let rv = cogl_material_get_layers(cast(_ptr))
+        let rv: UnsafePointer<GList>! = cast(cogl_material_get_layers(cast(_ptr)))
         return cast(rv)
     }
 
@@ -5083,9 +5555,9 @@ public extension MaterialProtocol {
     ///
     /// **get_n_layers is deprecated:**
     /// Use cogl_pipeline_get_n_layers() instead
-    @available(*, deprecated) func getNLayers() -> CInt {
-        let rv = cogl_material_get_n_layers(cast(_ptr))
-        return rv
+    @available(*, deprecated) func getNLayers() -> Int {
+        let rv: Int = cast(cogl_material_get_n_layers(cast(_ptr)))
+        return cast(rv)
     }
 
     /// Get the size of points drawn when `COGL_VERTICES_MODE_POINTS` is
@@ -5093,18 +5565,18 @@ public extension MaterialProtocol {
     ///
     /// **get_point_size is deprecated:**
     /// Use cogl_pipeline_get_point_size() instead
-    @available(*, deprecated) func getPointSize() -> CFloat {
-        let rv = cogl_material_get_point_size(cast(_ptr))
-        return rv
+    @available(*, deprecated) func getPointSize() -> Double {
+        let rv: Float = cast(cogl_material_get_point_size(cast(_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the materials current emission color.
     ///
     /// **get_shininess is deprecated:**
     /// Use the #CoglSnippet shader api for lighting
-    @available(*, deprecated) func getShininess() -> CFloat {
-        let rv = cogl_material_get_shininess(cast(_ptr))
-        return rv
+    @available(*, deprecated) func getShininess() -> Double {
+        let rv: Float = cast(cogl_material_get_shininess(cast(_ptr)))
+        return cast(rv)
     }
 
     /// Retrieves the materials current specular color.
@@ -5123,7 +5595,7 @@ public extension MaterialProtocol {
     /// Use #CoglSnippet api instead instead
     @available(*, deprecated) func getUserProgram() -> CoglHandle! {
         let rv = cogl_material_get_user_program(cast(_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// This function removes a layer from your material
@@ -5248,12 +5720,10 @@ public extension MaterialProtocol {
     /// **set_blend is deprecated:**
     /// Use cogl_pipeline_set_blend() instead
     @available(*, deprecated) func setBlend(blendString blend_string: UnsafePointer<CChar>) throws -> CoglBool {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        var error: UnsafeMutablePointer<GError>?
         let rv = cogl_material_set_blend(cast(_ptr), blend_string, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
-        return rv
+        if let error = error { throw ErrorType(error) }
+        return cast(rv)
     }
 
     /// When blending is setup to reference a CONSTANT blend factor then
@@ -5427,12 +5897,10 @@ public extension MaterialProtocol {
     /// **set_layer_combine is deprecated:**
     /// Use cogl_pipeline_set_layer_combine() instead
     @available(*, deprecated) func setLayerCombine(layerIndex layer_index: CInt, blendString blend_string: UnsafePointer<CChar>) throws -> CoglBool {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        var error: UnsafeMutablePointer<GError>?
         let rv = cogl_material_set_layer_combine(cast(_ptr), layer_index, blend_string, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
-        return rv
+        if let error = error { throw ErrorType(error) }
+        return cast(rv)
     }
 
     /// When you are using the 'CONSTANT' color source in a layer combine
@@ -5481,12 +5949,10 @@ public extension MaterialProtocol {
     /// Use cogl_pipeline_set_layer_point_sprite_coords_enabled()
     ///                  instead
     @available(*, deprecated) func setLayerPointSpriteCoordsEnabled(layerIndex layer_index: CInt, enable: Bool_) throws -> CoglBool {
-        var error: Optional<UnsafeMutablePointer<GError>> = nil
+        var error: UnsafeMutablePointer<GError>?
         let rv = cogl_material_set_layer_point_sprite_coords_enabled(cast(_ptr), layer_index, enable, &error)
-        if let error = error {
-                throw ErrorType(error)
-        }
-        return rv
+        if let error = error { throw ErrorType(error) }
+        return cast(rv)
     }
 
     /// Sets the wrap mode for all three coordinates of texture lookups on
@@ -5641,7 +6107,7 @@ public extension MaterialProtocol {
         /// way and so you would have to re-get the list in that
         /// situation.</note>
         get {
-            let rv = cogl_material_get_layers(cast(_ptr))
+            let rv: UnsafePointer<GList>! = cast(cogl_material_get_layers(cast(_ptr)))
             return cast(rv)
         }
     }
@@ -5650,14 +6116,14 @@ public extension MaterialProtocol {
     ///
     /// **get_n_layers is deprecated:**
     /// Use cogl_pipeline_get_n_layers() instead
-    var nLayers: CInt {
+    var nLayers: Int {
         /// Retrieves the number of layers defined for the given `material`
         ///
         /// **get_n_layers is deprecated:**
         /// Use cogl_pipeline_get_n_layers() instead
         @available(*, deprecated) get {
-            let rv = cogl_material_get_n_layers(cast(_ptr))
-            return rv
+            let rv: Int = cast(cogl_material_get_n_layers(cast(_ptr)))
+            return cast(rv)
         }
     }
 
@@ -5666,15 +6132,15 @@ public extension MaterialProtocol {
     ///
     /// **get_point_size is deprecated:**
     /// Use cogl_pipeline_get_point_size() instead
-    var pointSize: CFloat {
+    var pointSize: Double {
         /// Get the size of points drawn when `COGL_VERTICES_MODE_POINTS` is
         /// used with the vertex buffer API.
         ///
         /// **get_point_size is deprecated:**
         /// Use cogl_pipeline_get_point_size() instead
         @available(*, deprecated) get {
-            let rv = cogl_material_get_point_size(cast(_ptr))
-            return rv
+            let rv: Float = cast(cogl_material_get_point_size(cast(_ptr)))
+            return cast(rv)
         }
         /// Changes the size of points drawn when `COGL_VERTICES_MODE_POINTS` is
         /// used with the vertex buffer API. Note that typically the GPU will
@@ -5687,7 +6153,7 @@ public extension MaterialProtocol {
         /// **set_point_size is deprecated:**
         /// Use cogl_pipeline_set_point_size() instead
         @available(*, deprecated) nonmutating set {
-            cogl_material_set_point_size(cast(_ptr), newValue)
+            cogl_material_set_point_size(cast(_ptr), cast(newValue))
         }
     }
 
@@ -5695,14 +6161,14 @@ public extension MaterialProtocol {
     ///
     /// **get_shininess is deprecated:**
     /// Use the #CoglSnippet shader api for lighting
-    var shininess: CFloat {
+    var shininess: Double {
         /// Retrieves the materials current emission color.
         ///
         /// **get_shininess is deprecated:**
         /// Use the #CoglSnippet shader api for lighting
         @available(*, deprecated) get {
-            let rv = cogl_material_get_shininess(cast(_ptr))
-            return rv
+            let rv: Float = cast(cogl_material_get_shininess(cast(_ptr)))
+            return cast(rv)
         }
         /// Sets the shininess of the material, in the standard OpenGL lighting
         /// model, which determines the size of the specular highlights. A
@@ -5714,7 +6180,7 @@ public extension MaterialProtocol {
         /// **set_shininess is deprecated:**
         /// Use the #CoglSnippet shader api for lighting
         @available(*, deprecated) nonmutating set {
-            cogl_material_set_shininess(cast(_ptr), newValue)
+            cogl_material_set_shininess(cast(_ptr), cast(newValue))
         }
     }
 
@@ -5731,7 +6197,7 @@ public extension MaterialProtocol {
         /// Use #CoglSnippet api instead instead
         @available(*, deprecated) get {
             let rv = cogl_material_get_user_program(cast(_ptr))
-            return rv
+            return cast(rv)
         }
         /// Associates a linked CoglProgram with the given material so that the
         /// program can take full control of vertex and/or fragment processing.
@@ -5775,9 +6241,11 @@ public extension MaterialProtocol {
         /// **set_user_program is deprecated:**
         /// Use #CoglSnippet api instead instead
         @available(*, deprecated) nonmutating set {
-            cogl_material_set_user_program(cast(_ptr), newValue)
+            cogl_material_set_user_program(cast(_ptr), cast(newValue))
         }
     }
+
+
 }
 
 
@@ -5791,7 +6259,7 @@ public extension MaterialProtocol {
 ///
 
 public protocol MaterialLayerProtocol {
-    /// Untyped pointer to the underlying `CoglMaterialLayer` instance.
+        /// Untyped pointer to the underlying `CoglMaterialLayer` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglMaterialLayer` instance.
@@ -5804,7 +6272,7 @@ public protocol MaterialLayerProtocol {
 ///
 
 public struct MaterialLayerRef: MaterialLayerProtocol {
-    /// Untyped pointer to the underlying `CoglMaterialLayer` instance.
+        /// Untyped pointer to the underlying `CoglMaterialLayer` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -5857,7 +6325,7 @@ public extension MaterialLayerRef {
 ///
 
 open class MaterialLayer: MaterialLayerProtocol {
-    /// Untyped pointer to the underlying `CoglMaterialLayer` instance.
+        /// Untyped pointer to the underlying `CoglMaterialLayer` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -5886,7 +6354,7 @@ open class MaterialLayer: MaterialLayerProtocol {
         // no reference counting for CoglMaterialLayer, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`CoglMaterialLayer`.
+    /// Do-nothing destructor for `CoglMaterialLayer`.
     deinit {
         // no reference counting for CoglMaterialLayer, cannot unref(cast(_ptr))
     }
@@ -5954,11 +6422,12 @@ open class MaterialLayer: MaterialLayerProtocol {
 
 }
 
-// MARK: - no MaterialLayer properties
+// MARK: no MaterialLayer properties
 
-// MARK: - no signals
+// MARK: no MaterialLayer signals
 
 
+// MARK: MaterialLayer Record: MaterialLayerProtocol extension (methods and fields)
 public extension MaterialLayerProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglMaterialLayer` instance.
     var _ptr: UnsafeMutablePointer<CoglMaterialLayer> { return ptr.assumingMemoryBound(to: CoglMaterialLayer.self) }
@@ -5969,7 +6438,7 @@ public extension MaterialLayerProtocol {
     /// No replacement
     @available(*, deprecated) func getMagFilter() -> CoglMaterialFilter {
         let rv = cogl_material_layer_get_mag_filter(cast(_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Queries the currently set downscaling filter for a material layer
@@ -5978,7 +6447,7 @@ public extension MaterialLayerProtocol {
     /// No replacement
     @available(*, deprecated) func getMinFilter() -> CoglMaterialFilter {
         let rv = cogl_material_layer_get_min_filter(cast(_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Extracts a texture handle for a specific layer.
@@ -5993,7 +6462,7 @@ public extension MaterialLayerProtocol {
     /// No replacement
     @available(*, deprecated) func getTexture() -> CoglHandle! {
         let rv = cogl_material_layer_get_texture(cast(_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Retrieves the type of the layer
@@ -6007,7 +6476,7 @@ public extension MaterialLayerProtocol {
     /// No replacement
     @available(*, deprecated) func getType() -> CoglMaterialLayerType {
         let rv = cogl_material_layer_get_type(cast(_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the wrap mode for the 'p' coordinate of texture lookups on
@@ -6017,7 +6486,7 @@ public extension MaterialLayerProtocol {
     /// Use cogl_pipeline_layer_get_wrap_mode_p() instead
     @available(*, deprecated) func getWrapModeP() -> CoglMaterialWrapMode {
         let rv = cogl_material_layer_get_wrap_mode_p(cast(_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the wrap mode for the 's' coordinate of texture lookups on this layer.
@@ -6026,7 +6495,7 @@ public extension MaterialLayerProtocol {
     /// Use cogl_pipeline_layer_get_wrap_mode_s() instead
     @available(*, deprecated) func getWrapModeS() -> CoglMaterialWrapMode {
         let rv = cogl_material_layer_get_wrap_mode_s(cast(_ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Gets the wrap mode for the 't' coordinate of texture lookups on this layer.
@@ -6035,7 +6504,7 @@ public extension MaterialLayerProtocol {
     /// Use cogl_pipeline_layer_get_wrap_mode_t() instead
     @available(*, deprecated) func getWrapModeT() -> CoglMaterialWrapMode {
         let rv = cogl_material_layer_get_wrap_mode_t(cast(_ptr))
-        return rv
+        return cast(rv)
     }
     /// Queries the currently set downscaling filter for a material later
     ///
@@ -6048,7 +6517,7 @@ public extension MaterialLayerProtocol {
         /// No replacement
         @available(*, deprecated) get {
             let rv = cogl_material_layer_get_mag_filter(cast(_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
@@ -6063,7 +6532,7 @@ public extension MaterialLayerProtocol {
         /// No replacement
         @available(*, deprecated) get {
             let rv = cogl_material_layer_get_min_filter(cast(_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
@@ -6090,7 +6559,7 @@ public extension MaterialLayerProtocol {
         /// No replacement
         @available(*, deprecated) get {
             let rv = cogl_material_layer_get_texture(cast(_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
@@ -6115,7 +6584,7 @@ public extension MaterialLayerProtocol {
         /// No replacement
         @available(*, deprecated) get {
             let rv = cogl_material_layer_get_type(cast(_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
@@ -6132,7 +6601,7 @@ public extension MaterialLayerProtocol {
         /// Use cogl_pipeline_layer_get_wrap_mode_p() instead
         @available(*, deprecated) get {
             let rv = cogl_material_layer_get_wrap_mode_p(cast(_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
@@ -6147,7 +6616,7 @@ public extension MaterialLayerProtocol {
         /// Use cogl_pipeline_layer_get_wrap_mode_s() instead
         @available(*, deprecated) get {
             let rv = cogl_material_layer_get_wrap_mode_s(cast(_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
@@ -6162,9 +6631,11 @@ public extension MaterialLayerProtocol {
         /// Use cogl_pipeline_layer_get_wrap_mode_t() instead
         @available(*, deprecated) get {
             let rv = cogl_material_layer_get_wrap_mode_t(cast(_ptr))
-            return rv
+            return cast(rv)
         }
     }
+
+
 }
 
 
@@ -6201,7 +6672,7 @@ public extension MaterialLayerProtocol {
 /// undefined results. If you need to initialize a matrix with a constant other
 /// than the identity matrix you can use `cogl_matrix_init_from_array()`.</note>
 public protocol MatrixProtocol {
-    /// Untyped pointer to the underlying `CoglMatrix` instance.
+        /// Untyped pointer to the underlying `CoglMatrix` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglMatrix` instance.
@@ -6237,7 +6708,7 @@ public protocol MatrixProtocol {
 /// undefined results. If you need to initialize a matrix with a constant other
 /// than the identity matrix you can use `cogl_matrix_init_from_array()`.</note>
 public struct MatrixRef: MatrixProtocol {
-    /// Untyped pointer to the underlying `CoglMatrix` instance.
+        /// Untyped pointer to the underlying `CoglMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -6313,7 +6784,7 @@ public extension MatrixRef {
 /// undefined results. If you need to initialize a matrix with a constant other
 /// than the identity matrix you can use `cogl_matrix_init_from_array()`.</note>
 open class Matrix: MatrixProtocol {
-    /// Untyped pointer to the underlying `CoglMatrix` instance.
+        /// Untyped pointer to the underlying `CoglMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -6342,7 +6813,7 @@ open class Matrix: MatrixProtocol {
         // no reference counting for CoglMatrix, cannot ref(cast(matrix_ptr))
     }
 
-    /// Do-nothing destructor for`CoglMatrix`.
+    /// Do-nothing destructor for `CoglMatrix`.
     deinit {
         // no reference counting for CoglMatrix, cannot unref(cast(matrix_ptr))
     }
@@ -6410,11 +6881,12 @@ open class Matrix: MatrixProtocol {
 
 }
 
-// MARK: - no Matrix properties
+// MARK: no Matrix properties
 
-// MARK: - no signals
+// MARK: no Matrix signals
 
 
+// MARK: Matrix Record: MatrixProtocol extension (methods and fields)
 public extension MatrixProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglMatrix` instance.
     var matrix_ptr: UnsafeMutablePointer<CoglMatrix> { return ptr.assumingMemoryBound(to: CoglMatrix.self) }
@@ -6422,7 +6894,7 @@ public extension MatrixProtocol {
     /// Allocates a new `CoglMatrix` on the heap and initializes it with
     /// the same values as `matrix`.
     func copy() -> UnsafeMutablePointer<CoglMatrix>! {
-        let rv = cogl_matrix_copy(cast(matrix_ptr))
+        let rv: UnsafeMutablePointer<CoglMatrix>! = cast(cogl_matrix_copy(cast(matrix_ptr)))
         return cast(rv)
     }
 
@@ -6441,7 +6913,7 @@ public extension MatrixProtocol {
 
     /// Casts `matrix` to a float array which can be directly passed to OpenGL.
     func getArray() -> UnsafePointer<CFloat>! {
-        let rv = cogl_matrix_get_array(cast(matrix_ptr))
+        let rv: UnsafePointer<CFloat>! = cast(cogl_matrix_get_array(cast(matrix_ptr)))
         return cast(rv)
     }
 
@@ -6455,7 +6927,7 @@ public extension MatrixProtocol {
     /// avoid costly inversion calculations.</note>
     func get(inverse: MatrixProtocol) -> CoglBool {
         let rv = cogl_matrix_get_inverse(cast(matrix_ptr), cast(inverse.ptr))
-        return rv
+        return cast(rv)
     }
 
     /// Initializes `matrix` with the contents of `array`
@@ -6646,7 +7118,7 @@ public extension MatrixProtocol {
     var array: UnsafePointer<CFloat>! {
         /// Casts `matrix` to a float array which can be directly passed to OpenGL.
         get {
-            let rv = cogl_matrix_get_array(cast(matrix_ptr))
+            let rv: UnsafePointer<CFloat>! = cast(cogl_matrix_get_array(cast(matrix_ptr)))
             return cast(rv)
         }
     }
@@ -6656,13 +7128,182 @@ public extension MatrixProtocol {
         /// Determines if the given matrix is an identity matrix.
         get {
             let rv = cogl_matrix_is_identity(cast(matrix_ptr))
-            return rv
+            return cast(rv)
         }
     }
 
     // var modelviewMatrix is unavailable because it does not have a valid getter or setter
 
     // var projectionMatrix is unavailable because it does not have a valid getter or setter
+
+    var xx: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.xx)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.xx = cast(newValue)
+        }
+    }
+
+    var yx: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.yx)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.yx = cast(newValue)
+        }
+    }
+
+    var zx: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.zx)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.zx = cast(newValue)
+        }
+    }
+
+    var wx: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.wx)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.wx = cast(newValue)
+        }
+    }
+
+    var xy: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.xy)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.xy = cast(newValue)
+        }
+    }
+
+    var yy: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.yy)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.yy = cast(newValue)
+        }
+    }
+
+    var zy: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.zy)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.zy = cast(newValue)
+        }
+    }
+
+    var wy: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.wy)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.wy = cast(newValue)
+        }
+    }
+
+    var xz: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.xz)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.xz = cast(newValue)
+        }
+    }
+
+    var yz: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.yz)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.yz = cast(newValue)
+        }
+    }
+
+    var zz: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.zz)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.zz = cast(newValue)
+        }
+    }
+
+    var wz: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.wz)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.wz = cast(newValue)
+        }
+    }
+
+    var xw: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.xw)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.xw = cast(newValue)
+        }
+    }
+
+    var yw: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.yw)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.yw = cast(newValue)
+        }
+    }
+
+    var zw: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.zw)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.zw = cast(newValue)
+        }
+    }
+
+    var ww: Double {
+        get {
+            let rv: Double = cast(matrix_ptr.pointee.ww)
+            return rv
+        }
+         set {
+            matrix_ptr.pointee.ww = cast(newValue)
+        }
+    }
+
+    // var privateMemberInv is unavailable because private_member_inv is private
+
+    // var privateMemberType is unavailable because private_member_type is private
+
+    // var privateMemberFlags is unavailable because private_member_flags is private
+
+    // var privateMember_padding3 is unavailable because private_member__padding3 is private
+
 }
 
 
@@ -6676,7 +7317,7 @@ public extension MatrixProtocol {
 ///
 
 public protocol QuaternionProtocol {
-    /// Untyped pointer to the underlying `CoglQuaternion` instance.
+        /// Untyped pointer to the underlying `CoglQuaternion` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglQuaternion` instance.
@@ -6689,7 +7330,7 @@ public protocol QuaternionProtocol {
 ///
 
 public struct QuaternionRef: QuaternionProtocol {
-    /// Untyped pointer to the underlying `CoglQuaternion` instance.
+        /// Untyped pointer to the underlying `CoglQuaternion` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -6742,7 +7383,7 @@ public extension QuaternionRef {
 ///
 
 open class Quaternion: QuaternionProtocol {
-    /// Untyped pointer to the underlying `CoglQuaternion` instance.
+        /// Untyped pointer to the underlying `CoglQuaternion` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -6771,7 +7412,7 @@ open class Quaternion: QuaternionProtocol {
         // no reference counting for CoglQuaternion, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`CoglQuaternion`.
+    /// Do-nothing destructor for `CoglQuaternion`.
     deinit {
         // no reference counting for CoglQuaternion, cannot unref(cast(_ptr))
     }
@@ -6839,14 +7480,17 @@ open class Quaternion: QuaternionProtocol {
 
 }
 
-// MARK: - no Quaternion properties
+// MARK: no Quaternion properties
 
-// MARK: - no signals
+// MARK: no Quaternion signals
 
 
+// MARK: Quaternion Record: QuaternionProtocol extension (methods and fields)
 public extension QuaternionProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglQuaternion` instance.
     var _ptr: UnsafeMutablePointer<CoglQuaternion> { return ptr.assumingMemoryBound(to: CoglQuaternion.self) }
+
+
 
 }
 
@@ -6861,7 +7505,7 @@ public extension QuaternionProtocol {
 ///
 /// Used to specify vertex information when calling `cogl_polygon()`
 public protocol TextureVertexProtocol {
-    /// Untyped pointer to the underlying `CoglTextureVertex` instance.
+        /// Untyped pointer to the underlying `CoglTextureVertex` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `CoglTextureVertex` instance.
@@ -6874,7 +7518,7 @@ public protocol TextureVertexProtocol {
 ///
 /// Used to specify vertex information when calling `cogl_polygon()`
 public struct TextureVertexRef: TextureVertexProtocol {
-    /// Untyped pointer to the underlying `CoglTextureVertex` instance.
+        /// Untyped pointer to the underlying `CoglTextureVertex` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -6927,7 +7571,7 @@ public extension TextureVertexRef {
 ///
 /// Used to specify vertex information when calling `cogl_polygon()`
 open class TextureVertex: TextureVertexProtocol {
-    /// Untyped pointer to the underlying `CoglTextureVertex` instance.
+        /// Untyped pointer to the underlying `CoglTextureVertex` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -6956,7 +7600,7 @@ open class TextureVertex: TextureVertexProtocol {
         // no reference counting for CoglTextureVertex, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`CoglTextureVertex`.
+    /// Do-nothing destructor for `CoglTextureVertex`.
     deinit {
         // no reference counting for CoglTextureVertex, cannot unref(cast(_ptr))
     }
@@ -7024,11 +7668,12 @@ open class TextureVertex: TextureVertexProtocol {
 
 }
 
-// MARK: - no TextureVertex properties
+// MARK: no TextureVertex properties
 
-// MARK: - no signals
+// MARK: no TextureVertex signals
 
 
+// MARK: TextureVertex Record: TextureVertexProtocol extension (methods and fields)
 public extension TextureVertexProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglTextureVertex` instance.
     var _ptr: UnsafeMutablePointer<CoglTextureVertex> { return ptr.assumingMemoryBound(to: CoglTextureVertex.self) }
@@ -7052,6 +7697,88 @@ public extension TextureVertexProtocol {
         cogl_polygon(cast(_ptr), n_vertices, use_color)
     
     }
+
+    /// Model x-coordinate
+    var x: Double {
+        /// Model x-coordinate
+        get {
+            let rv: Double = cast(_ptr.pointee.x)
+            return rv
+        }
+        /// Model x-coordinate
+         set {
+            _ptr.pointee.x = cast(newValue)
+        }
+    }
+
+    /// Model y-coordinate
+    var y: Double {
+        /// Model y-coordinate
+        get {
+            let rv: Double = cast(_ptr.pointee.y)
+            return rv
+        }
+        /// Model y-coordinate
+         set {
+            _ptr.pointee.y = cast(newValue)
+        }
+    }
+
+    /// Model z-coordinate
+    var z: Double {
+        /// Model z-coordinate
+        get {
+            let rv: Double = cast(_ptr.pointee.z)
+            return rv
+        }
+        /// Model z-coordinate
+         set {
+            _ptr.pointee.z = cast(newValue)
+        }
+    }
+
+    /// Texture x-coordinate
+    var tx: Double {
+        /// Texture x-coordinate
+        get {
+            let rv: Double = cast(_ptr.pointee.tx)
+            return rv
+        }
+        /// Texture x-coordinate
+         set {
+            _ptr.pointee.tx = cast(newValue)
+        }
+    }
+
+    /// Texture y-coordinate
+    var ty: Double {
+        /// Texture y-coordinate
+        get {
+            let rv: Double = cast(_ptr.pointee.ty)
+            return rv
+        }
+        /// Texture y-coordinate
+         set {
+            _ptr.pointee.ty = cast(newValue)
+        }
+    }
+
+    /// The color to use at this vertex. This is ignored if
+    ///   use_color is `false` when calling `cogl_polygon()`
+    var color: CoglColor {
+        /// The color to use at this vertex. This is ignored if
+        ///   use_color is `false` when calling `cogl_polygon()`
+        get {
+            let rv: CoglColor = cast(_ptr.pointee.color)
+            return rv
+        }
+        /// The color to use at this vertex. This is ignored if
+        ///   use_color is `false` when calling `cogl_polygon()`
+         set {
+            _ptr.pointee.color = cast(newValue)
+        }
+    }
+
 }
 
 
@@ -7065,7 +7792,7 @@ public extension TextureVertexProtocol {
 ///
 
 public protocol _ColorSizeCheckProtocol {
-    /// Untyped pointer to the underlying `_CoglColorSizeCheck` instance.
+        /// Untyped pointer to the underlying `_CoglColorSizeCheck` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `_CoglColorSizeCheck` instance.
@@ -7078,7 +7805,7 @@ public protocol _ColorSizeCheckProtocol {
 ///
 
 public struct _ColorSizeCheckRef: _ColorSizeCheckProtocol {
-    /// Untyped pointer to the underlying `_CoglColorSizeCheck` instance.
+        /// Untyped pointer to the underlying `_CoglColorSizeCheck` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -7131,7 +7858,7 @@ public extension _ColorSizeCheckRef {
 ///
 
 open class _ColorSizeCheck: _ColorSizeCheckProtocol {
-    /// Untyped pointer to the underlying `_CoglColorSizeCheck` instance.
+        /// Untyped pointer to the underlying `_CoglColorSizeCheck` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -7160,7 +7887,7 @@ open class _ColorSizeCheck: _ColorSizeCheckProtocol {
         // no reference counting for _CoglColorSizeCheck, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`_CoglColorSizeCheck`.
+    /// Do-nothing destructor for `_CoglColorSizeCheck`.
     deinit {
         // no reference counting for _CoglColorSizeCheck, cannot unref(cast(_ptr))
     }
@@ -7228,14 +7955,18 @@ open class _ColorSizeCheck: _ColorSizeCheckProtocol {
 
 }
 
-// MARK: - no _ColorSizeCheck properties
+// MARK: no _ColorSizeCheck properties
 
-// MARK: - no signals
+// MARK: no _ColorSizeCheck signals
 
 
+// MARK: _ColorSizeCheck Record: _ColorSizeCheckProtocol extension (methods and fields)
 public extension _ColorSizeCheckProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `_CoglColorSizeCheck` instance.
     var _ptr: UnsafeMutablePointer<_CoglColorSizeCheck> { return ptr.assumingMemoryBound(to: _CoglColorSizeCheck.self) }
+
+
+    // var compileTimeAssertCoglColorSize is unavailable because compile_time_assert_CoglColor_size is void
 
 }
 
@@ -7250,7 +7981,7 @@ public extension _ColorSizeCheckProtocol {
 ///
 
 public protocol _MatrixSizeCheckProtocol {
-    /// Untyped pointer to the underlying `_CoglMatrixSizeCheck` instance.
+        /// Untyped pointer to the underlying `_CoglMatrixSizeCheck` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `_CoglMatrixSizeCheck` instance.
@@ -7263,7 +7994,7 @@ public protocol _MatrixSizeCheckProtocol {
 ///
 
 public struct _MatrixSizeCheckRef: _MatrixSizeCheckProtocol {
-    /// Untyped pointer to the underlying `_CoglMatrixSizeCheck` instance.
+        /// Untyped pointer to the underlying `_CoglMatrixSizeCheck` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -7316,7 +8047,7 @@ public extension _MatrixSizeCheckRef {
 ///
 
 open class _MatrixSizeCheck: _MatrixSizeCheckProtocol {
-    /// Untyped pointer to the underlying `_CoglMatrixSizeCheck` instance.
+        /// Untyped pointer to the underlying `_CoglMatrixSizeCheck` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -7345,7 +8076,7 @@ open class _MatrixSizeCheck: _MatrixSizeCheckProtocol {
         // no reference counting for _CoglMatrixSizeCheck, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`_CoglMatrixSizeCheck`.
+    /// Do-nothing destructor for `_CoglMatrixSizeCheck`.
     deinit {
         // no reference counting for _CoglMatrixSizeCheck, cannot unref(cast(_ptr))
     }
@@ -7413,14 +8144,18 @@ open class _MatrixSizeCheck: _MatrixSizeCheckProtocol {
 
 }
 
-// MARK: - no _MatrixSizeCheck properties
+// MARK: no _MatrixSizeCheck properties
 
-// MARK: - no signals
+// MARK: no _MatrixSizeCheck signals
 
 
+// MARK: _MatrixSizeCheck Record: _MatrixSizeCheckProtocol extension (methods and fields)
 public extension _MatrixSizeCheckProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `_CoglMatrixSizeCheck` instance.
     var _ptr: UnsafeMutablePointer<_CoglMatrixSizeCheck> { return ptr.assumingMemoryBound(to: _CoglMatrixSizeCheck.self) }
+
+
+    // var compileTimeAssertCoglMatrixSize is unavailable because compile_time_assert_CoglMatrix_size is void
 
 }
 
@@ -7435,7 +8170,7 @@ public extension _MatrixSizeCheckProtocol {
 ///
 
 public protocol _TextureVertexSizeCheckProtocol {
-    /// Untyped pointer to the underlying `_CoglTextureVertexSizeCheck` instance.
+        /// Untyped pointer to the underlying `_CoglTextureVertexSizeCheck` instance.
     var ptr: UnsafeMutableRawPointer { get }
 
     /// Typed pointer to the underlying `_CoglTextureVertexSizeCheck` instance.
@@ -7448,7 +8183,7 @@ public protocol _TextureVertexSizeCheckProtocol {
 ///
 
 public struct _TextureVertexSizeCheckRef: _TextureVertexSizeCheckProtocol {
-    /// Untyped pointer to the underlying `_CoglTextureVertexSizeCheck` instance.
+        /// Untyped pointer to the underlying `_CoglTextureVertexSizeCheck` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 }
@@ -7501,7 +8236,7 @@ public extension _TextureVertexSizeCheckRef {
 ///
 
 open class _TextureVertexSizeCheck: _TextureVertexSizeCheckProtocol {
-    /// Untyped pointer to the underlying `_CoglTextureVertexSizeCheck` instance.
+        /// Untyped pointer to the underlying `_CoglTextureVertexSizeCheck` instance.
     /// For type-safe access, use the generated, typed pointer `_ptr` property instead.
     public let ptr: UnsafeMutableRawPointer
 
@@ -7530,7 +8265,7 @@ open class _TextureVertexSizeCheck: _TextureVertexSizeCheckProtocol {
         // no reference counting for _CoglTextureVertexSizeCheck, cannot ref(cast(_ptr))
     }
 
-    /// Do-nothing destructor for`_CoglTextureVertexSizeCheck`.
+    /// Do-nothing destructor for `_CoglTextureVertexSizeCheck`.
     deinit {
         // no reference counting for _CoglTextureVertexSizeCheck, cannot unref(cast(_ptr))
     }
@@ -7598,14 +8333,18 @@ open class _TextureVertexSizeCheck: _TextureVertexSizeCheckProtocol {
 
 }
 
-// MARK: - no _TextureVertexSizeCheck properties
+// MARK: no _TextureVertexSizeCheck properties
 
-// MARK: - no signals
+// MARK: no _TextureVertexSizeCheck signals
 
 
+// MARK: _TextureVertexSizeCheck Record: _TextureVertexSizeCheckProtocol extension (methods and fields)
 public extension _TextureVertexSizeCheckProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `_CoglTextureVertexSizeCheck` instance.
     var _ptr: UnsafeMutablePointer<_CoglTextureVertexSizeCheck> { return ptr.assumingMemoryBound(to: _CoglTextureVertexSizeCheck.self) }
+
+
+    // var compileTimeAssertCoglTextureVertexSize is unavailable because compile_time_assert_CoglTextureVertex_size is void
 
 }
 
