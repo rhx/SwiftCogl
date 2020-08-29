@@ -8,7 +8,8 @@ let package = Package(
         .library(name: "Cogl", targets: ["Cogl"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/rhx/SwiftGObject.git", .branch("master")),
+        .package(url: "file:///Users/rh/src/swift/rh/gtk/SwiftGObject", .branch("master")),
+        //.package(url: "https://github.com/rhx/SwiftGObject.git", .branch("master")),
     ],
     targets: [
 	.systemLibrary(name: "CCogl", pkgConfig: "cogl-gl-1.0 cogl-path-1.0 ccairo glib-2.0 gio-unix-2.0",
