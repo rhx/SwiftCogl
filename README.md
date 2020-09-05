@@ -38,15 +38,20 @@ on macOS, or on Linux you should get something like:
 	Swift version 5.2.5 (swift-5.2.5-RELEASE)
 	Target: x86_64-unknown-linux-gnu
 
-### GLib 2.46 or higher
+### GLib 2.56 and Cogl-1.22 or higher
 
-These Swift wrappers have been tested with glib-2.46, 2.48, 2.52, 2.56, 2.58, 2.60, 2.62, and 2.64.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
+These Swift wrappers have been tested with cogl-1.22 as well as glib-2.56, 2.58, 2.60, 2.62, and 2.64.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
 
 #### Linux
 
 ##### Ubuntu
 
-On Ubuntu 16.04 and 18.04, you can use the gtk that comes with the distribution.  Just install with the `apt` package manager:
+On Ubuntu 20.04, you can use the cogl that comes with the distribution.  Just install with the `apt` package manager:
+
+	sudo apt update
+	sudo apt install libcogl-dev gobject-introspection libgirepository1.0-dev libxml2-dev
+
+On Ubuntu 18.04, the name of the packages are slightly different.  Install the following with the `apt` package manager:
 
 	sudo apt update
 	sudo apt install libCogl2-dev libCogl-gobject2 gobject-introspection libgirepository1.0-dev libxml2-dev

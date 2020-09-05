@@ -5,9 +5,10 @@ struct _CoglMaterialLayer {};
 struct _CoglOffscreen {};
 struct _CoglPrimitive {};
 struct _CoglTexture {};
+struct _CoglRenderer {};
+struct _XDisplay {};
 
-struct CoglRenderer{};
-struct Display{};
+typedef struct _CoglRenderer CoglRenderer;
 
 #define COGL_ENABLE_EXPERIMENTAL_API
 #define GLIB_DISABLE_DEPRECATION_WARNINGS
