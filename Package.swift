@@ -1,14 +1,12 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.2
 
 import PackageDescription
 
 let package = Package(
     name: "Cogl",
-    products: [
-        .library(name: "Cogl", targets: ["Cogl"]),
-    ],
+    products: [ .library(name: "Cogl", targets: ["Cogl"]) ],
     dependencies: [
-        .package(url: "https://github.com/rhx/SwiftGObject.git", .branch("master")),
+        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("master")),
     ],
     targets: [
 	.systemLibrary(name: "CCogl", pkgConfig: "cogl-gl-1.0 cogl-path-1.0 ccairo glib-2.0 gio-unix-2.0",
