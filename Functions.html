@@ -1350,7 +1350,7 @@ The x, y, width, height arguments are inconsistent
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPush</span><span class="p">(</span><span class="n">xOffset</span> <span class="nv">x_offset</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">yOffset</span> <span class="nv">y_offset</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPush</span><span class="p">(</span><span class="nv">xOffset</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">yOffset</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1397,7 +1397,7 @@ Use cogl_framebuffer_push_primitive_clip()
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPush</span><span class="p">(</span><span class="nv">primitive</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglPrimitive</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">boundsX1</span> <span class="nv">bounds_x1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">boundsY1</span> <span class="nv">bounds_y1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">boundsX2</span> <span class="nv">bounds_x2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">boundsY2</span> <span class="nv">bounds_y2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPush</span><span class="p">(</span><span class="nv">primitive</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CoglPrimitive</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">boundsX1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">boundsY1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">boundsX2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">boundsY2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1482,7 +1482,7 @@ Use cogl_framebuffer_push_scissor_clip() instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushWindowRect</span><span class="p">(</span><span class="n">xOffset</span> <span class="nv">x_offset</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">yOffset</span> <span class="nv">y_offset</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushWindowRect</span><span class="p">(</span><span class="nv">xOffset</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">yOffset</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1524,7 +1524,7 @@ Use cogl_framebuffer_push_scissor_clip() instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushWindowRectangle</span><span class="p">(</span><span class="n">xOffset</span> <span class="nv">x_offset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">yOffset</span> <span class="nv">y_offset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">clipPushWindowRectangle</span><span class="p">(</span><span class="nv">xOffset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">yOffset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1807,7 +1807,7 @@ Use #CoglSnippet api</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">createShader</span><span class="p">(</span><span class="n">shaderType</span> <span class="nv">shader_type</span><span class="p">:</span> <span class="kt">CoglShaderType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">createShader</span><span class="p">(</span><span class="nv">shaderType</span><span class="p">:</span> <span class="kt">CoglShaderType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -2169,7 +2169,7 @@ Use cogl_framebuffer_frustum() instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">frustum</span><span class="p">(</span><span class="nv">left</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">top</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">frustum</span><span class="p">(</span><span class="nv">left</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">top</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">zNear</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">zFar</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -2386,7 +2386,7 @@ Not replaced</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">getOptionGroup</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">OptionGroupRef</span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">getOptionGroup</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">GLib</span><span class="o">.</span><span class="kt">OptionGroupRef</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -3163,7 +3163,7 @@ Use cogl_framebuffer_perspective() instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">perspective</span><span class="p">(</span><span class="nv">fovy</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">aspect</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">perspective</span><span class="p">(</span><span class="nv">fovy</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">aspect</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">zNear</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">zFar</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3208,7 +3208,7 @@ to COGL_MATERIAL_FILTER_NEAREST.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">polygon</span><span class="o">&lt;</span><span class="kt">TextureVertexT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">vertices</span><span class="p">:</span> <span class="kt">TextureVertexT</span><span class="p">,</span> <span class="n">nVertices</span> <span class="nv">n_vertices</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">useColor</span> <span class="nv">use_color</span><span class="p">:</span> <span class="kt">CoglBool</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TextureVertexT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/TextureVertexProtocol.html">TextureVertexProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">polygon</span><span class="o">&lt;</span><span class="kt">TextureVertexT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">vertices</span><span class="p">:</span> <span class="kt">TextureVertexT</span><span class="p">,</span> <span class="nv">nVertices</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">useColor</span><span class="p">:</span> <span class="kt">CoglBool</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TextureVertexT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/TextureVertexProtocol.html">TextureVertexProtocol</a></span></code></pre>
 
                         </div>
                       </div>
@@ -3395,7 +3395,7 @@ Use #CoglSnippet api</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programAttachShader</span><span class="p">(</span><span class="n">programHandle</span> <span class="nv">program_handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">shaderHandle</span> <span class="nv">shader_handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programAttachShader</span><span class="p">(</span><span class="nv">programHandle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">shaderHandle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3432,7 +3432,7 @@ Use #CoglSnippet api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programGetUniformLocation</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">uniformName</span> <span class="nv">uniform_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programGetUniformLocation</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">uniformName</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -3540,7 +3540,7 @@ Use #CoglSnippet api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniform1f</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniform1f</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">uniformLocation</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3576,7 +3576,7 @@ Use #CoglSnippet api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniform1i</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniform1i</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">uniformLocation</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3612,7 +3612,7 @@ Use #CoglSnippet api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformFloat</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">nComponents</span> <span class="nv">n_components</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformFloat</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">uniformLocation</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">nComponents</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3648,7 +3648,7 @@ Use #CoglSnippet api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformInt</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">nComponents</span> <span class="nv">n_components</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformInt</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">uniformLocation</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">nComponents</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3684,7 +3684,7 @@ Use #CoglSnippet api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformMatrix</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">uniformLocation</span> <span class="nv">uniform_location</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">dimensions</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">transpose</span><span class="p">:</span> <span class="kt">CoglBool</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programSetUniformMatrix</span><span class="p">(</span><span class="nv">program</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">uniformLocation</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">dimensions</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">transpose</span><span class="p">:</span> <span class="kt">CoglBool</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3720,7 +3720,7 @@ Use #CoglSnippet api</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniform1f</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniform1f</span><span class="p">(</span><span class="nv">uniformNo</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3756,7 +3756,7 @@ Use #CoglSnippet api</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniform1i</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniform1i</span><span class="p">(</span><span class="nv">uniformNo</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3792,7 +3792,7 @@ Use #CoglSnippet api</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformFloat</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformFloat</span><span class="p">(</span><span class="nv">uniformNo</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3828,7 +3828,7 @@ Use #CoglSnippet api</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformInt</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformInt</span><span class="p">(</span><span class="nv">uniformNo</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CInt</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -3865,7 +3865,7 @@ Use #CoglSnippet api</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformMatrix</span><span class="p">(</span><span class="n">uniformNo</span> <span class="nv">uniform_no</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">transpose</span><span class="p">:</span> <span class="kt">CoglBool</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">programUniformMatrix</span><span class="p">(</span><span class="nv">uniformNo</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">transpose</span><span class="p">:</span> <span class="kt">CoglBool</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -4234,7 +4234,7 @@ Use cogl_framebuffer_read_pixels() instead</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rectangle</span><span class="p">(</span><span class="n">x1</span> <span class="nv">x_1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">y1</span> <span class="nv">y_1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">x2</span> <span class="nv">x_2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">y2</span> <span class="nv">y_2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rectangle</span><span class="p">(</span><span class="nv">x1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">y1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">x2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">y2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -4273,7 +4273,7 @@ layers in the current source material then default texture coordinates
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rectangleWithMultitextureCoords</span><span class="p">(</span><span class="nv">x1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">y1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">x2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">y2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">texCoords</span> <span class="nv">tex_coords</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">texCoordsLen</span> <span class="nv">tex_coords_len</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rectangleWithMultitextureCoords</span><span class="p">(</span><span class="nv">x1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">y1</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">x2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">y2</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">texCoords</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">texCoordsLen</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -4345,7 +4345,7 @@ meaning as in <code>cogl_rectangle()</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rectangles</span><span class="p">(</span><span class="nv">verts</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">nRects</span> <span class="nv">n_rects</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rectangles</span><span class="p">(</span><span class="nv">verts</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">nRects</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -4384,7 +4384,7 @@ meaning as in <code>cogl_rectangle_with_texture_coords()</code>.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rectanglesWithTextureCoords</span><span class="p">(</span><span class="nv">verts</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">nRects</span> <span class="nv">n_rects</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rectanglesWithTextureCoords</span><span class="p">(</span><span class="nv">verts</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CFloat</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">nRects</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -4625,7 +4625,7 @@ Use #CoglSnippet shader api for fog</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="n">setFog</span><span class="o">&lt;</span><span class="kt">ColorT</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fogColor</span> <span class="nv">fog_color</span><span class="p">:</span> <span class="kt">ColorT</span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt">CoglFogMode</span><span class="p">,</span> <span class="nv">density</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">zNear</span> <span class="nv">z_near</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="n">zFar</span> <span class="nv">z_far</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span> <span class="k">where</span> <span class="kt">ColorT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ColorProtocol.html">ColorProtocol</a></span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">setFog</span><span class="o">&lt;</span><span class="kt">ColorT</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">fogColor</span><span class="p">:</span> <span class="kt">ColorT</span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt">CoglFogMode</span><span class="p">,</span> <span class="nv">density</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">zNear</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">,</span> <span class="nv">zFar</span><span class="p">:</span> <span class="kt">CFloat</span><span class="p">)</span> <span class="k">where</span> <span class="kt">ColorT</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ColorProtocol.html">ColorProtocol</a></span></code></pre>
 
                         </div>
                       </div>
@@ -5521,7 +5521,7 @@ Use the #CoglPrimitive api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferAdd</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">nComponents</span> <span class="nv">n_components</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">CoglAttributeType</span><span class="p">,</span> <span class="nv">normalized</span><span class="p">:</span> <span class="kt">CoglBool</span><span class="p">,</span> <span class="nv">stride</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">pointer</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferAdd</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">attributeName</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">nComponents</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">CoglAttributeType</span><span class="p">,</span> <span class="nv">normalized</span><span class="p">:</span> <span class="kt">CoglBool</span><span class="p">,</span> <span class="nv">stride</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">pointer</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -5558,7 +5558,7 @@ Use the #CoglPrimitive api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDelete</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDelete</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">attributeName</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -5600,7 +5600,7 @@ Use the #CoglPrimitive api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDisable</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDisable</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">attributeName</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -5679,7 +5679,7 @@ Use the #CoglPrimitive api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDrawElements</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt">CoglVerticesMode</span><span class="p">,</span> <span class="nv">indices</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">minIndex</span> <span class="nv">min_index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">maxIndex</span> <span class="nv">max_index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">indicesOffset</span> <span class="nv">indices_offset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferDrawElements</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt">CoglVerticesMode</span><span class="p">,</span> <span class="nv">indices</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">minIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">maxIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">indicesOffset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -5720,7 +5720,7 @@ Use the #CoglPrimitive api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferEnable</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="n">attributeName</span> <span class="nv">attribute_name</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferEnable</span><span class="p">(</span><span class="nv">handle</span><span class="p">:</span> <span class="kt">CoglHandle</span><span class="p">,</span> <span class="nv">attributeName</span><span class="p">:</span> <span class="kt">UnsafePointer</span><span class="o">&lt;</span><span class="kt">CChar</span><span class="o">&gt;!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -5812,7 +5812,7 @@ Use the #CoglPrimitive api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesGetForQuads</span><span class="p">(</span><span class="n">nIndices</span> <span class="nv">n_indices</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesGetForQuads</span><span class="p">(</span><span class="nv">nIndices</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -5885,7 +5885,7 @@ Use the #CoglPrimitive api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesNew</span><span class="p">(</span><span class="n">indicesType</span> <span class="nv">indices_type</span><span class="p">:</span> <span class="kt">CoglIndicesType</span><span class="p">,</span> <span class="n">indicesArray</span> <span class="nv">indices_array</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="n">indicesLen</span> <span class="nv">indices_len</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferIndicesNew</span><span class="p">(</span><span class="nv">indicesType</span><span class="p">:</span> <span class="kt">CoglIndicesType</span><span class="p">,</span> <span class="nv">indicesArray</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="nv">indicesLen</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -5920,7 +5920,7 @@ Use the #CoglPrimitive api instead</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
 <span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferNew</span><span class="p">(</span><span class="n">nVertices</span> <span class="nv">n_vertices</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">vertexBufferNew</span><span class="p">(</span><span class="nv">nVertices</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CoglHandle</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -6447,7 +6447,7 @@ by a third fixed-point value.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-06)</p>
+      <p>&copy; 2020 <a class="link" href="https://www.ict.griffith.edu.au/~rhexel/" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2020-09-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
