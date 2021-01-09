@@ -4,8 +4,9 @@ import XCTest
 class CoglTests: XCTestCase {
     func testFixedPoint() {
         let x = Fixed(doubleValue: 0.5)
-        let y = mul(x, Fixed(intValue: 2))
-        XCTAssertEqual(y.intValue, 1)
+        let y = Fixed(doubleValue: 2)
+        let z = mul(x, y)
+        XCTAssertEqual(z.doubleValue, 1)
     }
 
 
