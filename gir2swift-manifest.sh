@@ -15,22 +15,8 @@ function generate_arg-path_arg-g2s-exec_arg-gir-pre_arg-gir-path {
     local NAME=$(package_name)
     local GIR_PRE_ARGS=`for FILE in ${GIR_PRE}; do echo -n "-p ${GIR_PATH}/${FILE}.gir "; done`
     
-    bash -c "${G2S_EXEC} -o Sources/${NAME} -m ${GIR_NAME}.module ${GIR_PRE_ARGS} ${GIR_PATH}/${GIR_NAME}.gir"
-
-    for src in Sources/${NAME}/*-*.swift ; do
-	    sed -f ${GIR_NAME}.sed < ${src} > ${src}.out
-	    mv ${src}.out ${src}
-    done
-    touch Sources/${NAME}/${GIR_NAME}.swift
-    echo  > Sources/${NAME}/Swift${NAME}.swift "import CGLib"
-    echo  > Sources/${NAME}/Swift${NAME}.swift "import CCogl"
-    echo >> Sources/${NAME}/Swift${NAME}.swift "import GLib"
-    echo >> Sources/${NAME}/Swift${NAME}.swift "import GIO"
-    echo >> Sources/${NAME}/Swift${NAME}.swift ""
-    echo >> Sources/${NAME}/Swift${NAME}.swift "public extension Cogl {"
-    grep -h '^public typealias' Sources/${NAME}/*-*.swift | sed 's/^public/   /' >> Sources/${NAME}/Swift${NAME}.swift
-    echo >> Sources/${NAME}/Swift${NAME}.swift "}"
-
+    bash -c "${G2S_EXEC} ${GIR_PRE_ARGS} ${GIR_PATH}/${GIR_NAME}.gir" | sed -f ${GIR_NAME}.sed > Sources/${NAME}/${GIR_NAME}.swift
+ 
     cd $CALLER
 }
 
