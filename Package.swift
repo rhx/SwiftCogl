@@ -7,15 +7,20 @@ let package = Package(
     products: [ .library(name: "Cogl", targets: ["Cogl"]) ],
     dependencies: [
         .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("development")),
-        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("development")),
+        .package(name: "GdkPixbuf", url: "https://github.com/rhx/SwiftGdkPixbuf.git", .branch("development")),
     ],
     targets: [
-	.systemLibrary(name: "CCogl", pkgConfig: "cogl-gl-1.0 cogl-path-1.0 ccairo glib-2.0 gio-unix-2.0",
+	.systemLibrary(name: "CCogl", pkgConfig: "cogl-1.0",
 	    providers: [
 		.brew(["cogl", "cairo", "glib", "glib-networking", "gobject-introspection"]),
-		.apt(["libcogl-gles2-dev", "libcogl-path-dev", "libcogl-dev", "libcairo2-dev", "libglib2.0-dev", "glib-networking", "gobject-introspection", "libgirepository1.0-dev"])
+		.apt(["libcogl-gles2-dev", "libcogl-dev", "libcairo2-dev", "libglib2.0-dev", "glib-networking", "gobject-introspection", "libgirepository1.0-dev"])
 	    ]),
-        .target(name: "Cogl", dependencies: ["CCogl", "GLibObject"]),
+	.systemLibrary(name: "CCoglPath", pkgConfig: "cogl-1.0",
+	    providers: [
+		.brew(["cogl", "cairo", "glib", "glib-networking", "gobject-introspection"]),
+		.apt(["libcogl-path-dev", "libcairo2-dev", "libglib2.0-dev", "glib-networking", "gobject-introspection", "libgirepository1.0-dev"])
+	    ]),
+        .target(name: "Cogl", dependencies: ["CCogl", "CCoglPath", "GdkPixbuf"]),
         .testTarget(name: "CoglTests", dependencies: ["Cogl"]),
     ]
 )
