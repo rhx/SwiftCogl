@@ -6,7 +6,8 @@ let package = Package(
     name: "Cogl",
     products: [ .library(name: "Cogl", targets: ["Cogl"]) ],
     dependencies: [
-        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("main")),
+        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("development")),
+        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("development")),
     ],
     targets: [
 	.systemLibrary(name: "CCogl", pkgConfig: "cogl-gl-1.0 cogl-path-1.0 ccairo glib-2.0 gio-unix-2.0",
