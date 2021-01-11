@@ -43,7 +43,7 @@ jobs:
       - name: Build SwiftCogl
         run: |
           cd SwiftCogl
-          swift build
+          swift build -Xswiftc -suppresswarnings
           cd ..
 
       - name: Test SwiftCogl
