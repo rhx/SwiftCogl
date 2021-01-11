@@ -46,7 +46,7 @@ jobs:
       - name: Build SwiftCogl
         run: |
           cd SwiftCogl
-          swift build -Xswiftc -suppresswarnings `./run-gir2swift.sh flags -noUpdate`
+          swift build -Xswiftc -suppress-warnings `./run-gir2swift.sh flags -noUpdate`
           cd ..
 
       - name: Test SwiftCogl
