@@ -4,8 +4,10 @@
 /docs
 /Packages
 /*.xcodeproj
+/.swiftpm
 *.tgz
 undocumented.json
 Package.resolved
 Package.pins
 *-*.swift
+/Sources/Cogl/SwiftCogl.swift
