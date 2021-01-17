@@ -1319,7 +1319,7 @@ open class Texture: TextureProtocol {
 
 // MARK: no Texture signals
 
-
+// MARK: Texture has no signals
 // MARK: Texture Interface: TextureProtocol extension (methods and fields)
 public extension TextureProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglTexture` instance.
@@ -1897,7 +1897,7 @@ open class Bitmap: BitmapProtocol {
 
 // MARK: no Bitmap signals
 
-
+// MARK: Bitmap has no signals
 // MARK: Bitmap Class: BitmapProtocol extension (methods and fields)
 public extension BitmapProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglBitmap` instance.
@@ -2346,7 +2346,7 @@ open class Offscreen: OffscreenProtocol {
 
 // MARK: no Offscreen signals
 
-
+// MARK: Offscreen has no signals
 // MARK: Offscreen Class: OffscreenProtocol extension (methods and fields)
 public extension OffscreenProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglOffscreen` instance.
@@ -4713,7 +4713,7 @@ open class Color: ColorProtocol {
 
 // MARK: no Color signals
 
-
+// MARK: Color has no signals
 // MARK: Color Record: ColorProtocol extension (methods and fields)
 public extension ColorProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglColor` instance.
@@ -5464,7 +5464,7 @@ open class Euler: EulerProtocol {
 
 // MARK: no Euler signals
 
-
+// MARK: Euler has no signals
 // MARK: Euler Record: EulerProtocol extension (methods and fields)
 public extension EulerProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglEuler` instance.
@@ -5729,7 +5729,7 @@ open class Material: MaterialProtocol {
 
 // MARK: no Material signals
 
-
+// MARK: Material has no signals
 // MARK: Material Record: MaterialProtocol extension (methods and fields)
 public extension MaterialProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglMaterial` instance.
@@ -6796,7 +6796,7 @@ open class MaterialLayer: MaterialLayerProtocol {
 
 // MARK: no MaterialLayer signals
 
-
+// MARK: MaterialLayer has no signals
 // MARK: MaterialLayer Record: MaterialLayerProtocol extension (methods and fields)
 public extension MaterialLayerProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglMaterialLayer` instance.
@@ -7332,7 +7332,7 @@ open class Matrix: MatrixProtocol {
 
 // MARK: no Matrix signals
 
-
+// MARK: Matrix has no signals
 // MARK: Matrix Record: MatrixProtocol extension (methods and fields)
 public extension MatrixProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglMatrix` instance.
@@ -8008,7 +8008,7 @@ open class Quaternion: QuaternionProtocol {
 
 // MARK: no Quaternion signals
 
-
+// MARK: Quaternion has no signals
 // MARK: Quaternion Record: QuaternionProtocol extension (methods and fields)
 public extension QuaternionProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglQuaternion` instance.
@@ -8273,7 +8273,7 @@ open class TextureVertex: TextureVertexProtocol {
 
 // MARK: no TextureVertex signals
 
-
+// MARK: TextureVertex has no signals
 // MARK: TextureVertex Record: TextureVertexProtocol extension (methods and fields)
 public extension TextureVertexProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `CoglTextureVertex` instance.
@@ -8637,7 +8637,7 @@ open class _ColorSizeCheck: _ColorSizeCheckProtocol {
 
 // MARK: no _ColorSizeCheck signals
 
-
+// MARK: _ColorSizeCheck has no signals
 // MARK: _ColorSizeCheck Record: _ColorSizeCheckProtocol extension (methods and fields)
 public extension _ColorSizeCheckProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `_CoglColorSizeCheck` instance.
@@ -8911,7 +8911,7 @@ open class _MatrixSizeCheck: _MatrixSizeCheckProtocol {
 
 // MARK: no _MatrixSizeCheck signals
 
-
+// MARK: _MatrixSizeCheck has no signals
 // MARK: _MatrixSizeCheck Record: _MatrixSizeCheckProtocol extension (methods and fields)
 public extension _MatrixSizeCheckProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `_CoglMatrixSizeCheck` instance.
@@ -9185,7 +9185,7 @@ open class _TextureVertexSizeCheck: _TextureVertexSizeCheckProtocol {
 
 // MARK: no _TextureVertexSizeCheck signals
 
-
+// MARK: _TextureVertexSizeCheck has no signals
 // MARK: _TextureVertexSizeCheck Record: _TextureVertexSizeCheckProtocol extension (methods and fields)
 public extension _TextureVertexSizeCheckProtocol {
     /// Return the stored, untyped pointer as a typed pointer to the `_CoglTextureVertexSizeCheck` instance.
