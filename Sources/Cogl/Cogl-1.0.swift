@@ -89,11 +89,11 @@ public let PREMULT_BIT = COGL_PREMULT_BIT // 128
 public let RADIANS_TO_DEGREES = COGL_RADIANS_TO_DEGREES // 3754936
 
 /// Maximum argument that can be passed to `cogl_sqrti()` for which the
-/// resulting error is < 10%
+/// resulting error is &lt; 10%
 public let SQRTI_ARG_10_PERCENT = COGL_SQRTI_ARG_10_PERCENT // 5590
 
 /// Maximum argument that can be passed to `cogl_sqrti()` for which the
-/// resulting error is < 5%
+/// resulting error is &lt; 5%
 public let SQRTI_ARG_5_PERCENT = COGL_SQRTI_ARG_5_PERCENT // 210
 
 /// Maximum argument that can be passed to `cogl_sqrti()` function.
@@ -373,6 +373,1303 @@ public struct TextureFlags: OptionSet {
 }
 
 
+// MARK: - Texture Interface
+
+/// The `TextureProtocol` protocol exposes the methods and properties of an underlying `CoglTexture` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Texture`.
+/// Alternatively, use `TextureRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
+
+public protocol TextureProtocol {
+        /// Untyped pointer to the underlying `CoglTexture` instance.
+    var ptr: UnsafeMutableRawPointer! { get }
+
+    /// Typed pointer to the underlying `CoglTexture` instance.
+    var texture_ptr: UnsafeMutablePointer<CoglTexture>! { get }
+
+    /// Required Initialiser for types conforming to `TextureProtocol`
+    init(raw: UnsafeMutableRawPointer)
+}
+
+/// The `TextureRef` type acts as a lightweight Swift reference to an underlying `CoglTexture` instance.
+/// It exposes methods that can operate on this data type through `TextureProtocol` conformance.
+/// Use `TextureRef` only as an `unowned` reference to an existing `CoglTexture` instance.
+///
+
+public struct TextureRef: TextureProtocol {
+        /// Untyped pointer to the underlying `CoglTexture` instance.
+    /// For type-safe access, use the generated, typed pointer `texture_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer!
+}
+
+public extension TextureRef {
+    /// Designated initialiser from the underlying `C` data type
+    @inlinable init(_ p: UnsafeMutablePointer<CoglTexture>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<CoglTexture>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<CoglTexture>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<CoglTexture>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
+
+    /// Reference intialiser for a related type that implements `TextureProtocol`
+    @inlinable init<T: TextureProtocol>(_ other: T) {
+        ptr = other.ptr
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
+        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    @inlinable init(mutating raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    @inlinable init(raw: UnsafeMutableRawPointer) {
+        ptr = raw
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    @inlinable init(opaquePointer: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(opaquePointer)
+    }
+
+    }
+
+/// The `Texture` type acts as an owner of an underlying `CoglTexture` instance.
+/// It provides the methods that can operate on this data type through `TextureProtocol` conformance.
+/// Use `Texture` as a strong reference or owner of a `CoglTexture` instance.
+///
+
+open class Texture: TextureProtocol {
+        /// Untyped pointer to the underlying `CoglTexture` instance.
+    /// For type-safe access, use the generated, typed pointer `texture_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer!
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Texture` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafeMutablePointer<CoglTexture>) {
+        ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Texture` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<CoglTexture>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Texture` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Texture` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Texture` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<CoglTexture>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Texture` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<CoglTexture>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglTexture` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Texture` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(retaining op: UnsafeMutablePointer<CoglTexture>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglTexture, cannot ref(texture_ptr)
+    }
+
+    /// Reference intialiser for a related type that implements `TextureProtocol`
+    /// `CoglTexture` does not allow reference counting.
+    /// - Parameter other: an instance of a related type that implements `TextureProtocol`
+    @inlinable public init<T: TextureProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for CoglTexture, cannot ref(texture_ptr)
+    }
+
+    /// Do-nothing destructor for `CoglTexture`.
+    deinit {
+        // no reference counting for CoglTexture, cannot unref(texture_ptr)
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglTexture, cannot ref(texture_ptr)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter p: raw pointer to the underlying object
+    @inlinable public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglTexture, cannot ref(texture_ptr)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter p: mutable raw pointer to the underlying object
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglTexture, cannot ref(texture_ptr)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    @inlinable public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglTexture, cannot ref(texture_ptr)
+    }
+
+
+
+}
+
+// MARK: no Texture properties
+
+// MARK: no Texture signals
+
+// MARK: Texture has no signals
+// MARK: Texture Interface: TextureProtocol extension (methods and fields)
+public extension TextureProtocol {
+    /// Return the stored, untyped pointer as a typed pointer to the `CoglTexture` instance.
+    @inlinable var texture_ptr: UnsafeMutablePointer<CoglTexture>! { return ptr?.assumingMemoryBound(to: CoglTexture.self) }
+
+    /// Explicitly allocates the storage for the given `texture` which
+    /// allows you to be sure that there is enough memory for the
+    /// texture and if not then the error can be handled gracefully.
+    /// 
+    /// &lt;note&gt;Normally applications don't need to use this api directly
+    /// since the texture will be implicitly allocated when data is set on
+    /// the texture, or if the texture is attached to a `CoglOffscreen`
+    /// framebuffer and rendered too.&lt;/note&gt;
+    @inlinable func allocate() throws -> CoglBool {
+        var error: UnsafeMutablePointer<GError>?
+        let rv = cogl_texture_allocate(texture_ptr, &error)
+        if let error = error { throw GLibError(error) }
+        return rv
+    }
+
+    /// Queries what components the given `texture` stores internally as set
+    /// via `cogl_texture_set_components()`.
+    /// 
+    /// For textures created by the ‘_with_size’ constructors the default
+    /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
+    /// a `CoglBitmap` or a data pointer default to the same components as
+    /// the pixel format of the data.
+    @inlinable func getComponents() -> CoglTextureComponents {
+        let rv = cogl_texture_get_components(texture_ptr)
+        return rv
+    }
+
+    /// Copies the pixel data from a cogl texture to system memory.
+    /// 
+    /// &lt;note&gt;Don't pass the value of `cogl_texture_get_rowstride()` as the
+    /// `rowstride` argument, the rowstride should be the rowstride you
+    /// want for the destination `data` buffer not the rowstride of the
+    /// source texture&lt;/note&gt;
+    @inlinable func getData(format: CoglPixelFormat, rowstride: Int, data: UnsafeMutablePointer<UInt8>!) -> Int {
+        let rv = Int(cogl_texture_get_data(texture_ptr, format, guint(rowstride), data))
+        return rv
+    }
+
+    /// Queries the GL handles for a GPU side texture through its `CoglTexture`.
+    /// 
+    /// If the texture is spliced the data for the first sub texture will be
+    /// queried.
+    @inlinable func getGlTexture(outGlHandle: UnsafeMutablePointer<guint>! = nil, outGlTarget: UnsafeMutablePointer<guint>! = nil) -> CoglBool {
+        let rv = cogl_texture_get_gl_texture(texture_ptr, outGlHandle, outGlTarget)
+        return rv
+    }
+
+    /// Queries the height of a cogl texture.
+    @inlinable func getHeight() -> Int {
+        let rv = Int(cogl_texture_get_height(texture_ptr))
+        return rv
+    }
+
+    /// Queries the maximum wasted (unused) pixels in one dimension of a GPU side
+    /// texture.
+    @inlinable func getMaxWaste() -> Int {
+        let rv = Int(cogl_texture_get_max_waste(texture_ptr))
+        return rv
+    }
+
+    /// Queries the pre-multiplied alpha status for internally stored red,
+    /// green and blue components for the given `texture` as set by
+    /// `cogl_texture_set_premultiplied()`.
+    /// 
+    /// By default the pre-multipled state is `TRUE`.
+    @inlinable func getPremultiplied() -> CoglBool {
+        let rv = cogl_texture_get_premultiplied(texture_ptr)
+        return rv
+    }
+
+    /// Queries the width of a cogl texture.
+    @inlinable func getWidth() -> Int {
+        let rv = Int(cogl_texture_get_width(texture_ptr))
+        return rv
+    }
+
+    /// Affects the internal storage format for this texture by specifying
+    /// what components will be required for sampling later.
+    /// 
+    /// This api affects how data is uploaded to the GPU since unused
+    /// components can potentially be discarded from source data.
+    /// 
+    /// For textures created by the ‘_with_size’ constructors the default
+    /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
+    /// a `CoglBitmap` or a data pointer default to the same components as
+    /// the pixel format of the data.
+    /// 
+    /// Note that the `COGL_TEXTURE_COMPONENTS_RG` format is not available
+    /// on all drivers. The availability can be determined by checking for
+    /// the `COGL_FEATURE_ID_TEXTURE_RG` feature. If this format is used on
+    /// a driver where it is not available then `COGL_TEXTURE_ERROR_FORMAT`
+    /// will be raised when the texture is allocated. Even if the feature
+    /// is not available then `COGL_PIXEL_FORMAT_RG_88` can still be used as
+    /// an image format as long as `COGL_TEXTURE_COMPONENTS_RG` isn't used
+    /// as the texture's components.
+    @inlinable func set(components: CoglTextureComponents) {
+        cogl_texture_set_components(texture_ptr, components)
+    
+    }
+
+    /// Affects the internal storage format for this texture by specifying
+    /// whether red, green and blue color components should be stored as
+    /// pre-multiplied alpha values.
+    /// 
+    /// This api affects how data is uploaded to the GPU since Cogl will
+    /// convert source data to have premultiplied or unpremultiplied
+    /// components according to this state.
+    /// 
+    /// For example if you create a texture via
+    /// `cogl_texture_2d_new_with_size()` and then upload data via
+    /// `cogl_texture_set_data()` passing a source format of
+    /// `COGL_PIXEL_FORMAT_RGBA_8888` then Cogl will internally multiply the
+    /// red, green and blue components of the source data by the alpha
+    /// component, for each pixel so that the internally stored data has
+    /// pre-multiplied alpha components. If you instead upload data that
+    /// already has pre-multiplied components by passing
+    /// `COGL_PIXEL_FORMAT_RGBA_8888_PRE` as the source format to
+    /// `cogl_texture_set_data()` then the data can be uploaded without being
+    /// converted.
+    /// 
+    /// By default the `premultipled` state is `TRUE`.
+    @inlinable func set(premultiplied: CoglBool) {
+        cogl_texture_set_premultiplied(texture_ptr, premultiplied)
+    
+    }
+
+    /// Sets the pixels in a rectangular subregion of `texture` from an in-memory
+    /// buffer containing pixel data.
+    /// 
+    /// &lt;note&gt;The region set can't be larger than the source `data`&lt;/note&gt;
+    @inlinable func setRegion(srcX: Int, srcY: Int, dstX: Int, dstY: Int, dstWidth: Int, dstHeight: Int, width: Int, height: Int, format: CoglPixelFormat, rowstride: Int, data: UnsafePointer<UInt8>!) -> CoglBool {
+        let rv = cogl_texture_set_region(texture_ptr, gint(srcX), gint(srcY), gint(dstX), gint(dstY), guint(dstWidth), guint(dstHeight), gint(width), gint(height), format, guint(rowstride), data)
+        return rv
+    }
+
+    /// This is a convenience function for creating a material with the first
+    /// layer set to `texture` and setting that material as the source with
+    /// cogl_set_source.
+    /// 
+    /// Note: There is no interaction between calls to cogl_set_source_color
+    /// and cogl_set_source_texture. If you need to blend a texture with a color then
+    /// you can create a simple material like this:
+    /// &lt;programlisting&gt;
+    /// material = cogl_material_new ();
+    /// cogl_material_set_color4ub (material, 0xff, 0x00, 0x00, 0x80);
+    /// cogl_material_set_layer (material, 0, tex_handle);
+    /// cogl_set_source (material);
+    /// &lt;/programlisting&gt;
+    ///
+    /// **set_source_texture is deprecated:**
+    /// Latest drawing apis all take an explicit
+    ///                   #CoglPipeline argument so this stack of
+    ///                   #CoglMaterial<!-- -->s shouldn't be used.
+    @available(*, deprecated) @inlinable func setSourceTexture() {
+        cogl_set_source_texture(texture_ptr)
+    
+    }
+    /// Queries what components the given `texture` stores internally as set
+    /// via `cogl_texture_set_components()`.
+    /// 
+    /// For textures created by the ‘_with_size’ constructors the default
+    /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
+    /// a `CoglBitmap` or a data pointer default to the same components as
+    /// the pixel format of the data.
+    @inlinable var components: CoglTextureComponents {
+        /// Queries what components the given `texture` stores internally as set
+        /// via `cogl_texture_set_components()`.
+        /// 
+        /// For textures created by the ‘_with_size’ constructors the default
+        /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
+        /// a `CoglBitmap` or a data pointer default to the same components as
+        /// the pixel format of the data.
+        get {
+            let rv = cogl_texture_get_components(texture_ptr)
+            return rv
+        }
+        /// Affects the internal storage format for this texture by specifying
+        /// what components will be required for sampling later.
+        /// 
+        /// This api affects how data is uploaded to the GPU since unused
+        /// components can potentially be discarded from source data.
+        /// 
+        /// For textures created by the ‘_with_size’ constructors the default
+        /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
+        /// a `CoglBitmap` or a data pointer default to the same components as
+        /// the pixel format of the data.
+        /// 
+        /// Note that the `COGL_TEXTURE_COMPONENTS_RG` format is not available
+        /// on all drivers. The availability can be determined by checking for
+        /// the `COGL_FEATURE_ID_TEXTURE_RG` feature. If this format is used on
+        /// a driver where it is not available then `COGL_TEXTURE_ERROR_FORMAT`
+        /// will be raised when the texture is allocated. Even if the feature
+        /// is not available then `COGL_PIXEL_FORMAT_RG_88` can still be used as
+        /// an image format as long as `COGL_TEXTURE_COMPONENTS_RG` isn't used
+        /// as the texture's components.
+        nonmutating set {
+            cogl_texture_set_components(texture_ptr, newValue)
+        }
+    }
+
+    /// Queries the height of a cogl texture.
+    @inlinable var height: Int {
+        /// Queries the height of a cogl texture.
+        get {
+            let rv = Int(cogl_texture_get_height(texture_ptr))
+            return rv
+        }
+    }
+
+    /// Queries if a texture is sliced (stored as multiple GPU side tecture
+    /// objects).
+    @inlinable var isSliced: CoglBool {
+        /// Queries if a texture is sliced (stored as multiple GPU side tecture
+        /// objects).
+        get {
+            let rv = cogl_texture_is_sliced(texture_ptr)
+            return rv
+        }
+    }
+
+    /// Queries the maximum wasted (unused) pixels in one dimension of a GPU side
+    /// texture.
+    @inlinable var maxWaste: Int {
+        /// Queries the maximum wasted (unused) pixels in one dimension of a GPU side
+        /// texture.
+        get {
+            let rv = Int(cogl_texture_get_max_waste(texture_ptr))
+            return rv
+        }
+    }
+
+    /// Queries the pre-multiplied alpha status for internally stored red,
+    /// green and blue components for the given `texture` as set by
+    /// `cogl_texture_set_premultiplied()`.
+    /// 
+    /// By default the pre-multipled state is `TRUE`.
+    @inlinable var premultiplied: CoglBool {
+        /// Queries the pre-multiplied alpha status for internally stored red,
+        /// green and blue components for the given `texture` as set by
+        /// `cogl_texture_set_premultiplied()`.
+        /// 
+        /// By default the pre-multipled state is `TRUE`.
+        get {
+            let rv = cogl_texture_get_premultiplied(texture_ptr)
+            return rv
+        }
+        /// Affects the internal storage format for this texture by specifying
+        /// whether red, green and blue color components should be stored as
+        /// pre-multiplied alpha values.
+        /// 
+        /// This api affects how data is uploaded to the GPU since Cogl will
+        /// convert source data to have premultiplied or unpremultiplied
+        /// components according to this state.
+        /// 
+        /// For example if you create a texture via
+        /// `cogl_texture_2d_new_with_size()` and then upload data via
+        /// `cogl_texture_set_data()` passing a source format of
+        /// `COGL_PIXEL_FORMAT_RGBA_8888` then Cogl will internally multiply the
+        /// red, green and blue components of the source data by the alpha
+        /// component, for each pixel so that the internally stored data has
+        /// pre-multiplied alpha components. If you instead upload data that
+        /// already has pre-multiplied components by passing
+        /// `COGL_PIXEL_FORMAT_RGBA_8888_PRE` as the source format to
+        /// `cogl_texture_set_data()` then the data can be uploaded without being
+        /// converted.
+        /// 
+        /// By default the `premultipled` state is `TRUE`.
+        nonmutating set {
+            cogl_texture_set_premultiplied(texture_ptr, newValue)
+        }
+    }
+
+    /// Queries the width of a cogl texture.
+    @inlinable var width: Int {
+        /// Queries the width of a cogl texture.
+        get {
+            let rv = Int(cogl_texture_get_width(texture_ptr))
+            return rv
+        }
+    }
+
+
+}
+
+
+// MARK: - Bitmap Class
+
+/// The `BitmapProtocol` protocol exposes the methods and properties of an underlying `CoglBitmap` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Bitmap`.
+/// Alternatively, use `BitmapRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
+
+public protocol BitmapProtocol {
+        /// Untyped pointer to the underlying `CoglBitmap` instance.
+    var ptr: UnsafeMutableRawPointer! { get }
+
+    /// Typed pointer to the underlying `CoglBitmap` instance.
+    var bitmap_ptr: UnsafeMutablePointer<CoglBitmap>! { get }
+
+    /// Required Initialiser for types conforming to `BitmapProtocol`
+    init(raw: UnsafeMutableRawPointer)
+}
+
+/// The `BitmapRef` type acts as a lightweight Swift reference to an underlying `CoglBitmap` instance.
+/// It exposes methods that can operate on this data type through `BitmapProtocol` conformance.
+/// Use `BitmapRef` only as an `unowned` reference to an existing `CoglBitmap` instance.
+///
+
+public struct BitmapRef: BitmapProtocol {
+        /// Untyped pointer to the underlying `CoglBitmap` instance.
+    /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer!
+}
+
+public extension BitmapRef {
+    /// Designated initialiser from the underlying `C` data type
+    @inlinable init(_ p: UnsafeMutablePointer<CoglBitmap>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<CoglBitmap>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<CoglBitmap>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<CoglBitmap>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
+
+    /// Reference intialiser for a related type that implements `BitmapProtocol`
+    @inlinable init<T: BitmapProtocol>(_ other: T) {
+        ptr = other.ptr
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
+        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    @inlinable init(mutating raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    @inlinable init(raw: UnsafeMutableRawPointer) {
+        ptr = raw
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    @inlinable init(opaquePointer: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(opaquePointer)
+    }
+
+        /// Loads an image file from disk. This function can be safely called from
+    /// within a thread.
+    @inlinable init(file filename: UnsafePointer<CChar>!) throws {
+        var error: UnsafeMutablePointer<GError>?
+        let rv = cogl_bitmap_new_from_file(filename, &error)
+        if let error = error { throw GLibError(error) }
+        ptr = UnsafeMutableRawPointer(rv)
+    }
+    /// Loads an image file from disk. This function can be safely called from
+    /// within a thread.
+    @inlinable static func newFrom(file filename: UnsafePointer<CChar>!) throws -> BitmapRef! {
+        var error: UnsafeMutablePointer<GError>?
+        let maybeRV = BitmapRef(gconstpointer: gconstpointer(cogl_bitmap_new_from_file(filename, &error)))
+        if let error = error { throw GLibError(error) }
+        guard let rv = maybeRV else { return nil }
+        return rv
+    }
+}
+
+/// The `Bitmap` type acts as an owner of an underlying `CoglBitmap` instance.
+/// It provides the methods that can operate on this data type through `BitmapProtocol` conformance.
+/// Use `Bitmap` as a strong reference or owner of a `CoglBitmap` instance.
+///
+
+open class Bitmap: BitmapProtocol {
+        /// Untyped pointer to the underlying `CoglBitmap` instance.
+    /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer!
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Bitmap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafeMutablePointer<CoglBitmap>) {
+        ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Bitmap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<CoglBitmap>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Bitmap` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Bitmap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Bitmap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<CoglBitmap>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Bitmap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<CoglBitmap>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglBitmap` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Bitmap` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(retaining op: UnsafeMutablePointer<CoglBitmap>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
+    }
+
+    /// Reference intialiser for a related type that implements `BitmapProtocol`
+    /// `CoglBitmap` does not allow reference counting.
+    /// - Parameter other: an instance of a related type that implements `BitmapProtocol`
+    @inlinable public init<T: BitmapProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
+    }
+
+    /// Do-nothing destructor for `CoglBitmap`.
+    deinit {
+        // no reference counting for CoglBitmap, cannot unref(bitmap_ptr)
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter p: raw pointer to the underlying object
+    @inlinable public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter p: mutable raw pointer to the underlying object
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    @inlinable public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
+    }
+
+    /// Loads an image file from disk. This function can be safely called from
+    /// within a thread.
+    @inlinable public init(file filename: UnsafePointer<CChar>!) throws {
+        var error: UnsafeMutablePointer<GError>?
+        let rv = cogl_bitmap_new_from_file(filename, &error)
+        if let error = error { throw GLibError(error) }
+        ptr = UnsafeMutableRawPointer(rv)
+    }
+
+    /// Loads an image file from disk. This function can be safely called from
+    /// within a thread.
+    @inlinable public static func newFrom(file filename: UnsafePointer<CChar>!) throws -> Bitmap! {
+        var error: UnsafeMutablePointer<GError>?
+        let maybeRV = Bitmap(gconstpointer: gconstpointer(cogl_bitmap_new_from_file(filename, &error)))
+        if let error = error { throw GLibError(error) }
+        guard let rv = maybeRV else { return nil }
+        return rv
+    }
+
+}
+
+// MARK: no Bitmap properties
+
+// MARK: no Bitmap signals
+
+// MARK: Bitmap has no signals
+// MARK: Bitmap Class: BitmapProtocol extension (methods and fields)
+public extension BitmapProtocol {
+    /// Return the stored, untyped pointer as a typed pointer to the `CoglBitmap` instance.
+    @inlinable var bitmap_ptr: UnsafeMutablePointer<CoglBitmap>! { return ptr?.assumingMemoryBound(to: CoglBitmap.self) }
+
+
+
+}
+
+
+
+// MARK: - Offscreen Class
+
+/// The `OffscreenProtocol` protocol exposes the methods and properties of an underlying `CoglOffscreen` instance.
+/// The default implementation of these can be found in the protocol extension below.
+/// For a concrete class that implements these methods and properties, see `Offscreen`.
+/// Alternatively, use `OffscreenRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
+///
+
+public protocol OffscreenProtocol {
+        /// Untyped pointer to the underlying `CoglOffscreen` instance.
+    var ptr: UnsafeMutableRawPointer! { get }
+
+    /// Typed pointer to the underlying `CoglOffscreen` instance.
+    var offscreen_ptr: UnsafeMutablePointer<CoglOffscreen>! { get }
+
+    /// Required Initialiser for types conforming to `OffscreenProtocol`
+    init(raw: UnsafeMutableRawPointer)
+}
+
+/// The `OffscreenRef` type acts as a lightweight Swift reference to an underlying `CoglOffscreen` instance.
+/// It exposes methods that can operate on this data type through `OffscreenProtocol` conformance.
+/// Use `OffscreenRef` only as an `unowned` reference to an existing `CoglOffscreen` instance.
+///
+
+public struct OffscreenRef: OffscreenProtocol {
+        /// Untyped pointer to the underlying `CoglOffscreen` instance.
+    /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer!
+}
+
+public extension OffscreenRef {
+    /// Designated initialiser from the underlying `C` data type
+    @inlinable init(_ p: UnsafeMutablePointer<CoglOffscreen>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type
+    @inlinable init(_ p: UnsafePointer<CoglOffscreen>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
+    }
+
+    /// Conditional initialiser from an optional pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafeMutablePointer<CoglOffscreen>?) {
+        guard let p = maybePointer else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
+    @inlinable init!(_ maybePointer: UnsafePointer<CoglOffscreen>?) {
+        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional `gpointer`
+    @inlinable init!(gpointer g: gpointer?) {
+        guard let p = g else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
+    @inlinable init!(gconstpointer g: gconstpointer?) {
+        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
+        ptr = p
+    }
+
+    /// Reference intialiser for a related type that implements `OffscreenProtocol`
+    @inlinable init<T: OffscreenProtocol>(_ other: T) {
+        ptr = other.ptr
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    @inlinable init<T>(constPointer: UnsafePointer<T>) {
+        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    @inlinable init(mutating raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    @inlinable init(raw: UnsafeMutableRawPointer) {
+        ptr = raw
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    @inlinable init(opaquePointer: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(opaquePointer)
+    }
+
+        /// This creates an offscreen buffer object using the given `texture` as the
+    /// primary color buffer. It doesn't just initialize the contents of the
+    /// offscreen buffer with the `texture`; they are tightly bound so that
+    /// drawing to the offscreen buffer effectivly updates the contents of the
+    /// given texture. You don't need to destroy the offscreen buffer before
+    /// you can use the `texture` again.
+    /// 
+    /// &lt;note&gt;This only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.&lt;/note&gt;
+    ///
+    /// **new_to_texture is deprecated:**
+    /// Use cogl_offscreen_new_with_texture instead.
+    @available(*, deprecated) @inlinable init<TextureT: TextureProtocol>(to_texture texture: TextureT) {
+        let rv = cogl_offscreen_new_to_texture(texture.texture_ptr)
+        ptr = UnsafeMutableRawPointer(rv)
+    }
+
+    /// This creates an offscreen framebuffer object using the given
+    /// `texture` as the primary color buffer. It doesn't just initialize
+    /// the contents of the offscreen buffer with the `texture`; they are
+    /// tightly bound so that drawing to the offscreen buffer effectively
+    /// updates the contents of the given texture. You don't need to
+    /// destroy the offscreen buffer before you can use the `texture` again.
+    /// 
+    /// &lt;note&gt;This api only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.&lt;/note&gt;
+    /// 
+    /// The storage for the framebuffer is actually allocated lazily
+    /// so this function will never return `nil` to indicate a runtime
+    /// error. This means it is still possible to configure the framebuffer
+    /// before it is really allocated.
+    /// 
+    /// Simple applications without full error handling can simply rely on
+    /// Cogl to lazily allocate the storage of framebuffers but you should
+    /// be aware that if Cogl encounters an error (such as running out of
+    /// GPU memory) then your application will simply abort with an error
+    /// message. If you need to be able to catch such exceptions at runtime
+    /// then you can explicitly allocate your framebuffer when you have
+    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
+    /// passing in a `CoglError` argument to catch any exceptions.
+    @inlinable init<TextureT: TextureProtocol>(texture: TextureT) {
+        let rv = cogl_offscreen_new_with_texture(texture.texture_ptr)
+        ptr = UnsafeMutableRawPointer(rv)
+    }
+    /// This creates an offscreen buffer object using the given `texture` as the
+    /// primary color buffer. It doesn't just initialize the contents of the
+    /// offscreen buffer with the `texture`; they are tightly bound so that
+    /// drawing to the offscreen buffer effectivly updates the contents of the
+    /// given texture. You don't need to destroy the offscreen buffer before
+    /// you can use the `texture` again.
+    /// 
+    /// &lt;note&gt;This only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.&lt;/note&gt;
+    ///
+    /// **new_to_texture is deprecated:**
+    /// Use cogl_offscreen_new_with_texture instead.
+    @available(*, deprecated) @inlinable static func newTo<TextureT: TextureProtocol>(to_texture texture: TextureT) -> OffscreenRef! {
+        guard let rv = OffscreenRef(gconstpointer: gconstpointer(cogl_offscreen_new_to_texture(texture.texture_ptr))) else { return nil }
+        return rv
+    }
+
+    /// This creates an offscreen framebuffer object using the given
+    /// `texture` as the primary color buffer. It doesn't just initialize
+    /// the contents of the offscreen buffer with the `texture`; they are
+    /// tightly bound so that drawing to the offscreen buffer effectively
+    /// updates the contents of the given texture. You don't need to
+    /// destroy the offscreen buffer before you can use the `texture` again.
+    /// 
+    /// &lt;note&gt;This api only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.&lt;/note&gt;
+    /// 
+    /// The storage for the framebuffer is actually allocated lazily
+    /// so this function will never return `nil` to indicate a runtime
+    /// error. This means it is still possible to configure the framebuffer
+    /// before it is really allocated.
+    /// 
+    /// Simple applications without full error handling can simply rely on
+    /// Cogl to lazily allocate the storage of framebuffers but you should
+    /// be aware that if Cogl encounters an error (such as running out of
+    /// GPU memory) then your application will simply abort with an error
+    /// message. If you need to be able to catch such exceptions at runtime
+    /// then you can explicitly allocate your framebuffer when you have
+    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
+    /// passing in a `CoglError` argument to catch any exceptions.
+    @inlinable static func newWith<TextureT: TextureProtocol>(texture: TextureT) -> OffscreenRef! {
+        guard let rv = OffscreenRef(gconstpointer: gconstpointer(cogl_offscreen_new_with_texture(texture.texture_ptr))) else { return nil }
+        return rv
+    }
+}
+
+/// The `Offscreen` type acts as an owner of an underlying `CoglOffscreen` instance.
+/// It provides the methods that can operate on this data type through `OffscreenProtocol` conformance.
+/// Use `Offscreen` as a strong reference or owner of a `CoglOffscreen` instance.
+///
+
+open class Offscreen: OffscreenProtocol {
+        /// Untyped pointer to the underlying `CoglOffscreen` instance.
+    /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
+    public let ptr: UnsafeMutableRawPointer!
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Offscreen` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafeMutablePointer<CoglOffscreen>) {
+        ptr = UnsafeMutableRawPointer(op)
+    }
+
+    /// Designated initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Offscreen` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(_ op: UnsafePointer<CoglOffscreen>) {
+        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
+    }
+
+    /// Optional initialiser from a non-mutating `gpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Offscreen` instance.
+    /// - Parameter op: gpointer to the underlying object
+    @inlinable public init!(gpointer op: gpointer?) {
+        guard let p = UnsafeMutableRawPointer(op) else { return nil }
+        ptr = p
+    }
+
+    /// Optional initialiser from a non-mutating `gconstpointer` to
+    /// the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Offscreen` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(gconstpointer op: gconstpointer?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Optional initialiser from a constant pointer to the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Offscreen` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafePointer<CoglOffscreen>?) {
+        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Optional initialiser from the underlying `C` data type.
+    /// This creates an instance without performing an unbalanced retain
+    /// i.e., ownership is transferred to the `Offscreen` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init!(_ op: UnsafeMutablePointer<CoglOffscreen>?) {
+        guard let p = op else { return nil }
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Designated initialiser from the underlying `C` data type.
+    /// `CoglOffscreen` does not allow reference counting, so despite the name no actual retaining will occur.
+    /// i.e., ownership is transferred to the `Offscreen` instance.
+    /// - Parameter op: pointer to the underlying object
+    @inlinable public init(retaining op: UnsafeMutablePointer<CoglOffscreen>) {
+        ptr = UnsafeMutableRawPointer(op)
+        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
+    }
+
+    /// Reference intialiser for a related type that implements `OffscreenProtocol`
+    /// `CoglOffscreen` does not allow reference counting.
+    /// - Parameter other: an instance of a related type that implements `OffscreenProtocol`
+    @inlinable public init<T: OffscreenProtocol>(_ other: T) {
+        ptr = other.ptr
+        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
+    }
+
+    /// Do-nothing destructor for `CoglOffscreen`.
+    deinit {
+        // no reference counting for CoglOffscreen, cannot unref(offscreen_ptr)
+    }
+
+    /// Unsafe typed initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe typed, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter cPointer: pointer to the underlying object
+    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
+        ptr = UnsafeMutableRawPointer(cPointer)
+        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter p: raw pointer to the underlying object
+    @inlinable public init(raw p: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
+        ptr = UnsafeMutableRawPointer(mutating: raw)
+        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter p: mutable raw pointer to the underlying object
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
+        ptr = p
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter raw: mutable raw pointer to the underlying object
+    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
+        ptr = raw
+        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
+    }
+
+    /// Unsafe untyped initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    @inlinable public init(opaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+    }
+
+    /// Unsafe untyped, retaining initialiser.
+    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
+    /// - Parameter p: opaque pointer to the underlying object
+    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
+        ptr = UnsafeMutableRawPointer(p)
+        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
+    }
+
+    /// This creates an offscreen buffer object using the given `texture` as the
+    /// primary color buffer. It doesn't just initialize the contents of the
+    /// offscreen buffer with the `texture`; they are tightly bound so that
+    /// drawing to the offscreen buffer effectivly updates the contents of the
+    /// given texture. You don't need to destroy the offscreen buffer before
+    /// you can use the `texture` again.
+    /// 
+    /// &lt;note&gt;This only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.&lt;/note&gt;
+    ///
+    /// **new_to_texture is deprecated:**
+    /// Use cogl_offscreen_new_with_texture instead.
+    @available(*, deprecated) @inlinable public init<TextureT: TextureProtocol>(to_texture texture: TextureT) {
+        let rv = cogl_offscreen_new_to_texture(texture.texture_ptr)
+        ptr = UnsafeMutableRawPointer(rv)
+    }
+
+    /// This creates an offscreen framebuffer object using the given
+    /// `texture` as the primary color buffer. It doesn't just initialize
+    /// the contents of the offscreen buffer with the `texture`; they are
+    /// tightly bound so that drawing to the offscreen buffer effectively
+    /// updates the contents of the given texture. You don't need to
+    /// destroy the offscreen buffer before you can use the `texture` again.
+    /// 
+    /// &lt;note&gt;This api only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.&lt;/note&gt;
+    /// 
+    /// The storage for the framebuffer is actually allocated lazily
+    /// so this function will never return `nil` to indicate a runtime
+    /// error. This means it is still possible to configure the framebuffer
+    /// before it is really allocated.
+    /// 
+    /// Simple applications without full error handling can simply rely on
+    /// Cogl to lazily allocate the storage of framebuffers but you should
+    /// be aware that if Cogl encounters an error (such as running out of
+    /// GPU memory) then your application will simply abort with an error
+    /// message. If you need to be able to catch such exceptions at runtime
+    /// then you can explicitly allocate your framebuffer when you have
+    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
+    /// passing in a `CoglError` argument to catch any exceptions.
+    @inlinable public init<TextureT: TextureProtocol>(texture: TextureT) {
+        let rv = cogl_offscreen_new_with_texture(texture.texture_ptr)
+        ptr = UnsafeMutableRawPointer(rv)
+    }
+
+    /// This creates an offscreen buffer object using the given `texture` as the
+    /// primary color buffer. It doesn't just initialize the contents of the
+    /// offscreen buffer with the `texture`; they are tightly bound so that
+    /// drawing to the offscreen buffer effectivly updates the contents of the
+    /// given texture. You don't need to destroy the offscreen buffer before
+    /// you can use the `texture` again.
+    /// 
+    /// &lt;note&gt;This only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.&lt;/note&gt;
+    ///
+    /// **new_to_texture is deprecated:**
+    /// Use cogl_offscreen_new_with_texture instead.
+    @available(*, deprecated) @inlinable public static func newTo<TextureT: TextureProtocol>(to_texture texture: TextureT) -> Offscreen! {
+        guard let rv = Offscreen(gconstpointer: gconstpointer(cogl_offscreen_new_to_texture(texture.texture_ptr))) else { return nil }
+        return rv
+    }
+
+    /// This creates an offscreen framebuffer object using the given
+    /// `texture` as the primary color buffer. It doesn't just initialize
+    /// the contents of the offscreen buffer with the `texture`; they are
+    /// tightly bound so that drawing to the offscreen buffer effectively
+    /// updates the contents of the given texture. You don't need to
+    /// destroy the offscreen buffer before you can use the `texture` again.
+    /// 
+    /// &lt;note&gt;This api only works with low-level `CoglTexture` types such as
+    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
+    /// with meta-texture types such as `CoglTexture2DSliced`.&lt;/note&gt;
+    /// 
+    /// The storage for the framebuffer is actually allocated lazily
+    /// so this function will never return `nil` to indicate a runtime
+    /// error. This means it is still possible to configure the framebuffer
+    /// before it is really allocated.
+    /// 
+    /// Simple applications without full error handling can simply rely on
+    /// Cogl to lazily allocate the storage of framebuffers but you should
+    /// be aware that if Cogl encounters an error (such as running out of
+    /// GPU memory) then your application will simply abort with an error
+    /// message. If you need to be able to catch such exceptions at runtime
+    /// then you can explicitly allocate your framebuffer when you have
+    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
+    /// passing in a `CoglError` argument to catch any exceptions.
+    @inlinable public static func newWith<TextureT: TextureProtocol>(texture: TextureT) -> Offscreen! {
+        guard let rv = Offscreen(gconstpointer: gconstpointer(cogl_offscreen_new_with_texture(texture.texture_ptr))) else { return nil }
+        return rv
+    }
+
+}
+
+// MARK: no Offscreen properties
+
+// MARK: no Offscreen signals
+
+// MARK: Offscreen has no signals
+// MARK: Offscreen Class: OffscreenProtocol extension (methods and fields)
+public extension OffscreenProtocol {
+    /// Return the stored, untyped pointer as a typed pointer to the `CoglOffscreen` instance.
+    @inlinable var offscreen_ptr: UnsafeMutablePointer<CoglOffscreen>! { return ptr?.assumingMemoryBound(to: CoglOffscreen.self) }
+
+
+
+}
+
+
 /// Data types for the components of a vertex attribute.
 public typealias AttributeType = CoglAttributeType
 
@@ -403,7 +1700,7 @@ public extension AttributeType {
 /// Error codes that can be thrown when performing bitmap
 /// operations. Note that `gdk_pixbuf_new_from_file()` can also throw
 /// errors directly from the underlying image loading library. For
-/// example, if GdkPixbuf is used then errors `GdkPixbufError`<!-- -->s
+/// example, if GdkPixbuf is used then errors `GdkPixbufError`&lt;!-- --&gt;s
 /// will be used directly.
 public typealias BitmapError = CoglBitmapError
 
@@ -680,7 +1977,7 @@ public extension MaterialLayerType {
         self.init(rawValue: castToMaterialLayerTypeInt(raw))
     }
     /// The layer represents a
-    ///   <link linkend="cogl-Textures">texture</link>
+    ///   &lt;link linkend="cogl-Textures"&gt;texture&lt;/link&gt;
     static let texture = COGL_MATERIAL_LAYER_TYPE_TEXTURE // 0
 }
 
@@ -880,17 +2177,17 @@ public extension StereoMode {
 /// The `COGL_SYSTEM_ERROR_UNSUPPORTED` error can be thrown for a
 /// variety of reasons. For example:
 /// 
-/// <itemizedlist>
-///  <listitem><para>You've tried to use a feature that is not
+/// &lt;itemizedlist&gt;
+///  &lt;listitem&gt;&lt;para&gt;You've tried to use a feature that is not
 ///   advertised by `cogl_has_feature()`. This could happen if you create
 ///   a 2d texture with a non-power-of-two size when
-///   `COGL_FEATURE_ID_TEXTURE_NPOT` is not advertised.</para></listitem>
-///  <listitem><para>The GPU can not handle the configuration you have
+///   `COGL_FEATURE_ID_TEXTURE_NPOT` is not advertised.&lt;/para&gt;&lt;/listitem&gt;
+///  &lt;listitem&gt;&lt;para&gt;The GPU can not handle the configuration you have
 ///   requested. An example might be if you try to use too many texture
-///   layers in a single `CoglPipeline`</para></listitem>
-///  <listitem><para>The driver does not support some
-///   configuration.</para></listiem>
-/// </itemizedlist>
+///   layers in a single `CoglPipeline`&lt;/para&gt;&lt;/listitem&gt;
+///  &lt;listitem&gt;&lt;para&gt;The driver does not support some
+///   configuration.&lt;/para&gt;&lt;/listiem&gt;
+/// &lt;/itemizedlist&gt;
 /// 
 /// Currently this is only used by Cogl API marked as experimental so
 /// this enum should also be considered experimental.
@@ -998,23 +2295,23 @@ public extension VerticesMode {
         self.init(rawValue: castToVerticesModeInt(raw))
     }
     /// FIXME, equivalent to
-    /// <constant>GL_POINTS</constant>
+    /// &lt;constant&gt;GL_POINTS&lt;/constant&gt;
     static let points = COGL_VERTICES_MODE_POINTS // 0
-    /// FIXME, equivalent to <constant>GL_LINES</constant>
+    /// FIXME, equivalent to &lt;constant&gt;GL_LINES&lt;/constant&gt;
     static let lines = COGL_VERTICES_MODE_LINES // 1
     /// FIXME, equivalent to
-    /// <constant>GL_LINE_LOOP</constant>
+    /// &lt;constant&gt;GL_LINE_LOOP&lt;/constant&gt;
     static let lineLoop = COGL_VERTICES_MODE_LINE_LOOP // 2
     /// FIXME, equivalent to
-    /// <constant>GL_LINE_STRIP</constant>
+    /// &lt;constant&gt;GL_LINE_STRIP&lt;/constant&gt;
     static let lineStrip = COGL_VERTICES_MODE_LINE_STRIP // 3
     /// FIXME, equivalent to
-    /// <constant>GL_TRIANGLES</constant>
+    /// &lt;constant&gt;GL_TRIANGLES&lt;/constant&gt;
     static let triangles = COGL_VERTICES_MODE_TRIANGLES // 4
     /// FIXME, equivalent to
-    /// <constant>GL_TRIANGLE_STRIP</constant>
+    /// &lt;constant&gt;GL_TRIANGLE_STRIP&lt;/constant&gt;
     static let triangleStrip = COGL_VERTICES_MODE_TRIANGLE_STRIP // 5
-    /// FIXME, equivalent to <constant>GL_TRIANGLE_FAN</constant>
+    /// FIXME, equivalent to &lt;constant&gt;GL_TRIANGLE_FAN&lt;/constant&gt;
     static let triangleFan = COGL_VERTICES_MODE_TRIANGLE_FAN // 6
 }
 
@@ -1063,1297 +2360,6 @@ public extension WinsysFeature {
     static let bufferAge = COGL_WINSYS_FEATURE_BUFFER_AGE // 9
     static let syncAndCompleteEvent = COGL_WINSYS_FEATURE_SYNC_AND_COMPLETE_EVENT // 10
     static let nFeatures = COGL_WINSYS_FEATURE_N_FEATURES // 11
-}
-
-
-// MARK: - Texture Interface
-
-/// The `TextureProtocol` protocol exposes the methods and properties of an underlying `CoglTexture` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Texture`.
-/// Alternatively, use `TextureRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
-
-public protocol TextureProtocol {
-        /// Untyped pointer to the underlying `CoglTexture` instance.
-    var ptr: UnsafeMutableRawPointer! { get }
-
-    /// Typed pointer to the underlying `CoglTexture` instance.
-    var texture_ptr: UnsafeMutablePointer<CoglTexture>! { get }
-
-}
-
-/// The `TextureRef` type acts as a lightweight Swift reference to an underlying `CoglTexture` instance.
-/// It exposes methods that can operate on this data type through `TextureProtocol` conformance.
-/// Use `TextureRef` only as an `unowned` reference to an existing `CoglTexture` instance.
-///
-
-public struct TextureRef: TextureProtocol {
-        /// Untyped pointer to the underlying `CoglTexture` instance.
-    /// For type-safe access, use the generated, typed pointer `texture_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-}
-
-public extension TextureRef {
-    /// Designated initialiser from the underlying `C` data type
-    @inlinable init(_ p: UnsafeMutablePointer<CoglTexture>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type
-    @inlinable init(_ p: UnsafePointer<CoglTexture>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
-    }
-
-    /// Conditional initialiser from an optional pointer to the underlying `C` data type
-    @inlinable init!(_ maybePointer: UnsafeMutablePointer<CoglTexture>?) {
-        guard let p = maybePointer else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
-    @inlinable init!(_ maybePointer: UnsafePointer<CoglTexture>?) {
-        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Conditional initialiser from an optional `gpointer`
-    @inlinable init!(gpointer g: gpointer?) {
-        guard let p = g else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
-    @inlinable init!(gconstpointer g: gconstpointer?) {
-        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
-        ptr = p
-    }
-
-    /// Reference intialiser for a related type that implements `TextureProtocol`
-    @inlinable init<T: TextureProtocol>(_ other: T) {
-        ptr = other.ptr
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    @inlinable init<T>(constPointer: UnsafePointer<T>) {
-        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    @inlinable init(mutating raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    @inlinable init(raw: UnsafeMutableRawPointer) {
-        ptr = raw
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    @inlinable init(opaquePointer: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(opaquePointer)
-    }
-
-    }
-
-/// The `Texture` type acts as an owner of an underlying `CoglTexture` instance.
-/// It provides the methods that can operate on this data type through `TextureProtocol` conformance.
-/// Use `Texture` as a strong reference or owner of a `CoglTexture` instance.
-///
-
-open class Texture: TextureProtocol {
-        /// Untyped pointer to the underlying `CoglTexture` instance.
-    /// For type-safe access, use the generated, typed pointer `texture_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Texture` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<CoglTexture>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Texture` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<CoglTexture>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Texture` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Texture` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Texture` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<CoglTexture>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Texture` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<CoglTexture>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `CoglTexture` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `Texture` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<CoglTexture>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for CoglTexture, cannot ref(texture_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `TextureProtocol`
-    /// `CoglTexture` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `TextureProtocol`
-    @inlinable public init<T: TextureProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for CoglTexture, cannot ref(texture_ptr)
-    }
-
-    /// Do-nothing destructor for `CoglTexture`.
-    deinit {
-        // no reference counting for CoglTexture, cannot unref(texture_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for CoglTexture, cannot ref(texture_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for CoglTexture, cannot ref(texture_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for CoglTexture, cannot ref(texture_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for CoglTexture, cannot ref(texture_ptr)
-    }
-
-
-
-}
-
-// MARK: no Texture properties
-
-// MARK: no Texture signals
-
-// MARK: Texture has no signals
-// MARK: Texture Interface: TextureProtocol extension (methods and fields)
-public extension TextureProtocol {
-    /// Return the stored, untyped pointer as a typed pointer to the `CoglTexture` instance.
-    @inlinable var texture_ptr: UnsafeMutablePointer<CoglTexture>! { return ptr?.assumingMemoryBound(to: CoglTexture.self) }
-
-    /// Explicitly allocates the storage for the given `texture` which
-    /// allows you to be sure that there is enough memory for the
-    /// texture and if not then the error can be handled gracefully.
-    /// 
-    /// <note>Normally applications don't need to use this api directly
-    /// since the texture will be implicitly allocated when data is set on
-    /// the texture, or if the texture is attached to a `CoglOffscreen`
-    /// framebuffer and rendered too.</note>
-    @inlinable func allocate() throws -> CoglBool {
-        var error: UnsafeMutablePointer<GError>?
-        let rv = cogl_texture_allocate(texture_ptr, &error)
-        if let error = error { throw GLibError(error) }
-        return rv
-    }
-
-    /// Queries what components the given `texture` stores internally as set
-    /// via `cogl_texture_set_components()`.
-    /// 
-    /// For textures created by the ‘_with_size’ constructors the default
-    /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
-    /// a `CoglBitmap` or a data pointer default to the same components as
-    /// the pixel format of the data.
-    @inlinable func getComponents() -> CoglTextureComponents {
-        let rv = cogl_texture_get_components(texture_ptr)
-        return rv
-    }
-
-    /// Copies the pixel data from a cogl texture to system memory.
-    /// 
-    /// <note>Don't pass the value of `cogl_texture_get_rowstride()` as the
-    /// `rowstride` argument, the rowstride should be the rowstride you
-    /// want for the destination `data` buffer not the rowstride of the
-    /// source texture</note>
-    @inlinable func getData(format: CoglPixelFormat, rowstride: Int, data: UnsafeMutablePointer<UInt8>!) -> Int {
-        let rv = Int(cogl_texture_get_data(texture_ptr, format, guint(rowstride), data))
-        return rv
-    }
-
-    /// Queries the GL handles for a GPU side texture through its `CoglTexture`.
-    /// 
-    /// If the texture is spliced the data for the first sub texture will be
-    /// queried.
-    @inlinable func getGlTexture(outGlHandle: UnsafeMutablePointer<guint>! = nil, outGlTarget: UnsafeMutablePointer<guint>! = nil) -> CoglBool {
-        let rv = cogl_texture_get_gl_texture(texture_ptr, outGlHandle, outGlTarget)
-        return rv
-    }
-
-    /// Queries the height of a cogl texture.
-    @inlinable func getHeight() -> Int {
-        let rv = Int(cogl_texture_get_height(texture_ptr))
-        return rv
-    }
-
-    /// Queries the maximum wasted (unused) pixels in one dimension of a GPU side
-    /// texture.
-    @inlinable func getMaxWaste() -> Int {
-        let rv = Int(cogl_texture_get_max_waste(texture_ptr))
-        return rv
-    }
-
-    /// Queries the pre-multiplied alpha status for internally stored red,
-    /// green and blue components for the given `texture` as set by
-    /// `cogl_texture_set_premultiplied()`.
-    /// 
-    /// By default the pre-multipled state is `TRUE`.
-    @inlinable func getPremultiplied() -> CoglBool {
-        let rv = cogl_texture_get_premultiplied(texture_ptr)
-        return rv
-    }
-
-    /// Queries the width of a cogl texture.
-    @inlinable func getWidth() -> Int {
-        let rv = Int(cogl_texture_get_width(texture_ptr))
-        return rv
-    }
-
-    /// Affects the internal storage format for this texture by specifying
-    /// what components will be required for sampling later.
-    /// 
-    /// This api affects how data is uploaded to the GPU since unused
-    /// components can potentially be discarded from source data.
-    /// 
-    /// For textures created by the ‘_with_size’ constructors the default
-    /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
-    /// a `CoglBitmap` or a data pointer default to the same components as
-    /// the pixel format of the data.
-    /// 
-    /// Note that the `COGL_TEXTURE_COMPONENTS_RG` format is not available
-    /// on all drivers. The availability can be determined by checking for
-    /// the `COGL_FEATURE_ID_TEXTURE_RG` feature. If this format is used on
-    /// a driver where it is not available then `COGL_TEXTURE_ERROR_FORMAT`
-    /// will be raised when the texture is allocated. Even if the feature
-    /// is not available then `COGL_PIXEL_FORMAT_RG_88` can still be used as
-    /// an image format as long as `COGL_TEXTURE_COMPONENTS_RG` isn't used
-    /// as the texture's components.
-    @inlinable func set(components: CoglTextureComponents) {
-        cogl_texture_set_components(texture_ptr, components)
-    
-    }
-
-    /// Affects the internal storage format for this texture by specifying
-    /// whether red, green and blue color components should be stored as
-    /// pre-multiplied alpha values.
-    /// 
-    /// This api affects how data is uploaded to the GPU since Cogl will
-    /// convert source data to have premultiplied or unpremultiplied
-    /// components according to this state.
-    /// 
-    /// For example if you create a texture via
-    /// `cogl_texture_2d_new_with_size()` and then upload data via
-    /// `cogl_texture_set_data()` passing a source format of
-    /// `COGL_PIXEL_FORMAT_RGBA_8888` then Cogl will internally multiply the
-    /// red, green and blue components of the source data by the alpha
-    /// component, for each pixel so that the internally stored data has
-    /// pre-multiplied alpha components. If you instead upload data that
-    /// already has pre-multiplied components by passing
-    /// `COGL_PIXEL_FORMAT_RGBA_8888_PRE` as the source format to
-    /// `cogl_texture_set_data()` then the data can be uploaded without being
-    /// converted.
-    /// 
-    /// By default the `premultipled` state is `TRUE`.
-    @inlinable func set(premultiplied: CoglBool) {
-        cogl_texture_set_premultiplied(texture_ptr, premultiplied)
-    
-    }
-
-    /// Sets the pixels in a rectangular subregion of `texture` from an in-memory
-    /// buffer containing pixel data.
-    /// 
-    /// <note>The region set can't be larger than the source `data`</note>
-    @inlinable func setRegion(srcX: Int, srcY: Int, dstX: Int, dstY: Int, dstWidth: Int, dstHeight: Int, width: Int, height: Int, format: CoglPixelFormat, rowstride: Int, data: UnsafePointer<UInt8>!) -> CoglBool {
-        let rv = cogl_texture_set_region(texture_ptr, gint(srcX), gint(srcY), gint(dstX), gint(dstY), guint(dstWidth), guint(dstHeight), gint(width), gint(height), format, guint(rowstride), data)
-        return rv
-    }
-
-    /// This is a convenience function for creating a material with the first
-    /// layer set to `texture` and setting that material as the source with
-    /// cogl_set_source.
-    /// 
-    /// Note: There is no interaction between calls to cogl_set_source_color
-    /// and cogl_set_source_texture. If you need to blend a texture with a color then
-    /// you can create a simple material like this:
-    /// <programlisting>
-    /// material = cogl_material_new ();
-    /// cogl_material_set_color4ub (material, 0xff, 0x00, 0x00, 0x80);
-    /// cogl_material_set_layer (material, 0, tex_handle);
-    /// cogl_set_source (material);
-    /// </programlisting>
-    ///
-    /// **set_source_texture is deprecated:**
-    /// Latest drawing apis all take an explicit
-    ///                   #CoglPipeline argument so this stack of
-    ///                   #CoglMaterial<!-- -->s shouldn't be used.
-    @available(*, deprecated) @inlinable func setSourceTexture() {
-        cogl_set_source_texture(texture_ptr)
-    
-    }
-    /// Queries what components the given `texture` stores internally as set
-    /// via `cogl_texture_set_components()`.
-    /// 
-    /// For textures created by the ‘_with_size’ constructors the default
-    /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
-    /// a `CoglBitmap` or a data pointer default to the same components as
-    /// the pixel format of the data.
-    @inlinable var components: CoglTextureComponents {
-        /// Queries what components the given `texture` stores internally as set
-        /// via `cogl_texture_set_components()`.
-        /// 
-        /// For textures created by the ‘_with_size’ constructors the default
-        /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
-        /// a `CoglBitmap` or a data pointer default to the same components as
-        /// the pixel format of the data.
-        get {
-            let rv = cogl_texture_get_components(texture_ptr)
-            return rv
-        }
-        /// Affects the internal storage format for this texture by specifying
-        /// what components will be required for sampling later.
-        /// 
-        /// This api affects how data is uploaded to the GPU since unused
-        /// components can potentially be discarded from source data.
-        /// 
-        /// For textures created by the ‘_with_size’ constructors the default
-        /// is `COGL_TEXTURE_COMPONENTS_RGBA`. The other constructors which take
-        /// a `CoglBitmap` or a data pointer default to the same components as
-        /// the pixel format of the data.
-        /// 
-        /// Note that the `COGL_TEXTURE_COMPONENTS_RG` format is not available
-        /// on all drivers. The availability can be determined by checking for
-        /// the `COGL_FEATURE_ID_TEXTURE_RG` feature. If this format is used on
-        /// a driver where it is not available then `COGL_TEXTURE_ERROR_FORMAT`
-        /// will be raised when the texture is allocated. Even if the feature
-        /// is not available then `COGL_PIXEL_FORMAT_RG_88` can still be used as
-        /// an image format as long as `COGL_TEXTURE_COMPONENTS_RG` isn't used
-        /// as the texture's components.
-        nonmutating set {
-            cogl_texture_set_components(texture_ptr, newValue)
-        }
-    }
-
-    /// Queries the height of a cogl texture.
-    @inlinable var height: Int {
-        /// Queries the height of a cogl texture.
-        get {
-            let rv = Int(cogl_texture_get_height(texture_ptr))
-            return rv
-        }
-    }
-
-    /// Queries if a texture is sliced (stored as multiple GPU side tecture
-    /// objects).
-    @inlinable var isSliced: CoglBool {
-        /// Queries if a texture is sliced (stored as multiple GPU side tecture
-        /// objects).
-        get {
-            let rv = cogl_texture_is_sliced(texture_ptr)
-            return rv
-        }
-    }
-
-    /// Queries the maximum wasted (unused) pixels in one dimension of a GPU side
-    /// texture.
-    @inlinable var maxWaste: Int {
-        /// Queries the maximum wasted (unused) pixels in one dimension of a GPU side
-        /// texture.
-        get {
-            let rv = Int(cogl_texture_get_max_waste(texture_ptr))
-            return rv
-        }
-    }
-
-    /// Queries the pre-multiplied alpha status for internally stored red,
-    /// green and blue components for the given `texture` as set by
-    /// `cogl_texture_set_premultiplied()`.
-    /// 
-    /// By default the pre-multipled state is `TRUE`.
-    @inlinable var premultiplied: CoglBool {
-        /// Queries the pre-multiplied alpha status for internally stored red,
-        /// green and blue components for the given `texture` as set by
-        /// `cogl_texture_set_premultiplied()`.
-        /// 
-        /// By default the pre-multipled state is `TRUE`.
-        get {
-            let rv = cogl_texture_get_premultiplied(texture_ptr)
-            return rv
-        }
-        /// Affects the internal storage format for this texture by specifying
-        /// whether red, green and blue color components should be stored as
-        /// pre-multiplied alpha values.
-        /// 
-        /// This api affects how data is uploaded to the GPU since Cogl will
-        /// convert source data to have premultiplied or unpremultiplied
-        /// components according to this state.
-        /// 
-        /// For example if you create a texture via
-        /// `cogl_texture_2d_new_with_size()` and then upload data via
-        /// `cogl_texture_set_data()` passing a source format of
-        /// `COGL_PIXEL_FORMAT_RGBA_8888` then Cogl will internally multiply the
-        /// red, green and blue components of the source data by the alpha
-        /// component, for each pixel so that the internally stored data has
-        /// pre-multiplied alpha components. If you instead upload data that
-        /// already has pre-multiplied components by passing
-        /// `COGL_PIXEL_FORMAT_RGBA_8888_PRE` as the source format to
-        /// `cogl_texture_set_data()` then the data can be uploaded without being
-        /// converted.
-        /// 
-        /// By default the `premultipled` state is `TRUE`.
-        nonmutating set {
-            cogl_texture_set_premultiplied(texture_ptr, newValue)
-        }
-    }
-
-    /// Queries the width of a cogl texture.
-    @inlinable var width: Int {
-        /// Queries the width of a cogl texture.
-        get {
-            let rv = Int(cogl_texture_get_width(texture_ptr))
-            return rv
-        }
-    }
-
-
-}
-
-
-// MARK: - Bitmap Class
-
-/// The `BitmapProtocol` protocol exposes the methods and properties of an underlying `CoglBitmap` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Bitmap`.
-/// Alternatively, use `BitmapRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
-
-public protocol BitmapProtocol {
-        /// Untyped pointer to the underlying `CoglBitmap` instance.
-    var ptr: UnsafeMutableRawPointer! { get }
-
-    /// Typed pointer to the underlying `CoglBitmap` instance.
-    var bitmap_ptr: UnsafeMutablePointer<CoglBitmap>! { get }
-
-}
-
-/// The `BitmapRef` type acts as a lightweight Swift reference to an underlying `CoglBitmap` instance.
-/// It exposes methods that can operate on this data type through `BitmapProtocol` conformance.
-/// Use `BitmapRef` only as an `unowned` reference to an existing `CoglBitmap` instance.
-///
-
-public struct BitmapRef: BitmapProtocol {
-        /// Untyped pointer to the underlying `CoglBitmap` instance.
-    /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-}
-
-public extension BitmapRef {
-    /// Designated initialiser from the underlying `C` data type
-    @inlinable init(_ p: UnsafeMutablePointer<CoglBitmap>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type
-    @inlinable init(_ p: UnsafePointer<CoglBitmap>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
-    }
-
-    /// Conditional initialiser from an optional pointer to the underlying `C` data type
-    @inlinable init!(_ maybePointer: UnsafeMutablePointer<CoglBitmap>?) {
-        guard let p = maybePointer else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
-    @inlinable init!(_ maybePointer: UnsafePointer<CoglBitmap>?) {
-        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Conditional initialiser from an optional `gpointer`
-    @inlinable init!(gpointer g: gpointer?) {
-        guard let p = g else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
-    @inlinable init!(gconstpointer g: gconstpointer?) {
-        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
-        ptr = p
-    }
-
-    /// Reference intialiser for a related type that implements `BitmapProtocol`
-    @inlinable init<T: BitmapProtocol>(_ other: T) {
-        ptr = other.ptr
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    @inlinable init<T>(constPointer: UnsafePointer<T>) {
-        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    @inlinable init(mutating raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    @inlinable init(raw: UnsafeMutableRawPointer) {
-        ptr = raw
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    @inlinable init(opaquePointer: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(opaquePointer)
-    }
-
-        /// Loads an image file from disk. This function can be safely called from
-    /// within a thread.
-    @inlinable init(file filename: UnsafePointer<CChar>!) throws {
-        var error: UnsafeMutablePointer<GError>?
-        let rv = cogl_bitmap_new_from_file(filename, &error)
-        if let error = error { throw GLibError(error) }
-        ptr = UnsafeMutableRawPointer(rv)
-    }
-    /// Loads an image file from disk. This function can be safely called from
-    /// within a thread.
-    @inlinable static func newFrom(file filename: UnsafePointer<CChar>!) throws -> BitmapRef! {
-        var error: UnsafeMutablePointer<GError>?
-        let maybeRV = BitmapRef(gconstpointer: gconstpointer(cogl_bitmap_new_from_file(filename, &error)))
-        if let error = error { throw GLibError(error) }
-        guard let rv = maybeRV else { return nil }
-        return rv
-    }
-}
-
-/// The `Bitmap` type acts as an owner of an underlying `CoglBitmap` instance.
-/// It provides the methods that can operate on this data type through `BitmapProtocol` conformance.
-/// Use `Bitmap` as a strong reference or owner of a `CoglBitmap` instance.
-///
-
-open class Bitmap: BitmapProtocol {
-        /// Untyped pointer to the underlying `CoglBitmap` instance.
-    /// For type-safe access, use the generated, typed pointer `bitmap_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Bitmap` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<CoglBitmap>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Bitmap` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<CoglBitmap>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Bitmap` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Bitmap` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Bitmap` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<CoglBitmap>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Bitmap` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<CoglBitmap>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `CoglBitmap` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `Bitmap` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<CoglBitmap>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `BitmapProtocol`
-    /// `CoglBitmap` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `BitmapProtocol`
-    @inlinable public init<T: BitmapProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
-    }
-
-    /// Do-nothing destructor for `CoglBitmap`.
-    deinit {
-        // no reference counting for CoglBitmap, cannot unref(bitmap_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `BitmapProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for CoglBitmap, cannot ref(bitmap_ptr)
-    }
-
-    /// Loads an image file from disk. This function can be safely called from
-    /// within a thread.
-    @inlinable public init(file filename: UnsafePointer<CChar>!) throws {
-        var error: UnsafeMutablePointer<GError>?
-        let rv = cogl_bitmap_new_from_file(filename, &error)
-        if let error = error { throw GLibError(error) }
-        ptr = UnsafeMutableRawPointer(rv)
-    }
-
-    /// Loads an image file from disk. This function can be safely called from
-    /// within a thread.
-    @inlinable public static func newFrom(file filename: UnsafePointer<CChar>!) throws -> Bitmap! {
-        var error: UnsafeMutablePointer<GError>?
-        let maybeRV = Bitmap(gconstpointer: gconstpointer(cogl_bitmap_new_from_file(filename, &error)))
-        if let error = error { throw GLibError(error) }
-        guard let rv = maybeRV else { return nil }
-        return rv
-    }
-
-}
-
-// MARK: no Bitmap properties
-
-// MARK: no Bitmap signals
-
-// MARK: Bitmap has no signals
-// MARK: Bitmap Class: BitmapProtocol extension (methods and fields)
-public extension BitmapProtocol {
-    /// Return the stored, untyped pointer as a typed pointer to the `CoglBitmap` instance.
-    @inlinable var bitmap_ptr: UnsafeMutablePointer<CoglBitmap>! { return ptr?.assumingMemoryBound(to: CoglBitmap.self) }
-
-
-
-}
-
-
-
-// MARK: - Offscreen Class
-
-/// The `OffscreenProtocol` protocol exposes the methods and properties of an underlying `CoglOffscreen` instance.
-/// The default implementation of these can be found in the protocol extension below.
-/// For a concrete class that implements these methods and properties, see `Offscreen`.
-/// Alternatively, use `OffscreenRef` as a lighweight, `unowned` reference if you already have an instance you just want to use.
-///
-
-public protocol OffscreenProtocol {
-        /// Untyped pointer to the underlying `CoglOffscreen` instance.
-    var ptr: UnsafeMutableRawPointer! { get }
-
-    /// Typed pointer to the underlying `CoglOffscreen` instance.
-    var offscreen_ptr: UnsafeMutablePointer<CoglOffscreen>! { get }
-
-}
-
-/// The `OffscreenRef` type acts as a lightweight Swift reference to an underlying `CoglOffscreen` instance.
-/// It exposes methods that can operate on this data type through `OffscreenProtocol` conformance.
-/// Use `OffscreenRef` only as an `unowned` reference to an existing `CoglOffscreen` instance.
-///
-
-public struct OffscreenRef: OffscreenProtocol {
-        /// Untyped pointer to the underlying `CoglOffscreen` instance.
-    /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-}
-
-public extension OffscreenRef {
-    /// Designated initialiser from the underlying `C` data type
-    @inlinable init(_ p: UnsafeMutablePointer<CoglOffscreen>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type
-    @inlinable init(_ p: UnsafePointer<CoglOffscreen>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: p))
-    }
-
-    /// Conditional initialiser from an optional pointer to the underlying `C` data type
-    @inlinable init!(_ maybePointer: UnsafeMutablePointer<CoglOffscreen>?) {
-        guard let p = maybePointer else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Conditional initialiser from an optional, non-mutable pointer to the underlying `C` data type
-    @inlinable init!(_ maybePointer: UnsafePointer<CoglOffscreen>?) {
-        guard let p = UnsafeMutablePointer(mutating: maybePointer) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Conditional initialiser from an optional `gpointer`
-    @inlinable init!(gpointer g: gpointer?) {
-        guard let p = g else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Conditional initialiser from an optional, non-mutable `gconstpointer`
-    @inlinable init!(gconstpointer g: gconstpointer?) {
-        guard let p = UnsafeMutableRawPointer(mutating: g) else { return nil }
-        ptr = p
-    }
-
-    /// Reference intialiser for a related type that implements `OffscreenProtocol`
-    @inlinable init<T: OffscreenProtocol>(_ other: T) {
-        ptr = other.ptr
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    @inlinable init<T>(cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    @inlinable init<T>(constPointer: UnsafePointer<T>) {
-        ptr = UnsafeMutableRawPointer(mutating: UnsafeRawPointer(constPointer))
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    @inlinable init(mutating raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    @inlinable init(raw: UnsafeMutableRawPointer) {
-        ptr = raw
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    @inlinable init(opaquePointer: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(opaquePointer)
-    }
-
-        /// This creates an offscreen buffer object using the given `texture` as the
-    /// primary color buffer. It doesn't just initialize the contents of the
-    /// offscreen buffer with the `texture`; they are tightly bound so that
-    /// drawing to the offscreen buffer effectivly updates the contents of the
-    /// given texture. You don't need to destroy the offscreen buffer before
-    /// you can use the `texture` again.
-    /// 
-    /// <note>This only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    ///
-    /// **new_to_texture is deprecated:**
-    /// Use cogl_offscreen_new_with_texture instead.
-    @available(*, deprecated) @inlinable init<TextureT: TextureProtocol>(to_texture texture: TextureT) {
-        let rv = cogl_offscreen_new_to_texture(texture.texture_ptr)
-        ptr = UnsafeMutableRawPointer(rv)
-    }
-
-    /// This creates an offscreen framebuffer object using the given
-    /// `texture` as the primary color buffer. It doesn't just initialize
-    /// the contents of the offscreen buffer with the `texture`; they are
-    /// tightly bound so that drawing to the offscreen buffer effectively
-    /// updates the contents of the given texture. You don't need to
-    /// destroy the offscreen buffer before you can use the `texture` again.
-    /// 
-    /// <note>This api only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    /// 
-    /// The storage for the framebuffer is actually allocated lazily
-    /// so this function will never return `nil` to indicate a runtime
-    /// error. This means it is still possible to configure the framebuffer
-    /// before it is really allocated.
-    /// 
-    /// Simple applications without full error handling can simply rely on
-    /// Cogl to lazily allocate the storage of framebuffers but you should
-    /// be aware that if Cogl encounters an error (such as running out of
-    /// GPU memory) then your application will simply abort with an error
-    /// message. If you need to be able to catch such exceptions at runtime
-    /// then you can explicitly allocate your framebuffer when you have
-    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
-    /// passing in a `CoglError` argument to catch any exceptions.
-    @inlinable init<TextureT: TextureProtocol>(texture: TextureT) {
-        let rv = cogl_offscreen_new_with_texture(texture.texture_ptr)
-        ptr = UnsafeMutableRawPointer(rv)
-    }
-    /// This creates an offscreen buffer object using the given `texture` as the
-    /// primary color buffer. It doesn't just initialize the contents of the
-    /// offscreen buffer with the `texture`; they are tightly bound so that
-    /// drawing to the offscreen buffer effectivly updates the contents of the
-    /// given texture. You don't need to destroy the offscreen buffer before
-    /// you can use the `texture` again.
-    /// 
-    /// <note>This only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    ///
-    /// **new_to_texture is deprecated:**
-    /// Use cogl_offscreen_new_with_texture instead.
-    @available(*, deprecated) @inlinable static func newTo<TextureT: TextureProtocol>(to_texture texture: TextureT) -> OffscreenRef! {
-        guard let rv = OffscreenRef(gconstpointer: gconstpointer(cogl_offscreen_new_to_texture(texture.texture_ptr))) else { return nil }
-        return rv
-    }
-
-    /// This creates an offscreen framebuffer object using the given
-    /// `texture` as the primary color buffer. It doesn't just initialize
-    /// the contents of the offscreen buffer with the `texture`; they are
-    /// tightly bound so that drawing to the offscreen buffer effectively
-    /// updates the contents of the given texture. You don't need to
-    /// destroy the offscreen buffer before you can use the `texture` again.
-    /// 
-    /// <note>This api only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    /// 
-    /// The storage for the framebuffer is actually allocated lazily
-    /// so this function will never return `nil` to indicate a runtime
-    /// error. This means it is still possible to configure the framebuffer
-    /// before it is really allocated.
-    /// 
-    /// Simple applications without full error handling can simply rely on
-    /// Cogl to lazily allocate the storage of framebuffers but you should
-    /// be aware that if Cogl encounters an error (such as running out of
-    /// GPU memory) then your application will simply abort with an error
-    /// message. If you need to be able to catch such exceptions at runtime
-    /// then you can explicitly allocate your framebuffer when you have
-    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
-    /// passing in a `CoglError` argument to catch any exceptions.
-    @inlinable static func newWith<TextureT: TextureProtocol>(texture: TextureT) -> OffscreenRef! {
-        guard let rv = OffscreenRef(gconstpointer: gconstpointer(cogl_offscreen_new_with_texture(texture.texture_ptr))) else { return nil }
-        return rv
-    }
-}
-
-/// The `Offscreen` type acts as an owner of an underlying `CoglOffscreen` instance.
-/// It provides the methods that can operate on this data type through `OffscreenProtocol` conformance.
-/// Use `Offscreen` as a strong reference or owner of a `CoglOffscreen` instance.
-///
-
-open class Offscreen: OffscreenProtocol {
-        /// Untyped pointer to the underlying `CoglOffscreen` instance.
-    /// For type-safe access, use the generated, typed pointer `offscreen_ptr` property instead.
-    public let ptr: UnsafeMutableRawPointer!
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Offscreen` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafeMutablePointer<CoglOffscreen>) {
-        ptr = UnsafeMutableRawPointer(op)
-    }
-
-    /// Designated initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Offscreen` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(_ op: UnsafePointer<CoglOffscreen>) {
-        ptr = UnsafeMutableRawPointer(UnsafeMutablePointer(mutating: op))
-    }
-
-    /// Optional initialiser from a non-mutating `gpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Offscreen` instance.
-    /// - Parameter op: gpointer to the underlying object
-    @inlinable public init!(gpointer op: gpointer?) {
-        guard let p = UnsafeMutableRawPointer(op) else { return nil }
-        ptr = p
-    }
-
-    /// Optional initialiser from a non-mutating `gconstpointer` to
-    /// the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Offscreen` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(gconstpointer op: gconstpointer?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Optional initialiser from a constant pointer to the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Offscreen` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafePointer<CoglOffscreen>?) {
-        guard let p = UnsafeMutablePointer(mutating: op) else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Optional initialiser from the underlying `C` data type.
-    /// This creates an instance without performing an unbalanced retain
-    /// i.e., ownership is transferred to the `Offscreen` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init!(_ op: UnsafeMutablePointer<CoglOffscreen>?) {
-        guard let p = op else { return nil }
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Designated initialiser from the underlying `C` data type.
-    /// `CoglOffscreen` does not allow reference counting, so despite the name no actual retaining will occur.
-    /// i.e., ownership is transferred to the `Offscreen` instance.
-    /// - Parameter op: pointer to the underlying object
-    @inlinable public init(retaining op: UnsafeMutablePointer<CoglOffscreen>) {
-        ptr = UnsafeMutableRawPointer(op)
-        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
-    }
-
-    /// Reference intialiser for a related type that implements `OffscreenProtocol`
-    /// `CoglOffscreen` does not allow reference counting.
-    /// - Parameter other: an instance of a related type that implements `OffscreenProtocol`
-    @inlinable public init<T: OffscreenProtocol>(_ other: T) {
-        ptr = other.ptr
-        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
-    }
-
-    /// Do-nothing destructor for `CoglOffscreen`.
-    deinit {
-        // no reference counting for CoglOffscreen, cannot unref(offscreen_ptr)
-    }
-
-    /// Unsafe typed initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(cPointer p: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe typed, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    /// - Parameter cPointer: pointer to the underlying object
-    @inlinable public init<T>(retainingCPointer cPointer: UnsafeMutablePointer<T>) {
-        ptr = UnsafeMutableRawPointer(cPointer)
-        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    /// - Parameter p: raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    @inlinable public init(retainingRaw raw: UnsafeRawPointer) {
-        ptr = UnsafeMutableRawPointer(mutating: raw)
-        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
-        ptr = p
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    /// - Parameter raw: mutable raw pointer to the underlying object
-    @inlinable public init(retainingRaw raw: UnsafeMutableRawPointer) {
-        ptr = raw
-        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
-    }
-
-    /// Unsafe untyped initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(opaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-    }
-
-    /// Unsafe untyped, retaining initialiser.
-    /// **Do not use unless you know the underlying data type the pointer points to conforms to `OffscreenProtocol`.**
-    /// - Parameter p: opaque pointer to the underlying object
-    @inlinable public init(retainingOpaquePointer p: OpaquePointer) {
-        ptr = UnsafeMutableRawPointer(p)
-        // no reference counting for CoglOffscreen, cannot ref(offscreen_ptr)
-    }
-
-    /// This creates an offscreen buffer object using the given `texture` as the
-    /// primary color buffer. It doesn't just initialize the contents of the
-    /// offscreen buffer with the `texture`; they are tightly bound so that
-    /// drawing to the offscreen buffer effectivly updates the contents of the
-    /// given texture. You don't need to destroy the offscreen buffer before
-    /// you can use the `texture` again.
-    /// 
-    /// <note>This only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    ///
-    /// **new_to_texture is deprecated:**
-    /// Use cogl_offscreen_new_with_texture instead.
-    @available(*, deprecated) @inlinable public init<TextureT: TextureProtocol>(to_texture texture: TextureT) {
-        let rv = cogl_offscreen_new_to_texture(texture.texture_ptr)
-        ptr = UnsafeMutableRawPointer(rv)
-    }
-
-    /// This creates an offscreen framebuffer object using the given
-    /// `texture` as the primary color buffer. It doesn't just initialize
-    /// the contents of the offscreen buffer with the `texture`; they are
-    /// tightly bound so that drawing to the offscreen buffer effectively
-    /// updates the contents of the given texture. You don't need to
-    /// destroy the offscreen buffer before you can use the `texture` again.
-    /// 
-    /// <note>This api only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    /// 
-    /// The storage for the framebuffer is actually allocated lazily
-    /// so this function will never return `nil` to indicate a runtime
-    /// error. This means it is still possible to configure the framebuffer
-    /// before it is really allocated.
-    /// 
-    /// Simple applications without full error handling can simply rely on
-    /// Cogl to lazily allocate the storage of framebuffers but you should
-    /// be aware that if Cogl encounters an error (such as running out of
-    /// GPU memory) then your application will simply abort with an error
-    /// message. If you need to be able to catch such exceptions at runtime
-    /// then you can explicitly allocate your framebuffer when you have
-    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
-    /// passing in a `CoglError` argument to catch any exceptions.
-    @inlinable public init<TextureT: TextureProtocol>(texture: TextureT) {
-        let rv = cogl_offscreen_new_with_texture(texture.texture_ptr)
-        ptr = UnsafeMutableRawPointer(rv)
-    }
-
-    /// This creates an offscreen buffer object using the given `texture` as the
-    /// primary color buffer. It doesn't just initialize the contents of the
-    /// offscreen buffer with the `texture`; they are tightly bound so that
-    /// drawing to the offscreen buffer effectivly updates the contents of the
-    /// given texture. You don't need to destroy the offscreen buffer before
-    /// you can use the `texture` again.
-    /// 
-    /// <note>This only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    ///
-    /// **new_to_texture is deprecated:**
-    /// Use cogl_offscreen_new_with_texture instead.
-    @available(*, deprecated) @inlinable public static func newTo<TextureT: TextureProtocol>(to_texture texture: TextureT) -> Offscreen! {
-        guard let rv = Offscreen(gconstpointer: gconstpointer(cogl_offscreen_new_to_texture(texture.texture_ptr))) else { return nil }
-        return rv
-    }
-
-    /// This creates an offscreen framebuffer object using the given
-    /// `texture` as the primary color buffer. It doesn't just initialize
-    /// the contents of the offscreen buffer with the `texture`; they are
-    /// tightly bound so that drawing to the offscreen buffer effectively
-    /// updates the contents of the given texture. You don't need to
-    /// destroy the offscreen buffer before you can use the `texture` again.
-    /// 
-    /// <note>This api only works with low-level `CoglTexture` types such as
-    /// `CoglTexture2D`, `CoglTexture3D` and `CoglTextureRectangle`, and not
-    /// with meta-texture types such as `CoglTexture2DSliced`.</note>
-    /// 
-    /// The storage for the framebuffer is actually allocated lazily
-    /// so this function will never return `nil` to indicate a runtime
-    /// error. This means it is still possible to configure the framebuffer
-    /// before it is really allocated.
-    /// 
-    /// Simple applications without full error handling can simply rely on
-    /// Cogl to lazily allocate the storage of framebuffers but you should
-    /// be aware that if Cogl encounters an error (such as running out of
-    /// GPU memory) then your application will simply abort with an error
-    /// message. If you need to be able to catch such exceptions at runtime
-    /// then you can explicitly allocate your framebuffer when you have
-    /// finished configuring it by calling `cogl_framebuffer_allocate()` and
-    /// passing in a `CoglError` argument to catch any exceptions.
-    @inlinable public static func newWith<TextureT: TextureProtocol>(texture: TextureT) -> Offscreen! {
-        guard let rv = Offscreen(gconstpointer: gconstpointer(cogl_offscreen_new_with_texture(texture.texture_ptr))) else { return nil }
-        return rv
-    }
-
-}
-
-// MARK: no Offscreen properties
-
-// MARK: no Offscreen signals
-
-// MARK: Offscreen has no signals
-// MARK: Offscreen Class: OffscreenProtocol extension (methods and fields)
-public extension OffscreenProtocol {
-    /// Return the stored, untyped pointer as a typed pointer to the `CoglOffscreen` instance.
-    @inlinable var offscreen_ptr: UnsafeMutablePointer<CoglOffscreen>! { return ptr?.assumingMemoryBound(to: CoglOffscreen.self) }
-
-
-
 }
 
 
@@ -2437,16 +2443,16 @@ public extension OffscreenProtocol {
 /// state such as backface culling, depth and fogging enabledness will be sent
 /// to OpenGL.
 /// 
-/// <note>No special material state is flushed, so if you want Cogl to setup a
+/// &lt;note&gt;No special material state is flushed, so if you want Cogl to setup a
 /// simplified material state it is your responsibility to set a simple source
 /// material before calling `cogl_begin_gl()`. E.g. by calling
-/// `cogl_set_source_color4ub()`.</note>
+/// `cogl_set_source_color4ub()`.&lt;/note&gt;
 /// 
-/// <note>It is your responsibility to restore any OpenGL state that you modify
+/// &lt;note&gt;It is your responsibility to restore any OpenGL state that you modify
 /// to how it was after calling `cogl_begin_gl()` if you don't do this then the
-/// result of further Cogl calls is undefined.</note>
+/// result of further Cogl calls is undefined.&lt;/note&gt;
 /// 
-/// <note>You can not nest begin/end blocks.</note>
+/// &lt;note&gt;You can not nest begin/end blocks.&lt;/note&gt;
 /// 
 /// Again we would like to stress, we do not advise the use of this API and if
 /// possible we would prefer to improve Cogl than have developers require raw
@@ -2694,10 +2700,10 @@ public extension OffscreenProtocol {
 
 
 
-/// Compares two `CoglColor`<!-- -->s and checks if they are the same.
+/// Compares two `CoglColor`&lt;!-- --&gt;s and checks if they are the same.
 /// 
 /// This function can be passed to `g_hash_table_new()` as the `key_equal_func`
-/// parameter, when using `CoglColor`<!-- -->s as keys in a `GHashTable`.
+/// parameter, when using `CoglColor`&lt;!-- --&gt;s as keys in a `GHashTable`.
 @inlinable public func colorEqual(v1: UnsafeMutableRawPointer? = nil, v2: UnsafeMutableRawPointer? = nil) -> CoglBool {
     let rv = cogl_color_equal(v1, v2)
     return rv
@@ -2959,9 +2965,9 @@ public extension OffscreenProtocol {
 /// as a wrapper around `glXGetProcAddress()` or whatever is the
 /// appropriate function for the current backend.
 /// 
-/// <note>This function should not be used to query core opengl API
+/// &lt;note&gt;This function should not be used to query core opengl API
 /// symbols since eglGetProcAddress for example doesn't allow this and
-/// and may return a junk pointer if you do.</note>
+/// and may return a junk pointer if you do.&lt;/note&gt;
 @inlinable public func getProcAddress(name: UnsafePointer<CChar>!) -> CoglFuncPtr! {
     let rv = cogl_get_proc_address(name)
     return rv
@@ -2986,11 +2992,11 @@ public extension OffscreenProtocol {
 /// Returns the current source material as previously set using
 /// `cogl_set_source()`.
 /// 
-/// <note>You should typically consider the returned material immutable
+/// &lt;note&gt;You should typically consider the returned material immutable
 /// and not try to change any of its properties unless you own a
 /// reference to that material. At times you may be able to get a
 /// reference to an internally managed materials and the result of
-/// modifying such materials is undefined.</note>
+/// modifying such materials is undefined.&lt;/note&gt;
 ///
 /// **get_source is deprecated:**
 /// Latest drawing apis all take an explicit
@@ -3192,20 +3198,20 @@ public extension OffscreenProtocol {
 
 
 /// Replaces the current projection matrix with an orthographic projection
-/// matrix. See <xref linkend="cogl-ortho-matrix"/> to see how the matrix is
+/// matrix. See &lt;xref linkend="cogl-ortho-matrix"/&gt; to see how the matrix is
 /// calculated.
 /// 
-/// <figure id="cogl-ortho-matrix">
-///   <title></title>
-///   <graphic fileref="cogl_ortho.png" format="PNG"/>
-/// </figure>
+/// &lt;figure id="cogl-ortho-matrix"&gt;
+///   &lt;title&gt;&lt;/title&gt;
+///   &lt;graphic fileref="cogl_ortho.png" format="PNG"/&gt;
+/// &lt;/figure&gt;
 /// 
-/// <note>This function copies the arguments from OpenGL's `glOrtho()` even
+/// &lt;note&gt;This function copies the arguments from OpenGL's `glOrtho()` even
 /// though they are unnecessarily confusing due to the z near and z far
 /// arguments actually being a "distance" from the origin, where
 /// negative values are behind the viewer, instead of coordinates for
 /// the z clipping planes which would have been consistent with the
-/// left, right bottom and top arguments.</note>
+/// left, right bottom and top arguments.&lt;/note&gt;
 ///
 /// **ortho is deprecated:**
 /// Use cogl_framebuffer_orthographic() instead
@@ -3220,10 +3226,10 @@ public extension OffscreenProtocol {
 /// Replaces the current projection matrix with a perspective matrix
 /// based on the provided values.
 /// 
-/// <note>You should be careful not to have to great a `z_far` / `z_near`
+/// &lt;note&gt;You should be careful not to have to great a `z_far` / `z_near`
 /// ratio since that will reduce the effectiveness of depth testing
 /// since there wont be enough precision to identify the depth of
-/// objects near to each other.</note>
+/// objects near to each other.&lt;/note&gt;
 ///
 /// **perspective is deprecated:**
 /// Use cogl_framebuffer_perspective() instead
@@ -3552,12 +3558,12 @@ public extension OffscreenProtocol {
 /// or in the future it may be an onscreen framebuffer too.
 /// 
 /// You should understand that a framebuffer owns the following state:
-/// <itemizedlist>
-///  <listitem><simpara>The projection matrix</simpara></listitem>
-///  <listitem><simpara>The modelview matrix stack</simpara></listitem>
-///  <listitem><simpara>The viewport</simpara></listitem>
-///  <listitem><simpara>The clip stack</simpara></listitem>
-/// </itemizedlist>
+/// &lt;itemizedlist&gt;
+///  &lt;listitem&gt;&lt;simpara&gt;The projection matrix&lt;/simpara&gt;&lt;/listitem&gt;
+///  &lt;listitem&gt;&lt;simpara&gt;The modelview matrix stack&lt;/simpara&gt;&lt;/listitem&gt;
+///  &lt;listitem&gt;&lt;simpara&gt;The viewport&lt;/simpara&gt;&lt;/listitem&gt;
+///  &lt;listitem&gt;&lt;simpara&gt;The clip stack&lt;/simpara&gt;&lt;/listitem&gt;
+/// &lt;/itemizedlist&gt;
 /// So these items will automatically be saved and restored when you
 /// push and pop between different framebuffers.
 /// 
@@ -3722,7 +3728,7 @@ public extension OffscreenProtocol {
 /// significant performance boost to use this function rather than
 /// calling `cogl_rectangle()` separately for each rectangle.
 /// 
-/// `verts` should point to an array of `float`<!-- -->s with
+/// `verts` should point to an array of `float`&lt;!-- --&gt;s with
 /// `n_rects` * 4 elements. Each group of 4 values corresponds to the
 /// parameters x1, y1, x2, and y2, and have the same
 /// meaning as in `cogl_rectangle()`.
@@ -3739,7 +3745,7 @@ public extension OffscreenProtocol {
 /// significant performance boost to use this function rather than
 /// calling `cogl_rectangle_with_texture_coords()` separately for each rectangle.
 /// 
-/// `verts` should point to an array of `float`<!-- -->s with
+/// `verts` should point to an array of `float`&lt;!-- --&gt;s with
 /// `n_rects` * 8 elements. Each group of 8 values corresponds to the
 /// parameters x1, y1, x2, y2, tx1, ty1, tx2 and ty2 and have the same
 /// meaning as in `cogl_rectangle_with_texture_coords()`.
@@ -3836,13 +3842,13 @@ public extension OffscreenProtocol {
 /// vertices at `z_far` are drawn fully with `fog_color`. Fogging will remain
 /// enabled until you call `cogl_disable_fog()`.
 /// 
-/// <note>The fogging functions only work correctly when primitives use
+/// &lt;note&gt;The fogging functions only work correctly when primitives use
 /// unmultiplied alpha colors. By default Cogl will premultiply textures
 /// and `cogl_set_source_color()` will premultiply colors, so unless you
 /// explicitly load your textures requesting an unmultiplied internal format
 /// and use `cogl_material_set_color()` you can only use fogging with fully
 /// opaque primitives. This might improve in the future when we can depend
-/// on fragment shaders.</note>
+/// on fragment shaders.&lt;/note&gt;
 ///
 /// **set_fog is deprecated:**
 /// Use #CoglSnippet shader api for fog
@@ -3982,12 +3988,12 @@ public extension OffscreenProtocol {
 /// Note: There is no interaction between calls to cogl_set_source_color
 /// and cogl_set_source_texture. If you need to blend a texture with a color then
 /// you can create a simple material like this:
-/// <programlisting>
+/// &lt;programlisting&gt;
 /// material = cogl_material_new ();
 /// cogl_material_set_color4ub (material, 0xff, 0x00, 0x00, 0x80);
 /// cogl_material_set_layer (material, 0, tex_handle);
 /// cogl_set_source (material);
-/// </programlisting>
+/// &lt;/programlisting&gt;
 ///
 /// **set_source_texture is deprecated:**
 /// Latest drawing apis all take an explicit
@@ -4082,8 +4088,8 @@ public extension OffscreenProtocol {
 /// Replaces the current source associated with a shader with a new
 /// one.
 /// 
-/// Please see <link
-/// linkend="cogl-Shaders-and-Programmable-Pipeline.description">above</link>
+/// Please see &lt;link
+/// linkend="cogl-Shaders-and-Programmable-Pipeline.description"&gt;above&lt;/link&gt;
 /// for a description of the recommended format for the shader code.
 ///
 /// **shader_source is deprecated:**
@@ -4200,17 +4206,17 @@ public extension OffscreenProtocol {
 /// to commit the changes to the GPU. Be carefull to minimize the number
 /// of calls to `cogl_vertex_buffer_submit()`, though.
 /// 
-/// <note>If you are interleving attributes it is assumed that each interleaved
+/// &lt;note&gt;If you are interleving attributes it is assumed that each interleaved
 /// attribute starts no farther than +- stride bytes from the other attributes
 /// it is interleved with. I.e. this is ok:
-/// <programlisting>
+/// &lt;programlisting&gt;
 /// |-0-0-0-0-0-0-0-0-0-0|
-/// </programlisting>
+/// &lt;/programlisting&gt;
 /// This is not ok:
-/// <programlisting>
+/// &lt;programlisting&gt;
 /// |- - - - -0-0-0-0-0-0 0 0 0 0|
-/// </programlisting>
-/// (Though you can have multiple groups of interleved attributes)</note>
+/// &lt;/programlisting&gt;
+/// (Though you can have multiple groups of interleved attributes)&lt;/note&gt;
 ///
 /// **vertex_buffer_add is deprecated:**
 /// Use the #CoglPrimitive api instead
@@ -4328,19 +4334,19 @@ public extension OffscreenProtocol {
 /// 0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7 ... etc
 /// 
 /// For example, if you submit vertices for a quad like like that shown
-/// in <xref linkend="quad-indices-order"/> then you can request 6
-/// indices to render two triangles like those shown in <xref
-/// linkend="quad-indices-triangles"/>.
+/// in &lt;xref linkend="quad-indices-order"/&gt; then you can request 6
+/// indices to render two triangles like those shown in &lt;xref
+/// linkend="quad-indices-triangles"/&gt;.
 /// 
-/// <figure id="quad-indices-order">
-///   <title>Example of vertices submitted to form a quad</title>
-///   <graphic fileref="quad-indices-order.png" format="PNG"/>
-/// </figure>
+/// &lt;figure id="quad-indices-order"&gt;
+///   &lt;title&gt;Example of vertices submitted to form a quad&lt;/title&gt;
+///   &lt;graphic fileref="quad-indices-order.png" format="PNG"/&gt;
+/// &lt;/figure&gt;
 /// 
-/// <figure id="quad-indices-triangles">
-///   <title>Illustration of the triangle indices that will be generated</title>
-///   <graphic fileref="quad-indices-triangles.png" format="PNG"/>
-/// </figure>
+/// &lt;figure id="quad-indices-triangles"&gt;
+///   &lt;title&gt;Illustration of the triangle indices that will be generated&lt;/title&gt;
+///   &lt;graphic fileref="quad-indices-triangles.png" format="PNG"/&gt;
+/// &lt;/figure&gt;
 ///
 /// **vertex_buffer_indices_get_for_quads is deprecated:**
 /// Use the #CoglPrimitive api instead
@@ -4461,6 +4467,8 @@ public protocol ColorProtocol {
     /// Typed pointer to the underlying `CoglColor` instance.
     var color_ptr: UnsafeMutablePointer<CoglColor>! { get }
 
+    /// Required Initialiser for types conforming to `ColorProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `ColorRef` type acts as a lightweight Swift reference to an underlying `CoglColor` instance.
@@ -4673,7 +4681,7 @@ open class Color: ColorProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `ColorProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -4979,13 +4987,13 @@ public extension ColorProtocol {
     /// vertices at `z_far` are drawn fully with `fog_color`. Fogging will remain
     /// enabled until you call `cogl_disable_fog()`.
     /// 
-    /// <note>The fogging functions only work correctly when primitives use
+    /// &lt;note&gt;The fogging functions only work correctly when primitives use
     /// unmultiplied alpha colors. By default Cogl will premultiply textures
     /// and `cogl_set_source_color()` will premultiply colors, so unless you
     /// explicitly load your textures requesting an unmultiplied internal format
     /// and use `cogl_material_set_color()` you can only use fogging with fully
     /// opaque primitives. This might improve in the future when we can depend
-    /// on fragment shaders.</note>
+    /// on fragment shaders.&lt;/note&gt;
     ///
     /// **set_fog is deprecated:**
     /// Use #CoglSnippet shader api for fog
@@ -5226,6 +5234,8 @@ public protocol EulerProtocol {
     /// Typed pointer to the underlying `CoglEuler` instance.
     var _ptr: UnsafeMutablePointer<CoglEuler>! { get }
 
+    /// Required Initialiser for types conforming to `EulerProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `EulerRef` type acts as a lightweight Swift reference to an underlying `CoglEuler` instance.
@@ -5429,7 +5439,7 @@ open class Euler: EulerProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `EulerProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -5491,6 +5501,8 @@ public protocol MaterialProtocol {
     /// Typed pointer to the underlying `CoglMaterial` instance.
     var _ptr: UnsafeMutablePointer<CoglMaterial>! { get }
 
+    /// Required Initialiser for types conforming to `MaterialProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `MaterialRef` type acts as a lightweight Swift reference to an underlying `CoglMaterial` instance.
@@ -5694,7 +5706,7 @@ open class Material: MaterialProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -5831,14 +5843,14 @@ public extension MaterialProtocol {
     /// This function lets you access a material's internal list of layers
     /// for iteration.
     /// 
-    /// <note>You should avoid using this API if possible since it was only
+    /// &lt;note&gt;You should avoid using this API if possible since it was only
     /// made public by mistake and will be deprecated when we have
-    /// suitable alternative.</note>
+    /// suitable alternative.&lt;/note&gt;
     /// 
-    /// <note>It's important to understand that the list returned may not
+    /// &lt;note&gt;It's important to understand that the list returned may not
     /// remain valid if you modify the material or any of the layers in any
     /// way and so you would have to re-get the list in that
-    /// situation.</note>
+    /// situation.&lt;/note&gt;
     @inlinable func getLayers() -> GLib.ListRef! {
         let rv = GLib.ListRef(cogl_material_get_layers(_ptr))
         return rv
@@ -5945,7 +5957,7 @@ public extension MaterialProtocol {
     
     }
 
-    /// If not already familiar; please refer <link linkend="cogl-Blend-Strings">here</link>
+    /// If not already familiar; please refer &lt;link linkend="cogl-Blend-Strings"&gt;here&lt;/link&gt;
     /// for an overview of what blend strings are, and their syntax.
     /// 
     /// Blending occurs after the alpha test function, and combines fragments with
@@ -5958,49 +5970,49 @@ public extension MaterialProtocol {
     ///   &lt;channel-mask&gt;=ADD(SRC_COLOR*(&lt;factor&gt;), DST_COLOR*(&lt;factor&gt;))
     /// ```
     /// 
-    /// <warning>The brackets around blend factors are currently not
-    /// optional!</warning>
+    /// &lt;warning&gt;The brackets around blend factors are currently not
+    /// optional!&lt;/warning&gt;
     /// 
     /// This is the list of source-names usable as blend factors:
-    /// <itemizedlist>
-    ///   <listitem><para>SRC_COLOR: The color of the in comming fragment</para></listitem>
-    ///   <listitem><para>DST_COLOR: The color of the framebuffer</para></listitem>
-    ///   <listitem><para>CONSTANT: The constant set via `cogl_material_set_blend_constant()`</para></listitem>
-    /// </itemizedlist>
+    /// &lt;itemizedlist&gt;
+    ///   &lt;listitem&gt;&lt;para&gt;SRC_COLOR: The color of the in comming fragment&lt;/para&gt;&lt;/listitem&gt;
+    ///   &lt;listitem&gt;&lt;para&gt;DST_COLOR: The color of the framebuffer&lt;/para&gt;&lt;/listitem&gt;
+    ///   &lt;listitem&gt;&lt;para&gt;CONSTANT: The constant set via `cogl_material_set_blend_constant()`&lt;/para&gt;&lt;/listitem&gt;
+    /// &lt;/itemizedlist&gt;
     /// 
     /// The source names can be used according to the
-    /// <link linkend="cogl-Blend-String-syntax">color-source and factor syntax</link>,
+    /// &lt;link linkend="cogl-Blend-String-syntax"&gt;color-source and factor syntax&lt;/link&gt;,
     /// so for example "(1-SRC_COLOR[A])" would be a valid factor, as would
     /// "(CONSTANT[RGB])"
     /// 
     /// These can also be used as factors:
-    /// <itemizedlist>
-    ///   <listitem>0: (0, 0, 0, 0)</listitem>
-    ///   <listitem>1: (1, 1, 1, 1)</listitem>
-    ///   <listitem>SRC_ALPHA_SATURATE_FACTOR: (f,f,f,1) where f = `MIN(SRC_COLOR[A],1-DST_COLOR[A])`</listitem>
-    /// </itemizedlist>
+    /// &lt;itemizedlist&gt;
+    ///   &lt;listitem&gt;0: (0, 0, 0, 0)&lt;/listitem&gt;
+    ///   &lt;listitem&gt;1: (1, 1, 1, 1)&lt;/listitem&gt;
+    ///   &lt;listitem&gt;SRC_ALPHA_SATURATE_FACTOR: (f,f,f,1) where f = `MIN(SRC_COLOR[A],1-DST_COLOR[A])`&lt;/listitem&gt;
+    /// &lt;/itemizedlist&gt;
     /// 
-    /// <note>Remember; all color components are normalized to the range [0, 1]
-    /// before computing the result of blending.</note>
+    /// &lt;note&gt;Remember; all color components are normalized to the range [0, 1]
+    /// before computing the result of blending.&lt;/note&gt;
     /// 
-    /// <example id="cogl-Blend-Strings-blend-unpremul">
-    ///   <title>Blend Strings/1</title>
-    ///   <para>Blend a non-premultiplied source over a destination with
-    ///   premultiplied alpha:</para>
-    ///   <programlisting>
+    /// &lt;example id="cogl-Blend-Strings-blend-unpremul"&gt;
+    ///   &lt;title&gt;Blend Strings/1&lt;/title&gt;
+    ///   &lt;para&gt;Blend a non-premultiplied source over a destination with
+    ///   premultiplied alpha:&lt;/para&gt;
+    ///   &lt;programlisting&gt;
     /// "RGB = `ADD(SRC_COLOR*(SRC_COLOR[A])`, DST_COLOR*(1-SRC_COLOR[A]))"
     /// "A   = `ADD(SRC_COLOR, DST_COLOR*(1-SRC_COLOR[A])`)"
-    ///   </programlisting>
-    /// </example>
+    ///   &lt;/programlisting&gt;
+    /// &lt;/example&gt;
     /// 
-    /// <example id="cogl-Blend-Strings-blend-premul">
-    ///   <title>Blend Strings/2</title>
-    ///   <para>Blend a premultiplied source over a destination with
-    ///   premultiplied alpha</para>
-    ///   <programlisting>
+    /// &lt;example id="cogl-Blend-Strings-blend-premul"&gt;
+    ///   &lt;title&gt;Blend Strings/2&lt;/title&gt;
+    ///   &lt;para&gt;Blend a premultiplied source over a destination with
+    ///   premultiplied alpha&lt;/para&gt;
+    ///   &lt;programlisting&gt;
     /// "RGBA = `ADD(SRC_COLOR, DST_COLOR*(1-SRC_COLOR[A])`)"
-    ///   </programlisting>
-    /// </example>
+    ///   &lt;/programlisting&gt;
+    /// &lt;/example&gt;
     /// 
     /// The default blend string is:
     /// ```
@@ -6101,8 +6113,8 @@ public extension MaterialProtocol {
     /// The index values of multiple layers do not have to be consecutive; it is
     /// only their relative order that is important.
     /// 
-    /// <note>In the future, we may define other types of material layers, such
-    /// as purely GLSL based layers.</note>
+    /// &lt;note&gt;In the future, we may define other types of material layers, such
+    /// as purely GLSL based layers.&lt;/note&gt;
     ///
     /// **set_layer is deprecated:**
     /// Use cogl_pipeline_set_layer() instead
@@ -6112,80 +6124,80 @@ public extension MaterialProtocol {
     }
 
     /// If not already familiar; you can refer
-    /// <link linkend="cogl-Blend-Strings">here</link> for an overview of what blend
+    /// &lt;link linkend="cogl-Blend-Strings"&gt;here&lt;/link&gt; for an overview of what blend
     /// strings are and there syntax.
     /// 
     /// These are all the functions available for texture combining:
-    /// <itemizedlist>
-    ///   `<listitem>REPLACE(arg0)` = arg0</listitem>
-    ///   `<listitem>MODULATE(arg0, arg1)` = arg0 x arg1</listitem>
-    ///   `<listitem>ADD(arg0, arg1)` = arg0 + arg1</listitem>
-    ///   `<listitem>ADD_SIGNED(arg0, arg1)` = arg0 + arg1 - 0.5</listitem>
-    ///   `<listitem>INTERPOLATE(arg0, arg1, arg2)` = arg0 x arg2 + arg1 x (1 - arg2)</listitem>
-    ///   `<listitem>SUBTRACT(arg0, arg1)` = arg0 - arg1</listitem>
-    ///   <listitem>
-    ///     <programlisting>
+    /// &lt;itemizedlist&gt;
+    ///   &lt;listitem&gt;`REPLACE(arg0)` = arg0&lt;/listitem&gt;
+    ///   &lt;listitem&gt;`MODULATE(arg0, arg1)` = arg0 x arg1&lt;/listitem&gt;
+    ///   &lt;listitem&gt;`ADD(arg0, arg1)` = arg0 + arg1&lt;/listitem&gt;
+    ///   &lt;listitem&gt;`ADD_SIGNED(arg0, arg1)` = arg0 + arg1 - 0.5&lt;/listitem&gt;
+    ///   &lt;listitem&gt;`INTERPOLATE(arg0, arg1, arg2)` = arg0 x arg2 + arg1 x (1 - arg2)&lt;/listitem&gt;
+    ///   &lt;listitem&gt;`SUBTRACT(arg0, arg1)` = arg0 - arg1&lt;/listitem&gt;
+    ///   &lt;listitem&gt;
+    ///     &lt;programlisting&gt;
     ///  `DOT3_RGB(arg0, arg1)` = 4 x ((arg0[R] - 0.5)) * (arg1[R] - 0.5) +
     ///                              (arg0[G] - 0.5)) * (arg1[G] - 0.5) +
     ///                              (arg0[B] - 0.5)) * (arg1[B] - 0.5))
-    ///     </programlisting>
-    ///   </listitem>
-    ///   <listitem>
-    ///     <programlisting>
+    ///     &lt;/programlisting&gt;
+    ///   &lt;/listitem&gt;
+    ///   &lt;listitem&gt;
+    ///     &lt;programlisting&gt;
     ///  `DOT3_RGBA(arg0, arg1)` = 4 x ((arg0[R] - 0.5)) * (arg1[R] - 0.5) +
     ///                               (arg0[G] - 0.5)) * (arg1[G] - 0.5) +
     ///                               (arg0[B] - 0.5)) * (arg1[B] - 0.5))
-    ///     </programlisting>
-    ///   </listitem>
-    /// </itemizedlist>
+    ///     &lt;/programlisting&gt;
+    ///   &lt;/listitem&gt;
+    /// &lt;/itemizedlist&gt;
     /// 
     /// Refer to the
-    /// <link linkend="cogl-Blend-String-syntax">color-source syntax</link> for
+    /// &lt;link linkend="cogl-Blend-String-syntax"&gt;color-source syntax&lt;/link&gt; for
     /// describing the arguments. The valid source names for texture combining
     /// are:
-    /// <variablelist>
-    ///   <varlistentry>
-    ///     <term>TEXTURE</term>
-    ///     <listitem>Use the color from the current texture layer</listitem>
-    ///   </varlistentry>
-    ///   <varlistentry>
-    ///     <term>TEXTURE_0, TEXTURE_1, etc</term>
-    ///     <listitem>Use the color from the specified texture layer</listitem>
-    ///   </varlistentry>
-    ///   <varlistentry>
-    ///     <term>CONSTANT</term>
-    ///     <listitem>Use the color from the constant given with
-    ///     `cogl_material_set_layer_constant()`</listitem>
-    ///   </varlistentry>
-    ///   <varlistentry>
-    ///     <term>PRIMARY</term>
-    ///     <listitem>Use the color of the material as set with
-    ///     `cogl_material_set_color()`</listitem>
-    ///   </varlistentry>
-    ///   <varlistentry>
-    ///     <term>PREVIOUS</term>
-    ///     <listitem>Either use the texture color from the previous layer, or
+    /// &lt;variablelist&gt;
+    ///   &lt;varlistentry&gt;
+    ///     &lt;term&gt;TEXTURE&lt;/term&gt;
+    ///     &lt;listitem&gt;Use the color from the current texture layer&lt;/listitem&gt;
+    ///   &lt;/varlistentry&gt;
+    ///   &lt;varlistentry&gt;
+    ///     &lt;term&gt;TEXTURE_0, TEXTURE_1, etc&lt;/term&gt;
+    ///     &lt;listitem&gt;Use the color from the specified texture layer&lt;/listitem&gt;
+    ///   &lt;/varlistentry&gt;
+    ///   &lt;varlistentry&gt;
+    ///     &lt;term&gt;CONSTANT&lt;/term&gt;
+    ///     &lt;listitem&gt;Use the color from the constant given with
+    ///     `cogl_material_set_layer_constant()`&lt;/listitem&gt;
+    ///   &lt;/varlistentry&gt;
+    ///   &lt;varlistentry&gt;
+    ///     &lt;term&gt;PRIMARY&lt;/term&gt;
+    ///     &lt;listitem&gt;Use the color of the material as set with
+    ///     `cogl_material_set_color()`&lt;/listitem&gt;
+    ///   &lt;/varlistentry&gt;
+    ///   &lt;varlistentry&gt;
+    ///     &lt;term&gt;PREVIOUS&lt;/term&gt;
+    ///     &lt;listitem&gt;Either use the texture color from the previous layer, or
     ///     if this is layer 0, use the color of the material as set with
-    ///     `cogl_material_set_color()`</listitem>
-    ///   </varlistentry>
-    /// </variablelist>
+    ///     `cogl_material_set_color()`&lt;/listitem&gt;
+    ///   &lt;/varlistentry&gt;
+    /// &lt;/variablelist&gt;
     /// 
-    /// <refsect2 id="cogl-Layer-Combine-Examples">
-    ///   <title>Layer Combine Examples</title>
-    ///   <para>This is effectively what the default blending is:</para>
-    ///   <informalexample><programlisting>
+    /// &lt;refsect2 id="cogl-Layer-Combine-Examples"&gt;
+    ///   &lt;title&gt;Layer Combine Examples&lt;/title&gt;
+    ///   &lt;para&gt;This is effectively what the default blending is:&lt;/para&gt;
+    ///   &lt;informalexample&gt;&lt;programlisting&gt;
     ///   RGBA = MODULATE (PREVIOUS, TEXTURE)
-    ///   </programlisting></informalexample>
-    ///   <para>This could be used to cross-fade between two images, using
+    ///   &lt;/programlisting&gt;&lt;/informalexample&gt;
+    ///   &lt;para&gt;This could be used to cross-fade between two images, using
     ///   the alpha component of a constant as the interpolator. The constant
-    ///   color is given by calling cogl_material_set_layer_constant.</para>
-    ///   <informalexample><programlisting>
+    ///   color is given by calling cogl_material_set_layer_constant.&lt;/para&gt;
+    ///   &lt;informalexample&gt;&lt;programlisting&gt;
     ///   RGBA = INTERPOLATE (PREVIOUS, TEXTURE, CONSTANT[A])
-    ///   </programlisting></informalexample>
-    /// </refsect2>
+    ///   &lt;/programlisting&gt;&lt;/informalexample&gt;
+    /// &lt;/refsect2&gt;
     /// 
-    /// <note>You can't give a multiplication factor for arguments as you can
-    /// with blending.</note>
+    /// &lt;note&gt;You can't give a multiplication factor for arguments as you can
+    /// with blending.&lt;/note&gt;
     ///
     /// **set_layer_combine is deprecated:**
     /// Use cogl_pipeline_set_layer_combine() instead
@@ -6379,26 +6391,26 @@ public extension MaterialProtocol {
     /// This function lets you access a material's internal list of layers
     /// for iteration.
     /// 
-    /// <note>You should avoid using this API if possible since it was only
+    /// &lt;note&gt;You should avoid using this API if possible since it was only
     /// made public by mistake and will be deprecated when we have
-    /// suitable alternative.</note>
+    /// suitable alternative.&lt;/note&gt;
     /// 
-    /// <note>It's important to understand that the list returned may not
+    /// &lt;note&gt;It's important to understand that the list returned may not
     /// remain valid if you modify the material or any of the layers in any
     /// way and so you would have to re-get the list in that
-    /// situation.</note>
+    /// situation.&lt;/note&gt;
     @inlinable var layers: GLib.ListRef! {
         /// This function lets you access a material's internal list of layers
         /// for iteration.
         /// 
-        /// <note>You should avoid using this API if possible since it was only
+        /// &lt;note&gt;You should avoid using this API if possible since it was only
         /// made public by mistake and will be deprecated when we have
-        /// suitable alternative.</note>
+        /// suitable alternative.&lt;/note&gt;
         /// 
-        /// <note>It's important to understand that the list returned may not
+        /// &lt;note&gt;It's important to understand that the list returned may not
         /// remain valid if you modify the material or any of the layers in any
         /// way and so you would have to re-get the list in that
-        /// situation.</note>
+        /// situation.&lt;/note&gt;
         get {
             let rv = GLib.ListRef(cogl_material_get_layers(_ptr))
             return rv
@@ -6558,6 +6570,8 @@ public protocol MaterialLayerProtocol {
     /// Typed pointer to the underlying `CoglMaterialLayer` instance.
     var _ptr: UnsafeMutablePointer<CoglMaterialLayer>! { get }
 
+    /// Required Initialiser for types conforming to `MaterialLayerProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `MaterialLayerRef` type acts as a lightweight Swift reference to an underlying `CoglMaterialLayer` instance.
@@ -6761,7 +6775,7 @@ open class MaterialLayer: MaterialLayerProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MaterialLayerProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -6822,11 +6836,11 @@ public extension MaterialLayerProtocol {
 
     /// Extracts a texture handle for a specific layer.
     /// 
-    /// <note>In the future Cogl may support purely GLSL based layers; for those
+    /// &lt;note&gt;In the future Cogl may support purely GLSL based layers; for those
     /// layers this function which will likely return `COGL_INVALID_HANDLE` if you
     /// try to get the texture handle from them. Considering this scenario, you
     /// should call `cogl_material_layer_get_type()` first in order check it is of
-    /// type `COGL_MATERIAL_LAYER_TYPE_TEXTURE` before calling this function.</note>
+    /// type `COGL_MATERIAL_LAYER_TYPE_TEXTURE` before calling this function.&lt;/note&gt;
     ///
     /// **get_texture is deprecated:**
     /// No replacement
@@ -6908,22 +6922,22 @@ public extension MaterialLayerProtocol {
 
     /// Extracts a texture handle for a specific layer.
     /// 
-    /// <note>In the future Cogl may support purely GLSL based layers; for those
+    /// &lt;note&gt;In the future Cogl may support purely GLSL based layers; for those
     /// layers this function which will likely return `COGL_INVALID_HANDLE` if you
     /// try to get the texture handle from them. Considering this scenario, you
     /// should call `cogl_material_layer_get_type()` first in order check it is of
-    /// type `COGL_MATERIAL_LAYER_TYPE_TEXTURE` before calling this function.</note>
+    /// type `COGL_MATERIAL_LAYER_TYPE_TEXTURE` before calling this function.&lt;/note&gt;
     ///
     /// **get_texture is deprecated:**
     /// No replacement
     @inlinable var texture: CoglHandle! {
         /// Extracts a texture handle for a specific layer.
         /// 
-        /// <note>In the future Cogl may support purely GLSL based layers; for those
+        /// &lt;note&gt;In the future Cogl may support purely GLSL based layers; for those
         /// layers this function which will likely return `COGL_INVALID_HANDLE` if you
         /// try to get the texture handle from them. Considering this scenario, you
         /// should call `cogl_material_layer_get_type()` first in order check it is of
-        /// type `COGL_MATERIAL_LAYER_TYPE_TEXTURE` before calling this function.</note>
+        /// type `COGL_MATERIAL_LAYER_TYPE_TEXTURE` before calling this function.&lt;/note&gt;
         ///
         /// **get_texture is deprecated:**
         /// No replacement
@@ -7036,11 +7050,11 @@ public extension MaterialLayerProtocol {
 /// 
 /// Where w is normally 1
 /// 
-/// <note>You must consider the members of the CoglMatrix structure read only,
+/// &lt;note&gt;You must consider the members of the CoglMatrix structure read only,
 /// and all matrix modifications must be done via the cogl_matrix API. This
 /// allows Cogl to annotate the matrices internally. Violation of this will give
 /// undefined results. If you need to initialize a matrix with a constant other
-/// than the identity matrix you can use `cogl_matrix_init_from_array()`.</note>
+/// than the identity matrix you can use `cogl_matrix_init_from_array()`.&lt;/note&gt;
 public protocol MatrixProtocol {
         /// Untyped pointer to the underlying `CoglMatrix` instance.
     var ptr: UnsafeMutableRawPointer! { get }
@@ -7048,6 +7062,8 @@ public protocol MatrixProtocol {
     /// Typed pointer to the underlying `CoglMatrix` instance.
     var matrix_ptr: UnsafeMutablePointer<CoglMatrix>! { get }
 
+    /// Required Initialiser for types conforming to `MatrixProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `MatrixRef` type acts as a lightweight Swift reference to an underlying `CoglMatrix` instance.
@@ -7073,11 +7089,11 @@ public protocol MatrixProtocol {
 /// 
 /// Where w is normally 1
 /// 
-/// <note>You must consider the members of the CoglMatrix structure read only,
+/// &lt;note&gt;You must consider the members of the CoglMatrix structure read only,
 /// and all matrix modifications must be done via the cogl_matrix API. This
 /// allows Cogl to annotate the matrices internally. Violation of this will give
 /// undefined results. If you need to initialize a matrix with a constant other
-/// than the identity matrix you can use `cogl_matrix_init_from_array()`.</note>
+/// than the identity matrix you can use `cogl_matrix_init_from_array()`.&lt;/note&gt;
 public struct MatrixRef: MatrixProtocol {
         /// Untyped pointer to the underlying `CoglMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
@@ -7179,11 +7195,11 @@ public extension MatrixRef {
 /// 
 /// Where w is normally 1
 /// 
-/// <note>You must consider the members of the CoglMatrix structure read only,
+/// &lt;note&gt;You must consider the members of the CoglMatrix structure read only,
 /// and all matrix modifications must be done via the cogl_matrix API. This
 /// allows Cogl to annotate the matrices internally. Violation of this will give
 /// undefined results. If you need to initialize a matrix with a constant other
-/// than the identity matrix you can use `cogl_matrix_init_from_array()`.</note>
+/// than the identity matrix you can use `cogl_matrix_init_from_array()`.&lt;/note&gt;
 open class Matrix: MatrixProtocol {
         /// Untyped pointer to the underlying `CoglMatrix` instance.
     /// For type-safe access, use the generated, typed pointer `matrix_ptr` property instead.
@@ -7297,7 +7313,7 @@ open class Matrix: MatrixProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `MatrixProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -7367,11 +7383,11 @@ public extension MatrixProtocol {
     /// Gets the inverse transform of a given matrix and uses it to initialize
     /// a new `CoglMatrix`.
     /// 
-    /// <note>Although the first parameter is annotated as const to indicate
+    /// &lt;note&gt;Although the first parameter is annotated as const to indicate
     /// that the transform it represents isn't modified this function may
     /// technically save a copy of the inverse transform within the given
     /// `CoglMatrix` so that subsequent requests for the inverse transform may
-    /// avoid costly inversion calculations.</note>
+    /// avoid costly inversion calculations.&lt;/note&gt;
     @inlinable func get<MatrixT: MatrixProtocol>(inverse: MatrixT) -> CoglBool {
         let rv = cogl_matrix_get_inverse(matrix_ptr, inverse.matrix_ptr)
         return rv
@@ -7429,14 +7445,14 @@ public extension MatrixProtocol {
     /// position (partly because the man page is somewhat missleading) but
     /// that is not necessary for this function.
     /// 
-    /// <note>You should never look directly along the world-up
-    /// vector.</note>
+    /// &lt;note&gt;You should never look directly along the world-up
+    /// vector.&lt;/note&gt;
     /// 
-    /// <note>It is assumed you are using a typical projection matrix where
-    /// your origin maps to the center of your viewport.</note>
+    /// &lt;note&gt;It is assumed you are using a typical projection matrix where
+    /// your origin maps to the center of your viewport.&lt;/note&gt;
     /// 
-    /// <note>Almost always when you use this function it should be the first
-    /// transform applied to a new modelview transform</note>
+    /// &lt;note&gt;Almost always when you use this function it should be the first
+    /// transform applied to a new modelview transform&lt;/note&gt;
     @inlinable func lookAt(eyePositionX: CFloat, eyePositionY: CFloat, eyePositionZ: CFloat, objectX: CFloat, objectY: CFloat, objectZ: CFloat, worldUpX: CFloat, worldUpY: CFloat, worldUpZ: CFloat) {
         cogl_matrix_look_at(matrix_ptr, eyePositionX, eyePositionY, eyePositionZ, objectX, objectY, objectZ, worldUpX, worldUpY, worldUpZ)
     
@@ -7445,8 +7461,8 @@ public extension MatrixProtocol {
     /// Multiplies the two supplied matrices together and stores
     /// the resulting matrix inside `result`.
     /// 
-    /// <note>It is possible to multiply the `a` matrix in-place, so
-    /// `result` can be equal to `a` but can't be equal to `b`.</note>
+    /// &lt;note&gt;It is possible to multiply the `a` matrix in-place, so
+    /// `result` can be equal to `a` but can't be equal to `b`.&lt;/note&gt;
     @inlinable func multiply<MatrixT: MatrixProtocol>(a: MatrixT, b: MatrixT) {
         cogl_matrix_multiply(matrix_ptr, a.matrix_ptr, b.matrix_ptr)
     
@@ -7463,10 +7479,10 @@ public extension MatrixProtocol {
 
     /// Multiplies `matrix` by the described perspective matrix
     /// 
-    /// <note>You should be careful not to have to great a `z_far` / `z_near`
+    /// &lt;note&gt;You should be careful not to have to great a `z_far` / `z_near`
     /// ratio since that will reduce the effectiveness of depth testing
     /// since there wont be enough precision to identify the depth of
-    /// objects near to each other.</note>
+    /// objects near to each other.&lt;/note&gt;
     @inlinable func perspective(fovY: CFloat, aspect: CFloat, zNear: CFloat, zFar: CFloat) {
         cogl_matrix_perspective(matrix_ptr, fovY, aspect, zNear, zFar)
     
@@ -7770,6 +7786,8 @@ public protocol QuaternionProtocol {
     /// Typed pointer to the underlying `CoglQuaternion` instance.
     var _ptr: UnsafeMutablePointer<CoglQuaternion>! { get }
 
+    /// Required Initialiser for types conforming to `QuaternionProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `QuaternionRef` type acts as a lightweight Swift reference to an underlying `CoglQuaternion` instance.
@@ -7973,7 +7991,7 @@ open class Quaternion: QuaternionProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `QuaternionProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -8035,6 +8053,8 @@ public protocol TextureVertexProtocol {
     /// Typed pointer to the underlying `CoglTextureVertex` instance.
     var _ptr: UnsafeMutablePointer<CoglTextureVertex>! { get }
 
+    /// Required Initialiser for types conforming to `TextureVertexProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `TextureVertexRef` type acts as a lightweight Swift reference to an underlying `CoglTextureVertex` instance.
@@ -8238,7 +8258,7 @@ open class TextureVertex: TextureVertexProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `TextureVertexProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -8399,6 +8419,8 @@ public protocol _ColorSizeCheckProtocol {
     /// Typed pointer to the underlying `_CoglColorSizeCheck` instance.
     var _ptr: UnsafeMutablePointer<_CoglColorSizeCheck>! { get }
 
+    /// Required Initialiser for types conforming to `_ColorSizeCheckProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `_ColorSizeCheckRef` type acts as a lightweight Swift reference to an underlying `_CoglColorSizeCheck` instance.
@@ -8602,7 +8624,7 @@ open class _ColorSizeCheck: _ColorSizeCheckProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_ColorSizeCheckProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -8673,6 +8695,8 @@ public protocol _MatrixSizeCheckProtocol {
     /// Typed pointer to the underlying `_CoglMatrixSizeCheck` instance.
     var _ptr: UnsafeMutablePointer<_CoglMatrixSizeCheck>! { get }
 
+    /// Required Initialiser for types conforming to `_MatrixSizeCheckProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `_MatrixSizeCheckRef` type acts as a lightweight Swift reference to an underlying `_CoglMatrixSizeCheck` instance.
@@ -8876,7 +8900,7 @@ open class _MatrixSizeCheck: _MatrixSizeCheckProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_MatrixSizeCheckProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
@@ -8947,6 +8971,8 @@ public protocol _TextureVertexSizeCheckProtocol {
     /// Typed pointer to the underlying `_CoglTextureVertexSizeCheck` instance.
     var _ptr: UnsafeMutablePointer<_CoglTextureVertexSizeCheck>! { get }
 
+    /// Required Initialiser for types conforming to `_TextureVertexSizeCheckProtocol`
+    init(raw: UnsafeMutableRawPointer)
 }
 
 /// The `_TextureVertexSizeCheckRef` type acts as a lightweight Swift reference to an underlying `_CoglTextureVertexSizeCheck` instance.
@@ -9150,7 +9176,7 @@ open class _TextureVertexSizeCheck: _TextureVertexSizeCheckProtocol {
     /// Unsafe untyped initialiser.
     /// **Do not use unless you know the underlying data type the pointer points to conforms to `_TextureVertexSizeCheckProtocol`.**
     /// - Parameter p: mutable raw pointer to the underlying object
-    @inlinable public init(raw p: UnsafeMutableRawPointer) {
+    @inlinable public required init(raw p: UnsafeMutableRawPointer) {
         ptr = p
     }
 
