@@ -61,7 +61,7 @@ on macOS, or on Linux you should get something like:
 
 ### GLib 2.56 and Cogl-1.22 or higher
 
-These Swift wrappers have been tested with cogl-1.22 as well as glib-2.56, 2.58, 2.60, 2.62, 2.64, and 2.66.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
+These Swift wrappers have been tested with cogl-1.22 as well as glib-2.56, 2.58, 2.60, 2.62, 2.64, 2.66, and 2.68.  They should work with higher versions, but YMMV.  Also make sure you have `gobject-introspection` and its `.gir` files installed.
 
 #### Linux
 
