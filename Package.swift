@@ -6,8 +6,8 @@ let package = Package(
     name: "Cogl",
     products: [ .library(name: "Cogl", targets: ["Cogl"]) ],
     dependencies: [
-        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("main")),
-        .package(name: "GdkPixbuf", url: "https://github.com/rhx/SwiftGdkPixbuf.git", .branch("main")),
+        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("development")),
+        .package(name: "GdkPixbuf", url: "https://github.com/rhx/SwiftGdkPixbuf.git", .branch("development")),
     ],
     targets: [
 	.systemLibrary(name: "CCogl", pkgConfig: "cogl-1.0",
