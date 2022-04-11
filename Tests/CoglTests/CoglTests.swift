@@ -8,11 +8,4 @@ class CoglTests: XCTestCase {
         let z = mul(x, y)
         XCTAssertEqual(z.doubleValue, 1)
     }
-
-
-    static var allTests : [(String, (CoglTests) -> () throws -> Void)] {
-        return [
-            ("testFixedPoint", testFixedPoint),
-        ]
-    }
 }
