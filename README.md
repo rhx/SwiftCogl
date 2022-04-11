@@ -88,8 +88,8 @@ Normally, you don't build this package directly, but you embed it into your own 
 
 	git clone https://github.com/rhx/SwiftCogl.git
 	cd SwiftCogl
-    swift build -Xswiftc -suppress-warnings
-    swift test  -Xswiftc -suppress-warnings
+    swift build
+    swift test
 
 ### Xcode
 
@@ -140,8 +140,6 @@ this probably means that your Swift toolchain is too old, particularly on Linux 
 
 ### Known Issues
 
- * When building, a lot of warnings appear.  This is largely an issue with automatic `RawRepresentable` conformance in the Swift Standard library.  As a workaround, you can turn this off by passing the `-Xswiftc -suppress-warnings` parameter when building.
- 
  * The current build system does not support directory paths with spaces (e.g. the `My Drive` directory used by Google Drive File Stream).
  * BUILD_DIR is not supported in the current build system.
  
