@@ -26,7 +26,7 @@ let package = Package(
                 "CCogl",
                 "CCoglPath",
                 .product(name: "gir2swift", package: "gir2swift"),
-                .product(name: "GdkPixbuf", package: "SwiftGdkPixbuf"),
+                .product(name: "GdkPixBuf", package: "SwiftGdkPixbuf"),
             ],
             swiftSettings: [
                 .unsafeFlags(["-suppress-warnings"], .when(configuration: .release)),
