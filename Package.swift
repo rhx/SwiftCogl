@@ -6,8 +6,8 @@ let package = Package(
     name: "Cogl",
     products: [ .library(name: "Cogl", targets: ["Cogl"]) ],
     dependencies: [
-        .package(url: "https://github.com/rhx/gir2swift.git",      branch: "development"),
-        .package(url: "https://github.com/rhx/SwiftGdkPixbuf.git", branch: "development"),
+        .package(url: "https://github.com/rhx/gir2swift.git",      branch: "main"),
+        .package(url: "https://github.com/rhx/SwiftGdkPixbuf.git", branch: "main"),
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
     targets: [
