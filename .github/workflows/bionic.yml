@@ -41,13 +41,13 @@ jobs:
       - name: Build SwiftCogl
         run: |
           cd SwiftCogl
-          swift build -Xswiftc -suppress-warnings
+          swift build
           cd ..
 
       - name: Test SwiftCogl
         run: |
           cd SwiftCogl
-          swift test -Xswiftc -suppress-warnings
+          swift test
           cd ..
 
       - name: Remove unneeded files and archive artefacts
@@ -56,11 +56,3 @@ jobs:
           swift package clean
           rm -rf .build/repositories
           cd ..
-
-      - name: 'Upload Artefact'
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-artefact-18.04-5.3
-          path: |
-            SwiftCogl/Sources/
-          retention-days: 1
