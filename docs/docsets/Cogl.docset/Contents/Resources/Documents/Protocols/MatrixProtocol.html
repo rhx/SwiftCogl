@@ -26,22 +26,22 @@
          (94% documented)
       </p>
     
-      <p class="header-col--secondary">
+      <div class="header-col--secondary">
         <form role="search" action="../search.json">
           <input type="text" placeholder="Search documentation" data-typeahead>
         </form>
-      </p>
+      </div>
     
         <p class="header-col header-col--secondary">
           <a class="header-link" href="https://github.com/rhx/SwiftCogl">
-            <img class="header-icon" src="../img/gh.png"/>
+            <img class="header-icon" src="../img/gh.png" alt="GitHub"/>
             View on GitHub
           </a>
         </p>
     
         <p class="header-col header-col--secondary">
           <a class="header-link" href="dash-feed://http%3A%2F%2Frhx.github.io%2FSwiftCogl%2Fdocsets%2FCogl.xml">
-            <img class="header-icon" src="../img/dash.png"/>
+            <img class="header-icon" src="../img/dash.png" alt="Dash"/>
             Install in Dash
           </a>
         </p>
@@ -49,7 +49,7 @@
 
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Cogl Reference</a>
-      <img class="carat" src="../img/carat.png" />
+      <img class="carat" src="../img/carat.png" alt=""/>
       MatrixProtocol Protocol Reference
     </p>
 
@@ -903,12 +903,7 @@
 
                 </div>
               </div>
-            <p>The <code>MatrixProtocol</code> protocol exposes the methods and properties of an underlying <code>CoglMatrix</code> instance.
-The default implementation of these can be found in the protocol extension below.
-For a concrete class that implements these methods and properties, see <code><a href="../Classes/Matrix.html">Matrix</a></code>.
-Alternatively, use <code><a href="../Structs/MatrixRef.html">MatrixRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
-
-<p>A CoglMatrix holds a 4x4 transform matrix. This is a single precision,
+            <p>A CoglMatrix holds a 4x4 transform matrix. This is a single precision,
 column-major matrix which means it is compatible with what OpenGL expects.</p>
 
 <p>A CoglMatrix can represent transforms such as, rotations, scaling,
@@ -931,8 +926,13 @@ allows Cogl to annotate the matrices internally. Violation of this will give
 undefined results. If you need to initialize a matrix with a constant other
 than the identity matrix you can use <code>cogl_matrix_init_from_array()</code>.&lt;/note&gt;</p>
 
+<p>The <code>MatrixProtocol</code> protocol exposes the methods and properties of an underlying <code>CoglMatrix</code> instance.
+The default implementation of these can be found in the protocol extension below.
+For a concrete class that implements these methods and properties, see <code><a href="../Classes/Matrix.html">Matrix</a></code>.
+Alternatively, use <code><a href="../Structs/MatrixRef.html">MatrixRef</a></code> as a lighweight, <code>unowned</code> reference if you already have an instance you just want to use.</p>
+
               <div class="slightly-smaller">
-                <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7058-L7067">Show on GitHub</a>
+                <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1641-L1650">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -966,7 +966,7 @@ than the identity matrix you can use <code>cogl_matrix_init_from_array()</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7060">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1643">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1004,7 +1004,7 @@ than the identity matrix you can use <code>cogl_matrix_init_from_array()</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7063">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1646">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1034,7 +1034,7 @@ than the identity matrix you can use <code>cogl_matrix_init_from_array()</code>.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7066">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1649">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1047,7 +1047,7 @@ than the identity matrix you can use <code>cogl_matrix_init_from_array()</code>.
                 <a name="//apple_ref/swift/Section/Matrix Record: MatrixProtocol extension (methods and fields)" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Matrix%20Record%3A%20MatrixProtocol%20extension%20%28methods%20and%20fields%29"></a>
-                  <h3 class="section-name"><p>Matrix Record: MatrixProtocol extension (methods and fields)</p>
+                  <h3 class="section-name"><span>Matrix Record: MatrixProtocol extension (methods and fields)</span>
 </h3>
                 </div>
               </div>
@@ -1082,7 +1082,7 @@ the same values as <code>matrix</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7359-L7362">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1944-L1948">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1117,7 +1117,7 @@ the same values as <code>matrix</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7366-L7369">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1952-L1956">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1151,7 +1151,7 @@ the same values as <code>matrix</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7372-L7375">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1959-L1963">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1185,7 +1185,7 @@ the same values as <code>matrix</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7378-L7381">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1966-L1970">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1226,7 +1226,7 @@ avoid costly inversion calculations.&lt;/note&gt;</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7391-L7394">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1980-L1984">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1260,7 +1260,7 @@ avoid costly inversion calculations.&lt;/note&gt;</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7397-L7400">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L1987-L1991">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1299,7 +1299,7 @@ avoid costly inversion calculations.&lt;/note&gt;</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7411-L7414">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2002-L2006">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1338,7 +1338,7 @@ avoid costly inversion calculations.&lt;/note&gt;</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7425-L7428">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2017-L2021">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1397,7 +1397,7 @@ transform applied to a new modelview transform&lt;/note&gt;</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7456-L7459">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2049-L2053">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1435,7 +1435,7 @@ the resulting matrix inside <code>result</code>.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7466-L7469">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2060-L2064">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1473,7 +1473,7 @@ Use cogl_matrix_orthographic()</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7475-L7478">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2070-L2074">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1512,7 +1512,7 @@ objects near to each other.&lt;/note&gt;</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7486-L7489">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2082-L2086">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1547,7 +1547,7 @@ of <code>angle</code> degrees around the specified 3D vector.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7493-L7496">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2090-L2094">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1582,7 +1582,7 @@ Y and Z axis.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7500-L7503">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2098-L2102">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1617,7 +1617,7 @@ components.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7507-L7510">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2106-L2110">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1652,7 +1652,7 @@ the X, Y and Z axis.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7514-L7517">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2114-L2118">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1687,7 +1687,7 @@ new matrix is taken from element (j,i) in the old matrix.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7521-L7524">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2122-L2126">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1721,7 +1721,7 @@ new matrix is taken from element (j,i) in the old matrix.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7527-L7530">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2129-L2133">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1760,7 +1760,7 @@ Use cogl_framebuffer_get_modelview_matrix()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7537-L7540">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2140-L2144">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1799,7 +1799,7 @@ Use cogl_framebuffer_get_projection_matrix()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7547-L7550">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2151-L2155">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1838,7 +1838,7 @@ Use cogl_framebuffer_set_modelview_matrix()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7557-L7560">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2162-L2166">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1877,7 +1877,7 @@ Use cogl_framebuffer_set_projection_matrix()
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7567-L7570">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2173-L2177">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1915,7 +1915,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7576-L7579">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2183-L2187">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1949,7 +1949,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7581-L7587">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2189-L2196">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1983,7 +1983,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7590-L7596">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2199-L2206">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2017,7 +2017,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7602-L7610">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2212-L2220">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2051,7 +2051,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7612-L7620">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2222-L2230">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2085,7 +2085,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7622-L7630">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2232-L2240">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2119,7 +2119,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7632-L7640">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2242-L2250">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2153,7 +2153,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7642-L7650">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2252-L2260">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2187,7 +2187,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7652-L7660">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2262-L2270">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2221,7 +2221,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7662-L7670">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2272-L2280">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2255,7 +2255,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7672-L7680">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2282-L2290">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2289,7 +2289,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7682-L7690">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2292-L2300">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2323,7 +2323,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7692-L7700">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2302-L2310">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2357,7 +2357,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7702-L7710">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2312-L2320">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2391,7 +2391,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7712-L7720">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2322-L2330">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2425,7 +2425,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7722-L7730">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2332-L2340">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2459,7 +2459,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7732-L7740">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2342-L2350">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2493,7 +2493,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7742-L7750">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2352-L2360">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2527,7 +2527,7 @@ Use cogl_framebuffer_transform() instead</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/Sources/Cogl/Cogl-1.0.swift#L7752-L7760">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftCogl/tree/generated/.build/plugins/outputs/swiftcogl/Cogl/gir2swift-plugin/gir2swift-generated/Cogl/Cogl-1.0-M.swift#L2362-L2370">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2540,9 +2540,8 @@ Use cogl_framebuffer_transform() instead</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-05-09)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2022 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external noopener">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2022-04-26)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
-</div>
 </html>
